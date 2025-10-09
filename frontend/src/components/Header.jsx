@@ -86,7 +86,10 @@ const Header = () => {
             </motion.div>
 
             {/* Name & Designation */}
-            <motion.div variants={itemVariants} className="flex-1">
+            <motion.div
+              variants={itemVariants}
+              className="flex-1 text-center sm:text-left"
+            >
               <motion.h3
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
