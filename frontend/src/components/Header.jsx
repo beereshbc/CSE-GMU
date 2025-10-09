@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, Quote, Award, BookOpen, Users, Sparkles } from "lucide-react";
+import { assets } from "../assets/assets";
 
 const Header = () => {
   const containerVariants = {
@@ -65,7 +66,7 @@ const Header = () => {
               <div className="relative">
                 <div className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white relative">
                   <img
-                    src="/public/HOD_Img.jpeg"
+                    src={assets.hod_img}
                     alt="Dr. Shivanagowda G M, HoD of CSE"
                     className="w-full h-full object-cover"
                   />

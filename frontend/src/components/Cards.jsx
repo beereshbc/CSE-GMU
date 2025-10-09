@@ -254,44 +254,6 @@ const Cards = () => {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Bottom Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-12 sm:mt-16"
-        >
-          {[
-            {
-              icon: GraduationCap,
-              label: "Industry Ready Graduates",
-              value: "500+",
-            },
-            { icon: Users, label: "Expert Faculty", value: "25+" },
-            { icon: Lightbulb, label: "Research Projects", value: "50+" },
-            { icon: Globe, label: "Global Partnerships", value: "15+" },
-          ].map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1 + index * 0.1, duration: 0.5 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center shadow-lg border border-blue-200/50"
-            >
-              <stat.icon className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600 mx-auto mb-2 sm:mb-3" />
-              <p className="text-2xl sm:text-3xl font-bold text-blue-800">
-                {stat.value}
-              </p>
-              <p className="text-xs sm:text-sm text-gray-600 mt-1">
-                {stat.label}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

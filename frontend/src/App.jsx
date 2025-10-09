@@ -14,10 +14,12 @@ import StudentIP from "./pages/StudentIP";
 import StudentAchievements from "./pages/StudentAchievements";
 import Alumni from "./pages/Alumni";
 import Admissions from "./pages/Admissions";
+import AssistiveBubble from "./components/AssistiveBubble";
 
 const App = () => {
   return (
     <div className="mx-4 sm:mx-[6%] ">
+      <AssistiveBubble />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

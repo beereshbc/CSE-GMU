@@ -3,7 +3,7 @@ import Hero from "../components/Hero";
 import Header from "../components/Header";
 import Cards from "../components/Cards";
 import Navbar from "../components/Navbar";
-import Pictures from "../components/Pictures";
+import BoxMenu from "../components/BoxMenu";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       <Hero />
       <Header />
       <Cards />
-      <Pictures />
+      <BoxMenu />
       <Navbar />
     </div>
   );
