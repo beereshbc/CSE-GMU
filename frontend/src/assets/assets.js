@@ -112,3 +112,183 @@ export const boxData = [
     ],
   },
 ];
+
+export const faculties = [
+  {
+    name: "Dr. SHIVANAGOWDA G M",
+    degree: "B.E., M.Tech., Ph.D.",
+    specialization: "Professor, Program Coordinator and Associate Director ERP",
+    img: "/images/Dr. SHIVANAGOWDA G M.jpg",
+    linkedin: "https://www.linkedin.com/in/shivanagowda-g-m-0b54605/",
+  },
+  {
+    name: "Dr. CHETHAN CHANDRA S BASAVARADDI",
+    degree: "B.E., B.Ed., M.Tech., Ph.D., D.Litt., KEA-KSET.",
+    specialization: "Associate Professor",
+    img: "/images/Dr. CHETHAN CHANDRA S BASAVARADDI.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/dr-chethan-chandra-s-basavaraddi-5b523750/",
+  },
+  {
+    name: "SANTOSHKUMAR M",
+    degree: "B.E., M.Tech., (Ph.D.)",
+    specialization: "Assistant Professor, Deputy Director Student Affairs",
+    img: "/images/SANTOSHKUMAR M.jpg",
+    linkedin: "https://www.linkedin.com/in/santosh-mahendrakar-6908a299/",
+  },
+  {
+    name: "NAYANA K",
+    degree: "B.E., M.Tech., (Ph.D.)",
+    specialization: "Assistant Professor, Program Director of M.Tech - DL",
+    img: "/images/NAYANA K.jpg",
+    linkedin: "https://www.linkedin.com/in/nayana-k-921205371",
+  },
+  {
+    name: "KAVYASHREE P N",
+    degree: "B.E., M.Tech., (Ph.D.)",
+    specialization: "Assistant Professor",
+    img: "/images/KAVYASHREE P N.jpg",
+    linkedin: "https://www.linkedin.com/in/kavyashree-p-n-954b791b9",
+  },
+  {
+    name: "RANJITHA D S",
+    degree: "B.E., M.Tech.",
+    specialization: "Assistant Professor",
+    img: "/images/RANJITHA D S.jpg",
+    linkedin: "https://www.linkedin.com/in/ranjitha-ds-9127a716a",
+  },
+  {
+    name: "NANDITHA G",
+    degree: "B.E., M.Tech.",
+    specialization: "Assistant Professor",
+    img: "/images/NANDITHA G.jpg",
+    linkedin: "https://www.linkedin.com/in/nanditha-g-b490321b3",
+  },
+  {
+    name: "RAVINANDAN JANNU",
+    degree: "BCA., MCA.",
+    specialization: "Assistant Professor",
+    img: "/images/RAVINANDAN JANNU.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/ravinandan-jannu-assistant-professor-151168384",
+  },
+  {
+    name: "Miss Niveditha T Naik",
+    degree: "B.E., M.Tech.",
+    specialization: "Assistant Professor",
+    img: "/images/Niveditha.jpeg",
+    linkedin: "https://www.linkedin.com/in/niveditha-t-naik-88b993213",
+  },
+  {
+    name: "Miss Sanjana A T",
+    degree: "B.E., M.Tech.",
+    specialization: "Assistant Professor",
+    img: "/images/Sanjana AT.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/sanjana-a-t-994193384?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  },
+  {
+    name: "Mr. Srijan Roy",
+    degree: "B.E., M.Tech.",
+    specialization: "Assistant Professor",
+    img: "/images/Srujan Roy.jpeg",
+    linkedin:
+      "https://www.linkedin.com/in/srijan-roy-9a355721a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  },
+  {
+    name: "Nayana G S",
+    degree: "MSc",
+    specialization: "Assistant Professor",
+    img: "/images/Nayana GS.jpg",
+    linkedin: "https://www.linkedin.com/in/nayana-g-s-153820372",
+  },
+  {
+    name: "Rakshitha H",
+    degree: "MSc",
+    specialization: "Assistant Professor",
+    img: "/images/Rakshitha H.jpg",
+    linkedin: "https://www.linkedin.com/in/rakshitha-h-739b93383",
+  },
+  {
+    name: "Latha K B",
+    degree: "MCA",
+    specialization: "Assistant Professor",
+    img: "/images/Latha KB.jpg",
+    linkedin: "https://www.linkedin.com/in/deepti-h-g-9254281b8",
+  },
+  {
+    name: "DEEPTI H G",
+    degree: "BE, M.Tech",
+    specialization: "Assistant Professor",
+    img: "/images/DEEPTHI H S.jpg",
+    linkedin: "https://www.linkedin.com/in/latha-k-b-940198232",
+  },
+  {
+    name: "Miss Deepika M D",
+    degree: "BCA., MCA.",
+    specialization: "Tutor",
+    img: "/images/DEEPIKA M D.jpg",
+    linkedin: "http://www.linkedin.com/in/deepikamd",
+  },
+  {
+    name: "SHALINI M R",
+    degree: "B.E., (M.Tech.)",
+    specialization: "Lecturer",
+    img: "/images/SHALINI M R.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/shalini-mr-947016250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  },
+  {
+    name: "SUMANA C",
+    degree: "B.E., (M.Tech.)",
+    specialization: "Lecturer",
+    img: "/images/SUMANA C.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/sumana-c-b198a0131?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+  },
+  {
+    name: "SAIMA ANJUM",
+    degree: "B.E., (M.Tech.)",
+    specialization: "Lecturer",
+    img: "/images/SAIMA ANJUM.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/saima-anjum-b6a021225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  },
+  {
+    name: "RANJITHA J",
+    degree: "B.E.",
+    specialization: "Lecturer",
+    img: "/images/RANJITHA J.jpg",
+  },
+  {
+    name: "Mrs. Sindhu R R",
+    degree: "B.E.",
+    specialization: "Tutor",
+    img: "/images/Sindhu.jpeg",
+    linkedin: "https://www.linkedin.com/in/sindhu-r-r-254b2535b",
+  },
+  {
+    name: "Mrs. Supriya M Kerakkanavar",
+    degree: "B.E., (M.Tech.)",
+    specialization: "Tutor",
+    img: "/images/Supriya K.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/pallavi-s-a3b977384?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+  },
+  {
+    name: "Miss Sahana B R",
+    degree: "B.E.",
+    specialization: "Tutor",
+    img: "/images/Sahana BR.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/supriya-m-k?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+  },
+  {
+    name: "Miss Pallavi S",
+    degree: "B.E.",
+    specialization: "Tutor",
+    img: "/images/Pallavi S.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/pallavi-s-a3b977384?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+  },
+];
