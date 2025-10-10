@@ -41,7 +41,7 @@ const App = () => {
           element={<StudentIP />}
         />
         <Route
-          path="/student-achievements "
+          path="/student-achievements"
           element={<StudentAchievements />}
         />
         <Route path="/alumni" element={<Alumni />} />
