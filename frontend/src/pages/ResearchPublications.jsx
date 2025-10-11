@@ -47,10 +47,9 @@ const ResearchPublications = () => {
       setLoading(true);
       setError(null);
 
-      const response = await axios.get(
-        "http://localhost:5000/api/all-publications",
-        { timeout: 10000 }
-      );
+      const response = await axios.get("https://cse-gmu-stlo.vercel.app", {
+        timeout: 10000,
+      });
 
       setPublications(response.data || []);
     } catch (err) {
