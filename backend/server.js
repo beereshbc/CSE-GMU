@@ -14,6 +14,9 @@ app.use(express.json());
 
 // Routes
 app.use("/api", scholarRoutes);
+app.get("/", (req, res) => {
+  res.send("GMU-CSE Web app working Good....");
+});
 
 // Start server
 app.listen(PORT, () => {
