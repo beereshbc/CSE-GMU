@@ -22,6 +22,7 @@ const Navbar = () => {
     { name: "Student Achievements", path: "/student-achievements" },
     { name: "Alumni", path: "/alumni" },
     { name: "Admissions", path: "/admissions" },
+    { name: "Contact Us", path: "/contact-us" },
   ];
 
   // Close mobile menu when route changes

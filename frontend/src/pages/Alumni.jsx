@@ -58,10 +58,10 @@ const ThreeDCard = ({ member, onClick }) => {
   const mousePX = dimensions.width ? mouse.x / dimensions.width : 0;
   const mousePY = dimensions.height ? mouse.y / dimensions.height : 0;
 
-  const cardRotateY = mousePX * 30;
-  const cardRotateX = mousePY * -30;
-  const bgTranslateX = mousePX * -40;
-  const bgTranslateY = mousePY * -40;
+  const cardRotateY = mousePX * 20;
+  const cardRotateX = mousePY * -20;
+  const bgTranslateX = mousePX * -30;
+  const bgTranslateY = mousePY * -30;
 
   return (
     <motion.div
@@ -72,7 +72,7 @@ const ThreeDCard = ({ member, onClick }) => {
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
       style={{ cursor: "pointer" }}
-      whileHover={{ y: -10 }}
+      whileHover={{ y: -8 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
       <div
@@ -86,20 +86,35 @@ const ThreeDCard = ({ member, onClick }) => {
           style={{
             backgroundImage: `url(${member.image})`,
             transform: `translateX(${bgTranslateX}px) translateY(${bgTranslateY}px)`,
-            opacity: isHovering ? 0.8 : 0.5,
+            opacity: isHovering ? 0.7 : 0.4,
           }}
         />
         <div className="card-info">
+          <motion.div
+            className="flex items-center justify-center mb-3"
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center">
+              <img
+                src={member.image}
+                alt={member.name}
+                className="w-14 h-14 rounded-full object-cover"
+              />
+            </div>
+          </motion.div>
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
+            className="text-lg font-bold text-center"
           >
             {member.name}
           </motion.h1>
           <motion.p
             className="role"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
@@ -107,18 +122,38 @@ const ThreeDCard = ({ member, onClick }) => {
           </motion.p>
           <motion.p
             className="bio"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
             {member.bio}
           </motion.p>
+
+          {/* Social Links */}
+          <motion.div
+            className="social-links"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          >
+            <div className="flex justify-center space-x-3 mt-4">
+              <a href={member.social.linkedin} className="social-icon">
+                <Linkedin size={16} />
+              </a>
+              <a href={member.social.github} className="social-icon">
+                <Github size={16} />
+              </a>
+              <a href={member.social.email} className="social-icon">
+                <Mail size={16} />
+              </a>
+            </div>
+          </motion.div>
         </div>
       </div>
 
       <style jsx>{`
         .card-wrap {
-          margin: 10px;
+          margin: 8px;
           transform: perspective(800px);
           transform-style: preserve-3d;
           cursor: pointer;
@@ -151,26 +186,26 @@ const ThreeDCard = ({ member, onClick }) => {
         .card-wrap:hover .card {
           transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1),
             box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
-          box-shadow: rgba(59, 130, 246, 0.3) 0 0 40px 5px,
-            rgba(59, 130, 246, 1) 0 0 0 1px, rgba(0, 0, 0, 0.66) 0 30px 60px 0,
-            inset #1e40af 0 0 0 5px, inset white 0 0 0 6px;
+          box-shadow: rgba(59, 130, 246, 0.25) 0 0 30px 3px,
+            rgba(59, 130, 246, 0.8) 0 0 0 1px, rgba(0, 0, 0, 0.4) 0 20px 40px 0,
+            inset #93c5fd 0 0 0 2px, inset white 0 0 0 3px;
         }
 
         .card {
           position: relative;
-          flex: 0 0 240px;
-          width: 240px;
+          flex: 0 0 200px;
+          width: 220px;
           height: 320px;
-          background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+          background: linear-gradient(135deg, #93c5fd 0%, #3b82f6 100%);
           overflow: hidden;
           border-radius: 16px;
-          box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #1e40af 0 0 0 5px,
-            inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0 20px 40px 0, inset #93c5fd 0 0 0 2px,
+            inset rgba(255, 255, 255, 0.6) 0 0 0 3px;
           transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
         }
 
         .card-bg {
-          opacity: 0.5;
+          opacity: 0.4;
           position: absolute;
           top: -20px;
           left: -20px;
@@ -183,42 +218,45 @@ const ThreeDCard = ({ member, onClick }) => {
           transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95),
             opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
           pointer-events: none;
+          filter: blur(1px);
         }
 
         .card-info {
-          padding: 20px;
+          padding: 20px 15px;
           position: absolute;
           bottom: 0;
           color: #fff;
-          transform: translateY(40%);
+          transform: translateY(20%);
           transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
           width: 100%;
           box-sizing: border-box;
+          text-align: center;
         }
 
         .card-info p {
           opacity: 0;
-          text-shadow: rgba(0, 0, 0, 1) 0 2px 3px;
+          text-shadow: rgba(0, 0, 0, 0.8) 0 2px 3px;
           transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
-          line-height: 1.5em;
+          line-height: 1.4em;
           margin: 0;
         }
 
         .card-info .role {
-          color: #bfdbfe;
+          color: #dbeafe;
           font-weight: 600;
-          font-size: 1.1em;
-          margin-bottom: 8px;
+          font-size: 0.9em;
+          margin-bottom: 6px;
         }
 
         .card-info .bio {
-          font-size: 0.9em;
+          font-size: 0.8em;
           color: #e5e7eb;
+          margin-bottom: 8px;
         }
 
         .card-info h1 + p,
         .card-info p + p {
-          margin-top: 10px;
+          margin-top: 6px;
         }
 
         .card-info * {
@@ -237,7 +275,7 @@ const ThreeDCard = ({ member, onClick }) => {
           background-image: linear-gradient(
             to bottom,
             transparent 0%,
-            rgba(30, 64, 175, 0.8) 100%
+            rgba(30, 64, 175, 0.7) 100%
           );
           background-blend-mode: overlay;
           opacity: 0;
@@ -247,25 +285,67 @@ const ThreeDCard = ({ member, onClick }) => {
 
         .card-info h1 {
           font-family: "TT Norms Pro", "Roboto", sans-serif;
-          font-size: 24px;
+          font-size: 18px;
           font-weight: 700;
-          text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
-          margin: 0 0 10px 0;
+          text-shadow: rgba(0, 0, 0, 0.5) 0 5px 10px;
+          margin: 0 0 8px 0;
           color: #fff;
+        }
+
+        .social-links {
+          opacity: 0;
+          transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+        .card-wrap:hover .social-links {
+          opacity: 1;
+        }
+
+        .social-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 50%;
+          color: white;
+          transition: all 0.3s ease;
+          backdrop-filter: blur(10px);
+        }
+
+        .social-icon:hover {
+          background: rgba(255, 255, 255, 0.3);
+          transform: scale(1.1);
+        }
+
+        @media (max-width: 1200px) {
+          .card {
+            width: 200px;
+            height: 300px;
+          }
         }
 
         @media (max-width: 768px) {
           .card {
-            width: 200px;
-            height: 280px;
+            width: 160px;
+            height: 240px;
           }
 
           .card-info h1 {
-            font-size: 20px;
+            font-size: 16px;
           }
 
           .card-info {
-            padding: 15px;
+            padding: 12px 10px;
+          }
+
+          .card-info .role {
+            font-size: 0.8em;
+          }
+
+          .card-info .bio {
+            font-size: 0.7em;
           }
         }
       `}</style>
@@ -277,7 +357,7 @@ const ThreeDCard = ({ member, onClick }) => {
 const FloatingElements = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {[...Array(15)].map((_, i) => (
+      {[...Array(12)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute"
@@ -286,17 +366,17 @@ const FloatingElements = () => {
             top: `${Math.random() * 100}%`,
           }}
           animate={{
-            y: [0, -30, 0],
-            x: [0, Math.random() * 20 - 10, 0],
+            y: [0, -20, 0],
+            x: [0, Math.random() * 15 - 7.5, 0],
             rotate: [0, 180, 360],
           }}
           transition={{
-            duration: 5 + Math.random() * 5,
+            duration: 4 + Math.random() * 4,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         >
-          <Sparkles size={20} className="text-blue-200 opacity-40" />
+          <Sparkles size={16} className="text-blue-200 opacity-30" />
         </motion.div>
       ))}
     </div>
@@ -417,7 +497,7 @@ const Alumni = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   };
@@ -428,7 +508,7 @@ const Alumni = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
+        duration: 0.5,
         ease: "easeOut",
       },
     },
@@ -451,9 +531,9 @@ const Alumni = () => {
           font-weight: 500;
           background: linear-gradient(
             135deg,
-            #eff6ff 0%,
+            #f0f9ff 0%,
             #ffffff 50%,
-            #dbeafe 100%
+            #e0f2fe 100%
           );
           -webkit-font-smoothing: antialiased;
           overflow-x: hidden;
@@ -461,7 +541,7 @@ const Alumni = () => {
       `}</style>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white overflow-hidden">
+      <section className="relative py-16 bg-gradient-to-br from-blue-100 via-blue-50 to-blue-200 text-blue-900 overflow-hidden">
         <FloatingElements />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -474,27 +554,29 @@ const Alumni = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: "spring" }}
-              className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full mb-8"
+              className="inline-flex items-center space-x-2 bg-white/70 backdrop-blur-sm px-6 py-3 rounded-full mb-6 shadow-lg border border-blue-200"
             >
-              <Rocket className="w-6 h-6" />
-              <span className="font-semibold">Welcome to Our Community</span>
+              <Rocket className="w-5 h-5 text-blue-600" />
+              <span className="font-semibold text-blue-700">
+                Welcome to Our Community
+              </span>
             </motion.div>
 
             <motion.h1
-              className="text-6xl font-bold mb-6 leading-tight"
+              className="text-5xl font-bold mb-6 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
               Welcome to{" "}
-              <span className="bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
                 GMIT Alumni
               </span>{" "}
               Network
             </motion.h1>
 
             <motion.p
-              className="text-xl text-blue-100 max-w-3xl mx-auto mb-8 leading-relaxed"
+              className="text-lg text-blue-700 max-w-3xl mx-auto mb-8 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
@@ -515,7 +597,7 @@ const Alumni = () => {
           <svg
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
-            className="w-full h-16"
+            className="w-full h-12"
           >
             <path
               d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
@@ -536,86 +618,92 @@ const Alumni = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white/80 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6"
           >
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
                 variants={itemVariants}
                 className="text-center group"
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -3 }}
               >
                 <motion.div
-                  className="bg-gradient-to-br from-blue-500 to-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-xl transition-all"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  className="bg-gradient-to-br from-blue-100 to-blue-200 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md group-hover:shadow-lg transition-all border border-blue-200"
+                  whileHover={{ scale: 1.05, rotate: 2 }}
                 >
-                  <stat.icon className="text-white w-8 h-8" />
+                  <stat.icon className="text-blue-600 w-6 h-6" />
                 </motion.div>
                 <motion.h3
-                  className="text-3xl font-bold text-blue-600 mb-2"
+                  className="text-2xl font-bold text-blue-700 mb-1"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
-                  transition={{ delay: index * 0.1 + 0.5, type: "spring" }}
+                  transition={{ delay: index * 0.1 + 0.3, type: "spring" }}
                 >
                   {stat.number}
                 </motion.h3>
-                <p className="text-gray-600 font-semibold">{stat.label}</p>
+                <p className="text-blue-600 font-medium text-sm">
+                  {stat.label}
+                </p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Team Section with 3D Cards */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
+      {/* Team Section with 4 Cards in Row */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-blue-100 relative overflow-hidden">
         <FloatingElements />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
           >
-            <motion.div variants={itemVariants} className="text-center mb-16">
+            <motion.div variants={itemVariants} className="text-center mb-12">
               <motion.div
-                className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full mb-6"
-                whileHover={{ scale: 1.05 }}
+                className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-6 py-2 rounded-full mb-4 shadow-md border border-blue-200"
+                whileHover={{ scale: 1.03 }}
               >
-                <Users className="w-6 h-6 text-white" />
-                <span className="text-white font-bold text-lg">Leadership</span>
+                <Users className="w-5 h-5 text-blue-600" />
+                <span className="text-blue-700 font-bold text-sm">
+                  Leadership Team
+                </span>
               </motion.div>
               <motion.h2
-                className="text-5xl font-bold text-white mb-6"
-                initial={{ opacity: 0, y: 30 }}
+                className="text-4xl font-bold text-blue-900 mb-4"
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
                 Meet Our Founders
               </motion.h2>
               <motion.p
-                className="text-xl text-blue-100"
-                initial={{ opacity: 0, y: 20 }}
+                className="text-lg text-blue-700 max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                The visionaries behind Linkable Technologies
+                The visionary leaders behind Linkable Technologies, driving
+                innovation and excellence in every project.
               </motion.p>
             </motion.div>
 
-            <div className="flex flex-wrap justify-center gap-8">
+            <div className="flex flex-wrap justify-center gap-6">
               {teamMembers.map((member, index) => (
                 <motion.div
                   key={member.id}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 + 0.4 }}
+                  viewport={{ once: true }}
                 >
                   <ThreeDCard
                     member={member}
@@ -624,33 +712,80 @@ const Alumni = () => {
                 </motion.div>
               ))}
             </div>
+
+            {/* Additional Info Section */}
+            <motion.div
+              className="mt-12 bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-blue-200 max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="p-4 rounded-xl bg-blue-50 border border-blue-200"
+                >
+                  <Target className="w-8 h-8 text-blue-600 mx-auto mb-3" />
+                  <h3 className="font-bold text-blue-800 mb-2">Our Vision</h3>
+                  <p className="text-blue-700 text-sm">
+                    To revolutionize digital solutions through innovative
+                    technology and exceptional user experiences.
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="p-4 rounded-xl bg-blue-50 border border-blue-200"
+                >
+                  <Star className="w-8 h-8 text-blue-600 mx-auto mb-3" />
+                  <h3 className="font-bold text-blue-800 mb-2">Our Mission</h3>
+                  <p className="text-blue-700 text-sm">
+                    Deliver cutting-edge digital solutions that empower
+                    businesses to thrive in the modern digital landscape.
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="p-4 rounded-xl bg-blue-50 border border-blue-200"
+                >
+                  <Globe className="w-8 h-8 text-blue-600 mx-auto mb-3" />
+                  <h3 className="font-bold text-blue-800 mb-2">Our Values</h3>
+                  <p className="text-blue-700 text-sm">
+                    Innovation, Excellence, Collaboration, and Customer Success
+                    drive everything we do.
+                  </p>
+                </motion.div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Alumni Success Stories */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-16 bg-white relative overflow-hidden">
         <FloatingElements />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
           >
-            <motion.div variants={itemVariants} className="text-center mb-16">
+            <motion.div variants={itemVariants} className="text-center mb-12">
               <motion.div
-                className="inline-flex items-center space-x-2 bg-blue-50 px-6 py-3 rounded-full shadow-lg mb-6"
-                whileHover={{ scale: 1.05 }}
+                className="inline-flex items-center space-x-2 bg-blue-50 px-5 py-2 rounded-full shadow-sm mb-4 border border-blue-200"
+                whileHover={{ scale: 1.03 }}
               >
-                <Award className="w-6 h-6 text-blue-600" />
-                <span className="text-blue-600 font-bold text-lg">
+                <Award className="w-5 h-5 text-blue-600" />
+                <span className="text-blue-700 font-bold text-sm">
                   Success Stories
                 </span>
               </motion.div>
               <motion.h2
-                className="text-5xl font-bold text-gray-800 mb-6"
-                initial={{ opacity: 0, y: 30 }}
+                className="text-4xl font-bold text-blue-900 mb-4"
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
@@ -658,47 +793,47 @@ const Alumni = () => {
               </motion.h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {alumniStories.map((story, index) => (
                 <motion.div
                   key={story.id}
                   variants={itemVariants}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -15 : 15 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                  whileHover={{ y: -5 }}
-                  className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl p-8 border border-blue-100 hover:shadow-2xl transition-all"
+                  transition={{ delay: index * 0.15 }}
+                  whileHover={{ y: -3 }}
+                  className="bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-md p-6 border border-blue-200 hover:shadow-lg transition-all"
                 >
-                  <div className="flex items-center space-x-6 mb-6">
+                  <div className="flex items-center space-x-4 mb-4">
                     <motion.img
                       src={story.image}
                       alt={story.name}
-                      className="w-16 h-16 rounded-2xl border-4 border-blue-200"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      className="w-12 h-12 rounded-xl border-2 border-blue-300"
+                      whileHover={{ scale: 1.05, rotate: 2 }}
                     />
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-800">
+                      <h3 className="text-lg font-bold text-blue-900">
                         {story.name}
                       </h3>
-                      <p className="text-blue-600 font-semibold">
+                      <p className="text-blue-600 font-semibold text-sm">
                         {story.batch}
                       </p>
                     </div>
                   </div>
-                  <div className="mb-6">
-                    <p className="text-blue-600 font-bold text-lg">
+                  <div className="mb-4">
+                    <p className="text-blue-700 font-bold text-sm">
                       {story.currentRole}
                     </p>
-                    <p className="text-gray-600 text-sm font-semibold">
+                    <p className="text-blue-600 text-xs font-medium">
                       {story.company}
                     </p>
                   </div>
                   <motion.p
-                    className="text-gray-700 text-lg leading-relaxed italic border-l-4 border-blue-400 pl-4"
+                    className="text-blue-800 text-sm leading-relaxed italic border-l-3 border-blue-400 pl-3"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ delay: 0.5 }}
+                    transition={{ delay: 0.3 }}
                   >
                     "{story.story}"
                   </motion.p>
@@ -710,28 +845,28 @@ const Alumni = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-white relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-blue-100 relative overflow-hidden">
         <FloatingElements />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
           >
-            <motion.div variants={itemVariants} className="text-center mb-16">
+            <motion.div variants={itemVariants} className="text-center mb-12">
               <motion.div
-                className="inline-flex items-center space-x-2 bg-white px-6 py-3 rounded-full shadow-lg mb-6"
-                whileHover={{ scale: 1.05 }}
+                className="inline-flex items-center space-x-2 bg-white px-5 py-2 rounded-full shadow-sm mb-4 border border-blue-200"
+                whileHover={{ scale: 1.03 }}
               >
-                <Quote className="w-6 h-6 text-blue-600" />
-                <span className="text-blue-600 font-bold text-lg">
+                <Quote className="w-5 h-5 text-blue-600" />
+                <span className="text-blue-700 font-bold text-sm">
                   Testimonials
                 </span>
               </motion.div>
               <motion.h2
-                className="text-5xl font-bold text-gray-800 mb-6"
-                initial={{ opacity: 0, y: 30 }}
+                className="text-4xl font-bold text-blue-900 mb-4"
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
@@ -739,36 +874,36 @@ const Alumni = () => {
               </motion.h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {testimonials.map((testimonial, index) => (
                 <motion.div
                   key={testimonial.id}
                   variants={itemVariants}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  className="bg-white rounded-2xl shadow-xl p-8 border border-blue-100 relative overflow-hidden"
+                  transition={{ delay: index * 0.15 }}
+                  whileHover={{ y: -3, scale: 1.01 }}
+                  className="bg-white rounded-xl shadow-md p-6 border border-blue-200 relative overflow-hidden"
                 >
                   <motion.div
-                    className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-blue-600"
+                    className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600"
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
-                    transition={{ delay: 0.5 }}
+                    transition={{ delay: 0.3 }}
                   />
-                  <Quote className="w-12 h-12 text-blue-200 mb-6" />
+                  <Quote className="w-8 h-8 text-blue-300 mb-4" />
                   <motion.p
-                    className="text-gray-700 text-lg mb-8 leading-relaxed"
+                    className="text-blue-800 text-sm mb-6 leading-relaxed"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ delay: 0.3 }}
+                    transition={{ delay: 0.2 }}
                   >
                     "{testimonial.text}"
                   </motion.p>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-sm">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-xs">
                         {testimonial.name
                           .split(" ")
                           .map((n) => n[0])
@@ -776,10 +911,10 @@ const Alumni = () => {
                       </span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-800 text-lg">
+                      <h4 className="font-bold text-blue-900 text-sm">
                         {testimonial.name}
                       </h4>
-                      <p className="text-blue-600 font-semibold">
+                      <p className="text-blue-600 font-medium text-xs">
                         {testimonial.role} • {testimonial.company}
                       </p>
                     </div>

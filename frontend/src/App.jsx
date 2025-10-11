@@ -16,6 +16,7 @@ import Alumni from "./pages/Alumni";
 import Admissions from "./pages/Admissions";
 import AssistiveBubble from "./components/AssistiveBubble";
 import FalconAI from "./pages/FalconAI";
+import ContactUs from "./pages/ContactUs";
 
 const App = () => {
   return (
@@ -47,6 +48,7 @@ const App = () => {
         <Route path="/alumni" element={<Alumni />} />
         <Route path="/admissions" element={<Admissions />} />
         <Route path="/falconai" element={<FalconAI />} />
+        <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
     </div>
   );
