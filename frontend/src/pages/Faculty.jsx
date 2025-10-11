@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { faculties } from "../assets/assets";
 
 const FacultyCard = ({ faculty }) => {
   const [activeSection, setActiveSection] = useState("about");
@@ -364,9 +365,10 @@ const Faculty = () => {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {/* You can map through your faculties array here */}
-          <FacultyCard faculty={sampleFaculty} />
-          <FacultyCard faculty={sampleFaculty} />
-          <FacultyCard faculty={sampleFaculty} />
+
+          {faculties.map((facultie, index) => (
+            <FacultyCard faculty={facultie} />
+          ))}
         </div>
       </div>
     </div>

@@ -24,7 +24,7 @@ const App = () => {
       <FalconAI />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<Home />} />
         <Route path="/programs" element={<Programs />} />
         <Route path="/learning-resources" element={<LearningResources />} />
         <Route path="/faculty" element={<Faculty />} />
@@ -40,10 +40,7 @@ const App = () => {
           path="/student-internships-placements "
           element={<StudentIP />}
         />
-        <Route
-          path="/student-achievements "
-          element={<StudentAchievements />}
-        />
+        <Route path="/student-achievements" element={<StudentAchievements />} />
         <Route path="/alumni" element={<Alumni />} />
         <Route path="/admissions" element={<Admissions />} />
         <Route path="/falconai" element={<FalconAI />} />
