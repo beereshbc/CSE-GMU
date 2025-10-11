@@ -31,7 +31,7 @@ const App = () => {
         <Route path="/faculty" element={<Faculty />} />
         <Route path="/bos" element={<BoS />} />
         <Route
-          path="/research-publications "
+          path="/research-publications"
           element={<ResearchPublications />}
         />
         <Route path="/student-projects" element={<StudentProjects />} />
@@ -41,10 +41,7 @@ const App = () => {
           path="/student-internships-placements "
           element={<StudentIP />}
         />
-        <Route
-          path="/student-achievements"
-          element={<StudentAchievements />}
-        />
+        <Route path="/student-achievements" element={<StudentAchievements />} />
         <Route path="/alumni" element={<Alumni />} />
         <Route path="/admissions" element={<Admissions />} />
         <Route path="/falconai" element={<FalconAI />} />
