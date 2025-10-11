@@ -142,14 +142,14 @@ const Hero = () => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="flex justify-center mb-4"
+          className="flex justify-center mb-4 "
         >
           <motion.div
             whileHover={{ scale: 1.02 }}
             className=" cursor-pointer flex items-center gap-3"
           >
             <motion.div>
-              <img src={assets.gmu_logo} className="w-44 " alt="" srcset="" />
+              <img src={assets.gmu_logo} className="w-44" alt="" srcset="" />
             </motion.div>
           </motion.div>
         </motion.div>
@@ -202,18 +202,10 @@ const Hero = () => {
             transition={{ delay: 1.4, duration: 0.6 }}
             className="relative"
           >
-            <motion.p className="text-lg md:text-xl  mt-[-40px] font-semibold text-blue-700 relative inline-block">
+            <motion.p className="text-lg md:text-xl   font-semibold text-blue-700 relative inline-block">
               <span className="relative z-10">
                 Faculty of Engineering and Technology
               </span>
-              <motion.span
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 1.6, duration: 0.4 }}
-                className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-br from-green-400 to-blue-500 rounded-full border-2 border-white shadow-sm flex items-center justify-center"
-              >
-                <div className="w-1 h-1 bg-white rounded-full"></div>
-              </motion.span>
             </motion.p>
           </motion.div>
         </motion.div>

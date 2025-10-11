@@ -16,9 +16,11 @@ import {
   Target,
   Heart,
   Sparkles,
+  ArrowRight,
+  ChevronRight,
 } from "lucide-react";
 
-// Custom 3D Card Component
+// Enhanced 3D Card Component with better styling
 const ThreeDCard = ({ member, onClick }) => {
   const cardRef = useRef(null);
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
@@ -58,10 +60,10 @@ const ThreeDCard = ({ member, onClick }) => {
   const mousePX = dimensions.width ? mouse.x / dimensions.width : 0;
   const mousePY = dimensions.height ? mouse.y / dimensions.height : 0;
 
-  const cardRotateY = mousePX * 30;
-  const cardRotateX = mousePY * -30;
-  const bgTranslateX = mousePX * -40;
-  const bgTranslateY = mousePY * -40;
+  const cardRotateY = mousePX * 20;
+  const cardRotateX = mousePY * -20;
+  const bgTranslateX = mousePX * -30;
+  const bgTranslateY = mousePY * -30;
 
   return (
     <motion.div
@@ -72,8 +74,8 @@ const ThreeDCard = ({ member, onClick }) => {
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
       style={{ cursor: "pointer" }}
-      whileHover={{ y: -10 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      whileHover={{ y: -8 }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
     >
       <div
         className="card"
@@ -86,7 +88,7 @@ const ThreeDCard = ({ member, onClick }) => {
           style={{
             backgroundImage: `url(${member.image})`,
             transform: `translateX(${bgTranslateX}px) translateY(${bgTranslateY}px)`,
-            opacity: isHovering ? 0.8 : 0.5,
+            opacity: isHovering ? 0.9 : 0.6,
           }}
         />
         <div className="card-info">
@@ -113,13 +115,31 @@ const ThreeDCard = ({ member, onClick }) => {
           >
             {member.bio}
           </motion.p>
+
+          {/* Social Links */}
+          <motion.div
+            className="social-links"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          >
+            <button className="social-btn">
+              <Linkedin size={14} />
+            </button>
+            <button className="social-btn">
+              <Mail size={14} />
+            </button>
+            <button className="social-btn">
+              <Github size={14} />
+            </button>
+          </motion.div>
         </div>
       </div>
 
       <style jsx>{`
         .card-wrap {
-          margin: 10px;
-          transform: perspective(800px);
+          margin: 12px;
+          transform: perspective(1000px);
           transform-style: preserve-3d;
           cursor: pointer;
         }
@@ -151,26 +171,29 @@ const ThreeDCard = ({ member, onClick }) => {
         .card-wrap:hover .card {
           transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1),
             box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
-          box-shadow: rgba(59, 130, 246, 0.3) 0 0 40px 5px,
-            rgba(59, 130, 246, 1) 0 0 0 1px, rgba(0, 0, 0, 0.66) 0 30px 60px 0,
-            inset #1e40af 0 0 0 5px, inset white 0 0 0 6px;
+          box-shadow: rgba(59, 130, 246, 0.25) 0 0 60px 8px,
+            rgba(59, 130, 246, 0.4) 0 0 0 1px, rgba(0, 0, 0, 0.1) 0 20px 40px 0,
+            inset rgba(30, 64, 175, 0.1) 0 0 0 1px,
+            inset rgba(255, 255, 255, 0.8) 0 0 0 2px;
         }
 
         .card {
           position: relative;
-          flex: 0 0 240px;
-          width: 240px;
-          height: 320px;
+          flex: 0 0 260px;
+          width: 260px;
+          height: 340px;
           background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
           overflow: hidden;
-          border-radius: 16px;
-          box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #1e40af 0 0 0 5px,
-            inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
+          border-radius: 20px;
+          box-shadow: rgba(0, 0, 0, 0.08) 0 20px 40px 0,
+            inset rgba(30, 64, 175, 0.1) 0 0 0 1px,
+            inset rgba(255, 255, 255, 0.6) 0 0 0 2px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
           transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
         }
 
         .card-bg {
-          opacity: 0.5;
+          opacity: 0.6;
           position: absolute;
           top: -20px;
           left: -20px;
@@ -183,14 +206,15 @@ const ThreeDCard = ({ member, onClick }) => {
           transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95),
             opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
           pointer-events: none;
+          filter: brightness(1.1);
         }
 
         .card-info {
-          padding: 20px;
+          padding: 24px;
           position: absolute;
           bottom: 0;
           color: #fff;
-          transform: translateY(40%);
+          transform: translateY(30%);
           transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
           width: 100%;
           box-sizing: border-box;
@@ -198,7 +222,7 @@ const ThreeDCard = ({ member, onClick }) => {
 
         .card-info p {
           opacity: 0;
-          text-shadow: rgba(0, 0, 0, 1) 0 2px 3px;
+          text-shadow: rgba(0, 0, 0, 0.8) 0 2px 4px;
           transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
           line-height: 1.5em;
           margin: 0;
@@ -207,18 +231,21 @@ const ThreeDCard = ({ member, onClick }) => {
         .card-info .role {
           color: #bfdbfe;
           font-weight: 600;
-          font-size: 1.1em;
+          font-size: 1em;
           margin-bottom: 8px;
+          letter-spacing: 0.5px;
         }
 
         .card-info .bio {
-          font-size: 0.9em;
+          font-size: 0.85em;
           color: #e5e7eb;
+          line-height: 1.4em;
+          margin-bottom: 16px;
         }
 
         .card-info h1 + p,
         .card-info p + p {
-          margin-top: 10px;
+          margin-top: 8px;
         }
 
         .card-info * {
@@ -237,7 +264,7 @@ const ThreeDCard = ({ member, onClick }) => {
           background-image: linear-gradient(
             to bottom,
             transparent 0%,
-            rgba(30, 64, 175, 0.8) 100%
+            rgba(30, 64, 175, 0.9) 100%
           );
           background-blend-mode: overlay;
           opacity: 0;
@@ -246,18 +273,45 @@ const ThreeDCard = ({ member, onClick }) => {
         }
 
         .card-info h1 {
-          font-family: "TT Norms Pro", "Roboto", sans-serif;
-          font-size: 24px;
+          font-family: "TT Norms Pro", "Inter", sans-serif;
+          font-size: 22px;
           font-weight: 700;
-          text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
-          margin: 0 0 10px 0;
+          text-shadow: rgba(0, 0, 0, 0.6) 0 8px 16px;
+          margin: 0 0 12px 0;
           color: #fff;
+          letter-spacing: -0.5px;
+        }
+
+        .social-links {
+          display: flex;
+          gap: 8px;
+          margin-top: 16px;
+        }
+
+        .social-btn {
+          width: 32px;
+          height: 32px;
+          border-radius: 10px;
+          background: rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+          background: rgba(255, 255, 255, 0.25);
+          transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
           .card {
-            width: 200px;
-            height: 280px;
+            width: 220px;
+            height: 300px;
           }
 
           .card-info h1 {
@@ -265,7 +319,7 @@ const ThreeDCard = ({ member, onClick }) => {
           }
 
           .card-info {
-            padding: 15px;
+            padding: 20px;
           }
         }
       `}</style>
@@ -273,11 +327,11 @@ const ThreeDCard = ({ member, onClick }) => {
   );
 };
 
-// Floating Elements Component for Background
+// Enhanced Floating Elements
 const FloatingElements = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {[...Array(15)].map((_, i) => (
+      {[...Array(12)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute"
@@ -286,24 +340,65 @@ const FloatingElements = () => {
             top: `${Math.random() * 100}%`,
           }}
           animate={{
-            y: [0, -30, 0],
-            x: [0, Math.random() * 20 - 10, 0],
+            y: [0, -40, 0],
+            x: [0, Math.random() * 15 - 7.5, 0],
             rotate: [0, 180, 360],
           }}
           transition={{
-            duration: 5 + Math.random() * 5,
+            duration: 6 + Math.random() * 4,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         >
-          <Sparkles size={20} className="text-blue-200 opacity-40" />
+          <Sparkles size={16} className="text-blue-300 opacity-30" />
         </motion.div>
       ))}
     </div>
   );
 };
 
+// Section Header Component
+const SectionHeader = ({ icon: Icon, title, subtitle, color = "blue" }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    className="text-center mb-16"
+  >
+    <motion.div
+      className={`inline-flex items-center space-x-3 bg-${color}-50 px-6 py-3 rounded-2xl shadow-sm border border-${color}-100 mb-6`}
+      whileHover={{ scale: 1.02, y: -2 }}
+      transition={{ type: "spring", stiffness: 400 }}
+    >
+      <Icon className={`w-5 h-5 text-${color}-600`} />
+      <span className={`text-${color}-600 font-semibold text-sm tracking-wide`}>
+        {title}
+      </span>
+    </motion.div>
+    <motion.h2
+      className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 tracking-tight"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.1 }}
+    >
+      {subtitle}
+    </motion.h2>
+    <motion.div
+      className="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"
+      initial={{ scaleX: 0 }}
+      whileInView={{ scaleX: 1 }}
+      transition={{ delay: 0.3, duration: 0.8 }}
+    />
+  </motion.div>
+);
+
 const Alumni = () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+
   const companyInfo = {
     name: "Linkable Technologies",
     founded: "2022",
@@ -417,7 +512,7 @@ const Alumni = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   };
@@ -439,30 +534,51 @@ const Alumni = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
-      {/* Global Styles */}
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30">
+      {/* Enhanced Global Styles */}
       <style jsx global>{`
         @import url("https://fonts.cdnfonts.com/css/tt-norms-pro");
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
         body {
           margin: 0;
-          font-family: "Roboto", Helvetica, Arial, Lucida, sans-serif;
-          font-size: 14px;
-          font-weight: 500;
+          font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+          font-size: 15px;
+          font-weight: 400;
           background: linear-gradient(
             135deg,
-            #eff6ff 0%,
+            #f8fafc 0%,
             #ffffff 50%,
-            #dbeafe 100%
+            #f1f5f9 100%
           );
           -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
           overflow-x: hidden;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+          background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: #cbd5e1;
+          border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background: #94a3b8;
         }
       `}</style>
 
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white overflow-hidden">
+      {/* Enhanced Hero Section */}
+      <section className="relative py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white overflow-hidden">
         <FloatingElements />
+        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -474,27 +590,29 @@ const Alumni = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: "spring" }}
-              className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full mb-8"
+              className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/20 mb-8"
             >
-              <Rocket className="w-6 h-6" />
-              <span className="font-semibold">Welcome to Our Community</span>
+              <Rocket className="w-5 h-5" />
+              <span className="font-semibold text-sm tracking-wide">
+                Welcome to Our Community
+              </span>
             </motion.div>
 
             <motion.h1
-              className="text-6xl font-bold mb-6 leading-tight"
+              className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
               Welcome to{" "}
-              <span className="bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-200 to-cyan-200 bg-clip-text text-transparent">
                 GMIT Alumni
               </span>{" "}
               Network
             </motion.h1>
 
             <motion.p
-              className="text-xl text-blue-100 max-w-3xl mx-auto mb-8 leading-relaxed"
+              className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
@@ -502,10 +620,32 @@ const Alumni = () => {
               Celebrating the achievements of our alumni and fostering lifelong
               connections that drive innovation and success across the globe.
             </motion.p>
+
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+            >
+              <motion.button
+                className="bg-white text-slate-900 px-8 py-3 rounded-xl font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-all"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Join Network <ArrowRight size={16} />
+              </motion.button>
+              <motion.button
+                className="border border-white/30 text-white px-8 py-3 rounded-xl font-semibold backdrop-blur-sm hover:bg-white/10 transition-all"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Explore Stories
+              </motion.button>
+            </motion.div>
           </motion.div>
         </div>
 
-        {/* Animated Wave */}
+        {/* Enhanced Wave */}
         <motion.div
           className="absolute bottom-0 left-0 right-0"
           initial={{ opacity: 0 }}
@@ -515,7 +655,7 @@ const Alumni = () => {
           <svg
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
-            className="w-full h-16"
+            className="w-full h-20"
           >
             <path
               d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
@@ -535,240 +675,191 @@ const Alumni = () => {
         </motion.div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-white">
+      {/* Enhanced Stats Section */}
+      <section className="py-10 bg-white/50 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto"
           >
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
                 variants={itemVariants}
-                className="text-center group"
-                whileHover={{ y: -5 }}
+                className="text-center group p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300"
+                whileHover={{ y: -5, scale: 1.02 }}
               >
                 <motion.div
-                  className="bg-gradient-to-br from-blue-500 to-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-xl transition-all"
+                  className="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-xl transition-all"
                   whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <stat.icon className="text-white w-8 h-8" />
+                  <stat.icon className="text-white w-6 h-6" />
                 </motion.div>
                 <motion.h3
-                  className="text-3xl font-bold text-blue-600 mb-2"
+                  className="text-2xl font-bold text-gray-800 mb-2"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
-                  transition={{ delay: index * 0.1 + 0.5, type: "spring" }}
+                  transition={{ delay: index * 0.1 + 0.3, type: "spring" }}
                 >
                   {stat.number}
                 </motion.h3>
-                <p className="text-gray-600 font-semibold">{stat.label}</p>
+                <p className="text-gray-600 font-medium text-sm">
+                  {stat.label}
+                </p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Team Section with 3D Cards */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
+      {/* Enhanced Team Section */}
+      <section className="py- bg-gradient-to-br from-slate-50 to-blue-50/30 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-blue-900/[0.01] bg-[size:60px_60px]" />
         <FloatingElements />
         <div className="container mx-auto px-4 relative z-10">
+          <SectionHeader
+            icon={Users}
+            title="Leadership"
+            subtitle="Meet Our Founders"
+            color="blue"
+          />
+
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
+            className="flex flex-wrap justify-center gap-6"
           >
-            <motion.div variants={itemVariants} className="text-center mb-16">
+            {teamMembers.map((member, index) => (
               <motion.div
-                className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full mb-6"
-                whileHover={{ scale: 1.05 }}
-              >
-                <Users className="w-6 h-6 text-white" />
-                <span className="text-white font-bold text-lg">Leadership</span>
-              </motion.div>
-              <motion.h2
-                className="text-5xl font-bold text-white mb-6"
+                key={member.id}
+                variants={itemVariants}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
+                transition={{ delay: index * 0.1 + 0.4 }}
               >
-                Meet Our Founders
-              </motion.h2>
-              <motion.p
-                className="text-xl text-blue-100"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-              >
-                The visionaries behind Linkable Technologies
-              </motion.p>
-            </motion.div>
-
-            <div className="flex flex-wrap justify-center gap-8">
-              {teamMembers.map((member, index) => (
-                <motion.div
-                  key={member.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 + 0.4 }}
-                >
-                  <ThreeDCard
-                    member={member}
-                    onClick={() => handleCardClick(member)}
-                  />
-                </motion.div>
-              ))}
-            </div>
+                <ThreeDCard
+                  member={member}
+                  onClick={() => handleCardClick(member)}
+                />
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Alumni Success Stories */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      {/* Enhanced Alumni Stories */}
+      <section className="py-5 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-gray-900/[0.01] bg-[size:60px_60px]" />
         <FloatingElements />
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.div variants={itemVariants} className="text-center mb-16">
-              <motion.div
-                className="inline-flex items-center space-x-2 bg-blue-50 px-6 py-3 rounded-full shadow-lg mb-6"
-                whileHover={{ scale: 1.05 }}
-              >
-                <Award className="w-6 h-6 text-blue-600" />
-                <span className="text-blue-600 font-bold text-lg">
-                  Success Stories
-                </span>
-              </motion.div>
-              <motion.h2
-                className="text-5xl font-bold text-gray-800 mb-6"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                Alumni Achievements
-              </motion.h2>
-            </motion.div>
+          <SectionHeader
+            icon={Award}
+            title="Success Stories"
+            subtitle="Alumni Achievements"
+            color="blue"
+          />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {alumniStories.map((story, index) => (
-                <motion.div
-                  key={story.id}
-                  variants={itemVariants}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                  whileHover={{ y: -5 }}
-                  className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl p-8 border border-blue-100 hover:shadow-2xl transition-all"
-                >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {alumniStories.map((story, index) => (
+              <motion.div
+                key={story.id}
+                variants={itemVariants}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 }}
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              >
+                <div className="p-8">
                   <div className="flex items-center space-x-6 mb-6">
                     <motion.img
                       src={story.image}
                       alt={story.name}
-                      className="w-16 h-16 rounded-2xl border-4 border-blue-200"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      className="w-16 h-16 rounded-2xl border-2 border-blue-200 shadow-md group-hover:border-blue-300 transition-colors"
+                      whileHover={{ scale: 1.1, rotate: 2 }}
                     />
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-800">
+                      <h3 className="text-xl font-bold text-gray-800">
                         {story.name}
                       </h3>
-                      <p className="text-blue-600 font-semibold">
+                      <p className="text-blue-600 font-semibold text-sm">
                         {story.batch}
                       </p>
                     </div>
                   </div>
                   <div className="mb-6">
-                    <p className="text-blue-600 font-bold text-lg">
+                    <p className="text-blue-600 font-bold text-base">
                       {story.currentRole}
                     </p>
-                    <p className="text-gray-600 text-sm font-semibold">
+                    <p className="text-gray-600 text-sm font-medium">
                       {story.company}
                     </p>
                   </div>
                   <motion.p
-                    className="text-gray-700 text-lg leading-relaxed italic border-l-4 border-blue-400 pl-4"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 0.5 }}
-                  >
-                    "{story.story}"
-                  </motion.p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-white relative overflow-hidden">
-        <FloatingElements />
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.div variants={itemVariants} className="text-center mb-16">
-              <motion.div
-                className="inline-flex items-center space-x-2 bg-white px-6 py-3 rounded-full shadow-lg mb-6"
-                whileHover={{ scale: 1.05 }}
-              >
-                <Quote className="w-6 h-6 text-blue-600" />
-                <span className="text-blue-600 font-bold text-lg">
-                  Testimonials
-                </span>
-              </motion.div>
-              <motion.h2
-                className="text-5xl font-bold text-gray-800 mb-6"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                What Our Alumni Say
-              </motion.h2>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={testimonial.id}
-                  variants={itemVariants}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  className="bg-white rounded-2xl shadow-xl p-8 border border-blue-100 relative overflow-hidden"
-                >
-                  <motion.div
-                    className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-blue-600"
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    transition={{ delay: 0.5 }}
-                  />
-                  <Quote className="w-12 h-12 text-blue-200 mb-6" />
-                  <motion.p
-                    className="text-gray-700 text-lg mb-8 leading-relaxed"
+                    className="text-gray-700 text-base leading-relaxed italic border-l-3 border-blue-400 pl-4"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: 0.3 }}
                   >
+                    "{story.story}"
+                  </motion.p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced Testimonials */}
+      <section className="py-5 bg-gradient-to-br from-slate-50 to-blue-50/30 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-blue-900/[0.01] bg-[size:60px_60px]" />
+        <FloatingElements />
+        <div className="container mx-auto px-4 relative z-10">
+          <SectionHeader
+            icon={Quote}
+            title="Testimonials"
+            subtitle="What Our Alumni Say"
+            color="blue"
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.id}
+                variants={itemVariants}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
+              >
+                <motion.div
+                  className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                />
+                <div className="p-8">
+                  <Quote className="w-10 h-10 text-blue-200 mb-3" />
+                  <motion.p
+                    className="text-gray-700 text-base mb-8 leading-relaxed"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                  >
                     "{testimonial.text}"
                   </motion.p>
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-sm">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-md">
+                      <span className="text-white font-bold text-xs">
                         {testimonial.name
                           .split(" ")
                           .map((n) => n[0])
@@ -776,18 +867,18 @@ const Alumni = () => {
                       </span>
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-800 text-lg">
+                      <h4 className="font-bold text-gray-800 text-base">
                         {testimonial.name}
                       </h4>
-                      <p className="text-blue-600 font-semibold">
+                      <p className="text-blue-600 font-medium text-sm">
                         {testimonial.role} • {testimonial.company}
                       </p>
                     </div>
                   </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
     </div>

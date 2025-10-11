@@ -16,12 +16,18 @@ import Alumni from "./pages/Alumni";
 import Admissions from "./pages/Admissions";
 import AssistiveBubble from "./components/AssistiveBubble";
 import FalconAI from "./pages/FalconAI";
+import ContactUs from "./pages/ContactUs";
+import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div className="mx-4 sm:mx-[6%] ">
+    <div>
+      <ScrollToTop />
       <AssistiveBubble />
       <FalconAI />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<Home />} />
@@ -30,7 +36,7 @@ const App = () => {
         <Route path="/faculty" element={<Faculty />} />
         <Route path="/bos" element={<BoS />} />
         <Route
-          path="/research-publications "
+          path="/research-publications"
           element={<ResearchPublications />}
         />
         <Route path="/student-projects" element={<StudentProjects />} />
@@ -44,7 +50,9 @@ const App = () => {
         <Route path="/alumni" element={<Alumni />} />
         <Route path="/admissions" element={<Admissions />} />
         <Route path="/falconai" element={<FalconAI />} />
+        <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
+      <Footer />
     </div>
   );
 };

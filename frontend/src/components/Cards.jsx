@@ -10,8 +10,9 @@ const Cards = () => {
       title: "Department Vision",
       description:
         "Department of Computer Science and Engineering (CSE) we have a transformative impact on society through continual innovation in Computer engineering education, research, skill development, creativity, and entrepreneurship",
-      color: "from-blue-400 to-blue-600",
+      color: "from-blue-500 to-blue-700",
       bgColor: "from-blue-50 to-blue-100",
+      accentColor: "bg-blue-500",
       delay: 0.1,
       image: assets.gmu_logo,
     },
@@ -24,8 +25,9 @@ const Cards = () => {
         "To develop global citizens by educating students on emotional, physical, social, economic, environmental, spiritual dimensions of human growth in addition to intellectual pursuits",
         "To address real-world challenges and to establish the groundwork for entrepreneurship and lifelong learning",
       ],
-      color: "from-cyan-400 to-cyan-600",
+      color: "from-cyan-500 to-cyan-700",
       bgColor: "from-cyan-50 to-cyan-100",
+      accentColor: "bg-cyan-500",
       delay: 0.3,
       image: assets.gmu_logo,
     },
@@ -39,8 +41,9 @@ const Cards = () => {
         "Develop professional, ethical, and leadership skills among students to excel in diverse global work environments.",
         "Engage with industry and community through consultancy, skill development, and technology transfer for regional and national development.",
       ],
-      color: "from-indigo-400 to-indigo-600",
+      color: "from-indigo-500 to-indigo-700",
       bgColor: "from-indigo-50 to-indigo-100",
+      accentColor: "bg-indigo-500",
       delay: 0.5,
       image: assets.gmu_logo,
     },
@@ -69,42 +72,40 @@ const Cards = () => {
 
     const handleMouseLeave = () => {
       setIsHovering(false);
-      setTimeout(() => {
-        setMouse({ x: 0, y: 0 });
-      }, 1000);
+      setMouse({ x: 0, y: 0 });
     };
 
     const mousePX = mouse.x / (cardRef.current?.offsetWidth || 1);
     const mousePY = mouse.y / (cardRef.current?.offsetHeight || 1);
 
-    const rX = mousePX * 30;
-    const rY = mousePY * -30;
+    const rX = mousePX * 15;
+    const rY = mousePY * -15;
 
-    const tX = mousePX * -40;
-    const tY = mousePY * -40;
+    const tX = mousePX * -20;
+    const tY = mousePY * -20;
 
     const cardStyle = {
-      transform: `rotateY(${rX}deg) rotateX(${rY}deg)`,
+      transform: `rotateY(${rX}deg) rotateX(${rY}deg) scale(${
+        isHovering ? 1.02 : 1
+      })`,
     };
 
     const cardBgTransform = {
-      transform: `translateX(${tX}px) translateY(${tY}px)`,
+      transform: `translateX(${tX}px) translateY(${tY}px) scale(1.1)`,
       backgroundImage: `url(${card.image})`,
     };
 
     const cardVariants = {
       hidden: {
         opacity: 0,
-        y: 50,
-        scale: 0.9,
+        y: 60,
       },
       visible: {
         opacity: 1,
         y: 0,
-        scale: 1,
         transition: {
           duration: 0.6,
-          ease: "easeOut",
+          ease: [0.25, 0.1, 0.25, 1],
         },
       },
     };
@@ -117,7 +118,7 @@ const Cards = () => {
         transition: {
           type: "spring",
           stiffness: 200,
-          delay: 0.2,
+          delay: card.delay + 0.2,
         },
       },
       hover: {
@@ -135,92 +136,94 @@ const Cards = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
-        className="group relative"
+        className="group relative h-full"
       >
         {/* 3D Card Container */}
         <div
           ref={cardRef}
-          className="card-wrap perspective-800 transform-style-3d cursor-pointer mx-4 my-4"
+          className="perspective-1000 transform-style-3d cursor-pointer h-full"
           onMouseMove={handleMouseMove}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
           {/* Main Card with 3D transforms */}
           <motion.div
-            className="card relative w-80 h-96 bg-white overflow-hidden rounded-2xl shadow-xl border border-blue-100/50 backdrop-blur-sm"
+            className="card relative w-full bg-white overflow-hidden rounded-2xl shadow-xl border border-white/20 backdrop-blur-sm h-full"
             style={cardStyle}
             animate={{
               boxShadow: isHovering
-                ? [
-                    "rgba(59, 130, 246, 0.15) 0 0 40px 5px",
-                    "rgba(255, 255, 255, 1) 0 0 0 1px",
-                    "rgba(0, 0, 0, 0.1) 0 30px 60px 0",
-                    "inset #ffffff 0 0 0 5px",
-                    "inset rgba(59, 130, 246, 0.1) 0 0 0 6px",
-                  ].join(", ")
-                : [
-                    "rgba(0, 0, 0, 0.08) 0 30px 60px 0",
-                    "inset #ffffff 0 0 0 5px",
-                    "inset rgba(59, 130, 246, 0.05) 0 0 0 6px",
-                  ].join(", "),
+                ? `
+                    0 20px 40px -8px rgba(0, 0, 0, 0.2),
+                    inset 0 1px 0 0 rgba(255, 255, 255, 0.2),
+                    0 0 0 1px rgba(255, 255, 255, 0.1)
+                  `
+                : `
+                    0 15px 30px -6px rgba(0, 0, 0, 0.1),
+                    inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+                    0 0 0 1px rgba(255, 255, 255, 0.05)
+                  `,
             }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
           >
             {/* Background Image with Parallax */}
             <div
-              className="card-bg absolute top-[-20px] left-[-20px] w-[calc(100%+40px)] h-[calc(100%+40px)] bg-cover bg-center bg-no-repeat opacity-20"
+              className="card-bg absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat opacity-10"
               style={cardBgTransform}
             />
 
-            {/* Light Blue Overlay */}
+            {/* Gradient Overlay */}
             <div
               className={`absolute inset-0 bg-gradient-to-br ${
                 card.bgColor
-              } opacity-80 transition-all duration-500 ${
-                isHovering ? "opacity-60" : "opacity-80"
+              } opacity-90 transition-all duration-300 ${
+                isHovering ? "opacity-80" : "opacity-90"
               }`}
             />
 
-            {/* Content */}
+            {/* Accent Border Top */}
             <div
-              className={`card-info absolute bottom-0 p-8 text-gray-800 transform transition-all duration-600 ease-in-out ${
-                isHovering ? "translate-y-0" : "translate-y-2/4"
-              }`}
-            >
+              className={`absolute top-0 left-0 w-full h-1 ${
+                card.accentColor
+              } transition-all duration-300 ${isHovering ? "h-1.5" : "h-1"}`}
+            />
+
+            {/* Content */}
+            <div className="relative flex flex-col p-6 h-full">
               {/* Icon Header */}
-              <div className="relative z-10 flex items-center gap-4 mb-6">
+              <div className="flex flex-col items-center text-left mb-6">
                 <motion.div
                   variants={iconVariants}
                   initial="hidden"
                   whileInView="visible"
                   whileHover="hover"
                   viewport={{ once: true }}
-                  className={`p-3 rounded-2xl bg-gradient-to-br ${card.color} shadow-lg`}
+                  className={`p-3 rounded-xl bg-gradient-to-br ${card.color} shadow-md mb-4`}
                 >
-                  <card.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                  <card.icon className="w-6 h-6 text-white" />
                 </motion.div>
                 <motion.h3
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: card.delay + 0.2, duration: 0.5 }}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: card.delay + 0.2, duration: 0.4 }}
                   viewport={{ once: true }}
-                  className="text-xl sm:text-2xl font-bold text-gray-800"
+                  className="text-xl font-bold text-gray-800 mb-2"
                 >
                   {card.title}
                 </motion.h3>
+                <div
+                  className={`w-12 h-1 rounded-full ${card.accentColor} opacity-80`}
+                />
               </div>
 
-              {/* Content */}
-              <div className="relative z-10">
+              {/* Content Body */}
+              <div className="flex-1 flex flex-col justify-center">
                 {card.description ? (
                   <motion.p
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ delay: card.delay + 0.4, duration: 0.6 }}
+                    transition={{ delay: card.delay + 0.4, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className={`text-gray-700 leading-relaxed text-sm sm:text-base transition-opacity duration-600 ${
-                      isHovering ? "opacity-100" : "opacity-0"
-                    }`}
+                    className="text-gray-700 leading-relaxed text-sm text-left"
                   >
                     {card.description}
                   </motion.p>
@@ -228,29 +231,29 @@ const Cards = () => {
                   <motion.ul
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ delay: card.delay + 0.4, duration: 0.6 }}
+                    transition={{ delay: card.delay + 0.4, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="space-y-3 sm:space-y-4"
+                    className="space-y-3"
                   >
                     {card.points?.map((point, pointIndex) => (
                       <motion.li
                         key={pointIndex}
-                        initial={{ opacity: 0, x: -20 }}
+                        initial={{ opacity: 0, x: -8 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{
-                          delay: card.delay + 0.6 + pointIndex * 0.1,
-                          duration: 0.4,
+                          delay: card.delay + 0.5 + pointIndex * 0.08,
+                          duration: 0.3,
                         }}
                         viewport={{ once: true }}
-                        className={`flex items-start gap-3 text-gray-700 text-sm sm:text-base leading-relaxed transition-opacity duration-600 ${
-                          isHovering ? "opacity-100" : "opacity-0"
-                        }`}
+                        className="flex items-start gap-3 text-gray-700 text-sm leading-relaxed group/item"
                       >
                         <motion.div
                           whileHover={{ scale: 1.2 }}
-                          className={`w-2 h-2 rounded-full bg-gradient-to-r ${card.color} mt-2 flex-shrink-0`}
-                        ></motion.div>
-                        <span>{point}</span>
+                          className={`w-2 h-2 rounded-full ${card.accentColor} mt-1.5 flex-shrink-0 transition-all duration-200`}
+                        />
+                        <span className="flex-1 text-xs sm:text-sm">
+                          {point}
+                        </span>
                       </motion.li>
                     ))}
                   </motion.ul>
@@ -260,22 +263,30 @@ const Cards = () => {
           </motion.div>
         </div>
 
-        {/* Floating Element */}
+        {/* Floating Decorative Element */}
         <motion.div
           animate={{
-            y: [0, -10, 0],
+            y: [0, -8, 0],
             rotate: [0, 5, 0],
+            scale: [1, 1.05, 1],
           }}
           transition={{
-            duration: 4,
+            duration: 3,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: index * 0.5,
+            delay: index * 0.2,
           }}
-          className="absolute -top-2 -right-2 w-6 h-6 bg-white backdrop-blur-sm rounded-full border border-blue-200 shadow-lg flex items-center justify-center z-20"
+          className="absolute -top-2 -right-2 w-6 h-6 bg-white backdrop-blur-sm rounded-full border border-white/30 shadow-md flex items-center justify-center z-10"
         >
           <Zap className="w-3 h-3 text-blue-500" />
         </motion.div>
+
+        {/* Glow Effect */}
+        <div
+          className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-60 transition-opacity duration-300 blur-lg -z-10 ${card.color
+            .replace("from-", "bg-")
+            .replace("to-", "")}`}
+        />
       </motion.div>
     );
   };
@@ -291,44 +302,59 @@ const Cards = () => {
   };
 
   return (
-    <section className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-12"
         >
           <motion.h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-800 mb-4"
-            initial={{ opacity: 0, y: 20 }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4"
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
             viewport={{ once: true }}
           >
             Our{" "}
-            <span className="bg-gradient-to-r from-blue-500 to-cyan-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
               Core Values
             </span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-4"
+          >
+            Guiding principles that shape our department's vision, mission, and
+            objectives for excellence in computer science education and
+            innovation.
+          </motion.p>
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
+            transition={{ delay: 0.5, duration: 0.4 }}
             viewport={{ once: true }}
-            className="w-20 h-1 bg-gradient-to-r from-blue-400 to-cyan-500 mx-auto rounded-full"
-          ></motion.div>
+            className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"
+          />
         </motion.div>
 
-        {/* Cards Grid */}
+        {/* Cards Grid with Equal Sizing */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-center items-start"
+          viewport={{ once: true, margin: "-30px" }}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+          style={{
+            gridAutoRows: "1fr",
+            alignItems: "stretch",
+          }}
         >
           {cardsData.map((card, index) => (
             <Card3D key={index} card={card} index={index} />
@@ -336,23 +362,19 @@ const Cards = () => {
         </motion.div>
       </div>
 
-      {/* Add custom CSS for the 3D effect */}
+      {/* Add custom CSS for the 3D effect and grid */}
       <style jsx>{`
-        .perspective-800 {
-          perspective: 800px;
+        .perspective-1000 {
+          perspective: 1000px;
         }
         .transform-style-3d {
           transform-style: preserve-3d;
         }
         .card {
-          transition: transform 0.6s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+          transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
         }
         .card-bg {
-          transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
-            opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        .card-info {
-          transition: transform 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+          transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         }
       `}</style>
     </section>

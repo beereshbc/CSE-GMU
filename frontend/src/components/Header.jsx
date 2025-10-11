@@ -134,8 +134,9 @@ const Header = () => {
             transition={{ delay: 1.1, duration: 0.6 }}
             className="relative"
           >
-            <div className="bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg">
-              <div className="overflow-y-auto pr-3 sm:pr-4 h-48 sm:h-56 lg:h-64 custom-scrollbar">
+            <hr className="h-1 bg-blue-500 items-center" />
+            <div className="bg-white/80 backdrop-blur-sm border border-blue-200/50 mt-10 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg">
+              <div className="overflow-y-auto pr-3 sm:pr-4 h-48 sm:h-56 lg:h-full custom-scrollbar">
                 <p className="text-gray-700 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
                   Welcome to the Department of Computer Science & Engineering
                   (CSE) at GM University, Davanagere. Dr. Shivanagowda G. M.,

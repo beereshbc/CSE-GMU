@@ -1,376 +1,724 @@
 import React, { useState } from "react";
-import { faculties } from "../assets/assets";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  X,
+  MapPin,
+  Phone,
+  Mail,
+  Linkedin,
+  GraduationCap,
+  BookOpen,
+  Users,
+  Award,
+  BookMarked,
+} from "lucide-react";
 
-const FacultyCard = ({ faculty }) => {
-  const [activeSection, setActiveSection] = useState("about");
+export const faculties = [
+  {
+    name: "Dr. SHIVANAGOWDA G M",
+    position: "Professor, Program Coordinator and Associate Director ERP",
+    img: "/images/Dr. SHIVANAGOWDA G M.jpg",
+    coverImg: "/images/Dr. SHIVANAGOWDA G M.jpg",
+    about:
+      "Expert in computer science with extensive academic and administrative experience. Currently serving as Program Coordinator and Associate Director ERP at GM University.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/shivanagowda-g-m-0b54605/",
+      Scholar: "https://scholar.google.com/citations?user=shivanagowda",
+      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123456",
+    },
+    experience: [
+      {
+        year: "2015",
+        title: "Program Coordinator",
+        company: "GM University",
+        description:
+          "Oversaw academic programs and curriculum development for computer science department.",
+      },
+      {
+        year: "2018",
+        title: "Associate Director ERP",
+        company: "GM University",
+        description:
+          "Managed enterprise resource planning systems and digital infrastructure.",
+      },
+      {
+        year: "2020",
+        title: "Professor",
+        company: "GM University",
+        description:
+          "Teaching advanced computer science courses and mentoring graduate students.",
+      },
+    ],
+    contact: {
+      address: "Computer Science Building, GM University",
+      phone: "(555) 123-4567",
+      email: "shivanagowda@university.edu",
+    },
+  },
+  {
+    name: "Dr. CHETHAN CHANDRA S BASAVARADDI",
+    position: "Associate Professor",
+    img: "/images/Dr. CHETHAN CHANDRA S BASAVARADDI.jpg",
+    coverImg: "/images/Dr. CHETHAN CHANDRA S BASAVARADDI.jpg",
+    about:
+      "Distinguished academic with multiple degrees including Ph.D. and D.Litt. Passionate about research and student development in computer science.",
+    social: {
+      linkedin:
+        "https://www.linkedin.com/in/dr-chethan-chandra-s-basavaraddi-5b523750/",
+      Scholar: "https://scholar.google.com/citations?user=chethan",
+      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123457",
+    },
+    experience: [
+      {
+        year: "2017",
+        title: "Associate Professor",
+        company: "GM University",
+        description:
+          "Teaching undergraduate and graduate courses in computer science.",
+      },
+      {
+        year: "2019",
+        title: "Research Lead",
+        company: "Tech Research Center",
+        description:
+          "Led interdisciplinary research projects in emerging technologies.",
+      },
+    ],
+    contact: {
+      address: "Computer Science Building, GM University",
+      phone: "(555) 123-4568",
+      email: "chethan@university.edu",
+    },
+  },
+  {
+    name: "SANTOSHKUMAR M",
+    position: "Assistant Professor, Deputy Director Student Affairs",
+    img: "/images/SANTOSHKUMAR M.jpg",
+    coverImg: "/images/SANTOSHKUMAR M.jpg",
+    about:
+      "Dedicated educator pursuing Ph.D. while serving as Deputy Director of Student Affairs. Committed to student success and academic excellence.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/santosh-mahendrakar-6908a299/",
+      Scholar: "https://scholar.google.com/citations?user=santosh",
+      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123458",
+    },
+    experience: [
+      {
+        year: "2018",
+        title: "Assistant Professor",
+        company: "GM University",
+        description:
+          "Teaching computer science courses and supervising student projects.",
+      },
+      {
+        year: "2020",
+        title: "Deputy Director Student Affairs",
+        company: "GM University",
+        description:
+          "Managed student activities, welfare programs and extracurricular initiatives.",
+      },
+    ],
+    contact: {
+      address: "Student Affairs Office, GM University",
+      phone: "(555) 123-4569",
+      email: "santosh@university.edu",
+    },
+  },
+  {
+    name: "NAYANA K",
+    position: "Assistant Professor, Program Director of M.Tech - DL",
+    img: "/images/NAYANA K.jpg",
+    coverImg: "/images/NAYANA K.jpg",
+    about:
+      "Specialized in deep learning and artificial intelligence. Currently directing M.Tech program in Deep Learning while pursuing Ph.D.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/nayana-k-921205371",
+      Scholar: "https://scholar.google.com/citations?user=nayana",
+      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123459",
+    },
+    experience: [
+      {
+        year: "2019",
+        title: "Assistant Professor",
+        company: "GM University",
+        description:
+          "Teaching courses in machine learning and artificial intelligence.",
+      },
+      {
+        year: "2021",
+        title: "Program Director M.Tech - DL",
+        company: "GM University",
+        description:
+          "Oversaw curriculum development and program administration for Deep Learning specialization.",
+      },
+    ],
+    contact: {
+      address: "AI Research Center, GM University",
+      phone: "(555) 123-4570",
+      email: "nayana@university.edu",
+    },
+  },
+  {
+    name: "KAVYASHREE P N",
+    position: "Assistant Professor",
+    img: "/images/KAVYASHREE P N.jpg",
+    coverImg: "/images/KAVYASHREE P N.jpg",
+    about:
+      "Enthusiastic educator and researcher pursuing Ph.D. Focused on innovative teaching methods and student mentorship.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/kavyashree-p-n-954b791b9",
+      Scholar: "https://scholar.google.com/citations?user=kavyashree",
+      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123460",
+    },
+    experience: [
+      {
+        year: "2020",
+        title: "Assistant Professor",
+        company: "GM University",
+        description:
+          "Teaching computer science fundamentals and advanced topics.",
+      },
+    ],
+    contact: {
+      address: "Computer Science Building, GM University",
+      phone: "(555) 123-4571",
+      email: "kavyashree@university.edu",
+    },
+  },
+  {
+    name: "RANJITHA D S",
+    position: "Assistant Professor",
+    img: "/images/RANJITHA D S.jpg",
+    coverImg: "/images/RANJITHA D S.jpg",
+    about:
+      "Computer science educator with expertise in software engineering and database systems. Committed to practical learning approaches.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/ranjitha-ds-9127a716a",
+      Scholar: "https://scholar.google.com/citations?user=ranjitha",
+      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123461",
+    },
+    experience: [
+      {
+        year: "2019",
+        title: "Assistant Professor",
+        company: "GM University",
+        description:
+          "Teaching software engineering and database management systems.",
+      },
+    ],
+    contact: {
+      address: "Computer Science Building, GM University",
+      phone: "(555) 123-4572",
+      email: "ranjitha@university.edu",
+    },
+  },
+  {
+    name: "NANDITHA G",
+    position: "Assistant Professor",
+    img: "/images/NANDITHA G.jpg",
+    coverImg: "/images/NANDITHA G.jpg",
+    about:
+      "Computer science educator focused on web technologies and programming fundamentals.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/nanditha-g-b490321b3",
+      Scholar: "https://scholar.google.com/citations?user=nanditha",
+      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123462",
+    },
+    experience: [
+      {
+        year: "2020",
+        title: "Assistant Professor",
+        company: "GM University",
+        description: "Teaching web development and programming courses.",
+      },
+    ],
+    contact: {
+      address: "Computer Science Building, GM University",
+      phone: "(555) 123-4573",
+      email: "nanditha@university.edu",
+    },
+  },
+  {
+    name: "RAVINANDAN JANNU",
+    position: "Assistant Professor",
+    img: "/images/RAVINANDAN JANNU.jpg",
+    coverImg: "/images/RAVINANDAN JANNU.jpg",
+    about:
+      "Computer applications expert with strong background in programming and software development.",
+    social: {
+      linkedin:
+        "https://www.linkedin.com/in/ravinandan-jannu-assistant-professor-151168384",
+      Scholar: "https://scholar.google.com/citations?user=ravinandan",
+      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123463",
+    },
+    experience: [
+      {
+        year: "2018",
+        title: "Assistant Professor",
+        company: "GM University",
+        description: "Teaching computer applications and programming courses.",
+      },
+    ],
+    contact: {
+      address: "Computer Applications Department, GM University",
+      phone: "(555) 123-4574",
+      email: "ravinandan@university.edu",
+    },
+  },
+  {
+    name: "Miss Niveditha T Naik",
+    position: "Assistant Professor",
+    img: "/images/Niveditha.jpeg",
+    coverImg: "/images/Niveditha.jpeg",
+    about:
+      "Computer science educator with focus on practical applications and student skill development.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/niveditha-t-naik-88b993213",
+      Scholar: "https://scholar.google.com/citations?user=niveditha",
+      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123464",
+    },
+    experience: [
+      {
+        year: "2021",
+        title: "Assistant Professor",
+        company: "GM University",
+        description:
+          "Teaching computer science courses and mentoring students.",
+      },
+    ],
+    contact: {
+      address: "Computer Science Building, GM University",
+      phone: "(555) 123-4575",
+      email: "niveditha@university.edu",
+    },
+  },
+];
 
-  const handleButtonClick = (section) => {
-    setActiveSection(section);
+const Faculty = () => {
+  const [selectedFaculty, setSelectedFaculty] = useState(null);
+
+  const openDetailView = (faculty) => {
+    setSelectedFaculty(faculty);
+  };
+
+  const closeDetailView = () => {
+    setSelectedFaculty(null);
+  };
+
+  // Stats for hero section
+  const stats = [
+    { number: faculties.length, label: "Faculty Members", icon: Users },
+    { number: "15+", label: "Years Experience", icon: Award },
+    { number: "100+", label: "Publications", icon: BookMarked },
+    { number: "10+", label: "Research Areas", icon: GraduationCap },
+  ];
+
+  // University social links for hero section
+  const universitySocialLinks = {
+    linkedin: "https://www.linkedin.com/school/gm-university",
+    Scholar: "https://scholar.google.com/citations?user=university",
+    Vidwan: "https://vidwan.inflibnet.ac.in/profile/university",
   };
 
   return (
-    <div
-      className={`max-w-xs mx-auto overflow-y-auto relative z-10 overflow-x-hidden bg-white flex transition-all duration-300 flex-col rounded-xl shadow-2xl ${
-        activeSection === "about"
-          ? "h-[450px]"
-          : activeSection === "contact"
-          ? "h-[430px]"
-          : "h-[550px]"
-      }`}
-      data-state={`#${activeSection}`}
-    >
-      {/* Card Header */}
-      <div
-        className={`relative flex flex-shrink-0 w-full transition-all duration-300 ${
-          activeSection !== "about" ? "h-20" : "h-48"
-        }`}
-      >
-        {/* Card Cover */}
-        <div className="absolute w-full h-40 -top-5 left-0 bg-cover bg-blue-300 bg-center filter blur-xl scale-125 transition-all duration-500"></div>
-
-        {/* Card Avatar */}
-        <img
-          className={`absolute object-cover object-center rounded-full shadow-lg transition-all duration-300 ${
-            activeSection !== "about"
-              ? "w-12 h-12 left-5 -bottom-1 transform-none"
-              : "w-24 h-24 bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-16"
-          }`}
-          src={faculty.img}
-          alt={faculty.name}
-        />
-
-        {/* Full Name */}
-        <h1
-          className={`absolute font-bold whitespace-nowrap transition-all duration-300 ${
-            activeSection !== "about"
-              ? "text-lg left-20 bottom-4 transform-none"
-              : "text-xl bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-2"
-          }`}
-        >
-          {faculty.name}
-        </h1>
-
-        {/* Job Title */}
-        <h2
-          className={`absolute font-medium opacity-70 uppercase tracking-widest whitespace-nowrap transition-all duration-300 ${
-            activeSection !== "about"
-              ? "text-xs left-20 bottom-7 transform-none"
-              : "text-xs bottom-0 left-1/2 transform -translate-x-1/2 translate-y-3"
-          }`}
-        >
-          {faculty.position}
-        </h2>
-      </div>
-
-      {/* Card Main Content */}
-      <div className="relative flex flex-col flex-1 pt-2">
-        {/* About Section */}
-        <div
-          className={`card-section ${
-            activeSection === "about" ? "block animate-fadeIn" : "hidden"
-          }`}
-        >
-          <div className="p-5">
-            <div className="font-bold text-sm mb-2 text-gray-700">ABOUT</div>
-            <p className="leading-relaxed text-gray-600 text-sm font-sans">
-              {faculty.about}
-            </p>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex items-center px-5 mb-8">
-            {faculty.social?.facebook && (
-              <a
-                href={faculty.social.facebook}
-                className="text-gray-500 w-8 h-8 rounded-full inline-flex items-center justify-center transition-colors bg-blue-50 hover:bg-blue-100 mr-2"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-4 fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M15.997 3.985h2.191V.169C17.81.117 16.51 0 14.996 0c-3.159 0-5.323 1.987-5.323 5.639V9H6.187v4.266h3.486V24h4.274V13.267h3.345l.531-4.266h-3.877V6.062c.001-1.233.333-2.077 2.051-2.077z" />
-                </svg>
-              </a>
-            )}
-
-            {faculty.social?.twitter && (
-              <a
-                href={faculty.social.twitter}
-                className="text-gray-500 w-8 h-8 rounded-full inline-flex items-center justify-center transition-colors bg-blue-50 hover:bg-blue-100 mr-2"
-              >
-                <svg
-                  className="w-4 fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                >
-                  <path d="M512 97.248c-19.04 8.352-39.328 13.888-60.48 16.576 21.76-12.992 38.368-33.408 46.176-58.016-20.288 12.096-42.688 20.64-66.56 25.408C411.872 60.704 384.416 48 354.464 48c-58.112 0-104.896 47.168-104.896 104.992 0 8.32.704 16.32 2.432 23.936-87.264-4.256-164.48-46.08-216.352-109.792-9.056 15.712-14.368 33.696-14.368 53.056 0 36.352 18.72 68.576 46.624 87.232-16.864-.32-33.408-5.216-47.424-12.928v1.152c0 51.008 36.384 93.376 84.096 103.136-8.544 2.336-17.856 3.456-27.52 3.456-6.72 0-13.504-.384-19.872-1.792 13.6 41.568 52.192 72.128 98.08 73.12-35.712 27.936-81.056 44.768-130.144 44.768-8.608 0-16.864-.384-25.12-1.44C46.496 446.88 101.6 464 161.024 464c193.152 0 298.752-160 298.752-298.688 0-4.64-.16-9.12-.384-13.568 20.832-14.784 38.336-33.248 52.608-54.496z" />
-                </svg>
-              </a>
-            )}
-
-            {faculty.social?.instagram && (
-              <a
-                href={faculty.social.instagram}
-                className="text-gray-500 w-8 h-8 rounded-full inline-flex items-center justify-center transition-colors bg-blue-50 hover:bg-blue-100 mr-2"
-              >
-                <svg
-                  className="w-4 fill-current"
-                  viewBox="0 0 512 512"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M301 256c0 24.852-20.148 45-45 45s-45-20.148-45-45 20.148-45 45-45 45 20.148 45 45zm0 0" />
-                  <path d="M332 120H180c-33.086 0-60 26.914-60 60v152c0 33.086 26.914 60 60 60h152c33.086 0 60-26.914 60-60V180c0-33.086-26.914-60-60-60zm-76 211c-41.355 0-75-33.645-75-75s33.645-75 75-75 75 33.645 75 75-33.645 75-75 75zm86-146c-8.285 0-15-6.715-15-15s6.715-15 15-15 15 6.715 15 15-6.715 15-15 15zm0 0" />
-                  <path d="M377 0H135C60.562 0 0 60.563 0 135v242c0 74.438 60.563 135 135 135h242c74.438 0 135-60.563 135-135V135C512 60.562 451.437 0 377 0zm45 332c0 49.625-40.375 90-90 90H180c-49.625 0-90-40.375-90-90V180c0-49.625 40.375-90 90-90h152c49.625 0 90 40.375 90 90zm0 0" />
-                </svg>
-              </a>
-            )}
-
-            {faculty.social?.linkedin && (
-              <a
-                href={faculty.social.linkedin}
-                className="text-gray-500 w-8 h-8 rounded-full inline-flex items-center justify-center transition-colors bg-blue-50 hover:bg-blue-100"
-              >
-                <svg
-                  className="w-4 fill-current"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M23.994 24v-.001H24v-8.802c0-4.306-.927-7.623-5.961-7.623-2.42 0-4.044 1.328-4.707 2.587h-.07V7.976H8.489v16.023h4.97v-7.934c0-2.089.396-4.109 2.983-4.109 2.549 0 2.587 2.384 2.587 4.243V24zM.396 7.977h4.976V24H.396zM2.882 0C1.291 0 0 1.291 0 2.882s1.291 2.909 2.882 2.909 2.882-1.318 2.882-2.909A2.884 2.884 0 002.882 0z" />
-                </svg>
-              </a>
-            )}
-          </div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-black/10">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[size:40px_40px]"></div>
         </div>
 
-        {/* Experience Section */}
-        <div
-          className={`card-section ${
-            activeSection === "experience" ? "block animate-fadeIn" : "hidden"
-          }`}
-        >
-          <div className="p-5">
-            <div className="font-bold text-sm mb-2 text-gray-700">
-              WORK EXPERIENCE
-            </div>
-            <div className="mt-8 relative">
-              {/* Timeline line */}
-              <div className="absolute left-10 top-0 h-full w-0.5 bg-gradient-to-b from-transparent via-blue-500 to-blue-600"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center lg:text-left"
+            >
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+              >
+                Meet Our{" "}
+                <span className="bg-gradient-to-r from-blue-200 to-cyan-200 bg-clip-text text-transparent">
+                  Distinguished
+                </span>{" "}
+                Faculty
+              </motion.h1>
 
-              <div className="space-y-8">
-                {faculty.experience?.map((exp, index) => (
-                  <div key={index} className="relative pl-16 pr-5">
-                    {/* Timeline dot */}
-                    <div
-                      className="absolute left-8 top-0 w-3 h-3 rounded-full border-2 border-white bg-gradient-to-b from-blue-300 to-blue-600 shadow-md"
-                      data-year={exp.year}
-                    ></div>
-                    <div className="text-xs text-gray-500 absolute -left-2 top-0">
-                      {exp.year}
-                    </div>
-                    <div className="font-medium text-sm">
-                      {exp.title} at{" "}
-                      <span className="text-blue-600">{exp.company}</span>
-                    </div>
-                    <div className="text-gray-600 text-sm font-sans leading-relaxed mt-1">
-                      {exp.description}
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed"
+              >
+                World-class educators and researchers committed to excellence in
+                computer science education and innovation.
+              </motion.p>
+
+              {/* Social Links - University Level */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6 mb-8"
+              >
+                <span className="text-blue-200 font-semibold">
+                  Connect with us:
+                </span>
+                <div className="flex space-x-4">
+                  <a
+                    href={universitySocialLinks.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all duration-300 transform hover:scale-110"
+                    title="LinkedIn"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                  <a
+                    href={universitySocialLinks.Scholar}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all duration-300 transform hover:scale-110"
+                    title="Google Scholar"
+                  >
+                    <GraduationCap className="w-5 h-5" />
+                  </a>
+                  <a
+                    href={universitySocialLinks.Vidwan}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all duration-300 transform hover:scale-110"
+                    title="Vidwan"
+                  >
+                    <BookOpen className="w-5 h-5" />
+                  </a>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Content - Stats */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="grid grid-cols-2 gap-6"
+            >
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8 + index * 0.1, duration: 0.6 }}
+                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20"
+                >
+                  <div className="flex justify-center mb-3">
+                    <div className="bg-white/20 p-3 rounded-full">
+                      <stat.icon className="w-6 h-6" />
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
+                  <div className="text-3xl font-bold text-white mb-1">
+                    {stat.number}
+                  </div>
+                  <div className="text-blue-100 text-sm font-medium">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </div>
 
-        {/* Contact Section */}
-        <div
-          className={`card-section ${
-            activeSection === "contact" ? "block animate-fadeIn" : "hidden"
-          }`}
-        >
-          <div className="p-5">
-            <div className="font-bold text-sm mb-2 text-gray-700">CONTACT</div>
-            <div className="mt-5 space-y-4">
-              <div className="flex items-center text-gray-600 text-sm font-sans leading-relaxed cursor-pointer">
-                <svg
-                  className="w-6 h-6 mr-3 text-gray-400 border-r border-gray-200 pr-3"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                {faculty.contact?.address}
-              </div>
+        {/* Wave Divider */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+            className="w-full h-12 text-blue-50 fill-current"
+          >
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" />
+          </svg>
+        </div>
+      </section>
 
-              <div className="flex items-center text-gray-600 text-sm font-sans leading-relaxed cursor-pointer">
-                <svg
-                  className="w-6 h-6 mr-3 text-gray-400 border-r border-gray-200 pr-3"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-                </svg>
-                {faculty.contact?.phone}
-              </div>
+      {/* Faculty Grid Section */}
+      <section className="py-8 px-4 sm:px-6 lg:px-8 -mt-2">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-blue-900 mb-4">
+              Our Academic Team
+            </h2>
+            <p className="text-lg text-blue-700 max-w-2xl mx-auto">
+              Dedicated faculty members with extensive experience in teaching,
+              research, and innovation.
+            </p>
+          </motion.div>
 
-              <div className="flex items-center text-gray-600 text-sm font-sans leading-relaxed cursor-pointer">
-                <svg
-                  className="w-6 h-6 mr-3 text-gray-400 border-r border-gray-200 pr-3"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                  <path d="M22 6l-10 7L2 6" />
-                </svg>
-                {faculty.contact?.email}
-              </div>
+          {/* Faculty Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {faculties.map((faculty, index) => (
+              <motion.div
+                key={faculty.name}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.2 },
+                }}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-blue-100"
+                onClick={() => openDetailView(faculty)}
+              >
+                <div className="p-6">
+                  {/* Profile Image */}
+                  <div className="flex justify-center mb-4">
+                    <div className="relative">
+                      <div className="w-20 h-20 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 p-1">
+                        <img
+                          src={faculty.img}
+                          alt={faculty.name}
+                          className="w-full h-full rounded-full object-cover border-2 border-white"
+                        />
+                      </div>
+                    </div>
+                  </div>
 
-              <button className="w-full bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 text-white py-3 px-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 mt-6 font-medium">
-                WORK TOGETHER
-              </button>
-            </div>
+                  {/* Name and Position */}
+                  <div className="text-center">
+                    <h3 className="text-lg font-semibold text-blue-900 mb-1 line-clamp-2">
+                      {faculty.name}
+                    </h3>
+                    <p className="text-sm text-blue-600 mb-4 line-clamp-2">
+                      {faculty.position}
+                    </p>
+                  </div>
+
+                  {/* Quick Stats */}
+                  <div className="flex justify-between items-center text-center border-t border-blue-50 pt-4">
+                    <div>
+                      <div className="text-blue-900 font-semibold">
+                        {faculty.experience.length}
+                      </div>
+                      <div className="text-xs text-blue-600">Experience</div>
+                    </div>
+                    <div className="h-8 w-px bg-blue-100"></div>
+                    <div>
+                      <div className="text-blue-900 font-semibold">PhD</div>
+                      <div className="text-xs text-blue-600">Qualification</div>
+                    </div>
+                    <div className="h-8 w-px bg-blue-100"></div>
+                    <div>
+                      <button className="text-xs bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-full transition-colors">
+                        View Profile
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
+      </section>
 
-        {/* Navigation Buttons */}
-        <div className="flex bg-white mt-auto sticky bottom-0 left-0 border-t border-gray-100">
-          <button
-            onClick={() => handleButtonClick("about")}
-            className={`flex-1 bg-transparent text-xs py-4 cursor-pointer text-gray-600 transition-all duration-300 font-medium outline-none border-b-2 ${
-              activeSection === "about"
-                ? "text-gray-800 border-blue-500 bg-gradient-to-b from-transparent via-blue-50 to-blue-100"
-                : "border-transparent hover:text-gray-800"
-            }`}
+      {/* Detail View Modal */}
+      <AnimatePresence>
+        {selectedFaculty && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+            onClick={closeDetailView}
           >
-            ABOUT
-          </button>
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header with Cover Image */}
+              <div className="relative">
+                <div className="h-48 bg-gradient-to-r from-blue-400 to-blue-600">
+                  <img
+                    src={selectedFaculty.coverImg}
+                    alt="Cover"
+                    className="w-full h-full object-cover mix-blend-overlay"
+                  />
+                </div>
 
-          <button
-            onClick={() => handleButtonClick("experience")}
-            className={`flex-1 bg-transparent text-xs py-4 cursor-pointer text-gray-600 transition-all duration-300 font-medium outline-none border-b-2 ${
-              activeSection === "experience"
-                ? "text-gray-800 border-blue-500 bg-gradient-to-b from-transparent via-blue-50 to-blue-100"
-                : "border-transparent hover:text-gray-800"
-            }`}
-          >
-            EXPERIENCE
-          </button>
+                {/* Close Button */}
+                <button
+                  onClick={closeDetailView}
+                  className="absolute top-4 right-4 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition-all duration-200"
+                >
+                  <X className="w-5 h-5 text-white" />
+                </button>
 
-          <button
-            onClick={() => handleButtonClick("contact")}
-            className={`flex-1 bg-transparent text-xs py-4 cursor-pointer text-gray-600 transition-all duration-300 font-medium outline-none border-b-2 ${
-              activeSection === "contact"
-                ? "text-gray-800 border-blue-500 bg-gradient-to-b from-transparent via-blue-50 to-blue-100"
-                : "border-transparent hover:text-gray-800"
-            }`}
-          >
-            CONTACT
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
+                {/* Profile Image */}
+                <div className="absolute -bottom-12 left-8">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 p-1">
+                    <img
+                      src={selectedFaculty.img}
+                      alt={selectedFaculty.name}
+                      className="w-full h-full rounded-full object-cover border-4 border-white"
+                    />
+                  </div>
+                </div>
+              </div>
 
-// Sample faculty data
-const sampleFaculty = {
-  name: "Dr. William Rocheald",
-  position: "Professor of Computer Science",
-  img: "https://images.unsplash.com/photo-1549068106-b024baf5062d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-  coverImg:
-    "https://images.unsplash.com/photo-1549068106-b024baf5062d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-  about:
-    "Expert in artificial intelligence and machine learning with over 15 years of teaching experience. Passionate about innovative research and student mentorship.",
-  social: {
-    linkedin: "#",
-    twitter: "#",
-    facebook: "#",
-    instagram: "#",
-  },
-  experience: [
-    {
-      year: "2014",
-      title: "Senior Researcher",
-      company: "Tech Institute",
-      description:
-        "Led research projects in neural networks and deep learning applications.",
-    },
-    {
-      year: "2016",
-      title: "Associate Professor",
-      company: "State University",
-      description:
-        "Taught advanced algorithms and supervised graduate student research.",
-    },
-    {
-      year: "2018",
-      title: "Department Head",
-      company: "GM University",
-      description:
-        "Oversaw curriculum development and faculty management for CS department.",
-    },
-    {
-      year: "2020",
-      title: "Research Director",
-      company: "AI Research Center",
-      description:
-        "Directed interdisciplinary research in artificial intelligence applications.",
-    },
-  ],
-  contact: {
-    address: "Computer Science Building, GM University",
-    phone: "(269) 756-9809",
-    email: "william@university.edu",
-  },
-};
+              {/* Content */}
+              <div className="pt-16 pb-8 px-8 max-h-[calc(90vh-12rem)] overflow-y-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  {/* Main Info */}
+                  <div className="lg:col-span-2">
+                    <h2 className="text-2xl font-bold text-blue-900 mb-2">
+                      {selectedFaculty.name}
+                    </h2>
+                    <p className="text-lg text-blue-600 mb-6">
+                      {selectedFaculty.position}
+                    </p>
 
-// Main Faculty Component with the new cards
-const Faculty = () => {
-  // You can map through your faculties array here
-  return (
-    <div
-      className="min-h-screen bg-gray-50 py-12"
-      style={{
-        backgroundImage: ``,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
-    >
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-white mb-2 drop-shadow-lg">
-          Our Esteemed Faculty
-        </h2>
-        <p className="text-lg text-center text-white opacity-90 max-w-2xl mx-auto mb-12">
-          Meet our dedicated faculty members who are inspiring excellence and
-          innovation in Computer Science.
-        </p>
+                    {/* About Section */}
+                    <div className="mb-8">
+                      <h3 className="text-xl font-semibold text-blue-900 mb-4 flex items-center">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                        About
+                      </h3>
+                      <p className="text-blue-700 leading-relaxed">
+                        {selectedFaculty.about}
+                      </p>
+                    </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
-          {/* You can map through your faculties array here */}
+                    {/* Experience Section */}
+                    <div className="mb-8">
+                      <h3 className="text-xl font-semibold text-blue-900 mb-4 flex items-center">
+                        <Award className="w-5 h-5 mr-2" />
+                        Experience
+                      </h3>
+                      <div className="space-y-4">
+                        {selectedFaculty.experience.map((exp, index) => (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.1 }}
+                            className="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500"
+                          >
+                            <div className="flex justify-between items-start mb-2">
+                              <h4 className="font-semibold text-blue-900">
+                                {exp.title}
+                              </h4>
+                              <span className="text-sm bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
+                                {exp.year}
+                              </span>
+                            </div>
+                            <p className="text-sm text-blue-600 mb-1">
+                              {exp.company}
+                            </p>
+                            <p className="text-blue-700 text-sm">
+                              {exp.description}
+                            </p>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
 
-          {faculties.map((facultie, index) => (
-            <FacultyCard faculty={facultie} />
-          ))}
-        </div>
-      </div>
+                  {/* Sidebar */}
+                  <div className="space-y-6">
+                    {/* Contact Info */}
+                    <div className="bg-blue-50 rounded-xl p-6">
+                      <h3 className="text-lg font-semibold text-blue-900 mb-4">
+                        Contact Information
+                      </h3>
+                      <div className="space-y-3">
+                        <div className="flex items-center text-blue-700">
+                          <MapPin className="w-4 h-4 mr-3 text-blue-500" />
+                          <span className="text-sm">
+                            {selectedFaculty.contact.address}
+                          </span>
+                        </div>
+                        <div className="flex items-center text-blue-700">
+                          <Phone className="w-4 h-4 mr-3 text-blue-500" />
+                          <span className="text-sm">
+                            {selectedFaculty.contact.phone}
+                          </span>
+                        </div>
+                        <div className="flex items-center text-blue-700">
+                          <Mail className="w-4 h-4 mr-3 text-blue-500" />
+                          <span className="text-sm">
+                            {selectedFaculty.contact.email}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Social Links - Individual Faculty */}
+                    <div className="bg-blue-50 rounded-xl p-6">
+                      <h3 className="text-lg font-semibold text-blue-900 mb-4">
+                        Connect with {selectedFaculty.name.split(" ")[0]}
+                      </h3>
+                      <div className="flex space-x-3">
+                        {selectedFaculty.social.linkedin &&
+                          selectedFaculty.social.linkedin !== "#" && (
+                            <a
+                              href={selectedFaculty.social.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-lg transition-colors transform hover:scale-110 flex items-center justify-center"
+                              title="LinkedIn Profile"
+                            >
+                              <Linkedin className="w-4 h-4" />
+                            </a>
+                          )}
+                        {selectedFaculty.social.Scholar &&
+                          selectedFaculty.social.Scholar !== "#" && (
+                            <a
+                              href={selectedFaculty.social.Scholar}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-lg transition-colors transform hover:scale-110 flex items-center justify-center"
+                              title="Google Scholar Profile"
+                            >
+                              <GraduationCap className="w-4 h-4" />
+                            </a>
+                          )}
+                        {selectedFaculty.social.Vidwan &&
+                          selectedFaculty.social.Vidwan !== "#" && (
+                            <a
+                              href={selectedFaculty.social.Vidwan}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-lg transition-colors transform hover:scale-110 flex items-center justify-center"
+                              title="Vidwan Profile"
+                            >
+                              <BookOpen className="w-4 h-4" />
+                            </a>
+                          )}
+                      </div>
+                      <p className="text-xs text-blue-600 mt-3 text-center">
+                        Click to visit their professional profiles
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

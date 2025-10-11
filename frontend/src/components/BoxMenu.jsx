@@ -325,7 +325,7 @@ const BoxMenu = () => {
   };
 
   return (
-    <div className="min-h-screen py-16 px-4 bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen py-16 px-4 ">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -367,25 +367,6 @@ const BoxMenu = () => {
               />
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Footer */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="text-center mt-16"
-        >
-          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/50 shadow-lg">
-            <h3 className="text-xl font-semibold text-slate-700 mb-3">
-              Discover Our World
-            </h3>
-            <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed text-sm">
-              Each gallery represents a unique aspect of our educational
-              journey, showcasing the innovation, collaboration, and excellence
-              that define our community
-            </p>
-          </div>
         </motion.div>
       </div>
 

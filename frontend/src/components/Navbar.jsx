@@ -1,170 +1,278 @@
-import React, { useState, useEffect } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { motion, useAnimation } from "framer-motion";
+import {
+  Menu,
+  X,
+  GraduationCap,
+  Home,
+  BookOpen,
+  Users,
+  FileText,
+  Award,
+  Briefcase,
+  Mail,
+  User,
+  ChevronDown,
+} from "lucide-react";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
+  const dropdownRefs = useRef({});
+  const controls = useAnimation();
 
-  const links = [
-    { name: "About", path: "/about" },
-    { name: "Programs", path: "/programs" },
-    { name: "Learning Resources", path: "/learning-resources" },
-    { name: "Faculty", path: "/faculty" },
-    { name: "BoS", path: "/bos" },
-    { name: "Research Publications", path: "/research-publications" },
-    { name: "Student Projects", path: "/student-projects" },
-    { name: "IQAC", path: "/iqac" },
-    { name: "Faculty Achievements", path: "/faculty-achievements" },
-    {
-      name: "Student Internships & Placements",
-      path: "/student-internships-placements",
-    },
-    { name: "Student Achievements", path: "/student-achievements" },
-    { name: "Alumni", path: "/alumni" },
-    { name: "Admissions", path: "/admissions" },
-  ];
+  // Group links by category for better organization
+  const linkGroups = {
+    "About & Programs": [
+      { name: "About", path: "/about", icon: <Home size={18} /> },
+      { name: "Programs", path: "/programs", icon: <BookOpen size={18} /> },
+      { name: "Admissions", path: "/admissions", icon: <User size={18} /> },
+    ],
+    Academics: [
+      { name: "Faculty", path: "/faculty", icon: <Users size={18} /> },
+      { name: "BoS", path: "/bos", icon: <Users size={18} /> },
+      {
+        name: "Learning Resources",
+        path: "/learning-resources",
+        icon: <BookOpen size={18} />,
+      },
+      { name: "IQAC", path: "/iqac", icon: <Award size={18} /> },
+    ],
+    "Research & Projects": [
+      {
+        name: "Research Publications",
+        path: "/research-publications",
+        icon: <FileText size={18} />,
+      },
+      {
+        name: "Student Projects",
+        path: "/student-projects",
+        icon: <Award size={18} />,
+      },
+    ],
+    Achievements: [
+      {
+        name: "Faculty Achievements",
+        path: "/faculty-achievements",
+        icon: <Award size={18} />,
+      },
+      {
+        name: "Student Achievements",
+        path: "/student-achievements",
+        icon: <Award size={18} />,
+      },
+      {
+        name: "Internships & Placements",
+        path: "/student-internships-placements",
+        icon: <Briefcase size={18} />,
+      },
+    ],
+    Community: [
+      { name: "Alumni", path: "/alumni", icon: <GraduationCap size={18} /> },
+      { name: "Contact Us", path: "/contact-us", icon: <Mail size={18} /> },
+    ],
+  };
 
   // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
   }, [location]);
 
+  // Scroll animation - exact same as reference
+  useEffect(() => {
+    const handleScroll = () => {
+      if (document.body.scrollHeight <= window.innerHeight) {
+        controls.start({ opacity: 1, y: 0 });
+        return;
+      }
+      if (window.scrollY > 100) {
+        controls.start({ opacity: 1, y: 0 });
+      } else {
+        controls.start({ opacity: 0, y: -50 });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // initial check on mount
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [controls]);
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      Object.values(dropdownRefs.current).forEach((ref) => {
+        if (ref && !ref.contains(event.target)) {
+          setActiveDropdown(null);
+        }
+      });
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const toggleDropdown = (groupName) => {
+    setActiveDropdown(activeDropdown === groupName ? null : groupName);
+  };
+
+  // Handle logo click - navigate to home using React Router
+  const handleLogoClick = () => {
+    navigate("/");
+  };
+
+  // Handle direct navigation for desktop menu items
+  const handleDirectNavigation = (path) => {
+    navigate(path);
+    setActiveDropdown(null);
+  };
+
   return (
-    <>
-      {/* Desktop Navigation - Centered */}
-      <section className="hidden lg:block w-full max-w-7xl mx-auto px-6 py-8">
-        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-blue-100/50 p-8">
-          {/* Header */}
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-blue-800 mb-3">
-              Department Navigation
-            </h2>
-            <p className="text-gray-600 text-lg">
-              Explore GMU Computer Science & Engineering
-            </p>
-          </div>
-
-          {/* Navigation Links Grid */}
-          <div className="grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
-            {links.map((link) => (
-              <NavLink
-                key={link.name}
-                to={link.path}
-                className={({ isActive }) =>
-                  `text-center py-4 px-3 rounded-2xl font-medium transition-all duration-300
-                  border-2 hover:scale-105 hover:shadow-lg
-                  ${
-                    isActive
-                      ? "bg-gradient-to-br from-blue-600 to-blue-700 text-white border-blue-600 shadow-lg scale-105"
-                      : "bg-white text-blue-800 border-blue-100 hover:border-blue-300 shadow-sm"
-                  }`
-                }
-              >
-                <span className="text-sm leading-tight">{link.name}</span>
-              </NavLink>
-            ))}
-          </div>
+    <motion.nav
+      animate={controls}
+      initial={{ opacity: 0, y: -50 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="fixed top-0 left-0 w-full z-50"
+    >
+      {/* Navbar Container - Exact same styling as reference */}
+      <div
+        className="max-w-6xl mx-4 md:mx-auto flex items-center justify-between px-6 py-3 mt-4
+        border border-blue-300/20 rounded-2xl
+        bg-gradient-to-r from-blue-900/90 to-blue-800/90
+        text-blue-50 backdrop-blur-xl shadow-lg shadow-blue-900/40"
+      >
+        {/* Logo */}
+        <div
+          className="flex items-center gap-2 cursor-pointer"
+          onClick={handleLogoClick}
+        >
+          <GraduationCap className="text-blue-300 drop-shadow-lg" size={22} />
+          <span className="italic font-extrabold text-xl md:text-2xl tracking-wide text-blue-100 drop-shadow">
+            GMU-CSE
+          </span>
         </div>
-      </section>
 
-      {/* Tablet Navigation */}
-      <section className="hidden md:block lg:hidden w-full max-w-4xl mx-auto px-6 py-6">
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-blue-100 p-6">
-          <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-blue-800 mb-2">
-              GMU-CSE Navigation
-            </h2>
-            <p className="text-gray-600">Explore our department</p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3">
-            {links.map((link) => (
-              <NavLink
-                key={link.name}
-                to={link.path}
-                className={({ isActive }) =>
-                  `text-center py-3 px-2 rounded-xl font-medium transition-all duration-200
-                  border hover:shadow-md
-                  ${
-                    isActive
-                      ? "bg-blue-600 text-white border-blue-600 shadow-md"
-                      : "bg-white text-blue-700 border-blue-200 hover:bg-blue-50"
-                  }`
-                }
+        {/* Desktop Navigation Links */}
+        <div className="hidden lg:flex items-center gap-8">
+          {Object.entries(linkGroups).map(([groupName, links]) => (
+            <div
+              key={groupName}
+              className="relative"
+              ref={(el) => (dropdownRefs.current[groupName] = el)}
+            >
+              <button
+                onClick={() => toggleDropdown(groupName)}
+                onMouseEnter={() => setActiveDropdown(groupName)}
+                className="relative flex items-center gap-2 px-2 transition duration-300 group"
               >
-                <span className="text-xs leading-tight">{link.name}</span>
-              </NavLink>
-            ))}
-          </div>
-        </div>
-      </section>
+                <span className="font-medium">{groupName}</span>
+                <ChevronDown
+                  size={16}
+                  className={`transition-transform duration-300 ${
+                    activeDropdown === groupName
+                      ? "rotate-180 text-blue-300"
+                      : "text-blue-200"
+                  }`}
+                />
+                <span
+                  className="absolute bottom-[-6px] left-0 w-0 h-[2px] bg-blue-
+                  transition-all duration-300 group-hover:w-full"
+                ></span>
+              </button>
 
-      {/* Mobile Navigation */}
-      <div className="md:hidden w-full px-4 py-6">
-        {/* Mobile Header Card */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl shadow-lg p-5 text-center mb-4">
-          <h2 className="text-xl font-bold mb-1">GMU-CSE</h2>
-          <p className="text-blue-100 text-sm">Department Navigation</p>
+              {/* Dropdown Menu */}
+              <div
+                className={`absolute top-full left-0 mt-3 w-64 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-blue-200/20 overflow-hidden transition-all duration-300 z-50 ${
+                  activeDropdown === groupName
+                    ? "opacity-100 visible translate-y-0"
+                    : "opacity-0 invisible -translate-y-2"
+                }`}
+              >
+                <div className="p-4">
+                  <h3 className="font-bold text-blue-800 mb-3 flex items-center gap-2">
+                    <GraduationCap className="w-5 h-5 text-blue-600" />
+                    {groupName}
+                  </h3>
+                  <div className="space-y-2">
+                    {links.map((link) => (
+                      <button
+                        key={link.name}
+                        onClick={() => handleDirectNavigation(link.path)}
+                        className={`flex items-center gap-3 w-full text-left px-3 py-2 rounded-lg transition-all duration-200 text-sm ${
+                          location.pathname === link.path
+                            ? "bg-blue-500 text-white font-medium shadow-md"
+                            : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                        }`}
+                      >
+                        {link.icon}
+                        {link.name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="w-full bg-white border-2 border-blue-200 rounded-2xl shadow-sm p-4 flex items-center justify-between hover:shadow-md transition-all duration-200"
-        >
-          <span className="font-medium text-blue-800">Navigation Menu</span>
-          <span className="text-2xl text-blue-600">
-            {isMobileMenuOpen ? "✕" : "☰"}
-          </span>
-        </button>
-
-        {/* Mobile Menu Dropdown */}
-        <div
-          className={`bg-white rounded-2xl shadow-lg border border-blue-100 mt-3 overflow-hidden transition-all duration-300 ${
-            isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-          }`}
-        >
-          <div className="p-4 space-y-2 max-h-80 overflow-y-auto">
-            {links.map((link) => (
-              <NavLink
-                key={link.name}
-                to={link.path}
-                className={({ isActive }) =>
-                  `block w-full text-left px-4 py-3 rounded-xl font-medium transition-colors duration-200
-                  ${
-                    isActive
-                      ? "bg-blue-100 text-blue-700 border-l-4 border-blue-600"
-                      : "text-gray-700 hover:bg-blue-50"
-                  }`
-                }
-              >
-                {link.name}
-              </NavLink>
-            ))}
-          </div>
-        </div>
-
-        {/* Quick Access Links for Mobile */}
-        <div className="grid grid-cols-2 gap-3 mt-4">
-          {links.slice(0, 4).map((link) => (
-            <NavLink
-              key={link.name}
-              to={link.path}
-              className={({ isActive }) =>
-                `text-center py-3 px-2 rounded-xl font-medium text-sm transition-all duration-200
-                ${
-                  isActive
-                    ? "bg-blue-600 text-white shadow-md"
-                    : "bg-white text-blue-700 border border-blue-200 hover:bg-blue-50"
-                }`
-              }
-            >
-              <span className="text-xs leading-tight">{link.name}</span>
-            </NavLink>
-          ))}
+        <div className="lg:hidden flex items-center gap-3">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-blue-100 focus:outline-none"
+          >
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </div>
-    </>
+
+      {/* Mobile Menu - Same styling as reference */}
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="lg:hidden bg-gradient-to-br from-blue-900/95 to-blue-800/95 
+          backdrop-blur-xl rounded-xl mx-4 mt-2 p-5 border border-blue-300/20 shadow-xl shadow-blue-900/40"
+        >
+          <div className="space-y-4">
+            {Object.entries(linkGroups).map(([groupName, links]) => (
+              <div
+                key={groupName}
+                className="border-b border-blue-700/30 last:border-b-0 pb-4 last:pb-0"
+              >
+                <h3 className="text-blue-300 text-sm font-semibold mb-3 uppercase tracking-wide">
+                  {groupName}
+                </h3>
+                <div className="space-y-2">
+                  {links.map((link) => (
+                    <button
+                      key={link.name}
+                      onClick={() => {
+                        handleDirectNavigation(link.path);
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className={`flex items-center gap-3 w-full text-left px-3 py-2 rounded-lg transition-colors ${
+                        location.pathname === link.path
+                          ? "bg-blue-600/30 text-blue-200 font-semibold"
+                          : "text-blue-100 hover:text-blue-200 hover:bg-blue-700/20"
+                      }`}
+                    >
+                      {link.icon}
+                      {link.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      )}
+    </motion.nav>
   );
 };
 

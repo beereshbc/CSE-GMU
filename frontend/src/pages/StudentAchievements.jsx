@@ -398,7 +398,7 @@ const StudentAchievements = () => {
       `}</style>
 
       {/* Header Section */}
-      <div className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-24 text-white text-center overflow-hidden">
+      <div className="relative bg-gradient-to-br   from-blue-900 via-blue-800 to-blue-700 py-24 text-white text-center overflow-hidden">
         {/* Animated Grid Background */}
         <div
           className="absolute inset-0 opacity-10"
@@ -432,7 +432,7 @@ const StudentAchievements = () => {
       </div>
 
       {/* Student Achievements Section */}
-      <div className="py-16 bg-gray-50">
+      <div className="py-16 bg-gray-50 mx-4 sm:mx-[6%]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 relative">
@@ -500,7 +500,7 @@ const StudentAchievements = () => {
       </div>
 
       {/* Gallery Section */}
-      <div className="py-16 bg-white">
+      <div className="py-16 bg-white mx-4 sm:mx-[6%]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 relative">

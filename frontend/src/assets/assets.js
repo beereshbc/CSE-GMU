@@ -123,9 +123,8 @@ export const faculties = [
       "Expert in computer science with extensive academic and administrative experience. Currently serving as Program Coordinator and Associate Director ERP at GM University.",
     social: {
       linkedin: "https://www.linkedin.com/in/shivanagowda-g-m-0b54605/",
-      twitter: "#",
-      facebook: "#",
-      instagram: "#",
+      Scholar: "#",
+      Vidwan: "#",
     },
     experience: [
       {
@@ -166,9 +165,8 @@ export const faculties = [
     social: {
       linkedin:
         "https://www.linkedin.com/in/dr-chethan-chandra-s-basavaraddi-5b523750/",
-      twitter: "#",
-      facebook: "#",
-      instagram: "#",
+      Scholar: "#",
+      Vidwan: "#",
     },
     experience: [
       {
@@ -201,9 +199,8 @@ export const faculties = [
       "Dedicated educator pursuing Ph.D. while serving as Deputy Director of Student Affairs. Committed to student success and academic excellence.",
     social: {
       linkedin: "https://www.linkedin.com/in/santosh-mahendrakar-6908a299/",
-      twitter: "#",
-      facebook: "#",
-      instagram: "#",
+      Scholar: "#",
+      Vidwan: "#",
     },
     experience: [
       {
@@ -236,9 +233,8 @@ export const faculties = [
       "Specialized in deep learning and artificial intelligence. Currently directing M.Tech program in Deep Learning while pursuing Ph.D.",
     social: {
       linkedin: "https://www.linkedin.com/in/nayana-k-921205371",
-      twitter: "#",
-      facebook: "#",
-      instagram: "#",
+      Scholar: "#",
+      Vidwan: "#",
     },
     experience: [
       {
@@ -271,9 +267,8 @@ export const faculties = [
       "Enthusiastic educator and researcher pursuing Ph.D. Focused on innovative teaching methods and student mentorship.",
     social: {
       linkedin: "https://www.linkedin.com/in/kavyashree-p-n-954b791b9",
-      twitter: "#",
-      facebook: "#",
-      instagram: "#",
+      Scholar: "#",
+      Vidwan: "#",
     },
     experience: [
       {
@@ -299,9 +294,8 @@ export const faculties = [
       "Computer science educator with expertise in software engineering and database systems. Committed to practical learning approaches.",
     social: {
       linkedin: "https://www.linkedin.com/in/ranjitha-ds-9127a716a",
-      twitter: "#",
-      facebook: "#",
-      instagram: "#",
+      Scholar: "#",
+      Vidwan: "#",
     },
     experience: [
       {
@@ -318,7 +312,6 @@ export const faculties = [
       email: "ranjitha@university.edu",
     },
   },
-  // Continuing with similar structure for remaining faculty members...
   {
     name: "NANDITHA G",
     position: "Assistant Professor",
@@ -328,9 +321,8 @@ export const faculties = [
       "Computer science educator focused on web technologies and programming fundamentals.",
     social: {
       linkedin: "https://www.linkedin.com/in/nanditha-g-b490321b3",
-      twitter: "#",
-      facebook: "#",
-      instagram: "#",
+      Scholar: "#",
+      Vidwan: "#",
     },
     experience: [
       {
@@ -356,9 +348,8 @@ export const faculties = [
     social: {
       linkedin:
         "https://www.linkedin.com/in/ravinandan-jannu-assistant-professor-151168384",
-      twitter: "#",
-      facebook: "#",
-      instagram: "#",
+      Scholar: "#",
+      Vidwan: "#",
     },
     experience: [
       {
@@ -374,7 +365,6 @@ export const faculties = [
       email: "ravinandan@university.edu",
     },
   },
-  // Additional faculty members would follow the same pattern...
   {
     name: "Miss Niveditha T Naik",
     position: "Assistant Professor",
@@ -384,9 +374,8 @@ export const faculties = [
       "Computer science educator with focus on practical applications and student skill development.",
     social: {
       linkedin: "https://www.linkedin.com/in/niveditha-t-naik-88b993213",
-      twitter: "#",
-      facebook: "#",
-      instagram: "#",
+      Scholar: "#",
+      Vidwan: "#",
     },
     experience: [
       {
@@ -403,6 +392,4 @@ export const faculties = [
       email: "niveditha@university.edu",
     },
   },
-  // Note: The remaining faculty members would be converted following the same pattern
-  // to avoid making this response excessively long
 ];
