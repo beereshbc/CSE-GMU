@@ -6,6 +6,143 @@
 
 * {
     font-family: Outfit;
+}
 
+::-webkit-scrollbar {
+    display: none;
+}
 
+/* Global Reset and Base Styles */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Gooey Filter Support */
+.gooey-effect {
+    filter: url(#goo);
+    transform: translateZ(0);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Selection Styles */
+::selection {
+    background-color: #3b82f6;
+    color: white;
+}
+
+/* Focus Styles for Accessibility */
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Backdrop Blur Support */
+@supports (backdrop-filter: blur(10px)) {
+    .backdrop-blur-sm {
+        backdrop-filter: blur(4px);
+    }
+
+    .backdrop-blur-lg {
+        backdrop-filter: blur(16px);
+    }
+}
+
+/* Reduced Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .bg-gradient-to-br {
+        background-image: none !important;
+        background-color: #000 !important;
+    }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .assistive-bubble-mobile {
+        transform: scale(0.9);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .assistive-bubble {
+        display: none !important;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .assistive-bubble-dark {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Performance Optimizations */
+.performance-optimize {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Loading States */
+.assistive-loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Error State */
+.assistive-error {
+    border-color: #ef4444 !important;
+    background: #fef2f2 !important;
+}
+
+/* Success State */
+.assistive-success {
+    border-color: #10b981 !important;
+    background: #f0fdf4 !important;
 }

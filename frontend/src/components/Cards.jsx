@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Target, Eye, Rocket, Zap } from "lucide-react";
 import { assets } from "../assets/assets";
@@ -8,8 +8,9 @@ const Cards = () => {
     {
       icon: Eye,
       title: "Department Vision",
-      description:
+      points: [
         "Department of Computer Science and Engineering (CSE) we have a transformative impact on society through continual innovation in Computer engineering education, research, skill development, creativity, and entrepreneurship",
+      ],
       color: "from-blue-400 to-blue-600",
       bgColor: "from-blue-50 to-blue-100",
       delay: 0.1,
@@ -26,7 +27,7 @@ const Cards = () => {
       ],
       color: "from-cyan-400 to-cyan-600",
       bgColor: "from-cyan-50 to-cyan-100",
-      delay: 0.3,
+      delay: 0.2,
       image: assets.gmu_logo,
     },
     {
@@ -41,15 +42,37 @@ const Cards = () => {
       ],
       color: "from-indigo-400 to-indigo-600",
       bgColor: "from-indigo-50 to-indigo-100",
-      delay: 0.5,
+      delay: 0.3,
       image: assets.gmu_logo,
     },
   ];
 
   const Card3D = ({ card, index }) => {
     const cardRef = useRef(null);
+    const contentRef = useRef(null);
     const [mouse, setMouse] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
+    const [hasOverflow, setHasOverflow] = useState(false);
+    const [shouldAnimate, setShouldAnimate] = useState(false);
+
+    // Check if content overflows and has multiple points
+    useEffect(() => {
+      if (contentRef.current) {
+        const container = contentRef.current;
+        const hasOverflowingContent =
+          container.scrollHeight > container.clientHeight;
+        const hasMultiplePoints = card.points.length > 1;
+        setHasOverflow(hasOverflowingContent && hasMultiplePoints);
+
+        // Start animation automatically after component mounts
+        if (hasOverflowingContent && hasMultiplePoints) {
+          const timer = setTimeout(() => {
+            setShouldAnimate(true);
+          }, 200); // 0.2 second delay
+          return () => clearTimeout(timer);
+        }
+      }
+    }, [card.points]);
 
     const handleMouseMove = (e) => {
       if (!cardRef.current) return;
@@ -69,9 +92,6 @@ const Cards = () => {
 
     const handleMouseLeave = () => {
       setIsHovering(false);
-      setTimeout(() => {
-        setMouse({ x: 0, y: 0 });
-      }, 1000);
     };
 
     const mousePX = mouse.x / (cardRef.current?.offsetWidth || 1);
@@ -124,7 +144,31 @@ const Cards = () => {
         scale: 1.1,
         rotate: 5,
         transition: {
-          duration: 0.3,
+          duration: 0.1,
+        },
+      },
+    };
+
+    const contentVariants = {
+      hidden: { opacity: 0, y: 20 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.5,
+          ease: "easeOut",
+        },
+      },
+    };
+
+    // Faster and smoother slide animation for overflowing content
+    const slideVariants = {
+      initial: { y: 0 },
+      slideUp: {
+        y: -60, // Increased distance for better visibility
+        transition: {
+          duration: 6, // Faster duration (reduced from 8)
+          ease: [0.25, 0.1, 0.25, 1], // Smooth cubic-bezier curve
         },
       },
     };
@@ -147,7 +191,7 @@ const Cards = () => {
         >
           {/* Main Card with 3D transforms */}
           <motion.div
-            className="card relative w-80 h-96 bg-white overflow-hidden rounded-2xl shadow-xl border border-blue-100/50 backdrop-blur-sm"
+            className="card relative w-80 h-96 bg-indigo-50 overflow-hidden rounded-2xl shadow-xl border border-blue-100/50 backdrop-blur-sm"
             style={cardStyle}
             animate={{
               boxShadow: isHovering
@@ -168,7 +212,7 @@ const Cards = () => {
           >
             {/* Background Image with Parallax */}
             <div
-              className="card-bg absolute top-[-20px] left-[-20px] w-[calc(100%+40px)] h-[calc(100%+40px)] bg-cover bg-center bg-no-repeat opacity-20"
+              className="card-bg absolute top-[-20px] left-[-20px] w-[calc(100%+40px)] h-[calc(100%+40px)] bg-cover bg-center bg-no-repeat opacity-80"
               style={cardBgTransform}
             />
 
@@ -176,19 +220,22 @@ const Cards = () => {
             <div
               className={`absolute inset-0 bg-gradient-to-br ${
                 card.bgColor
-              } opacity-80 transition-all duration-500 ${
-                isHovering ? "opacity-60" : "opacity-80"
+              } opacity-60 transition-all duration-500 ${
+                isHovering ? "opacity-80" : "opacity-70"
               }`}
             />
 
-            {/* Content */}
-            <div
-              className={`card-info absolute bottom-0 p-8 text-gray-800 transform transition-all duration-600 ease-in-out ${
-                isHovering ? "translate-y-0" : "translate-y-2/4"
-              }`}
-            >
+            {/* Content - Always visible now */}
+            <div className="card-info absolute inset-0 p-8 text-gray-800">
               {/* Icon Header */}
-              <div className="relative z-10 flex items-center gap-4 mb-6">
+              <motion.div
+                className="relative z-10 flex items-center gap-4 mb-6"
+                variants={contentVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ delay: card.delay + 0.2 }}
+              >
                 <motion.div
                   variants={iconVariants}
                   initial="hidden"
@@ -208,55 +255,57 @@ const Cards = () => {
                 >
                   {card.title}
                 </motion.h3>
-              </div>
+              </motion.div>
 
-              {/* Content */}
-              <div className="relative z-10">
-                {card.description ? (
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: card.delay + 0.4, duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className={`text-gray-700 leading-relaxed text-sm sm:text-base transition-opacity duration-600 ${
-                      isHovering ? "opacity-100" : "opacity-0"
-                    }`}
-                  >
-                    {card.description}
-                  </motion.p>
-                ) : (
-                  <motion.ul
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: card.delay + 0.4, duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="space-y-3 sm:space-y-4"
-                  >
-                    {card.points?.map((point, pointIndex) => (
-                      <motion.li
-                        key={pointIndex}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{
-                          delay: card.delay + 0.6 + pointIndex * 0.1,
-                          duration: 0.4,
-                        }}
-                        viewport={{ once: true }}
-                        className={`flex items-start gap-3 text-gray-700 text-sm sm:text-base leading-relaxed transition-opacity duration-600 ${
-                          isHovering ? "opacity-100" : "opacity-0"
+              {/* Content with Auto Slide Animation */}
+              <div
+                ref={contentRef}
+                className="relative z-10 h-[calc(100%-100px)] overflow-hidden"
+              >
+                <motion.ul
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: card.delay, duration: 0.6 }}
+                  viewport={{ once: true }}
+                  variants={slideVariants}
+                  initial="initial"
+                  animate={hasOverflow && shouldAnimate ? "slideUp" : "initial"}
+                  className="space-y-3 sm:space-y-4"
+                >
+                  {card.points?.map((point, pointIndex) => (
+                    <motion.li
+                      key={pointIndex}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        delay: card.delay + 0.6 + pointIndex * 0.1,
+                        duration: 0.4,
+                      }}
+                      viewport={{ once: true }}
+                      className="flex items-start gap-3 text-gray-700 text-sm sm:text-base leading-relaxed group-hover:translate-x-1 transition-transform duration-300"
+                    >
+                      <motion.div
+                        whileHover={{ scale: 1.2 }}
+                        className={`w-2 h-2 rounded-full bg-gradient-to-r ${
+                          card.color
+                        } mt-2 flex-shrink-0 transition-all duration-300 ${
+                          isHovering ? "scale-110" : "scale-100"
                         }`}
-                      >
-                        <motion.div
-                          whileHover={{ scale: 1.2 }}
-                          className={`w-2 h-2 rounded-full bg-gradient-to-r ${card.color} mt-2 flex-shrink-0`}
-                        ></motion.div>
-                        <span>{point}</span>
-                      </motion.li>
-                    ))}
-                  </motion.ul>
-                )}
+                      ></motion.div>
+                      <span className="flex-1">{point}</span>
+                    </motion.li>
+                  ))}
+                </motion.ul>
               </div>
             </div>
+
+            {/* Enhanced Hover Effect Overlay */}
+            <motion.div
+              className={`absolute inset-0 bg-gradient-to-br ${
+                card.color
+              } opacity-0 transition-opacity duration-500 ${
+                isHovering ? "opacity-10" : "opacity-0"
+              }`}
+            />
           </motion.div>
         </div>
 
@@ -276,6 +325,15 @@ const Cards = () => {
         >
           <Zap className="w-3 h-3 text-blue-500" />
         </motion.div>
+
+        {/* Glow Effect on Hover */}
+        <motion.div
+          className={`absolute -inset-4 rounded-3xl bg-gradient-to-r ${
+            card.color
+          } opacity-0 blur-xl transition-all duration-500 -z-10 ${
+            isHovering ? "opacity-30" : "opacity-0"
+          }`}
+        />
       </motion.div>
     );
   };
@@ -350,9 +408,6 @@ const Cards = () => {
         .card-bg {
           transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
             opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        .card-info {
-          transition: transform 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
         }
       `}</style>
     </section>

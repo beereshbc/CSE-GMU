@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { faculties } from "../assets/assets";
 
 const FacultyCard = ({ faculty }) => {
   const [activeSection, setActiveSection] = useState("about");
@@ -25,7 +26,7 @@ const FacultyCard = ({ faculty }) => {
         }`}
       >
         {/* Card Cover */}
-        <div className="absolute w-full h-40 -top-5 left-0 bg-cover bg-blue-300 bg-center filter blur-xl scale-125 transition-all duration-500"></div>
+        <div className="absolute w-full h-40 -top-5 left-0 bg-cover bg-blue-100 bg-center filter blur-xl scale-125 transition-all duration-500"></div>
 
         {/* Card Avatar */}
         <img
@@ -287,64 +288,12 @@ const FacultyCard = ({ faculty }) => {
   );
 };
 
-// Sample faculty data
-const sampleFaculty = {
-  name: "Dr. William Rocheald",
-  position: "Professor of Computer Science",
-  img: "https://images.unsplash.com/photo-1549068106-b024baf5062d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-  coverImg:
-    "https://images.unsplash.com/photo-1549068106-b024baf5062d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-  about:
-    "Expert in artificial intelligence and machine learning with over 15 years of teaching experience. Passionate about innovative research and student mentorship.",
-  social: {
-    linkedin: "#",
-    twitter: "#",
-    facebook: "#",
-    instagram: "#",
-  },
-  experience: [
-    {
-      year: "2014",
-      title: "Senior Researcher",
-      company: "Tech Institute",
-      description:
-        "Led research projects in neural networks and deep learning applications.",
-    },
-    {
-      year: "2016",
-      title: "Associate Professor",
-      company: "State University",
-      description:
-        "Taught advanced algorithms and supervised graduate student research.",
-    },
-    {
-      year: "2018",
-      title: "Department Head",
-      company: "GM University",
-      description:
-        "Oversaw curriculum development and faculty management for CS department.",
-    },
-    {
-      year: "2020",
-      title: "Research Director",
-      company: "AI Research Center",
-      description:
-        "Directed interdisciplinary research in artificial intelligence applications.",
-    },
-  ],
-  contact: {
-    address: "Computer Science Building, GM University",
-    phone: "(269) 756-9809",
-    email: "william@university.edu",
-  },
-};
-
 // Main Faculty Component with the new cards
 const Faculty = () => {
   // You can map through your faculties array here
   return (
     <div
-      className="min-h-screen bg-gray-50 py-12"
+      className="min-h-screen  text-black py-12"
       style={{
         backgroundImage: ``,
         backgroundRepeat: "no-repeat",
@@ -354,7 +303,7 @@ const Faculty = () => {
       }}
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-white mb-2 drop-shadow-lg">
+        <h2 className="text-3xl font-bold text-center text-black mb-2 drop-shadow-lg">
           Our Esteemed Faculty
         </h2>
         <p className="text-lg text-center text-white opacity-90 max-w-2xl mx-auto mb-12">
@@ -364,9 +313,9 @@ const Faculty = () => {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {/* You can map through your faculties array here */}
-          <FacultyCard faculty={sampleFaculty} />
-          <FacultyCard faculty={sampleFaculty} />
-          <FacultyCard faculty={sampleFaculty} />
+          {faculties.map((facultie, index) => (
+            <FacultyCard faculty={facultie} />
+          ))}
         </div>
       </div>
     </div>

@@ -277,7 +277,7 @@ const Hero = () => {
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-3 top-1/2 transform -translate-y-1/ w-10 h-10 rounded-full flex items-center justify-center  transition-all duration-300 hover:scale-110 backdrop-blur-sm"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-blue-800 w-10 h-10 rounded-full flex items-center justify-center  transition-all duration-300 hover:scale-110 backdrop-blur-sm"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
