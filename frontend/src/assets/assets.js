@@ -35,9 +35,6 @@ import AY2021 from "../assets/PlacementPdfs/Placement_20-21.pdf";
 import AY2122 from "../assets/PlacementPdfs/Placement_2021-22.pdf";
 import AY2223 from "../assets/PlacementPdfs/AY2223.pdf";
 
-//Intro videos
-import Intro_v1 from "../../public/Intro_Video.mp4";
-
 //Alumni images
 import Alumni1 from "../assets/Alumni/Anushree_P_L.jpeg";
 import Alumni2 from "../assets/Alumni/Keerthi_P_G.jpeg";
@@ -58,7 +55,6 @@ import Lec3 from "../assets/Classroom/cr3.jpg";
 
 //DeepLearning
 import DL1 from "../assets/DL/dl1.pdf";
-import DL2 from "../assets/DL/dl2.mov";
 import DL3 from "../assets/DL/dl3.jpg";
 import DL4 from "../assets/DL/dl4.mp4";
 import DL5 from "../assets/DL/dl5.mp4";
@@ -176,7 +172,6 @@ import Orientation1 from "../assets/Orientation/o1.jpg";
 import Orientation2 from "../assets/Orientation/o2.jpg";
 
 export const assets = {
-  Intro_v1,
   hod_img,
   gmu_logo,
   gmu,
@@ -245,13 +240,7 @@ export const boxData = [
     id: 6,
     title: "Final Year Project",
     description: "Students working on Final year project",
-    images: [
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf",
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7",
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf",
-      "https://images.unsplash.com/photo-1593642634315-48f5414c3ad9",
-    ],
+    images: [],
   },
   {
     id: 7,
@@ -277,24 +266,13 @@ export const boxData = [
     id: 8,
     title: "Presentation",
     description: "Students making a Presentation",
-    images: [
-      "https://images.unsplash.com/photo-1560439513-74b037a25d7c",
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3f",
-      "https://images.unsplash.com/photo-1581092795365-1c7c4e24d94e",
-      "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b",
-    ],
+    images: [],
   },
   {
     id: 9,
     title: "Students-Parents Meet",
     description: "Interaction with parents",
-    images: [
-      "https://images.unsplash.com/photo-1583336669413-1f94b67df45d",
-      "https://images.unsplash.com/photo-1573497019411-5073e7fc6bff",
-      "https://images.unsplash.com/photo-1573497019411-5073e7fc6bff",
-      "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9",
-    ],
+    images: [],
   },
   {
     id: 10,
@@ -372,35 +350,19 @@ export const boxData = [
     id: 18,
     title: "Presentation",
     description: "Students making a Presentation",
-    images: [
-      "https://images.unsplash.com/photo-1560439513-74b037a25d7c",
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3f",
-      "https://images.unsplash.com/photo-1581092795365-1c7c4e24d94e",
-      "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b",
-    ],
+    images: [],
   },
   {
     id: 19,
     title: "Students-Parents Meet",
     description: "Interaction with parents",
-    images: [
-      "https://images.unsplash.com/photo-1583336669413-1f94b67df45d",
-      "https://images.unsplash.com/photo-1573497019411-5073e7fc6bff",
-      "https://images.unsplash.com/photo-1573497019411-5073e7fc6bff",
-      "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9",
-    ],
+    images: [],
   },
   {
     id: 20,
     title: "Students-Parents Meet",
     description: "Interaction with parents",
-    images: [
-      "https://images.unsplash.com/photo-1583336669413-1f94b67df45d",
-      "https://images.unsplash.com/photo-1573497019411-5073e7fc6bff",
-      "https://images.unsplash.com/photo-1573497019411-5073e7fc6bff",
-      "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9",
-    ],
+    images: [],
   },
 ];
 

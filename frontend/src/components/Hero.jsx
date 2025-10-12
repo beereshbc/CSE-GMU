@@ -165,8 +165,8 @@ const Hero = () => {
             </span>
           </motion.h1>
           <div>
-            <motion.p className="text-3xl md:text-xl   font-semibold text-blue-700 relative inline-block">
-              <span className="relative z-10 text-3xl">
+            <motion.p className="text-xl   font-semibold text-blue-700 relative inline-block">
+              <span className="relative z-10 sm:text-3xl">
                 School of Computer Science and Technology
               </span>
             </motion.p>
