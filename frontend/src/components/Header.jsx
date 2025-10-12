@@ -197,7 +197,7 @@ const Header = () => {
                 className="w-full h-full object-cover"
                 controls
               >
-                <source src={assets.Intro_v1} type="video/mp4" />
+                <source src="" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
 
