@@ -150,10 +150,10 @@ import sport7 from "../assets/sports/sp7.jpg";
 import sport8 from "../assets/sports/sp8.jpg";
 import sport9 from "../assets/sports/sp9.jpg";
 
-import pb1 from "../assets/pbl/pb1.JPG";
+import pb1 from "../assets/pbl/pb1.jpg";
 import pb2 from "../assets/pbl/pb2.jpg";
 import pb3 from "../assets/pbl/pb3.jpg";
-import pb4 from "../assets/pbl/pb4.JPG";
+import pb4 from "../assets/pbl/pb4.jpg";
 
 import National_conf1 from "../assets/National_conf/n1.jpg";
 import National_conf2 from "../assets/National_conf/n2.jpg";
