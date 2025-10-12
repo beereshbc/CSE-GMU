@@ -11,5 +11,10 @@ export const facultyData = [
     name: "Supriya M Kerakkanavar",
     department: "CSE",
   },
+  {
+    id: "fW9gis4AAAAJ",
+    name: "Shivanagowda G M",
+    department: "CSE",
+  },
   // Add more faculties if needed
 ];
