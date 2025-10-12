@@ -19,6 +19,7 @@ import {
   ArrowRight,
   ChevronRight,
 } from "lucide-react";
+import { teamMembers } from "../assets/assets";
 
 // Enhanced 3D Card Component with better styling
 const ThreeDCard = ({ member, onClick }) => {
@@ -409,57 +410,6 @@ const Alumni = () => {
       "Our team follows a modern development approach—covering requirement analysis, prototyping, agile development, deployment, and ongoing support—to deliver scalable and reliable software for diverse industries.",
   };
 
-  const teamMembers = [
-    {
-      id: 1,
-      name: "Mr. Sunad R Gundagatti",
-      role: "Co-founder & CMD",
-      image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Sunad",
-      bio: "Leading the strategic vision and growth of Linkable Technologies.",
-      social: {
-        linkedin: "#",
-        github: "#",
-        email: "#",
-      },
-    },
-    {
-      id: 2,
-      name: "Mr. M Jnananidhi",
-      role: "Co-founder & CTO",
-      image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Jnananidhi",
-      bio: "Driving technical innovation and product development.",
-      social: {
-        linkedin: "#",
-        github: "#",
-        email: "#",
-      },
-    },
-    {
-      id: 3,
-      name: "Mr. Anushree P L",
-      role: "Co-founder & CPM",
-      image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Anushree",
-      bio: "Managing projects and ensuring successful delivery.",
-      social: {
-        linkedin: "#",
-        github: "#",
-        email: "#",
-      },
-    },
-    {
-      id: 4,
-      name: "Mr. Keerthi Prasad G",
-      role: "Co-founder & Technical Advisor",
-      image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Keerthi",
-      bio: "Alumni success stories and alumni association activities.",
-      social: {
-        linkedin: "#",
-        github: "#",
-        email: "#",
-      },
-    },
-  ];
-
   const alumniStories = [
     {
       id: 1,
@@ -468,7 +418,7 @@ const Alumni = () => {
       currentRole: "Software Engineer",
       company: "Tech Company",
       story:
-        "GMIT provided me with the foundation to excel in my career. The alumni network has been incredibly supportive.",
+        "GMU provided me with the foundation to excel in my career. The alumni network has been incredibly supportive.",
       image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Santosh",
     },
     {
@@ -488,7 +438,7 @@ const Alumni = () => {
       id: 1,
       name: "Rahul Verma",
       role: "Senior Developer",
-      text: "The GMIT alumni community has been instrumental in my career growth. Always ready to help and guide.",
+      text: "The GMU alumni community has been instrumental in my career growth. Always ready to help and guide.",
       company: "Google",
     },
     {
@@ -606,7 +556,7 @@ const Alumni = () => {
             >
               Welcome to{" "}
               <span className="bg-gradient-to-r from-blue-200 to-cyan-200 bg-clip-text text-transparent">
-                GMIT Alumni
+                GMU Alumni
               </span>{" "}
               Network
             </motion.h1>
@@ -750,70 +700,6 @@ const Alumni = () => {
               </motion.div>
             ))}
           </motion.div>
-        </div>
-      </section>
-
-      {/* Enhanced Alumni Stories */}
-      <section className="py-5 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-gray-900/[0.01] bg-[size:60px_60px]" />
-        <FloatingElements />
-        <div className="container mx-auto px-4 relative z-10">
-          <SectionHeader
-            icon={Award}
-            title="Success Stories"
-            subtitle="Alumni Achievements"
-            color="blue"
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {alumniStories.map((story, index) => (
-              <motion.div
-                key={story.id}
-                variants={itemVariants}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 overflow-hidden group"
-              >
-                <div className="p-8">
-                  <div className="flex items-center space-x-6 mb-6">
-                    <motion.img
-                      src={story.image}
-                      alt={story.name}
-                      className="w-16 h-16 rounded-2xl border-2 border-blue-200 shadow-md group-hover:border-blue-300 transition-colors"
-                      whileHover={{ scale: 1.1, rotate: 2 }}
-                    />
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-800">
-                        {story.name}
-                      </h3>
-                      <p className="text-blue-600 font-semibold text-sm">
-                        {story.batch}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mb-6">
-                    <p className="text-blue-600 font-bold text-base">
-                      {story.currentRole}
-                    </p>
-                    <p className="text-gray-600 text-sm font-medium">
-                      {story.company}
-                    </p>
-                  </div>
-                  <motion.p
-                    className="text-gray-700 text-base leading-relaxed italic border-l-3 border-blue-400 pl-4"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                  >
-                    "{story.story}"
-                  </motion.p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 

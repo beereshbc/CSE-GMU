@@ -20,6 +20,8 @@ import ContactUs from "./pages/ContactUs";
 import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
+import BottomNavbar from "./components/BottomNavbar";
+import Benchmarking from "./pages/Benchmarking";
 
 const App = () => {
   return (
@@ -42,16 +44,15 @@ const App = () => {
         <Route path="/student-projects" element={<StudentProjects />} />
         <Route path="/iqac" element={<IQAC />} />
         <Route path="/faculty-achievements" element={<FacultyAchievements />} />
-        <Route
-          path="/student-internships-placements "
-          element={<StudentIP />}
-        />
+        <Route path="/student-internships-placements" element={<StudentIP />} />
         <Route path="/student-achievements" element={<StudentAchievements />} />
         <Route path="/alumni" element={<Alumni />} />
         <Route path="/admissions" element={<Admissions />} />
         <Route path="/falconai" element={<FalconAI />} />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/benchmarks" element={<Benchmarking />} />
       </Routes>
+      <BottomNavbar />
       <Footer />
     </div>
   );

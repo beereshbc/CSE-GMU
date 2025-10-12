@@ -13,35 +13,7 @@ import {
   Database,
   Network,
 } from "lucide-react";
-import { assets } from "../assets/assets";
-
-const slides = [
-  {
-    image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbXB1dGVyJTIwc2NpZW5jZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-    title: "Advanced Computing Labs",
-    description:
-      "State-of-the-art laboratories equipped with modern technology",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHN0dWRlbnRzJTIwbGVhcm5pbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-    title: "Interactive Learning",
-    description: "Engaging classroom environments with hands-on experience",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmVzZWFyY2h8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-    title: "Research Excellence",
-    description: "Cutting-edge research projects and innovation",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNvbXB1dGVyJTIwc2NpZW5jZSUyMGRlcGFydG1lbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-    title: "Modern Infrastructure",
-    description: "World-class facilities for technical education",
-  },
-];
+import { assets, slides } from "../assets/assets";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -142,7 +114,7 @@ const Hero = () => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="flex justify-center mb-4 "
+          className="flex justify-center mb-2 "
         >
           <motion.div
             whileHover={{ scale: 1.02 }}
@@ -159,7 +131,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="space-y-2"
+          className="space-y-1"
         >
           <motion.h1 className="text-2xl mt-[-50px] md:text-4xl lg:text-5xl font-black text-blue-900 leading-tight">
             <span className="relative inline-block">
@@ -192,6 +164,13 @@ const Hero = () => {
               ></motion.span>
             </span>
           </motion.h1>
+          <div>
+            <motion.p className="text-3xl md:text-xl   font-semibold text-blue-700 relative inline-block">
+              <span className="relative z-10 text-3xl">
+                School of Computer Science and Technology
+              </span>
+            </motion.p>
+          </div>
 
           {/* Animated Separator - Compact */}
 
@@ -202,7 +181,7 @@ const Hero = () => {
             transition={{ delay: 1.4, duration: 0.6 }}
             className="relative"
           >
-            <motion.p className="text-lg md:text-xl   font-semibold text-blue-700 relative inline-block">
+            <motion.p className="text-md md:text-xl   font-semibold text-blue-700 relative inline-block">
               <span className="relative z-10">
                 Faculty of Engineering and Technology
               </span>
@@ -269,7 +248,7 @@ const Hero = () => {
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-3 top-1/2 transform -translate-y-1/ w-10 h-10 rounded-full flex items-center justify-center  transition-all duration-300 hover:scale-110 backdrop-blur-sm"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-blue-800 w-10 h-10 rounded-full flex items-center justify-center  transition-all duration-300 hover:scale-110 backdrop-blur-sm"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -295,7 +274,7 @@ const Hero = () => {
                 </div>
                 <div className="text-center">
                   <Cpu className="w-5 h-5 text-white mx-auto mb-1" />
-                  <p className="text-white font-bold text-sm">10+</p>
+                  <p className="text-white font-bold text-sm">4+</p>
                   <p className="text-white text-xs">Labs</p>
                 </div>
               </div>

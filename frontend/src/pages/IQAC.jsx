@@ -9,6 +9,7 @@ import {
   Award,
   Shield,
 } from "lucide-react";
+import { assets } from "../assets/assets";
 
 const IQAC = () => {
   return (
@@ -41,7 +42,7 @@ const IQAC = () => {
           <div className="md:w-1/2 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://cdn.pixabay.com/photo/2018/01/18/07/53/analysis-3088958_960_720.jpg"
+                src={assets.gmu}
                 alt="IQAC and Quality Initiatives"
                 className="w-full h-80 object-cover transform hover:scale-105 transition-transform duration-500"
               />
@@ -72,9 +73,12 @@ const IQAC = () => {
           {/* Coordinator 1 */}
           <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100 hover:border-blue-300 group transform hover:-translate-y-2">
             <div className="flex items-start gap-4">
-              <div className="bg-blue-100 p-3 rounded-xl group-hover:bg-blue-200 transition-colors duration-300">
-                <Users className="w-6 h-6 text-blue-700" />
-              </div>
+              <img
+                className="w-24 h-24 text-blue-700 rounded-full scale-110"
+                src={assets.Dr_CHETHAN_CHANDRA_S_BASAVARADDI}
+                alt=""
+              />
+
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-blue-900 mb-3 group-hover:text-blue-700 transition-colors">
                   Dr. Chethan Chandra S. Basavaraddi
@@ -101,9 +105,11 @@ const IQAC = () => {
           {/* Coordinator 2 */}
           <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100 hover:border-blue-300 group transform hover:-translate-y-2">
             <div className="flex items-start gap-4">
-              <div className="bg-blue-100 p-3 rounded-xl group-hover:bg-blue-200 transition-colors duration-300">
-                <Users className="w-6 h-6 text-blue-700" />
-              </div>
+              <img
+                className="w-24 h-24 text-blue-700 rounded-full scale-110"
+                src={assets.SANTOSHKUMAR_M}
+                alt=""
+              />
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-blue-900 mb-3 group-hover:text-blue-700 transition-colors">
                   Mr. Santoshkumar M

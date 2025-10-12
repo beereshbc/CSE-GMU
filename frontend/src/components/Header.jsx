@@ -45,7 +45,7 @@ const Header = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="flex flex-col lg:flex-row gap-4 md:gap-6 lg:gap-8"
+        className="flex flex-col lg:flex-row gap-4 md:gap-6 lg:gap-8 min-h-[600px]"
       >
         {/* Left Section: HoD Data */}
         <motion.div
@@ -132,11 +132,11 @@ const Header = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.6 }}
-            className="relative"
+            className="relative flex-1 flex flex-col"
           >
             <hr className="h-1 bg-blue-500 items-center" />
-            <div className="bg-white/80 backdrop-blur-sm border border-blue-200/50 mt-10 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg">
-              <div className="overflow-y-auto pr-3 sm:pr-4 h-48 sm:h-56 lg:h-full custom-scrollbar">
+            <div className="bg-white/80 backdrop-blur-sm border border-blue-200/50 mt-4 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg flex-1 flex flex-col">
+              <div className="overflow-y-auto pr-3 sm:pr-4 flex-1 custom-scrollbar">
                 <p className="text-gray-700 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
                   Welcome to the Department of Computer Science & Engineering
                   (CSE) at GM University, Davanagere. Dr. Shivanagowda G. M.,
@@ -179,25 +179,25 @@ const Header = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right Video Section - No margins */}
+        {/* Right Video Section - Two Videos in Horizontal Layout */}
         <motion.div
           variants={itemVariants}
-          className="w-full lg:w-[30%] flex flex-col"
+          className="w-full lg:w-[30%] flex flex-col gap-4 md:gap-6 lg:gap-8 h-full"
         >
+          {/* Top Video */}
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="bg-gradient-to-br from-white to-blue-50 shadow-2xl rounded-3xl border border-blue-200/50 backdrop-blur-sm flex flex-col h-full"
+            className="bg-gradient-to-br from-white to-blue-50 shadow-2xl rounded-3xl border border-blue-200/50 backdrop-blur-sm flex-1 flex flex-col"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-lg bg-black aspect-[9/16] w-full">
-              {/* Auto-play Video */}
+            <div className="relative rounded-2xl overflow-hidden shadow-lg bg-black aspect-[4/3] w-full h-full">
               <video
                 autoPlay
-                muted
                 loop
                 playsInline
                 className="w-full h-full object-cover"
+                controls
               >
-                <source src="/hod-video.mp4" type="video/mp4" />
+                <source src={assets.Intro_v1} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
 
@@ -217,10 +217,54 @@ const Header = () => {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/30"
+                  className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/30"
                 >
-                  <div className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
-                    <Play className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 ml-0.5" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center shadow-lg">
+                    <Play className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600 ml-0.5" />
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Bottom Video */}
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="bg-gradient-to-br from-white to-blue-50 shadow-2xl rounded-3xl border border-blue-200/50 backdrop-blur-sm flex-1 flex flex-col"
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-lg bg-black aspect-[4/3] w-full h-full">
+              {/* Auto-play Video */}
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src="/department-video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+
+              {/* Subtle Hover Overlay */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                className="absolute inset-0 bg-black/20 flex items-center justify-center"
+              >
+                <motion.div
+                  animate={{
+                    scale: [1, 1.1, 1],
+                    opacity: [0.7, 1, 0.7],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/30"
+                >
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center shadow-lg">
+                    <Play className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600 ml-0.5" />
                   </div>
                 </motion.div>
               </motion.div>

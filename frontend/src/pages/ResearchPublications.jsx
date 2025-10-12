@@ -47,62 +47,102 @@ const ResearchPublications = () => {
       setLoading(true);
       setError(null);
 
-      const response = await axios.get("https://cse-gmu-stlo.vercel.app", {
+      const response = await axios.get("http://localhost:5000", {
         timeout: 10000,
       });
 
-      setPublications(response.data || []);
+      // ✅ FIX: Validate and ensure response data is an array
+      let publicationsData = response.data;
+
+      if (!publicationsData) {
+        throw new Error("No data received from server");
+      }
+
+      // If it's not an array, try to extract array from response structure
+      if (!Array.isArray(publicationsData)) {
+        // Try common response structures
+        if (
+          publicationsData.articles &&
+          Array.isArray(publicationsData.articles)
+        ) {
+          publicationsData = publicationsData.articles;
+        } else if (
+          publicationsData.data &&
+          Array.isArray(publicationsData.data)
+        ) {
+          publicationsData = publicationsData.data;
+        } else if (
+          publicationsData.publications &&
+          Array.isArray(publicationsData.publications)
+        ) {
+          publicationsData = publicationsData.publications;
+        } else {
+          // If we can't find an array, create empty array
+          console.warn(
+            "Response data is not an array, using empty array instead"
+          );
+          publicationsData = [];
+        }
+      }
+
+      // ✅ Ensure we always set an array
+      setPublications(publicationsData || []);
     } catch (err) {
       console.error("❌ Error fetching publications:", err);
       const message =
         err.response?.data?.error ||
         err.response?.statusText ||
+        err.message ||
         "Network error while fetching publications.";
       setError(message);
+      // ✅ Ensure publications is always an array even on error
+      setPublications([]);
     } finally {
       setLoading(false);
     }
   };
 
-  // Enhanced filter logic
-  const filteredPublications = publications.filter((pub) => {
-    const matchesSearch =
-      pub.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      pub.authors?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      pub.facultyName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      pub.publication?.toLowerCase().includes(searchTerm.toLowerCase());
+  // ✅ FIX: Enhanced filter logic with array validation
+  const filteredPublications = Array.isArray(publications)
+    ? publications.filter((pub) => {
+        const matchesSearch =
+          pub?.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          pub?.authors?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          pub?.facultyName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          pub?.publication?.toLowerCase().includes(searchTerm.toLowerCase());
 
-    const matchesYear = !filterYear || pub.year === parseInt(filterYear);
-    const matchesDepartment =
-      !filterDepartment ||
-      pub.facultyDepartment
-        ?.toLowerCase()
-        .includes(filterDepartment.toLowerCase());
+        const matchesYear = !filterYear || pub?.year === parseInt(filterYear);
+        const matchesDepartment =
+          !filterDepartment ||
+          pub?.facultyDepartment
+            ?.toLowerCase()
+            .includes(filterDepartment.toLowerCase());
 
-    return matchesSearch && matchesYear && matchesDepartment;
-  });
+        return matchesSearch && matchesYear && matchesDepartment;
+      })
+    : []; // Return empty array if publications is not an array
 
-  // Sorting logic
+  // ✅ FIX: Sorting logic with safe access
   const sortedPublications = [...filteredPublications].sort((a, b) => {
     let aValue, bValue;
 
     switch (sortBy) {
       case "citations":
-        aValue = a.cited_by?.value || 0;
-        bValue = b.cited_by?.value || 0;
+        aValue = a?.cited_by?.value || 0;
+        bValue = b?.cited_by?.value || 0;
         break;
       case "title":
-        aValue = a.title?.toLowerCase() || "";
-        bValue = b.title?.toLowerCase() || "";
+        aValue = a?.title?.toLowerCase() || "";
+        bValue = b?.title?.toLowerCase() || "";
         break;
       case "faculty":
-        aValue = a.facultyName?.toLowerCase() || "";
-        bValue = b.facultyName?.toLowerCase() || "";
+        aValue = a?.facultyName?.toLowerCase() || "";
+        bValue = b?.facultyName?.toLowerCase() || "";
         break;
       case "year":
       default:
-        aValue = a.year || 0;
-        bValue = b.year || 0;
+        aValue = a?.year || 0;
+        bValue = b?.year || 0;
     }
 
     if (sortOrder === "asc") {
@@ -112,21 +152,42 @@ const ResearchPublications = () => {
     }
   });
 
-  // Get unique values for filters
-  const uniqueYears = [...new Set(publications.map((pub) => pub.year))]
-    .filter((year) => year)
-    .sort((a, b) => b - a);
+  // ✅ FIX: Get unique values for filters with safe array access
+  const uniqueYears = Array.isArray(publications)
+    ? [...new Set(publications.map((pub) => pub?.year).filter(Boolean))].sort(
+        (a, b) => b - a
+      )
+    : [];
 
-  const uniqueDepartments = [
-    ...new Set(publications.map((pub) => pub.facultyDepartment)),
-  ]
-    .filter((dept) => dept)
-    .sort();
+  const uniqueDepartments = Array.isArray(publications)
+    ? [
+        ...new Set(
+          publications.map((pub) => pub?.facultyDepartment).filter(Boolean)
+        ),
+      ].sort()
+    : [];
 
   // Generate Google Scholar profile URL
   const getGoogleScholarUrl = (facultyName) => {
+    if (!facultyName) return "#";
     const encodedName = encodeURIComponent(facultyName);
     return `https://scholar.google.com/scholar?q=${encodedName}`;
+  };
+
+  // ✅ FIX: Safe statistics calculation
+  const stats = {
+    totalPublications: Array.isArray(publications) ? publications.length : 0,
+    totalCitations: Array.isArray(publications)
+      ? publications.reduce((sum, pub) => sum + (pub?.cited_by?.value || 0), 0)
+      : 0,
+    uniqueFaculty: Array.isArray(publications)
+      ? [
+          ...new Set(
+            publications.map((pub) => pub?.facultyName).filter(Boolean)
+          ),
+        ].length
+      : 0,
+    uniqueYears: uniqueYears.length,
   };
 
   // Animation variants
@@ -344,30 +405,25 @@ const ResearchPublications = () => {
               {[
                 {
                   icon: BookOpen,
-                  value: publications.length,
+                  value: stats.totalPublications,
                   label: "Publications",
                   color: "from-blue-500 to-cyan-500",
                 },
                 {
                   icon: TrendingUp,
-                  value: publications.reduce(
-                    (sum, pub) => sum + (pub.cited_by?.value || 0),
-                    0
-                  ),
+                  value: stats.totalCitations,
                   label: "Citations",
                   color: "from-green-500 to-emerald-500",
                 },
                 {
                   icon: Users,
-                  value: [
-                    ...new Set(publications.map((pub) => pub.facultyName)),
-                  ].length,
+                  value: stats.uniqueFaculty,
                   label: "Faculty Members",
                   color: "from-purple-500 to-pink-500",
                 },
                 {
                   icon: Globe,
-                  value: uniqueYears.length,
+                  value: stats.uniqueYears,
                   label: "Years of Research",
                   color: "from-orange-500 to-red-500",
                 },
@@ -607,7 +663,9 @@ const ResearchPublications = () => {
                     {sortedPublications.length > 0 ? (
                       sortedPublications.map((publication, index) => (
                         <motion.tr
-                          key={`${publication.citation_id}-${index}`}
+                          key={`${
+                            publication?.citation_id || publication?.id || index
+                          }-${index}`}
                           variants={tableRowVariants}
                           initial="hidden"
                           animate="visible"
@@ -618,18 +676,20 @@ const ResearchPublications = () => {
                           <td className="px-6 py-4 max-w-xs">
                             <motion.a
                               whileHover={{ scale: 1.02 }}
-                              href={publication.link}
+                              href={publication?.link || "#"}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="text-gray-900 font-medium hover:text-blue-600 transition-colors duration-200 line-clamp-2 flex items-start gap-2"
                             >
                               <ExternalLink className="w-4 h-4 mt-1 flex-shrink-0 text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />
-                              <span>{publication.title}</span>
+                              <span>
+                                {publication?.title || "No title available"}
+                              </span>
                             </motion.a>
                           </td>
                           <td className="px-6 py-4 max-w-xs">
                             <p className="text-gray-600 text-sm line-clamp-2">
-                              {publication.authors}
+                              {publication?.authors || "Unknown authors"}
                             </p>
                           </td>
                           <td className="px-6 py-4 max-w-xs">
@@ -637,37 +697,39 @@ const ResearchPublications = () => {
                               <motion.a
                                 whileHover={{ scale: 1.05 }}
                                 href={getGoogleScholarUrl(
-                                  publication.facultyName
+                                  publication?.facultyName
                                 )}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-blue-600 hover:text-blue-800 font-semibold hover:underline transition-colors duration-200 flex items-center gap-1 group"
                               >
                                 <User className="w-4 h-4" />
-                                {publication.facultyName}
+                                {publication?.facultyName || "Unknown faculty"}
                                 <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                               </motion.a>
                               <span className="text-xs text-blue-600 bg-blue-100 px-2 py-1 rounded-md self-start mt-1">
-                                {publication.facultyDepartment}
+                                {publication?.facultyDepartment ||
+                                  "Unknown department"}
                               </span>
                             </div>
                           </td>
                           <td className="px-6 py-4 text-center">
                             <span className="font-semibold text-gray-900 bg-blue-100 px-3 py-1 rounded-full text-sm">
-                              {publication.year}
+                              {publication?.year || "N/A"}
                             </span>
                           </td>
                           <td className="px-6 py-4 text-center">
                             <div className="flex items-center justify-center gap-1">
                               <TrendingUp className="w-4 h-4 text-green-500" />
                               <span className="font-semibold text-green-600">
-                                {publication.cited_by?.value || 0}
+                                {publication?.cited_by?.value || 0}
                               </span>
                             </div>
                           </td>
                           <td className="px-6 py-4 max-w-xs">
                             <p className="text-gray-600 text-sm line-clamp-2">
-                              {publication.publication}
+                              {publication?.publication ||
+                                "No publication info"}
                             </p>
                           </td>
                           <td className="px-6 py-4 text-center">
@@ -677,9 +739,9 @@ const ResearchPublications = () => {
                                 whileTap={{ scale: 0.9 }}
                                 onClick={() =>
                                   setExpandedRow(
-                                    expandedRow === publication.citation_id
+                                    expandedRow === publication?.citation_id
                                       ? null
-                                      : publication.citation_id
+                                      : publication?.citation_id
                                   )
                                 }
                                 className="p-2 hover:bg-blue-100 rounded-lg transition-colors duration-200 text-blue-500"
@@ -687,7 +749,7 @@ const ResearchPublications = () => {
                               >
                                 <ChevronDown
                                   className={`w-4 h-4 transition-transform ${
-                                    expandedRow === publication.citation_id
+                                    expandedRow === publication?.citation_id
                                       ? "rotate-180"
                                       : ""
                                   }`}
@@ -696,7 +758,7 @@ const ResearchPublications = () => {
                               <motion.a
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }}
-                                href={publication.link}
+                                href={publication?.link || "#"}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-2 hover:bg-blue-100 rounded-lg transition-colors duration-200 text-blue-500"

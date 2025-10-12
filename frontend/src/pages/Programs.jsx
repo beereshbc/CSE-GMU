@@ -5,14 +5,13 @@ import {
   BookOpen,
   GraduationCap,
   Users,
-  Target,
   Award,
   Brain,
-  Code,
-  Database,
-  Network,
-  Shield,
+  Target,
+  Settings,
+  Cpu,
   Zap,
+  FileText,
 } from "lucide-react";
 
 const programData = {
@@ -152,9 +151,111 @@ const programData = {
         ),
       },
     ],
+    // B.Tech specific table
+    curriculumTable: (
+      <div className="mt-12">
+        <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+          B.Tech Curriculum Resources
+        </h3>
+        <div className="overflow-x-auto shadow-lg rounded-lg">
+          <table className="min-w-full bg-white">
+            <thead className="bg-blue-600 text-white">
+              <tr>
+                <th className="py-4 px-6 text-left font-semibold text-lg">
+                  Degree
+                </th>
+                <th className="py-4 px-6 text-center font-semibold text-lg">
+                  23-Scheme Program
+                </th>
+                <th className="py-4 px-6 text-center font-semibold text-lg">
+                  24-Scheme Course
+                </th>
+                <th className="py-4 px-6 text-center font-semibold text-lg">
+                  25-Scheme Program
+                </th>
+                <th className="py-4 px-6 text-center font-semibold text-lg">
+                  Program Brochure
+                </th>
+                <th className="py-4 px-6 text-center font-semibold text-lg">
+                  Lab Recordings
+                </th>
+                <th className="py-4 px-6 text-center font-semibold text-lg">
+                  Department Details
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-blue-100 hover:bg-blue-50 transition-colors duration-200">
+                <td className="py-4 px-6 font-semibold text-gray-800">
+                  B.Tech
+                </td>
+                <td className="py-4 px-6 text-center">
+                  <a
+                    href="/pdfs/btech-23-program.pdf"
+                    className="text-blue-600 hover:text-blue-800 hover:underline font-medium flex items-center justify-center gap-2 transition-colors"
+                  >
+                    <FileText className="w-5 h-5" />
+                    View
+                  </a>
+                </td>
+                <td className="py-4 px-6 text-center">
+                  <a
+                    href="/pdfs/btech-24-course.pdf"
+                    className="text-blue-600 hover:text-blue-800 hover:underline font-medium flex items-center justify-center gap-2 transition-colors"
+                  >
+                    <FileText className="w-5 h-5" />
+                    View
+                  </a>
+                </td>
+                <td className="py-4 px-6 text-center">
+                  <a
+                    href="/pdfs/btech-25-program.pdf"
+                    className="text-blue-600 hover:text-blue-800 hover:underline font-medium flex items-center justify-center gap-2 transition-colors"
+                  >
+                    <FileText className="w-5 h-5" />
+                    View
+                  </a>
+                </td>
+                <td className="py-4 px-6 text-center">
+                  <a
+                    href="/pdfs/btech-brochure.pdf"
+                    className="text-blue-600 hover:text-blue-800 hover:underline font-medium flex items-center justify-center gap-2 transition-colors"
+                  >
+                    <FileText className="w-5 h-5" />
+                    View
+                  </a>
+                </td>
+                <td className="py-4 px-6 text-center">
+                  <a
+                    href="/recordings/btech-labs"
+                    className="text-blue-600 hover:text-blue-800 hover:underline font-medium flex items-center justify-center gap-2 transition-colors"
+                  >
+                    <FileText className="w-5 h-5" />
+                    View
+                  </a>
+                </td>
+                <td className="py-4 px-6 text-center">
+                  <a
+                    href="/department/cse"
+                    className="text-blue-600 hover:text-blue-800 hover:underline font-medium flex items-center justify-center gap-2 transition-colors"
+                  >
+                    <FileText className="w-5 h-5" />
+                    View
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-sm text-gray-600 mt-4 text-center">
+          Click on "View" to access detailed curriculum resources for B.Tech
+          program
+        </p>
+      </div>
+    ),
   },
   mtech: {
-    title: "M.Tech Computer Science & Engineering",
+    title: "M.Tech in Deep Learning",
     icon: <Users className="w-6 h-6" />,
     accordions: [
       {
@@ -162,23 +263,35 @@ const programData = {
         icon: <BookOpen className="w-5 h-5" />,
         content: (
           <>
+            <div className="mb-4">
+              <h4 className="font-bold text-blue-800 mb-2">
+                Faculty of Engineering and Technology
+              </h4>
+              <h4 className="font-bold text-blue-800 mb-3">
+                GM School of Advanced Studies (GMSAS)
+              </h4>
+            </div>
             <p className="mb-4">
-              The M.Tech. in Computer Science & Engineering provides advanced
-              specialization in cutting-edge domains, fostering research
-              excellence and technical leadership. The program emphasizes deep
-              theoretical understanding and innovative applications in emerging
-              technologies.
+              The M.Tech in Deep Learning under the Faculty of Engineering and
+              Technology at GM School of Advanced Studies (GMSAS) is a
+              specialized program designed to provide in-depth knowledge and
+              research skills in the field of deep learning. The program covers
+              advanced neural network architectures, optimization techniques,
+              and their applications in areas such as computer vision, natural
+              language processing, and reinforcement learning.
             </p>
             <p className="mb-4">
-              Specializations include Artificial Intelligence, Machine Learning,
-              Data Science, Cybersecurity, Cloud Computing, and Internet of
-              Things. Students engage in rigorous research projects and industry
-              collaborations.
+              Students engage in rigorous research projects, industry
+              collaborations, and hands-on implementation of deep learning
+              models. The curriculum emphasizes both theoretical foundations and
+              practical applications, preparing graduates for leadership roles
+              in AI research, development, and ethical implementation.
             </p>
             <p>
-              Graduates are prepared for leadership roles in R&D, academia, and
-              specialized industry positions, contributing to technological
-              innovation and knowledge creation.
+              Graduates are equipped to drive innovation in artificial
+              intelligence, contribute to cutting-edge research, and lead AI
+              initiatives with a strong ethical foundation in various industries
+              and research organizations.
             </p>
           </>
         ),
@@ -187,117 +300,253 @@ const programData = {
         title: "Program Educational Objectives (PEOs)",
         icon: <Target className="w-5 h-5" />,
         content: (
-          <ul className="list-disc pl-6 space-y-4">
-            <li>
-              <strong>PEO-1: Advanced Technical Expertise</strong>
-              <br />
-              Graduates will demonstrate advanced knowledge and research
-              capabilities in specialized computer science domains.
-            </li>
-            <li>
-              <strong>PEO-2: Research and Innovation</strong>
-              <br />
-              Graduates will conduct original research, contribute to knowledge
-              creation, and drive technological innovation.
-            </li>
-            <li>
-              <strong>PEO-3: Academic and Industrial Leadership</strong>
-              <br />
-              Graduates will assume leadership positions in academia, research
-              organizations, and technology industries.
-            </li>
-          </ul>
+          <div className="space-y-6">
+            <div className="border-l-4 border-blue-500 pl-4 bg-blue-50 py-3">
+              <strong className="text-blue-800 block mb-2">
+                PEO-1: Expertise in Advanced Deep Learning Concepts
+              </strong>
+              <p className="text-gray-700">
+                Upon completion of the Master's program in Deep Learning,
+                graduates will demonstrate expertise in advanced deep learning
+                concepts, including neural network architectures, optimization
+                algorithms, and specialized applications such as computer
+                vision, natural language processing, and reinforcement learning.
+                They will possess a deep understanding of theoretical
+                foundations and practical implementation, enabling them to
+                address complex challenges in the field.
+              </p>
+            </div>
+
+            <div className="border-l-4 border-green-500 pl-4 bg-green-50 py-3">
+              <strong className="text-green-800 block mb-2">
+                PEO-2: Innovation and Research Contribution
+              </strong>
+              <p className="text-gray-700">
+                Graduates will be equipped to contribute to the innovation and
+                advancement of deep learning through meaningful research and
+                development. They will have the skills to identify, analyse, and
+                propose solutions to emerging challenges in the field, fostering
+                a commitment to continuous learning and staying at the forefront
+                of evolving technologies.
+              </p>
+            </div>
+
+            <div className="border-l-4 border-purple-500 pl-4 bg-purple-50 py-3">
+              <strong className="text-purple-800 block mb-2">
+                PEO-3: Leadership in Ethical AI Practices
+              </strong>
+              <p className="text-gray-700">
+                The program aims to cultivate leadership qualities in graduates,
+                emphasizing ethical considerations in AI and deep learning.
+                Graduates will demonstrate a commitment to responsible AI
+                practices, considering the societal impact of their work. They
+                will be prepared to lead AI initiatives with a focus on ethical
+                decision-making, ensuring the responsible and sustainable
+                application of deep learning technologies.
+              </p>
+            </div>
+          </div>
         ),
       },
       {
         title: "Program Outcomes (POs)",
         icon: <Award className="w-5 h-5" />,
         content: (
-          <ul className="list-disc pl-6 space-y-3">
-            <li>
-              <strong>PO-1: Scholarly Knowledge</strong> — Demonstrate
-              comprehensive understanding of advanced computing concepts.
-            </li>
-            <li>
-              <strong>PO-2: Critical Analysis</strong> — Critically analyze
-              complex computing problems and research literature.
-            </li>
-            <li>
-              <strong>PO-3: Research Design</strong> — Design and conduct
-              research investigations with scholarly rigor.
-            </li>
-            <li>
-              <strong>PO-4: Innovation</strong> — Develop innovative solutions
-              and contribute to original research.
-            </li>
-            <li>
-              <strong>PO-5: Technical Leadership</strong> — Provide technical
-              leadership in specialized computing domains.
-            </li>
-            <li>
-              <strong>PO-6: Scholarly Communication</strong> — Communicate
-              research findings effectively to scholarly community.
-            </li>
-            <li>
-              <strong>PO-7: Ethical Research</strong> — Conduct research with
-              integrity and ethical responsibility.
-            </li>
-            <li>
-              <strong>PO-8: Collaborative Research</strong> — Collaborate
-              effectively in multidisciplinary research teams.
-            </li>
-          </ul>
+          <div className="grid gap-4">
+            <div className="bg-gradient-to-r from-blue-50 to-white p-4 rounded-lg border border-blue-100">
+              <strong className="text-blue-800 block mb-2">
+                PO-1: Mastery of Deep Learning Fundamentals
+              </strong>
+              <p className="text-gray-700 text-sm">
+                Graduates will demonstrate a comprehensive understanding of deep
+                learning principles, including neural network architectures,
+                optimization algorithms, and advanced techniques. They will
+                apply this knowledge to analyse and solve complex problems in
+                various domains, showcasing mastery in the foundational aspects
+                of deep learning.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-white p-4 rounded-lg border border-blue-100">
+              <strong className="text-blue-800 block mb-2">
+                PO-2: Advanced Skillset in Specialized Applications
+              </strong>
+              <p className="text-gray-700 text-sm">
+                Upon completion, students will possess advanced skills in
+                applying deep learning to specialized areas such as computer
+                vision, natural language processing, and reinforcement learning.
+                They will design and implement solutions for real-world
+                challenges, showcasing expertise in adapting deep learning
+                techniques to diverse applications.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-white p-4 rounded-lg border border-blue-100">
+              <strong className="text-blue-800 block mb-2">
+                PO-3: Research Proficiency and Contribution
+              </strong>
+              <p className="text-gray-700 text-sm">
+                Graduates will exhibit the ability to conduct original research
+                in deep learning, contributing to the academic and industrial
+                knowledge base. They will be proficient in literature review,
+                experimental design, and research methodologies, fostering a
+                culture of innovation and making meaningful contributions to the
+                field.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-white p-4 rounded-lg border border-blue-100">
+              <strong className="text-blue-800 block mb-2">
+                PO-4: Effective Communication of Complex Concepts
+              </strong>
+              <p className="text-gray-700 text-sm">
+                The program aims to enhance graduate's communication skills,
+                enabling them to articulate complex deep learning concepts
+                effectively. Graduates will be adept at presenting their
+                findings, collaborating with interdisciplinary teams, and
+                conveying technical information to both technical and
+                non-technical stakeholders.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-white p-4 rounded-lg border border-blue-100">
+              <strong className="text-blue-800 block mb-2">
+                PO-5: Ethical Considerations in AI
+              </strong>
+              <p className="text-gray-700 text-sm">
+                The curriculum emphasizes ethical considerations in AI and deep
+                learning. Graduates will demonstrate an understanding of the
+                ethical implications of AI technologies, including privacy,
+                bias, and societal impact. They will integrate ethical
+                considerations into their work, promoting responsible AI
+                practices.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-white p-4 rounded-lg border border-blue-100">
+              <strong className="text-blue-800 block mb-2">
+                PO-6: Adaptability to Emerging Technologies
+              </strong>
+              <p className="text-gray-700 text-sm">
+                Graduates will showcase adaptability to emerging technologies
+                and methodologies in the rapidly evolving field of deep
+                learning. They will actively seek opportunities for continuous
+                learning, staying abreast of the latest research, industry
+                trends, and technological advancements.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-white p-4 rounded-lg border border-blue-100">
+              <strong className="text-blue-800 block mb-2">
+                PO-7: Collaboration and Interdisciplinary Engagement
+              </strong>
+              <p className="text-gray-700 text-sm">
+                The program fosters collaboration and interdisciplinary
+                engagement. Graduates will excel in working collaboratively
+                within diverse teams, leveraging their deep learning expertise
+                to contribute effectively to projects and initiatives that
+                require a multidisciplinary approach.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-white p-4 rounded-lg border border-blue-100">
+              <strong className="text-blue-800 block mb-2">
+                PO-8: Leadership in AI Initiatives
+              </strong>
+              <p className="text-gray-700 text-sm">
+                Graduates will be prepared for leadership roles in AI
+                initiatives, demonstrating the ability to lead and manage
+                projects related to deep learning applications. They will
+                exhibit strategic thinking, project management skills, and the
+                capacity to drive innovation in AI technologies.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-white p-4 rounded-lg border border-blue-100">
+              <strong className="text-blue-800 block mb-2">
+                PO-9: Continuous Professional Development
+              </strong>
+              <p className="text-gray-700 text-sm">
+                The program instils a commitment to continuous professional
+                development. Graduates will recognize the importance of lifelong
+                learning, actively seeking opportunities for skill enhancement,
+                and contributing to the advancement of deep learning and AI as
+                lifelong learners and professionals in the field.
+              </p>
+            </div>
+          </div>
         ),
       },
       {
-        title: "Specializations",
+        title: "Program Specific Outcomes (PSOs)",
         icon: <Brain className="w-5 h-5" />,
         content: (
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-              <div className="flex items-center mb-3">
-                <Brain className="w-5 h-5 text-blue-600 mr-2" />
-                <strong className="text-blue-800">
-                  Artificial Intelligence
+          <div className="grid md:grid-cols-1 gap-6">
+            <div className="bg-gradient-to-r from-green-50 to-white p-5 rounded-lg border border-green-200 shadow-sm">
+              <div className="flex items-center mb-4">
+                <Brain className="w-6 h-6 text-green-600 mr-3" />
+                <strong className="text-green-800 text-lg">
+                  PSO-1: Advanced Understanding of Neural Network Architectures
                 </strong>
               </div>
-              <p className="text-sm text-gray-700">
-                Machine Learning, Deep Learning, Natural Language Processing,
-                Computer Vision
+              <p className="text-gray-700">
+                Graduates will demonstrate an advanced understanding of various
+                neural network architectures, enabling them to select, design,
+                and implement effective models for diverse deep learning
+                applications.
               </p>
             </div>
-            <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-              <div className="flex items-center mb-3">
-                <Database className="w-5 h-5 text-blue-600 mr-2" />
-                <strong className="text-blue-800">Data Science</strong>
+
+            <div className="bg-gradient-to-r from-purple-50 to-white p-5 rounded-lg border border-purple-200 shadow-sm">
+              <div className="flex items-center mb-4">
+                <Settings className="w-6 h-6 text-purple-600 mr-3" />
+                <strong className="text-purple-800 text-lg">
+                  PSO-2: Expertise in Optimizing Deep Learning Models
+                </strong>
               </div>
-              <p className="text-sm text-gray-700">
-                Big Data Analytics, Data Mining, Statistical Modeling, Business
-                Intelligence
+              <p className="text-gray-700">
+                Students will acquire expertise in optimizing deep learning
+                models, encompassing the implementation of optimization
+                algorithms, regularization techniques, and hyperparameter tuning
+                to enhance model performance and efficiency.
               </p>
             </div>
-            <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-              <div className="flex items-center mb-3">
-                <Shield className="w-5 h-5 text-blue-600 mr-2" />
-                <strong className="text-blue-800">Cybersecurity</strong>
+
+            <div className="bg-gradient-to-r from-blue-50 to-white p-5 rounded-lg border border-blue-200 shadow-sm">
+              <div className="flex items-center mb-4">
+                <Cpu className="w-6 h-6 text-blue-600 mr-3" />
+                <strong className="text-blue-800 text-lg">
+                  PSO-3: Application of Deep Learning in Specialized Domains
+                </strong>
               </div>
-              <p className="text-sm text-gray-700">
-                Network Security, Cryptography, Cyber Forensics, Ethical Hacking
-              </p>
-            </div>
-            <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-              <div className="flex items-center mb-3">
-                <Network className="w-5 h-5 text-blue-600 mr-2" />
-                <strong className="text-blue-800">Cloud Computing</strong>
-              </div>
-              <p className="text-sm text-gray-700">
-                Distributed Systems, Cloud Architecture, Virtualization, DevOps
+              <p className="text-gray-700">
+                Upon completion of the program, students will develop
+                specialized skills in applying deep learning techniques to
+                specific domains such as computer vision, natural language
+                processing, reinforcement learning, and demonstrating practical
+                expertise in tailored applications.
               </p>
             </div>
           </div>
         ),
       },
     ],
+    // M.Tech specific table
+    curriculumTable: (
+      <div className="mt-12">
+        <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+          <a href="https://gmu.ac.in/GMBSdeptprog">
+            {" "}
+            M.Tech Curriculum Resources
+          </a>
+        </h3>
+
+        <p className="text-sm text-gray-600 mt-4 text-center">
+          Click on "View" to access detailed curriculum resources for M.Tech
+          program
+        </p>
+      </div>
+    ),
   },
 };
 
@@ -349,7 +598,7 @@ const Programs = () => {
             transition={{ delay: 0.2, duration: 0.7 }}
             className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg"
           >
-            Programs Offered
+            Degree Programs
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -357,8 +606,8 @@ const Programs = () => {
             transition={{ delay: 0.4, duration: 0.7 }}
             className="max-w-2xl text-xl opacity-95 font-light"
           >
-            Explore our comprehensive Computer Science programs designed to
-            build future-ready innovators, researchers, and leaders.
+            Explore our comprehensive Computer Science degrees designed to build
+            future-ready innovators, researchers, and leaders.
           </motion.p>
         </div>
       </motion.section>
@@ -392,7 +641,7 @@ const Programs = () => {
       </motion.div>
 
       {/* Program Content */}
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-6xl mx-auto px-4 py-12">
         <motion.div
           key={activeProgram}
           initial={{ opacity: 0, x: 20 }}
@@ -471,11 +720,20 @@ const Programs = () => {
           ))}
         </motion.div>
 
-        {/* Stats Section */}
+        {/* Curriculum Resources Table - Program Specific */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
+        >
+          {currentProgram.curriculumTable}
+        </motion.div>
+
+        {/* Stats Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.0, duration: 0.6 }}
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
         >
           <div className="bg-white p-6 rounded-2xl border border-blue-100 text-center shadow-sm">

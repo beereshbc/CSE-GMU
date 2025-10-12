@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { achievementData } from "../assets/assets";
 
 const FacultyAchievements = () => {
   // Enhanced animation variants
@@ -57,57 +58,6 @@ const FacultyAchievements = () => {
       },
     },
   };
-
-  const achievementData = [
-    {
-      id: 1,
-      badgeIcon: "fas fa-book",
-      badgeText: "Research",
-      imageSrc:
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      imageAlt: "Research Papers",
-      title: "Research & Publications",
-      description:
-        "Our faculty have published numerous research papers in reputed journals, contributing to advancements in computer science and technology.",
-      stats: "50+ Papers",
-    },
-    {
-      id: 2,
-      badgeIcon: "fas fa-lightbulb",
-      badgeText: "Innovation",
-      imageSrc:
-        "https://images.unsplash.com/photo-1516321310762-479e93c67b9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      imageAlt: "AI/ML Projects",
-      title: "Guiding Projects & Innovation",
-      description:
-        "Faculty guide students in cutting-edge projects in AI, ML, IoT, and Cybersecurity, fostering innovation and practical learning.",
-      stats: "100+ Projects",
-    },
-    {
-      id: 3,
-      badgeIcon: "fas fa-graduation-cap",
-      badgeText: "Academic",
-      imageSrc:
-        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      imageAlt: "Curriculum Development",
-      title: "Academic Quality Initiatives",
-      description:
-        "Our faculty contribute to curriculum development, NBA/OBE practices, and IQAC activities to ensure academic excellence.",
-      stats: "15+ Years Excellence",
-    },
-    {
-      id: 4,
-      badgeIcon: "fas fa-handshake",
-      badgeText: "Collaboration",
-      imageSrc:
-        "https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      imageAlt: "Industry Collaboration",
-      title: "Industry Collaboration & Grants",
-      description:
-        "Faculty secure research grants and collaborate with industries to bridge the gap between academia and practice.",
-      stats: "₹2Cr+ Grants",
-    },
-  ];
 
   const handleReadMore = (title) => {
     console.log("Navigating to:", title);
@@ -211,18 +161,18 @@ const FacultyAchievements = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Faculty members of the Department of CSE have consistently
-            contributed to research, innovation, and academic excellence. They
-            have published research papers in reputed journals, guided student
-            projects in cutting-edge areas like AI, ML, IoT, and Cybersecurity,
-            and actively engaged in academic quality initiatives such as
-            curriculum development, NBA/OBE practices, and IQAC activities.
+            Our distinguished faculty members have achieved remarkable
+            milestones in research, innovation, and academic excellence. From
+            securing patents and international recognition to qualifying for
+            prestigious certifications and winning awards, our faculty continues
+            to inspire students and contribute to the advancement of computer
+            science education.
           </motion.p>
         </div>
       </motion.section>
 
-      {/* Enhanced Faculty Achievements Section */}
-      <section className="py-5 bg-gradient-to-b from-blue-25 to-white">
+      {/* Enhanced Faculty Achievements Section with Actual Data */}
+      <section className="py-20 bg-gradient-to-b from-blue-25 to-white">
         <div className="container max-w-7xl mx-auto px-4">
           <motion.div
             className="text-center mb-20"
@@ -232,17 +182,17 @@ const FacultyAchievements = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
-              Our Faculty's Contributions
+              Our Faculty's Remarkable Achievements
             </h2>
             <div className="w-20 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto font-light tracking-wide">
-              Discover the remarkable achievements of our CSE faculty in
-              research, innovation, and academic excellence.
+              Discover the outstanding accomplishments of our CSE faculty in
+              research, patents, certifications, and academic excellence.
             </p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -255,7 +205,7 @@ const FacultyAchievements = () => {
                 variants={itemVariants}
               >
                 <motion.div
-                  className="bg-white rounded-xl shadow-sm overflow-hidden relative border border-gray-100 hover:border-blue-100 transition-colors duration-300"
+                  className="bg-white rounded-xl shadow-sm overflow-hidden relative border border-gray-100 hover:border-blue-100 transition-colors duration-300 h-full flex flex-col"
                   variants={cardVariants}
                   whileHover="hover"
                 >
@@ -282,11 +232,11 @@ const FacultyAchievements = () => {
                   </div>
 
                   {/* Enhanced Content Area */}
-                  <div className="card-content p-5">
+                  <div className="card-content p-5 flex flex-col flex-grow">
                     <h3 className="text-lg font-semibold text-gray-900 mb-3 tracking-tight leading-tight">
                       {achievement.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4 font-light tracking-wide">
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4 font-light tracking-wide whitespace-pre-line flex-grow">
                       {achievement.description}
                     </p>
 
@@ -300,7 +250,7 @@ const FacultyAchievements = () => {
                     {/* Enhanced Button */}
                     <motion.button
                       onClick={() => handleReadMore(achievement.title)}
-                      className="w-full flex items-center justify-between text-blue-600 font-medium text-sm hover:text-blue-800 transition-all duration-300 group/btn py-2 px-1 border-t border-gray-100"
+                      className="w-full flex items-center justify-between text-blue-600 font-medium text-sm hover:text-blue-800 transition-all duration-300 group/btn py-2 px-1 border-t border-gray-100 mt-auto"
                       whileHover={{ x: 0 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -320,49 +270,6 @@ const FacultyAchievements = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* Enhanced Call to Action Section */}
-      <motion.section
-        className="py-20 bg-gradient-to-r from-blue-600 to-blue-700 border-t border-blue-500"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <div className="container max-w-4xl mx-auto px-4 text-center">
-          <motion.div
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 tracking-tight">
-              Join Our Academic Excellence
-            </h3>
-            <motion.p
-              className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto font-light tracking-wide"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              Be part of our innovative community where faculty achievements
-              drive technological advancement and academic excellence.
-            </motion.p>
-            <motion.button
-              className="bg-white text-blue-600 px-8 py-3.5 rounded-xl font-semibold text-base hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl border border-white/20"
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 20px 40px -10px rgba(255, 255, 255, 0.3)",
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Explore More Achievements
-            </motion.button>
-          </motion.div>
-        </div>
-      </motion.section>
     </div>
   );
 };

@@ -12,287 +12,75 @@ import {
   Award,
   BookMarked,
 } from "lucide-react";
+import { faculties } from "../assets/assets";
 
-export const faculties = [
-  {
-    name: "Dr. SHIVANAGOWDA G M",
-    position: "Professor, Program Coordinator and Associate Director ERP",
-    img: "/images/Dr. SHIVANAGOWDA G M.jpg",
-    coverImg: "/images/Dr. SHIVANAGOWDA G M.jpg",
-    about:
-      "Expert in computer science with extensive academic and administrative experience. Currently serving as Program Coordinator and Associate Director ERP at GM University.",
-    social: {
-      linkedin: "https://www.linkedin.com/in/shivanagowda-g-m-0b54605/",
-      Scholar: "https://scholar.google.com/citations?user=shivanagowda",
-      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123456",
-    },
-    experience: [
-      {
-        year: "2015",
-        title: "Program Coordinator",
-        company: "GM University",
-        description:
-          "Oversaw academic programs and curriculum development for computer science department.",
-      },
-      {
-        year: "2018",
-        title: "Associate Director ERP",
-        company: "GM University",
-        description:
-          "Managed enterprise resource planning systems and digital infrastructure.",
-      },
-      {
-        year: "2020",
-        title: "Professor",
-        company: "GM University",
-        description:
-          "Teaching advanced computer science courses and mentoring graduate students.",
-      },
-    ],
-    contact: {
-      address: "Computer Science Building, GM University",
-      phone: "(555) 123-4567",
-      email: "shivanagowda@university.edu",
-    },
-  },
-  {
-    name: "Dr. CHETHAN CHANDRA S BASAVARADDI",
-    position: "Associate Professor",
-    img: "/images/Dr. CHETHAN CHANDRA S BASAVARADDI.jpg",
-    coverImg: "/images/Dr. CHETHAN CHANDRA S BASAVARADDI.jpg",
-    about:
-      "Distinguished academic with multiple degrees including Ph.D. and D.Litt. Passionate about research and student development in computer science.",
-    social: {
-      linkedin:
-        "https://www.linkedin.com/in/dr-chethan-chandra-s-basavaraddi-5b523750/",
-      Scholar: "https://scholar.google.com/citations?user=chethan",
-      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123457",
-    },
-    experience: [
-      {
-        year: "2017",
-        title: "Associate Professor",
-        company: "GM University",
-        description:
-          "Teaching undergraduate and graduate courses in computer science.",
-      },
-      {
-        year: "2019",
-        title: "Research Lead",
-        company: "Tech Research Center",
-        description:
-          "Led interdisciplinary research projects in emerging technologies.",
-      },
-    ],
-    contact: {
-      address: "Computer Science Building, GM University",
-      phone: "(555) 123-4568",
-      email: "chethan@university.edu",
-    },
-  },
-  {
-    name: "SANTOSHKUMAR M",
-    position: "Assistant Professor, Deputy Director Student Affairs",
-    img: "/images/SANTOSHKUMAR M.jpg",
-    coverImg: "/images/SANTOSHKUMAR M.jpg",
-    about:
-      "Dedicated educator pursuing Ph.D. while serving as Deputy Director of Student Affairs. Committed to student success and academic excellence.",
-    social: {
-      linkedin: "https://www.linkedin.com/in/santosh-mahendrakar-6908a299/",
-      Scholar: "https://scholar.google.com/citations?user=santosh",
-      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123458",
-    },
-    experience: [
-      {
-        year: "2018",
-        title: "Assistant Professor",
-        company: "GM University",
-        description:
-          "Teaching computer science courses and supervising student projects.",
-      },
-      {
-        year: "2020",
-        title: "Deputy Director Student Affairs",
-        company: "GM University",
-        description:
-          "Managed student activities, welfare programs and extracurricular initiatives.",
-      },
-    ],
-    contact: {
-      address: "Student Affairs Office, GM University",
-      phone: "(555) 123-4569",
-      email: "santosh@university.edu",
-    },
-  },
-  {
-    name: "NAYANA K",
-    position: "Assistant Professor, Program Director of M.Tech - DL",
-    img: "/images/NAYANA K.jpg",
-    coverImg: "/images/NAYANA K.jpg",
-    about:
-      "Specialized in deep learning and artificial intelligence. Currently directing M.Tech program in Deep Learning while pursuing Ph.D.",
-    social: {
-      linkedin: "https://www.linkedin.com/in/nayana-k-921205371",
-      Scholar: "https://scholar.google.com/citations?user=nayana",
-      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123459",
-    },
-    experience: [
-      {
-        year: "2019",
-        title: "Assistant Professor",
-        company: "GM University",
-        description:
-          "Teaching courses in machine learning and artificial intelligence.",
-      },
-      {
-        year: "2021",
-        title: "Program Director M.Tech - DL",
-        company: "GM University",
-        description:
-          "Oversaw curriculum development and program administration for Deep Learning specialization.",
-      },
-    ],
-    contact: {
-      address: "AI Research Center, GM University",
-      phone: "(555) 123-4570",
-      email: "nayana@university.edu",
-    },
-  },
-  {
-    name: "KAVYASHREE P N",
-    position: "Assistant Professor",
-    img: "/images/KAVYASHREE P N.jpg",
-    coverImg: "/images/KAVYASHREE P N.jpg",
-    about:
-      "Enthusiastic educator and researcher pursuing Ph.D. Focused on innovative teaching methods and student mentorship.",
-    social: {
-      linkedin: "https://www.linkedin.com/in/kavyashree-p-n-954b791b9",
-      Scholar: "https://scholar.google.com/citations?user=kavyashree",
-      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123460",
-    },
-    experience: [
-      {
-        year: "2020",
-        title: "Assistant Professor",
-        company: "GM University",
-        description:
-          "Teaching computer science fundamentals and advanced topics.",
-      },
-    ],
-    contact: {
-      address: "Computer Science Building, GM University",
-      phone: "(555) 123-4571",
-      email: "kavyashree@university.edu",
-    },
-  },
-  {
-    name: "RANJITHA D S",
-    position: "Assistant Professor",
-    img: "/images/RANJITHA D S.jpg",
-    coverImg: "/images/RANJITHA D S.jpg",
-    about:
-      "Computer science educator with expertise in software engineering and database systems. Committed to practical learning approaches.",
-    social: {
-      linkedin: "https://www.linkedin.com/in/ranjitha-ds-9127a716a",
-      Scholar: "https://scholar.google.com/citations?user=ranjitha",
-      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123461",
-    },
-    experience: [
-      {
-        year: "2019",
-        title: "Assistant Professor",
-        company: "GM University",
-        description:
-          "Teaching software engineering and database management systems.",
-      },
-    ],
-    contact: {
-      address: "Computer Science Building, GM University",
-      phone: "(555) 123-4572",
-      email: "ranjitha@university.edu",
-    },
-  },
-  {
-    name: "NANDITHA G",
-    position: "Assistant Professor",
-    img: "/images/NANDITHA G.jpg",
-    coverImg: "/images/NANDITHA G.jpg",
-    about:
-      "Computer science educator focused on web technologies and programming fundamentals.",
-    social: {
-      linkedin: "https://www.linkedin.com/in/nanditha-g-b490321b3",
-      Scholar: "https://scholar.google.com/citations?user=nanditha",
-      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123462",
-    },
-    experience: [
-      {
-        year: "2020",
-        title: "Assistant Professor",
-        company: "GM University",
-        description: "Teaching web development and programming courses.",
-      },
-    ],
-    contact: {
-      address: "Computer Science Building, GM University",
-      phone: "(555) 123-4573",
-      email: "nanditha@university.edu",
-    },
-  },
-  {
-    name: "RAVINANDAN JANNU",
-    position: "Assistant Professor",
-    img: "/images/RAVINANDAN JANNU.jpg",
-    coverImg: "/images/RAVINANDAN JANNU.jpg",
-    about:
-      "Computer applications expert with strong background in programming and software development.",
-    social: {
-      linkedin:
-        "https://www.linkedin.com/in/ravinandan-jannu-assistant-professor-151168384",
-      Scholar: "https://scholar.google.com/citations?user=ravinandan",
-      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123463",
-    },
-    experience: [
-      {
-        year: "2018",
-        title: "Assistant Professor",
-        company: "GM University",
-        description: "Teaching computer applications and programming courses.",
-      },
-    ],
-    contact: {
-      address: "Computer Applications Department, GM University",
-      phone: "(555) 123-4574",
-      email: "ravinandan@university.edu",
-    },
-  },
-  {
-    name: "Miss Niveditha T Naik",
-    position: "Assistant Professor",
-    img: "/images/Niveditha.jpeg",
-    coverImg: "/images/Niveditha.jpeg",
-    about:
-      "Computer science educator with focus on practical applications and student skill development.",
-    social: {
-      linkedin: "https://www.linkedin.com/in/niveditha-t-naik-88b993213",
-      Scholar: "https://scholar.google.com/citations?user=niveditha",
-      Vidwan: "https://vidwan.inflibnet.ac.in/profile/123464",
-    },
-    experience: [
-      {
-        year: "2021",
-        title: "Assistant Professor",
-        company: "GM University",
-        description:
-          "Teaching computer science courses and mentoring students.",
-      },
-    ],
-    contact: {
-      address: "Computer Science Building, GM University",
-      phone: "(555) 123-4575",
-      email: "niveditha@university.edu",
-    },
-  },
-];
+// Dedicated Faculty Card Component
+const FacultyCard = ({ faculty, onClick }) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+    whileHover={{
+      scale: 1.02,
+      transition: { duration: 0.2 },
+    }}
+    className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer border border-blue-100 overflow-hidden"
+    onClick={onClick}
+  >
+    <div className="p-4">
+      {/* Compact Layout with Image and Text Side by Side */}
+      <div className="flex items-center space-x-4">
+        {/* Profile Image - Smaller */}
+        <div className="flex-shrink-0">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 p-0.5">
+            <img
+              src={faculty.img}
+              alt={faculty.name}
+              className="w-full h-full rounded-full object-cover border-2 border-white"
+            />
+          </div>
+        </div>
+
+        {/* Text Content */}
+        <div className="flex-1 min-w-0">
+          <h3 className="text-sm font-semibold text-blue-900 mb-1 line-clamp-1">
+            {faculty.name}
+          </h3>
+          <p className="text-xs text-blue-600 mb-2 line-clamp-2 leading-tight">
+            {faculty.position}
+          </p>
+
+          {/* Quick Social Links - Very Compact */}
+          <div className="flex space-x-2">
+            {faculty.social.linkedin && faculty.social.linkedin !== "#" && (
+              <a
+                href={faculty.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="text-blue-500 hover:text-blue-700 transition-colors"
+                title="LinkedIn"
+              >
+                <Linkedin className="w-3 h-3" />
+              </a>
+            )}
+            {faculty.social.Scholar && faculty.social.Scholar !== "#" && (
+              <a
+                href={faculty.social.Scholar}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="text-blue-500 hover:text-blue-700 transition-colors"
+                title="Google Scholar"
+              >
+                <GraduationCap className="w-3 h-3" />
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  </motion.div>
+);
 
 const Faculty = () => {
   const [selectedFaculty, setSelectedFaculty] = useState(null);
@@ -454,78 +242,25 @@ const Faculty = () => {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-12"
+            className="text-center mb-8"
           >
-            <h2 className="text-3xl font-bold text-blue-900 mb-4">
+            <h2 className="text-2xl font-bold text-blue-900 mb-3">
               Our Academic Team
             </h2>
-            <p className="text-lg text-blue-700 max-w-2xl mx-auto">
+            <p className="text-base text-blue-700 max-w-2xl mx-auto">
               Dedicated faculty members with extensive experience in teaching,
               research, and innovation.
             </p>
           </motion.div>
 
-          {/* Faculty Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {/* Compact Faculty Grid - Responsive Layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {faculties.map((faculty, index) => (
-              <motion.div
+              <FacultyCard
                 key={faculty.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.2 },
-                }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-blue-100"
+                faculty={faculty}
                 onClick={() => openDetailView(faculty)}
-              >
-                <div className="p-6">
-                  {/* Profile Image */}
-                  <div className="flex justify-center mb-4">
-                    <div className="relative">
-                      <div className="w-20 h-20 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 p-1">
-                        <img
-                          src={faculty.img}
-                          alt={faculty.name}
-                          className="w-full h-full rounded-full object-cover border-2 border-white"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Name and Position */}
-                  <div className="text-center">
-                    <h3 className="text-lg font-semibold text-blue-900 mb-1 line-clamp-2">
-                      {faculty.name}
-                    </h3>
-                    <p className="text-sm text-blue-600 mb-4 line-clamp-2">
-                      {faculty.position}
-                    </p>
-                  </div>
-
-                  {/* Quick Stats */}
-                  <div className="flex justify-between items-center text-center border-t border-blue-50 pt-4">
-                    <div>
-                      <div className="text-blue-900 font-semibold">
-                        {faculty.experience.length}
-                      </div>
-                      <div className="text-xs text-blue-600">Experience</div>
-                    </div>
-                    <div className="h-8 w-px bg-blue-100"></div>
-                    <div>
-                      <div className="text-blue-900 font-semibold">PhD</div>
-                      <div className="text-xs text-blue-600">Qualification</div>
-                    </div>
-                    <div className="h-8 w-px bg-blue-100"></div>
-                    <div>
-                      <button className="text-xs bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-full transition-colors">
-                        View Profile
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+              />
             ))}
           </div>
         </div>
@@ -550,25 +285,25 @@ const Faculty = () => {
             >
               {/* Header with Cover Image */}
               <div className="relative">
-                <div className="h-48 bg-gradient-to-r from-blue-400 to-blue-600">
+                <div className="h-48 border-b-2 border-blue-500 bg-blue-300 opacity-90">
                   <img
                     src={selectedFaculty.coverImg}
                     alt="Cover"
-                    className="w-full h-full object-cover mix-blend-overlay"
+                    className="w-full h-full object-cover mix-blend-overlay z-20"
                   />
                 </div>
 
                 {/* Close Button */}
                 <button
                   onClick={closeDetailView}
-                  className="absolute top-4 right-4 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition-all duration-200"
+                  className="absolute top-4 right-4 bg-blue-800 bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition-all duration-200"
                 >
                   <X className="w-5 h-5 text-white" />
                 </button>
 
                 {/* Profile Image */}
                 <div className="absolute -bottom-12 left-8">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 p-1">
+                  <div className="w-40 h-40 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 p-1">
                     <img
                       src={selectedFaculty.img}
                       alt={selectedFaculty.name}

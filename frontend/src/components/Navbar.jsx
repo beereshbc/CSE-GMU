@@ -14,6 +14,7 @@ import {
   Mail,
   User,
   ChevronDown,
+  BarChart3,
 } from "lucide-react";
 
 const Navbar = () => {
@@ -27,52 +28,57 @@ const Navbar = () => {
   // Group links by category for better organization
   const linkGroups = {
     "About & Programs": [
-      { name: "About", path: "/about", icon: <Home size={18} /> },
-      { name: "Programs", path: "/programs", icon: <BookOpen size={18} /> },
-      { name: "Admissions", path: "/admissions", icon: <User size={18} /> },
+      { name: "About", path: "/about", icon: <Home size={16} /> },
+      { name: "Programs", path: "/programs", icon: <BookOpen size={16} /> },
+      { name: "Admissions", path: "/admissions", icon: <User size={16} /> },
     ],
     Academics: [
-      { name: "Faculty", path: "/faculty", icon: <Users size={18} /> },
-      { name: "BoS", path: "/bos", icon: <Users size={18} /> },
+      { name: "Faculty", path: "/faculty", icon: <Users size={16} /> },
+      { name: "BoS", path: "/bos", icon: <Users size={16} /> },
       {
         name: "Learning Resources",
         path: "/learning-resources",
-        icon: <BookOpen size={18} />,
+        icon: <BookOpen size={16} />,
       },
-      { name: "IQAC", path: "/iqac", icon: <Award size={18} /> },
+      { name: "IQAC", path: "/iqac", icon: <Award size={16} /> },
+      {
+        name: "Benchmark",
+        path: "/benchmarks",
+        icon: <BarChart3 size={16} />,
+      },
     ],
     "Research & Projects": [
       {
         name: "Research Publications",
         path: "/research-publications",
-        icon: <FileText size={18} />,
+        icon: <FileText size={16} />,
       },
       {
         name: "Student Projects",
         path: "/student-projects",
-        icon: <Award size={18} />,
+        icon: <Award size={16} />,
       },
     ],
     Achievements: [
       {
         name: "Faculty Achievements",
         path: "/faculty-achievements",
-        icon: <Award size={18} />,
+        icon: <Award size={16} />,
       },
       {
         name: "Student Achievements",
         path: "/student-achievements",
-        icon: <Award size={18} />,
+        icon: <Award size={16} />,
       },
       {
         name: "Internships & Placements",
         path: "/student-internships-placements",
-        icon: <Briefcase size={18} />,
+        icon: <Briefcase size={16} />,
       },
     ],
     Community: [
-      { name: "Alumni", path: "/alumni", icon: <GraduationCap size={18} /> },
-      { name: "Contact Us", path: "/contact-us", icon: <Mail size={18} /> },
+      { name: "Alumni", path: "/alumni", icon: <GraduationCap size={16} /> },
+      { name: "Contact Us", path: "/contact-us", icon: <Mail size={16} /> },
     ],
   };
 
@@ -82,17 +88,18 @@ const Navbar = () => {
     setActiveDropdown(null);
   }, [location]);
 
-  // Scroll animation - exact same as reference
+  // Scroll animation - optimized for mobile
   useEffect(() => {
     const handleScroll = () => {
       if (document.body.scrollHeight <= window.innerHeight) {
         controls.start({ opacity: 1, y: 0 });
         return;
       }
-      if (window.scrollY > 100) {
+      if (window.scrollY > 50) {
+        // Reduced from 100 to 50 for mobile
         controls.start({ opacity: 1, y: 0 });
       } else {
-        controls.start({ opacity: 0, y: -50 });
+        controls.start({ opacity: 0, y: -30 }); // Reduced from -50 to -30
       }
     };
 
@@ -134,30 +141,30 @@ const Navbar = () => {
   return (
     <motion.nav
       animate={controls}
-      initial={{ opacity: 0, y: -50 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      initial={{ opacity: 0, y: -30 }} // Reduced from -50 to -30
+      transition={{ duration: 0.4, ease: "easeOut" }} // Slightly faster transition
       className="fixed top-0 left-0 w-full z-50"
     >
-      {/* Navbar Container - Exact same styling as reference */}
+      {/* Navbar Container - Optimized for mobile */}
       <div
-        className="max-w-6xl mx-4 md:mx-auto flex items-center justify-between px-6 py-3 mt-4
-        border border-blue-300/20 rounded-2xl
-        bg-gradient-to-r from-blue-900/90 to-blue-800/90
+        className="max-w-6xl mx-2 md:mx-auto flex items-center justify-between px-4 py-2 mt-2
+        border border-blue-300/20 rounded-xl md:rounded-2xl
+        bg-gradient-to-r from-blue-900/95 to-blue-800/95
         text-blue-50 backdrop-blur-xl shadow-lg shadow-blue-900/40"
       >
-        {/* Logo */}
+        {/* Logo - Smaller on mobile */}
         <div
-          className="flex items-center gap-2 cursor-pointer"
+          className="flex items-center gap-1 cursor-pointer"
           onClick={handleLogoClick}
         >
-          <GraduationCap className="text-blue-300 drop-shadow-lg" size={22} />
-          <span className="italic font-extrabold text-xl md:text-2xl tracking-wide text-blue-100 drop-shadow">
+          <GraduationCap className="text-blue-300 drop-shadow-lg" size={18} />
+          <span className="italic font-extrabold text-lg md:text-2xl tracking-wide text-blue-100 drop-shadow">
             GMU-CSE
           </span>
         </div>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6">
           {Object.entries(linkGroups).map(([groupName, links]) => (
             <div
               key={groupName}
@@ -167,11 +174,11 @@ const Navbar = () => {
               <button
                 onClick={() => toggleDropdown(groupName)}
                 onMouseEnter={() => setActiveDropdown(groupName)}
-                className="relative flex items-center gap-2 px-2 transition duration-300 group"
+                className="relative flex items-center gap-1 px-2 transition duration-300 group"
               >
-                <span className="font-medium">{groupName}</span>
+                <span className="font-medium text-sm">{groupName}</span>
                 <ChevronDown
-                  size={16}
+                  size={14}
                   className={`transition-transform duration-300 ${
                     activeDropdown === groupName
                       ? "rotate-180 text-blue-300"
@@ -179,30 +186,30 @@ const Navbar = () => {
                   }`}
                 />
                 <span
-                  className="absolute bottom-[-6px] left-0 w-0 h-[2px] bg-blue-
+                  className="absolute bottom-[-4px] left-0 w-0 h-[1px] bg-blue-300
                   transition-all duration-300 group-hover:w-full"
                 ></span>
               </button>
 
               {/* Dropdown Menu */}
               <div
-                className={`absolute top-full left-0 mt-3 w-64 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-blue-200/20 overflow-hidden transition-all duration-300 z-50 ${
+                className={`absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-xl rounded-lg shadow-2xl border border-blue-200/20 overflow-hidden transition-all duration-300 z-50 ${
                   activeDropdown === groupName
                     ? "opacity-100 visible translate-y-0"
                     : "opacity-0 invisible -translate-y-2"
                 }`}
               >
-                <div className="p-4">
-                  <h3 className="font-bold text-blue-800 mb-3 flex items-center gap-2">
-                    <GraduationCap className="w-5 h-5 text-blue-600" />
+                <div className="p-3">
+                  <h3 className="font-bold text-blue-800 mb-2 flex items-center gap-2 text-sm">
+                    <GraduationCap className="w-4 h-4 text-blue-600" />
                     {groupName}
                   </h3>
-                  <div className="space-y-2">
+                  <div className="space-y-1">
                     {links.map((link) => (
                       <button
                         key={link.name}
                         onClick={() => handleDirectNavigation(link.path)}
-                        className={`flex items-center gap-3 w-full text-left px-3 py-2 rounded-lg transition-all duration-200 text-sm ${
+                        className={`flex items-center gap-2 w-full text-left px-2 py-1.5 rounded-md transition-all duration-200 text-xs ${
                           location.pathname === link.path
                             ? "bg-blue-500 text-white font-medium shadow-md"
                             : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
@@ -219,36 +226,36 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="lg:hidden flex items-center gap-3">
+        {/* Mobile Menu Button - Smaller */}
+        <div className="lg:hidden flex items-center gap-2">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-blue-100 focus:outline-none"
+            className="text-blue-100 focus:outline-none p-1"
           >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu - Same styling as reference */}
+      {/* Mobile Menu - More compact */}
       {isMobileMenuOpen && (
         <motion.div
-          initial={{ opacity: 0, y: -15 }}
+          initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.2 }}
           className="lg:hidden bg-gradient-to-br from-blue-900/95 to-blue-800/95 
-          backdrop-blur-xl rounded-xl mx-4 mt-2 p-5 border border-blue-300/20 shadow-xl shadow-blue-900/40"
+          backdrop-blur-xl rounded-lg mx-2 mt-1 p-3 border border-blue-300/20 shadow-xl shadow-blue-900/40"
         >
-          <div className="space-y-4">
+          <div className="space-y-2">
             {Object.entries(linkGroups).map(([groupName, links]) => (
               <div
                 key={groupName}
-                className="border-b border-blue-700/30 last:border-b-0 pb-4 last:pb-0"
+                className="border-b border-blue-700/30 last:border-b-0 pb-2 last:pb-0"
               >
-                <h3 className="text-blue-300 text-sm font-semibold mb-3 uppercase tracking-wide">
+                <h3 className="text-blue-300 text-xs font-semibold mb-2 uppercase tracking-wide">
                   {groupName}
                 </h3>
-                <div className="space-y-2">
+                <div className="space-y-1">
                   {links.map((link) => (
                     <button
                       key={link.name}
@@ -256,7 +263,7 @@ const Navbar = () => {
                         handleDirectNavigation(link.path);
                         setIsMobileMenuOpen(false);
                       }}
-                      className={`flex items-center gap-3 w-full text-left px-3 py-2 rounded-lg transition-colors ${
+                      className={`flex items-center gap-2 w-full text-left px-2 py-1.5 rounded-md transition-colors text-sm ${
                         location.pathname === link.path
                           ? "bg-blue-600/30 text-blue-200 font-semibold"
                           : "text-blue-100 hover:text-blue-200 hover:bg-blue-700/20"

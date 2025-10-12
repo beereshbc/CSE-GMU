@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { assets } from "../assets/assets";
 
 const StudentAchievements = () => {
   useEffect(() => {
@@ -119,8 +120,7 @@ const StudentAchievements = () => {
   const studentAchievements = [
     {
       id: 1,
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      image: assets.Abhiram,
       title: "National-level Vyoma Hackathon",
       students: "Rahul, Abhiram, Yashaswini, Yashwanth",
       department: "Computer Science",
@@ -130,8 +130,7 @@ const StudentAchievements = () => {
     },
     {
       id: 2,
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
+      image: assets.bindu,
       title: "Paper Presentation on Climate Change",
       students: "Bindu C Patil, Shraddha Hiremath",
       department: "Computer Science",
@@ -141,8 +140,7 @@ const StudentAchievements = () => {
     },
     {
       id: 3,
-      image:
-        "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
+      image: assets.Arjun,
       title: "Jain Institute of Technology",
       students: "Innovators",
       department: "",
@@ -150,21 +148,10 @@ const StudentAchievements = () => {
         "Ideathon 2025 was held at Jain College Davangere on 23rd of April for analysis of future stocks and prediction of stocks.",
       hasLink: true,
     },
-    {
-      id: 4,
-      image:
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop",
-      title: "Real-Time Hand Sign Detection",
-      students: "",
-      department: "CSE Department",
-      description:
-        "This project focuses on developing an AI-based system that detects hand signs and translates them into text in real time.",
-      hasLink: false,
-    },
+
     {
       id: 5,
-      image:
-        "https://images.unsplash.com/photo-1551836026-d5c88ac5c73d?w=600&h=400&fit=crop",
+      image: assets.Sachin,
       title: "NeuroCalm Project – National Hackathon",
       students: "Sachin, Abhiram, Prajwal, Sudharshan",
       department: "",
@@ -174,8 +161,7 @@ const StudentAchievements = () => {
     },
     {
       id: 6,
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      image: assets.Shreya,
       title: "AI Investment Strategy Predictor",
       students: "Likitha C Y, Harshitha H M, Shreya B Yadav, Lakshmi B C",
       department: "",
@@ -185,8 +171,7 @@ const StudentAchievements = () => {
     },
     {
       id: 7,
-      image:
-        "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&h=400&fit=crop",
+      image: assets.Sinchana,
       title: "Code Quality Visualizer Project",
       students: "Sinchana M, Rohini KG, Pragathi S P, Prakruthi KN",
       department: "",
@@ -194,119 +179,37 @@ const StudentAchievements = () => {
         "At Hackmitten 2.0, our team developed Code Quality Visualizer—a tool for static analysis of code repositories.",
       hasLink: false,
     },
-    {
-      id: 8,
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      title: "Smart Campus Navigation System",
-      students: "Rohan Kumar, Priya Sharma, Ankit Verma",
-      department: "Computer Science",
-      description:
-        "Developed an AI-powered campus navigation system that helps students navigate efficiently using augmented reality.",
-      hasLink: true,
-    },
-    {
-      id: 9,
-      image:
-        "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=400&fit=crop",
-      title: "Blockchain Certificate Verification",
-      students: "Neha Patel, Rajesh Kumar, Sneha Singh",
-      department: "Information Technology",
-      description:
-        "Implemented a blockchain solution for secure and tamper-proof verification of academic certificates.",
-      hasLink: true,
-    },
-    {
-      id: 10,
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      title: "IoT-based Smart Agriculture System",
-      students: "Vikram Joshi, Meera Nair, Arjun Reddy",
-      department: "Electronics & Communication",
-      description:
-        "Created an IoT-based smart agriculture monitoring system for real-time crop health monitoring.",
-      hasLink: false,
-    },
-    {
-      id: 11,
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
-      title: "Machine Learning for Medical Diagnosis",
-      students: "Dr. Anjali Mehta, Ravi Shankar, Pooja Gupta",
-      department: "Computer Science & Medical Sciences",
-      description:
-        "Developed a machine learning model that assists in early diagnosis of diseases using medical imaging.",
-      hasLink: true,
-    },
-    {
-      id: 12,
-      image:
-        "https://images.unsplash.com/photo-1551836026-d5c88ac5c73d?w=600&h=400&fit=crop",
-      title: "Renewable Energy Monitoring Dashboard",
-      students: "Sanjay Mishra, Anjali Tiwari, Rohit Das",
-      department: "Electrical Engineering",
-      description:
-        "Built a comprehensive dashboard for monitoring renewable energy consumption across campus.",
-      hasLink: false,
-    },
   ];
 
   const galleryImages = [
     {
-      src: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=400&h=300&fit=crop",
+      src: assets.Abhiram,
       largeSrc:
         "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=600&fit=crop",
-      title: "Annual Awards Ceremony",
-      description: "Recognizing outstanding student achievements",
+      title: "National-level Vyoma Hackathon",
+      description:
+        "Under the leadership of DS Yashaswini, our team created an impactful Generative AI solution aimed at enhancing health and well-being during an intense 24-hour challenge in Hyderabad.",
     },
     {
-      src: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=300&fit=crop",
-      largeSrc:
-        "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800&h=600&fit=crop",
+      src: assets.Shreya,
+      largeSrc: "AI Investment Strategy Predictor",
       title: "National Hackathon Victory",
-      description: "Students celebrating their winning innovation",
+      description:
+        "The AI-Powered Investment Exit Strategy Predictor helps investors make smarter, data-driven exit decisions.",
     },
     {
-      src: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
+      src: assets.Sachin,
       largeSrc:
         "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop",
-      title: "International Research Conference",
+      title: "NeuroCalm Project – National Hackathon",
       description: "Students presenting groundbreaking research",
     },
     {
-      src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop",
+      src: assets.Sinchana,
       largeSrc:
         "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
-      title: "Startup Pitch Competition",
+      title: "Code Quality Visualizer Project",
       description: "Student entrepreneurs securing funding",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=300&fit=crop",
-      largeSrc:
-        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&h=600&fit=crop",
-      title: "Global Competition Success",
-      description: "Team representing GMU on world stage",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=400&h=300&fit=crop",
-      largeSrc:
-        "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=600&fit=crop",
-      title: "Scholarship Award Ceremony",
-      description: "Recognizing academic excellence",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
-      largeSrc:
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop",
-      title: "Innovation Showcase",
-      description: "Students displaying cutting-edge projects",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=400&h=300&fit=crop",
-      largeSrc:
-        "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&h=600&fit=crop",
-      title: "Research Symposium",
-      description: "Students presenting their research findings",
     },
   ];
 

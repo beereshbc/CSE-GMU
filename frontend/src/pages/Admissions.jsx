@@ -16,6 +16,7 @@ import {
   Calendar,
   Send,
 } from "lucide-react";
+import { assets } from "../assets/assets";
 
 const Admissions = () => {
   const handleApplyNow = () => {
@@ -185,7 +186,7 @@ const Admissions = () => {
           >
             {/* Profile Column */}
             <motion.div className="lg:col-span-4 flex" variants={slideInLeft}>
-              <div className="bg-white rounded-3xl p-8 border-2 border-blue-100 shadow-2xl w-full flex flex-col hover:shadow-2xl transition-all duration-300">
+              <div className="bg-white rounded-3xl p-8 border-2 border-blue-200 shadow-2xl w-full flex flex-col hover:shadow-2xl transition-all duration-300">
                 <div className="text-center flex-1">
                   {/* Enhanced Profile Picture */}
                   <motion.div
@@ -194,21 +195,22 @@ const Admissions = () => {
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-cyan-400/20" />
-                    <User className="w-20 h-20 text-blue-600" />
+                    <User className="w-20 h-20 text-blue-600 " />
+                    <img src={assets.Ravinandan_Jannu} alt="" />
                   </motion.div>
 
                   <motion.h3
                     className="text-2xl font-bold text-gray-900 mb-2"
                     variants={fadeInUp}
                   >
-                    Dr. Priya Sharma
+                    Prof. RAVINANDAN JANNU
                   </motion.h3>
                   <motion.p
                     className="text-blue-600 font-semibold text-lg mb-3 flex items-center justify-center gap-2"
                     variants={fadeInUp}
                   >
                     <Briefcase className="w-5 h-5" />
-                    Admissions Officer
+                    Admissions Co-ordinator
                   </motion.p>
                   <motion.p className="text-gray-600 mb-6" variants={fadeInUp}>
                     Department of Computer Science & Engineering
@@ -229,41 +231,18 @@ const Admissions = () => {
                       innovation and endless possibilities."
                     </p>
                   </motion.div>
-
-                  {/* Enhanced Officer Description */}
-                  <motion.div className="text-left flex-1" variants={fadeInUp}>
-                    <h4 className="font-semibold text-gray-900 mb-3 text-lg">
-                      About Dr. Sharma
-                    </h4>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                      With over 12 years of experience in academic counseling
-                      and student admissions, Dr. Priya Sharma specializes in
-                      helping aspiring computer science students find their
-                      perfect academic path. Her expertise ensures every
-                      candidate receives personalized guidance throughout the
-                      admission process.
-                    </p>
-                  </motion.div>
                 </div>
                 <motion.div
                   className="flex gap-3 pt-6 border-t border-gray-100"
                   variants={fadeInUp}
                 >
                   <motion.button
-                    className="flex-1 bg-blue-600 text-white px-5 py-3 rounded-xl text-sm font-semibold hover:bg-blue-700 transition-colors shadow-lg flex items-center justify-center gap-2"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Calendar className="w-4 h-4" />
-                    Schedule Meeting
-                  </motion.button>
-                  <motion.button
                     className="flex-1 border-2 border-blue-600 text-blue-600 px-5 py-3 rounded-xl text-sm font-semibold hover:bg-blue-50 transition-colors flex items-center justify-center gap-2"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     <Send className="w-4 h-4" />
-                    Send Email
+                    <a href="mailto:admissions.cse@gmu.edu">Send Email</a>
                   </motion.button>
                 </motion.div>
               </div>
@@ -305,7 +284,7 @@ const Admissions = () => {
                         {
                           icon: Phone,
                           label: "Phone",
-                          value: "+91-987-654-3210",
+                          value: "+91-906-662-3203",
                         },
                         {
                           icon: Mail,
