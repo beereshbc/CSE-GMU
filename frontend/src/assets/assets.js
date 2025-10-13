@@ -169,9 +169,9 @@ import Stud_work_Sft3 from "../assets/Stud_work_Sft/s3.jpg";
 import Orientation1 from "../assets/Orientation/o1.jpg";
 import Orientation2 from "../assets/Orientation/o2.jpg";
 
-import Seminar1 from "../assets/Seminar/se1.jpg";
-import Seminar2 from "../assets/Seminar/se2.jpg";
-import Seminar3 from "../assets/Seminar/se3.jpg";
+import Seminar1 from "../assets/seminar/se1.JPG";
+import Seminar2 from "../assets/seminar/se2.JPG";
+import Seminar3 from "../assets/seminar/se3.JPG";
 
 import pm1 from "../assets/parents_meet/pm1.jpeg";
 import falcon_logo from "../assets/public-images/falcon-logo.jpeg";
