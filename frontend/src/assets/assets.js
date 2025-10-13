@@ -150,7 +150,6 @@ import sport7 from "../assets/sports/sp7.jpg";
 import sport8 from "../assets/sports/sp8.jpg";
 import sport9 from "../assets/sports/sp9.jpg";
 
-import pb1 from "../assets/pbl/pb1.jpg";
 import pb2 from "../assets/pbl/pb2.jpg";
 import pb3 from "../assets/pbl/pb3.jpg";
 import pb4 from "../assets/pbl/pb4.jpg";
@@ -260,7 +259,7 @@ export const boxData = [
     id: 4,
     title: "Project Based Learning",
     description: "",
-    images: [pb1, pb2, pb3, pb4],
+    images: [pb2, pb3, pb4],
   },
   {
     id: 5,

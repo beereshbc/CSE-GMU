@@ -244,7 +244,10 @@ const Header = () => {
                 playsInline
                 className="w-full h-full object-cover"
               >
-                <source src="/department-video.mp4" type="video/mp4" />
+                <source
+                  src="https://res.cloudinary.com/dzgh3xvgd/video/upload/v1760331595/h6_z6w9qv.mp4"
+                  type="video/mp4"
+                />
                 Your browser does not support the video tag.
               </video>
 
