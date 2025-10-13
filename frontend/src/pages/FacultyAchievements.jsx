@@ -1,8 +1,47 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { achievementData } from "../assets/assets";
+import { achievementData, assets } from "../assets/assets";
 
 const FacultyAchievements = () => {
+  const galleryImages = [
+    {
+      src: assets.FA1,
+
+      title: "",
+      description: "",
+    },
+    {
+      src: assets.FA2,
+
+      title: "",
+      description: "",
+    },
+    {
+      src: assets.FA3,
+
+      title: "",
+      description: "",
+    },
+    {
+      src: assets.FA4,
+
+      title: "",
+      description: "",
+    },
+    {
+      src: assets.SA5,
+
+      title: "",
+      description: "",
+    },
+    {
+      src: assets.SA6,
+
+      title: "",
+      description: "",
+    },
+  ];
+
   // Enhanced animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -192,7 +231,7 @@ const FacultyAchievements = () => {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -220,12 +259,12 @@ const FacultyAchievements = () => {
                   </motion.div>
 
                   {/* Enhanced Image Container */}
-                  <div className="card-image relative overflow-hidden h-48">
+                  <div className="card-image relative overflow-hidden h-80">
                     <motion.img
                       src={achievement.imageSrc}
                       alt={achievement.imageAlt}
                       className="w-full h-full object-cover"
-                      whileHover={{ scale: 1.08 }}
+                      whileHover={{ scale: 0.5 }}
                       transition={{ duration: 0.5 }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -246,28 +285,50 @@ const FacultyAchievements = () => {
                         {achievement.stats}
                       </span>
                     </div>
-
-                    {/* Enhanced Button */}
-                    <motion.button
-                      onClick={() => handleReadMore(achievement.title)}
-                      className="w-full flex items-center justify-between text-blue-600 font-medium text-sm hover:text-blue-800 transition-all duration-300 group/btn py-2 px-1 border-t border-gray-100 mt-auto"
-                      whileHover={{ x: 0 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <span>Learn more</span>
-                      <motion.div
-                        className="flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full group-hover/btn:bg-blue-200 transition-colors duration-300"
-                        whileHover={{ x: 2 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <i className="fas fa-arrow-right text-blue-600 text-xs"></i>
-                      </motion.div>
-                    </motion.button>
                   </div>
                 </motion.div>
               </motion.div>
             ))}
           </motion.div>
+
+          {/* Gallery Section */}
+          <div className="py-16 bg-white mx-4 sm:mx-[6%]">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 relative">
+                  Achievement Moments
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-yellow-500 to-orange-400 rounded-full mt-2"></div>
+                </h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Capturing the memorable moments of success and recognition
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {galleryImages.map((item, index) => (
+                  <div
+                    key={index}
+                    className="gallery-item relative rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 h-64"
+                    onClick={() => openLightbox(item.largeSrc)}
+                  >
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="gallery-overlay absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent text-white p-6">
+                      <div className="gallery-title font-semibold text-lg mb-1">
+                        {item.title}
+                      </div>
+                      <div className="gallery-description text-sm opacity-90">
+                        {item.description}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

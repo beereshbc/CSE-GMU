@@ -436,17 +436,17 @@ const Alumni = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Rahul Verma",
-      role: "Senior Developer",
+      name: "",
+      role: "",
       text: "The GMU alumni community has been instrumental in my career growth. Always ready to help and guide.",
-      company: "Google",
+      company: "",
     },
     {
       id: 2,
-      name: "Sneha Patel",
-      role: "UX Designer",
+      name: "",
+      role: "",
       text: "Amazing network of professionals who genuinely care about each other's success.",
-      company: "Microsoft",
+      company: "",
     },
   ];
 
@@ -674,7 +674,7 @@ const Alumni = () => {
           <SectionHeader
             icon={Users}
             title="Leadership"
-            subtitle="Meet Our Founders"
+            subtitle="Alumni as Entrepreneurs"
             color="blue"
           />
 
@@ -743,24 +743,7 @@ const Alumni = () => {
                   >
                     "{testimonial.text}"
                   </motion.p>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-md">
-                      <span className="text-white font-bold text-xs">
-                        {testimonial.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
-                      </span>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-gray-800 text-base">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-blue-600 font-medium text-sm">
-                        {testimonial.role} • {testimonial.company}
-                      </p>
-                    </div>
-                  </div>
+                  <div className="flex items-center space-x-4"></div>
                 </div>
               </motion.div>
             ))}

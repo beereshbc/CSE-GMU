@@ -27,11 +27,13 @@ const IQAC = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               IQAC & Quality <span className="text-blue-200">Initiatives</span>
             </h1>
-            <p className="text-lg md:text-xl leading-relaxed text-blue-100">
-              The Department of Computer Science & Engineering (CSE) at GM
-              University actively participates in the Internal Quality Assurance
-              Cell (IQAC) framework to promote academic excellence, governance,
-              and continuous improvement.
+            <p className="text-md md:text-lg leading-relaxed text-blue-100">
+              The Department of Computer Science & Engineering (CSE) actively
+              engages in the Internal Quality Assurance Cell (IQAC) framework of
+              GM University to strengthen teaching, learning, and academic
+              governance. The department emphasizes quality enhancement through
+              structured mentoring, data-driven decision-making, and continuous
+              improvement practices.
             </p>
             <button className="bg-white text-blue-700 px-8 py-3 rounded-xl font-semibold hover:bg-blue-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
               Learn More
@@ -112,7 +114,7 @@ const IQAC = () => {
               />
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-blue-900 mb-3 group-hover:text-blue-700 transition-colors">
-                  Mr. Santoshkumar M
+                  Dr. Santoshkumar M
                 </h3>
                 <div className="space-y-3">
                   <p className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors">

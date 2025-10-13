@@ -84,8 +84,9 @@ const BoS = () => {
                       <th className="px-6 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider border-r border-blue-700">
                         Required Designation / Profile
                       </th>
+
                       <th className="px-6 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider">
-                        Preferred From
+                        Name
                       </th>
                     </tr>
                   </thead>
@@ -96,13 +97,15 @@ const BoS = () => {
                         category: "Chairperson",
                         designation: "Head of the Department (HoD)",
                         preferred: "Concerned Department",
+                        name: "Dr. Shivanagowda G. M",
                       },
                       {
                         id: 2,
                         category: "Member Secretary",
                         designation:
-                          "Program Coordinator / DUGC Member Secretary/ Senior Faculty",
+                          "Program Coordinator / DUGC Member Secretary / Senior Faculty",
                         preferred: "Concerned Department",
+                        name: "Prof. Nayana K",
                       },
                       {
                         id: 3,
@@ -110,19 +113,29 @@ const BoS = () => {
                         designation:
                           "Professors / Associate Professors / Senior Faculty",
                         preferred: "Concerned Department",
+                        name: "Dr. Sanjay Pande M. B, Dr. Santosh Kumar, Dr. Chethan Chandra",
+                      },
+                      {
+                        id: 4,
+                        category: "Internal Administrative Members",
+                        designation:
+                          "Placement Officer / Dean (Evaluation) / Other relevant role",
+                        preferred: "Concerned Department / Institution",
+                        name: "Dr. Sanjay Kumar, Dr. Asha K, Dr. Neelambike, Dr. Arun Kumar",
                       },
                       {
                         id: 5,
                         category: "Academic Council Nominee – 1",
                         designation: "Senior Faculty (Professor/Assoc. Prof.)",
                         preferred: "State/Central/Private University",
+                        name: "Dr. R. H. Goudar / Dr. Sreedhar",
                       },
                       {
                         id: 6,
                         category: "Academic Council Nominee – 2",
                         designation: "Senior Faculty (Professor/Assoc. Prof.)",
-                        preferred:
-                          "Autonomous Institution (preferably within State)",
+                        preferred: "Autonomous Institution (within State)",
+                        name: "Dr. Guruprasad H. S, BMSCE, Bangalore",
                       },
                       {
                         id: 7,
@@ -131,6 +144,7 @@ const BoS = () => {
                           "Subject Expert / Associate Professor / Professor",
                         preferred:
                           "Reputed University/Institution (outside State/region)",
+                        name: "Dr. Pavan Kumar, Dept. of CSE, IIIT Dharwad",
                       },
                       {
                         id: 8,
@@ -138,6 +152,7 @@ const BoS = () => {
                         designation: "Senior Professor",
                         preferred:
                           "Any Recognized Institution (nominated by VC)",
+                        name: "Dr. Rajasekhar K, IIT Dharwad",
                       },
                       {
                         id: 9,
@@ -146,6 +161,7 @@ const BoS = () => {
                           "Industry Expert / Senior Alumnus (10+ years experience)",
                         preferred:
                           "Reputed Industry / Alumni (earlier batches)",
+                        name: "Dr. Girish Ithal, Ex-Infosys and Entrepreneur",
                       },
                       {
                         id: 10,
@@ -154,6 +170,7 @@ const BoS = () => {
                           "Recent Alumnus (within last 10–15 years) in Industry/R&D",
                         preferred:
                           "Industry/Research Organization (recent batches alumni)",
+                        name: "Mr. Pranav, Alumni CSE, 2024 Passed Out",
                       },
                     ].map((member, index) => (
                       <tr
@@ -168,8 +185,9 @@ const BoS = () => {
                         <td className="px-6 py-4 text-sm text-gray-700">
                           {member.designation}
                         </td>
+
                         <td className="px-6 py-4 text-sm text-gray-700">
-                          {member.preferred}
+                          {member.name}
                         </td>
                       </tr>
                     ))}

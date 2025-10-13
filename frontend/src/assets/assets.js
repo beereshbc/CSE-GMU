@@ -171,6 +171,25 @@ import Stud_work_Sft3 from "../assets/Stud_work_Sft/s3.jpg";
 import Orientation1 from "../assets/Orientation/o1.jpg";
 import Orientation2 from "../assets/Orientation/o2.jpg";
 
+import Seminar1 from "../assets/Seminar/se1.jpg";
+import Seminar2 from "../assets/Seminar/se2.jpg";
+import Seminar3 from "../assets/Seminar/se3.jpg";
+
+import pm1 from "../assets/parents_meet/pm1.jpeg";
+import falcon_logo from "../assets/public-images/falcon-logo.jpeg";
+
+import FA1 from "../assets/faculty_achiv/FA1.jpeg";
+import FA2 from "../assets/faculty_achiv/FA2.jpeg";
+import FA3 from "../assets/faculty_achiv/FA3.jpeg";
+import FA4 from "../assets/faculty_achiv/FA4.jpeg";
+
+import SA1 from "../assets/Stud_Achiv/SA1.jpeg";
+import SA2 from "../assets/Stud_Achiv/SA2.jpeg";
+import SA3 from "../assets/Stud_Achiv/SA3.jpeg";
+import SA4 from "../assets/Stud_Achiv/SA4.jpeg";
+import SA5 from "../assets/Stud_Achiv/SA5.jpeg";
+import SA6 from "../assets/Stud_Achiv/SA6.jpeg";
+
 export const assets = {
   hod_img,
   gmu_logo,
@@ -182,6 +201,7 @@ export const assets = {
   AY2122,
   AY2223,
   KAVYASHREE_p_N,
+  falcon_logo,
 
   p1,
   p2,
@@ -203,49 +223,61 @@ export const assets = {
   Sachin,
   Shreya,
   Sinchana,
+
+  FA1,
+  FA2,
+  FA3,
+  FA4,
+
+  SA1,
+  SA2,
+  SA3,
+  SA4,
+  SA5,
+  SA6,
 };
 
 export const boxData = [
   {
     id: 1,
     title: "Lecture",
-    description: "Professor delivering a lecture",
+    description: "",
     images: [Lec1, Lec2, Lec3],
   },
   {
     id: 2,
     title: "Laboratory",
-    description: "Student performing a test",
+    description: "",
     images: [lab1, lab2, lab3, lab4, lab5, lab6],
   },
   {
     id: 3,
     title: "Workshop",
-    description: "Student working on a modern machine",
+    description: "",
     images: [Orientation1, Orientation2, Orientation1],
   },
   {
     id: 4,
     title: "Project Based Learning",
-    description: "Picture with student Group",
+    description: "",
     images: [pb1, pb2, pb3, pb4],
   },
   {
     id: 5,
     title: "Software Development",
-    description: "Students working on Software",
+    description: "",
     images: [Stud_work_Sft1, Stud_work_Sft2, Stud_work_Sft3],
   },
-  {
-    id: 6,
-    title: "Final Year Project",
-    description: "Students working on Final year project",
-    images: [],
-  },
+  // {
+  //   id: 6,
+  //   title: "Final Year Project",
+  //   description: "Students working on Final year project",
+  //   images: [],
+  // },
   {
     id: 7,
     title: "Hackathon/Ignitron",
-    description: "Coding competition event",
+    description: "",
     images: [
       hack1,
       hack2,
@@ -265,49 +297,49 @@ export const boxData = [
   {
     id: 8,
     title: "Presentation",
-    description: "Students making a Presentation",
-    images: [],
+    description: "",
+    images: [Seminar1, Seminar2, Seminar3],
   },
   {
     id: 9,
     title: "Students-Parents Meet",
-    description: "Interaction with parents",
-    images: [],
+    description: "",
+    images: [pm1],
   },
   {
     id: 10,
     title: "Cultural",
-    description: "Interaction with parents",
+    description: "",
     images: [cult1, cult2, cult3, cult4, cult5, cult6, cult7, cult8],
   },
   {
     id: 11,
-    title: "CD",
-    description: "Professor delivering a lecture",
+    title: "Campus Drive",
+    description: "",
     images: [CD1, CD2, CD3, CD4, CD5, CD6],
   },
   {
     id: 12,
-    title: "Laboratory",
-    description: "Student performing a test",
+    title: "Yoga",
+    description: "",
     images: [yoga1, yoga2, yoga3, yoga4, yoga5],
   },
   {
     id: 13,
     title: "Internship",
-    description: "Student working on a modern machine",
+    description: "",
     images: [intern1, intern2, intern3, intern4, intern5, intern6],
   },
   {
     id: 14,
-    title: "Student Acjhivement",
-    description: "Picture with student Group",
+    title: "Student Achivements",
+    description: "",
     images: [Abhiram, Arjun, bindu, Priyanka, Sachin, Shreya, Sinchana],
   },
   {
     id: 15,
     title: "Sports",
-    description: "Students working on Software",
+    description: "",
     images: [
       sport1,
       sport2,
@@ -322,71 +354,70 @@ export const boxData = [
   },
   {
     id: 16,
-    title: "NAtional conf",
-    description: "Students working on Final year project",
+    title: "National conference",
+    description: "",
     images: [National_conf1, National_conf2, National_conf3, National_conf4],
   },
-  {
-    id: 17,
-    title: "Oria",
-    description: "Coding competition event",
-    images: [
-      hack1,
-      hack2,
-      hack3,
-      hack4,
-      hack5,
-      hack6,
-      hack7,
-      hack8,
-      hack9,
-      hack10,
-      hack11,
-      hack12,
-      hack13,
-    ],
-  },
-  {
-    id: 18,
-    title: "Presentation",
-    description: "Students making a Presentation",
-    images: [],
-  },
-  {
-    id: 19,
-    title: "Students-Parents Meet",
-    description: "Interaction with parents",
-    images: [],
-  },
-  {
-    id: 20,
-    title: "Students-Parents Meet",
-    description: "Interaction with parents",
-    images: [],
-  },
+  // {
+  //   id: 17,
+  //   title: "Oriantaion",
+  //   description: "Coding competition event",
+  //   images: [
+  //     hack1,
+  //     hack2,
+  //     hack3,
+  //     hack4,
+  //     hack5,
+  //     hack6,
+  //     hack7,
+  //     hack8,
+  //     hack9,
+  //     hack10,
+  //     hack11,
+  //     hack12,
+  //     hack13,
+  //   ],
+  // },
+  // {
+  //   id: 18,
+  //   title: "Presentation",
+  //   description: "Students making a Presentation",
+  //   images: [],
+  // },
+  // {
+  //   id: 19,
+  //   title: "Students-Parents Meet",
+  //   description: "Interaction with parents",
+  //   images: [],
+  // },
+  // {
+  //   id: 20,
+  //   title: "Students-Parents Meet",
+  //   description: "Interaction with parents",
+  //   images: [],
+  // },
 ];
 
 export const slides = [
   {
     image: hero1,
     title: "Neuro-Prosthetics or Bionic Organs",
-    description:
-      "State-of-the-art laboratories equipped with modern technology",
+    description: "Signal decoding & Feedback generation",
   },
   {
     image: hero3,
     title: "Personalized Learning Environment - Adaptive Learning Paths",
-    description: "Engaging classroom environments with hands-on experience",
+    description: "Virtual Mentors & Emotion-Aware Learning",
   },
   {
     image: hero4,
     title: "High Performance Computing",
-    description: "Cutting-edge research projects and innovation",
+    description: "Heterogeneous Architectures & Hardware–Software Co-Design",
   },
   {
     image: hero7,
     title: "VR Interfaces Engage Multiple Sensory Channels",
-    description: "World-class facilities for technical education",
+    description: "Brain–Computer Interfaces & Locomotion Interfaces",
   },
 ];
 
@@ -520,58 +551,33 @@ export const teamMembers = [
       email: "#",
     },
   },
-  {
-    id: 4,
-    name: "Mr. Keerthi Prasad G",
-    role: "Co-founder & Technical Advisor",
-    image: Alumni2,
-    bio: "Alumni success stories and alumni association activities.",
-    social: {
-      linkedin: "#",
-      github: "#",
-      email: "#",
-    },
-  },
 ];
 
 export const faculties = [
   {
     name: "Dr. Sanjay Pande M. B.",
-    position: "Director , School of Computer Science and Technology",
+    position: "Professor and Director",
     img: Principal,
     coverImg: gmu,
     about:
-      "Dr. Shivanagowda G. M. is a Professor in the Department of Computer Science & Engineering at GM University, Davanagere. He has over two decades of teaching experience, with expertise in Personalized Learning Systems, Human-Computer Interaction, and Automated Software Engineering. His passion lies in innovating pedagogy and designing digital ecosystems that enhance personalized and joyful learning experiences. He is also a Senior Professional Member of ACM since 2013.",
+      "Dr. Sanjay Pande M. B. is the Professor and Director and a Professor in the Department of Computer Science & Engineering. He holds a Ph.D. in Computer Science and has over two decades of experience in teaching, research, and academic leadership. His areas of expertise include Image Processing, Pattern Recognition, and Biomedical Signal Analysis. A dedicated academician, Dr. Pande is passionate about fostering innovation, research excellence, and holistic student development. Under his leadership, GMIT continues to advance in quality education, research culture, and industry collaboration.",
     social: {
-      linkedin: "https://www.linkedin.com/in/shivanagowda-g-m-0b54605/",
-      Scholar: "https://scholar.google.com/citations?user=fW9gis4AAAAJ&hl=en",
-      Vidwan: "https://vidwan.inflibnet.ac.in/profile/259362",
+      linkedin: "https://in.linkedin.com/in/dr-sanjay-pande-mb-443a561b1/",
+      Scholar: "https://scholar.google.com/citations?user=Y25sz8EAAAAJ&hl=en",
+      Vidwan: "nil",
     },
     experience: [
       {
-        year: "2004-2023",
+        year: "2015-Present",
         title: "Teaching",
-        company: "SDMCET, Dharwad",
-        description: "21 Years of teaching experience.",
-      },
-      {
-        year: "2023-Present",
-        title: "Teaching",
-        company: "GM University Davangere",
-        description: "2 Years of teaching experience.",
-      },
-      {
-        year: "2006",
-        title: "Industry Sabbatical",
-        company: "Infosys, Bangalore DC",
-        description: "3 months Sabbatical on Refactoring.",
+        company: "GM Institute of technology",
+        description: "10.9 years of teaching Experience",
       },
       {
         year: "",
-        title: "Research",
-        company: "GM University",
-        description:
-          "Focus on Personalized Learning Systems and Academic Technology Innovation.",
+        title: "",
+        company: "",
+        description: "",
       },
     ],
     contact: {
@@ -583,7 +589,7 @@ export const faculties = [
   },
   {
     name: "Dr. Shivanagowda G. M",
-    position: "Professor",
+    position: "Professor and Head",
     img: hod_img,
     coverImg: gmu,
     about:
@@ -629,7 +635,7 @@ export const faculties = [
   },
   {
     name: "Dr. Chethan Chandra S Basavaraddi",
-    position: "Associate Professor in CS&E",
+    position: "Associate Professor",
     img: Dr_CHETHAN_CHANDRA_S_BASAVARADDI,
     coverImg: gmu,
     about:
@@ -645,8 +651,8 @@ export const faculties = [
       {
         year: "nil",
         title: "Teaching",
-        company: "GM University",
-        description: "14 Years.",
+        company: "",
+        description: "14 Years of teaching experience.",
       },
       {
         year: "nil",
@@ -663,23 +669,147 @@ export const faculties = [
     },
   },
   {
-    name: "Ms. Deepika M D",
-    position: "Tutor in CS&E",
-    img: Deepika_MD,
+    name: "Dr. SantoshKumar Mahendrakar",
+    position: "Associate Professor",
+    img: SANTOSHKUMAR_M,
     coverImg: gmu,
     about:
-      "Ms. Deepika M D joined GM University, Davanagere, as a Tutor in September 2024. She completed her Bachelor of Computer Applications (BCA) at SBC First Grade Women's College, Davanagere (2021) and her Master of Computer Applications (MCA) in 2023 from UBDT College of Engineering, Davanagere, graduating with distinction. She has one year of professional experience at GM University, where she developed strong academic and technical expertise in Java programming, database management, and project development.",
+      "Dr. Santoshkumar Mahendrakar is an Assistant Professor in the Department of Computer Science & Engineering at GM University, Davangere, with more than 22 years of academic and research experience. He is currently pursuing his Ph.D. in Artificial Intelligence and Machine Learning (AIML), with research contributions in computational models, machine learning for agriculture (including SlimNet for foxtail millet growth analysis), and blockchain technologies. Over the years, he has been actively engaged in teaching, curriculum design, and accreditation processes. He has strong expertise in NBA Accreditation, theory of computation, programming languages, and modern pedagogical practices.",
     social: {
-      linkedin: "https://www.linkedin.com/in/deepikamd",
-      Scholar: "nil",
+      linkedin: "https://www.linkedin.com/in/santosh-mahendrakar-6908a299/",
+      Scholar:
+        "https://scholar.google.com/citations?view_op=list_works&hl=id&user=faavbjwAAAAJ",
       Vidwan: "nil",
     },
     experience: [
       {
         year: "nil",
         title: "Teaching",
-        company: "GM University, Davangere",
-        description: "1 Year.",
+        company: "",
+        description: "nil",
+      },
+      {
+        year: "nil",
+        title: "Industry",
+        company: "nil",
+        description: "Nil",
+      },
+    ],
+    contact: {
+      address:
+        "Faculty of Engineering and Technology, GM University, Davanagere",
+      phone: "9242163128",
+      email: "santoshkumarm@gmit.ac.in",
+    },
+  },
+  {
+    name: "Prof. Nayana K",
+    position: "Assistant Professor",
+    img: NAYANA_K,
+    coverImg: gmu,
+    about:
+      "Prof. Nayana K is an Assistant Professor in the Department of Computer Science & Engineering at GM University, Davanagere. She joined GMU on January 2, 2023, with nearly 16 years of experience in academics, research, and administration, gained at PESITM, Shivamogga, and SCT Institute of Technology, Bengaluru. She believes in creating an interactive learning environment that bridges theoretical concepts with practical applications. Her approach emphasizes hands-on experience with cutting-edge technologies in AI and Deep Learning, while fostering research-oriented thinking among students. She is committed to mentoring students to become proficient in both foundational knowledge and emerging technologies in computer science. At GMU, she also serves as the Program Director for M.Tech in Deep Learning. She is responsible for overseeing and coordinating all academic activities of the program, including curriculum planning, course delivery, student mentoring, research facilitation, and ensuring overall academic excellence.",
+    social: {
+      linkedin: "//www.linkedin.com/in/nayana-k-921205371/recent-activity/all/",
+      Scholar:
+        ":https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;user=6hbQNOsAA",
+      Vidwan: "I:https://vidwan.inflibnet.ac.in/profile/345497",
+    },
+    experience: [
+      {
+        year: "",
+        title: "Teaching",
+        company:
+          "SCT Institute of Technology, Vignan Nagar, Bengaluru, Karnataka",
+        description: "2 Years of teaching experience",
+      },
+      {
+        year: "",
+        title: "Teaching",
+        company: "PES Institute of Technology, Shivamogga, Karnataka",
+        description: "12 Years of teaching experience",
+      },
+      {
+        year: "2023 – Present",
+        title: "Teaching",
+        company: "GM University Davangere",
+        description: "2 .10 Years of teaching experience",
+      },
+      {
+        year: "",
+        title: "Research",
+        company: "",
+        description:
+          "Specialisation in Artificial Intelligence, Machine Learning and Deep Le...",
+      },
+    ],
+    contact: {
+      address:
+        "School of Computer Science and Technology, GM University, Davanagere",
+      phone: "9945692143",
+      email: "nayanak@gmu.ac.in",
+    },
+  },
+  {
+    name: "Mrs Kavyashree P N",
+    position: "Assistant Professor",
+    img: KAVYASHREE_p_N,
+    coverImg: gmu,
+    about:
+      "Mrs Kavyashree P N is an Assistant Professor in the Department of Computer Science and Engineering GM University, Davanagere. She holds B.E,M.Tech and currently pursuingPh.D in GM University. She is having 4+ years of teaching experience various subjects like C Programming, Java Programming, Python Programming, Software Engineering, Full Stack Development, Mobile Application Development, Cloud Computing, Machine Learning, and Deep Learning. Shehas actively involved in Placement activities and conducted training program for students in Departmental level.",
+    social: {
+      linkedin:
+        "https://www.linkedin.com/in/kavyashree-p-n-954b791b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      Scholar: "https://scholar.google.com/citations?user=3Wu2bXkAAAAJ&hl=en",
+      Vidwan: "https://vidwan.inflibnet.ac.in/profile/238286",
+    },
+    experience: [
+      {
+        year: "",
+        title: "Teaching",
+        company: "GMIT",
+        description: "4+ years",
+      },
+      {
+        year: "",
+        title: "Teaching",
+        company: "G M University",
+        description: "6months years",
+      },
+      {
+        year: "",
+        title: "Research",
+        company: "",
+        description:
+          "Deep Learning-Based Approach to Interpret NIFTY 50 Prediction with Explainable AI Insights",
+      },
+    ],
+    contact: {
+      address:
+        "School of Computer Science and Technology, GM University, Davanagere",
+      phone: "8123506523",
+      email: "Kavyashreepn@gmu.ac.in",
+    },
+  },
+  {
+    name: "Ms. Ranjitha D S",
+    position: "Assistant Professor",
+    img: RANJITHA_D_S,
+    coverImg: gmu,
+    about:
+      "Ms. Ranjitha D. S is currently serving as an Assistant Professor in the Department of Computer Science and Engineering. She holds a Master’s Degree in Digital Communication and Networking from UBDT College of Engineering, Davanagere. Her areas of interest include Image Processing, Networking, Machine Learning, and Artificial Intelligence. She finds her teaching experience in this institution highly rewarding, as it offers a vibrant and supportive academic environment that encourages innovation and growth.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/ranjitha-ds-9127a716a/",
+      Scholar:
+        "https://scholar.google.com/citations?view_op=new_articles&hl=en&imq=RANJITHA+D+S#",
+      Vidwan: "nil",
+    },
+    experience: [
+      {
+        year: "2023-Currently Working",
+        title: "Teaching",
+        company: "nil",
+        description: "2 Years",
       },
       {
         year: "nil",
@@ -688,22 +818,261 @@ export const faculties = [
         description: "Nil",
       },
       {
-        year: "",
+        year: "nil",
         title: "Research",
-        company: "",
+        company: "nil",
         description: "Nil",
       },
     ],
     contact: {
       address:
         "School of Computer Science and Technology, GM University, Davanagere",
-      phone: "8088978173",
-      email: "deepikamd.fet.scst.cse@gmu.ac.in",
+      phone: "9164066050",
+      email: "ranjithads@gmu.ac.in",
+    },
+  },
+  {
+    name: "Mr. Ravinandan Jannu",
+    position: "Assistant Professor",
+    img: Ravinandan_Jannu,
+    coverImg: gmu,
+    about:
+      "Mr. Ravinandan R. Jannu has completed his Postgraduate degree in Computer Science and Engineering from BIET in the year 2023. He has also completed a certification course in Java Full Stack Development from Pentagon Space. His areas of interest include programming, web development, and emerging technologies in software engineering. He is passionate about guiding students in practical, project-based learning and fostering technical innovation.",
+    social: {
+      linkedin:
+        "https://www.linkedin.com/in/ravinandan-jannu-assistant-professor-151168384?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B4GMevE2hQi6TfqlB0L7%2B9Q%3D%3D",
+      Scholar: "nil",
+      Vidwan: "nil",
+    },
+    experience: [
+      {
+        year: "nil",
+        title: "Teaching",
+        company: "GM University Davanagere",
+        description: "1.5 Years",
+      },
+      {
+        year: "nil",
+        title: "Industry",
+        company: "DRVL SOFTWARE",
+        description: "1 Years",
+      },
+      {
+        year: "nil",
+        title: "Research",
+        company: "nil",
+        description: "NA",
+      },
+    ],
+    contact: {
+      address: "School of Science and Technology, GM University, Davanagere",
+      phone: "9066623203",
+      email: "ravinandanjannu.fet.scst.cse@gmu.ac.in",
+    },
+  },
+  {
+    name: "Ms. NIVEDITHA T NAIK",
+    position: "Assistant Professor",
+    img: NIVEDITHA_T_NAIK,
+    coverImg: gmu,
+    about:
+      "Ms. Niveditha T Naik is currently serving as an Assistant Professor in the Department of Computer Science and Engineering at GM University, Davangere. She is an M.Tech graduate in Digital Communication and Networking and B.E graduate in Electronics and Communication Engineering (ECE), with a strong passion for teaching, technology and innovation. She has expertise in wireless communication technologies, cloud computing, IoT, networking, and cybersecurity. Leveraging her knowledge and professional certifications in AWS, DevOps, Linux, and CCNA, she focuses on creating practical, real-world solutions and driving advancements in modern communication and networking technologies.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/niveditha-t-naik-88b993213",
+      Scholar:
+        "https://scholar.google.com/citations?view_op=new_articles&hl=en&imq=Niveditha+T+Naik#",
+      Vidwan: "nil",
+    },
+    experience: [
+      {
+        year: "nil",
+        title: "Teaching",
+        company: "GM University, Davangere",
+        description: "2 months",
+      },
+      {
+        year: "nil",
+        title: "Industry",
+        company: "nil",
+        description: "NIL",
+      },
+      {
+        year: "nil",
+        title: "Research",
+        company: "nil",
+        description: "Nil",
+      },
+    ],
+    contact: {
+      address:
+        "School of Computing science and Technology, GM University, Davanagere",
+      phone: "7349249270",
+      email: "nivedithatnaik.fet.scst@gmu.ac.in",
+    },
+  },
+  {
+    name: "Ms. Sanjana A T",
+    position: "Assistant Professor",
+    img: SANJANA_A_T,
+    coverImg: gmu,
+    about:
+      "Ms. Sanjana A. T is currently serving as an Assistant Professor in the Department of Computer Science and Engineering at G M University, Davanagere. She has recently joined the institution and has been contributing to the department for the past two months. She holds a Master of Computer Applications (MCA) degree, completed in 2024, and a Bachelor of Science (B.Sc.) in PMCs obtained in 2022. she aspires to pursue a Ph.D. in Computer Science focusing on Cyber Security, Data Mining, and Deep Learning domains. Ms. Sanjana is passionate about teaching, research, and continuous learning in emerging areas of computer science.",
+    social: {
+      linkedin:
+        "https://www.linkedin.com/in/sanjana-a-t-994193384?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      Scholar: "",
+      Vidwan: "",
+    },
+    experience: [
+      {
+        year: "nil",
+        title: "Teaching",
+        company: "nil",
+        description: "NA",
+      },
+      {
+        year: "nil",
+        title: "Industry",
+        company: "nil",
+        description: "NA",
+      },
+      {
+        year: "nil",
+        title: "Research",
+        company: "nil",
+        description: "NA",
+      },
+    ],
+    contact: {
+      address: "School of science and technology, GM University, Davanagere",
+      phone: "9482015238",
+      email: "sanjanaat.fet.scst@gmu.ac.in",
+    },
+  },
+  {
+    name: "Mr. Srijan Roy",
+    position: "Assistant Professor",
+    img: Srijan_Roy,
+    coverImg: gmu,
+    about:
+      "Srijan Roy is an Assistant Professor in the Department of Computer Science & Engineering at GM University, Davangere. He joined GMU on June 6th, bringing a strong academic background from premier institutions and a specialized focus on cutting-edge technologies. He is a dedicated academician and researcher, actively contributing to the fields of AI and Machine Learning.He is passionate about enhancing his skills and knowledge and is eager to contribute to the academic and research ecosystem.",
+    social: {
+      linkedin:
+        "https://www.linkedin.com/in/srijan-roy-9a355721a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      Scholar:
+        "https://scholar.google.com/citations?user=WTRohpQAAAAJ&hl=en&oi=ao",
+      Vidwan: "https://vidwan.inflibnet.ac.in/myprofile",
+    },
+    experience: [
+      {
+        year: "",
+        title: "Teaching",
+        company: "GM University Davangere",
+        description: "1 Year 3 months",
+      },
+      {
+        year: "",
+        title: "Industry",
+        company: "",
+        description: "NA",
+      },
+      {
+        year: "",
+        title: "Research",
+        company: "",
+        description: "",
+      },
+    ],
+    contact: {
+      address: "School of Science and Technology, GM University, Davanagere",
+      phone: "7005374477",
+      email: "srijanroy.fet.cs@gmu.ac.in",
+    },
+  },
+  {
+    name: "Ms. NAYANA G S",
+    position: "Assistant professor",
+    img: NAYANA_G_S,
+    coverImg: gmu,
+    about:
+      "Ms. Nayana G S currenty working as Assistant Professor in the Department of Computer Science and Engineering at GM University. She holds an M.Sc. in Computer Science from Kuvempu University, Shankaraghatta, Shivamogga (2025), and a Bachelor’s degree in PMCS from GMS First Grade Academy, Davangere (2023). She is passionate about teaching and committed to inspiring students through innovative learning. Her areas of interest include Artificial Intelligence, Machine Learning, and Deep Learning. She aspires to pursue a Ph.D. specializing in Deep Learning to contribute to research and technological advancement.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/nayana-g-s-153820372",
+      Scholar:
+        "https://scholar.google.co.in/citations?view_op=new_profile&hl=en",
+      Vidwan: "https://vidwan.inflibnet.ac.in/myprofile",
+    },
+    experience: [
+      {
+        year: "nil",
+        title: "Teaching",
+        company: "Gm University, Davangere",
+        description: "1 month.",
+      },
+      {
+        year: "nil",
+        title: "Industry",
+        company: "nil",
+        description: "NIL",
+      },
+      {
+        year: "nil",
+        title: "Research",
+        company: "nil",
+        description: "NIL",
+      },
+    ],
+    contact: {
+      address:
+        "Faculty of Engineering and Technology, GM University, Davanagere",
+      phone: "9036646876",
+      email: "nayanags.fet.scst@gmu.ac.in",
+    },
+  },
+  {
+    name: "Ms. LATHA K B",
+    position: "Assistant Professor",
+    img: LATHA_KB,
+    coverImg: gmu,
+    about:
+      "Latha K B, currently working as an Assistant Professor in the Department of Computer Science and Engineering at GM University. She holds a Master of Computer Applications (MCA) degree from BIET and have obtained certifications in Java Full Stack Development and Web Development. Her academic and research interests primarily focus on Artificial Intelligence, Machine Learning and Deep Learning.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/latha-k-b-940198232",
+      Scholar:
+        "https://scholar.google.com/citations?view_op=new_profile&hl=en&authuser=1",
+      Vidwan: "https://vidwan.inflibnet.ac.in/myprofile",
+    },
+    experience: [
+      {
+        year: "",
+        title: "Teaching",
+        company: "",
+        description: "",
+      },
+      {
+        year: "",
+        title: "Industry",
+        company: "",
+        description: "",
+      },
+      {
+        year: "",
+        title: "Research",
+        company: "",
+        description:
+          "Computer vision based food recognition with nutrition analysis",
+      },
+    ],
+    contact: {
+      address:
+        "Faculty of Engineering and Technology, GM University, Davanagere",
+      phone: "9108534770",
+      email: "lathakb.fet.scst@gmu.ac.in",
     },
   },
   {
     name: "Ms. DEEPTI H G",
-    position: "Assistant Professor in CS&E",
+    position: "Assistant Professor",
     img: DEEPTI_H_G,
     coverImg: gmu,
     about:
@@ -749,8 +1118,87 @@ export const faculties = [
     },
   },
   {
+    name: "Ms. Deepika M D",
+    position: "Tutor",
+    img: Deepika_MD,
+    coverImg: gmu,
+    about:
+      "Ms. Deepika M D joined GM University, Davanagere, as a Tutor in September 2024. She completed her Bachelor of Computer Applications (BCA) at SBC First Grade Women’s College, Davanagere (2021) and her Master of Computer Applications (MCA) in 2023 from UBDT College of Engineering, Davanagere, graduating with distinction. She has one year of professional experience at GM University, where she developed strong academic and technical expertise in Java programming, database management, and project development.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/deepikamd",
+      Scholar: "nil",
+      Vidwan: "nil",
+    },
+    experience: [
+      {
+        year: "nil",
+        title: "Teaching",
+        company: "GM University, Davangere",
+        description: "1 Year.",
+      },
+      {
+        year: "nil",
+        title: "Industry",
+        company: "nil",
+        description: "Nil",
+      },
+      {
+        year: "",
+        title: "Research",
+        company: "",
+        description: "Nil",
+      },
+    ],
+    contact: {
+      address:
+        "School of Computer Science and Technology, GM University, Davanagere",
+      phone: "8088978173",
+      email: "deepikamd.fet.scst.cse@gmu.ac.in",
+    },
+  },
+  {
+    name: "Ms.Shalini M R",
+    position: "Tutor",
+    img: Shalini_MR,
+    coverImg: gmu,
+    about:
+      "Ms. Shalini is currently working as a tutor in the Department of Computer Science and Engineering in GM University. She completed her B.E. from Jain Institute of Technology. Before joining GMuniversity, she joinedQSpiders, Bangalore, where she completed a course in Software Engineering and Testing.She then worked as a Software Test Engineer at Test Yantra for one year, followed by a position as anAssociateSoftware Engineer at Accenture for another year.Presently, she is pursuing herM.Tech in Computer Science and Engineering with a specialization in Deep Learning.",
+    social: {
+      linkedin:
+        "https://www.linkedin.com/in/shalini-mr-947016250/?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app",
+      Scholar: "nil",
+      Vidwan: "nil",
+    },
+    experience: [
+      {
+        year: "nil",
+        title: "Teaching",
+        company: "GM Univeristy,Davangere",
+        description: "1 Year at GM Univeristy , Davangere",
+      },
+      {
+        year: "nil",
+        title: "Industry",
+        company: "nil",
+        description: "1 Yearsat",
+      },
+      {
+        year: "nil",
+        title: "Research",
+        company: "nil",
+        description: "NIL",
+      },
+    ],
+    contact: {
+      address:
+        "Faculty of Engineering and Technology, GM University, Davanagere",
+      phone: "953567544",
+      email: "Shalinimr.fet.scst.cse@gmu.ac.in",
+    },
+  },
+  {
     name: "Mrs. Sumana C",
-    position: "Tutor in CS&E",
+    position: "Tutor",
     img: Sumana_C,
     coverImg: gmu,
     about:
@@ -788,353 +1236,8 @@ export const faculties = [
     },
   },
   {
-    name: "Mrs. Pallavi.S",
-    position: "Tutor in CSE",
-    img: PALLAVI,
-    coverImg: gmu,
-    about:
-      "Mrs. Pallavi S is a Tutor in the Department of Computer Science and Engineering at GM University, Davangere. She holds a B.E. degree in Information Science and Engineering at SSIT Tumkur and is currently pursuing her M. Tech in Computer Science and Engineering, having completed all examinations and awaiting final results. Her areas of interest include Blockchain Technology and Deep Learning. She has actively contributed to research with publications in both journals and conferences, including a Journal Paper (IJTE-ISTE, Paper ID: 1410625) and a Conference Paper (ICETSE-2025, Paper ID: 389). She is also a member of the Indian Society for Technical Education (ISTE). Mrs. Pallavi is passionate about exploring innovative technologies and aims to promote research-driven and technology-enhanced learning in the field of computer science.",
-    social: {
-      linkedin: "https://www.linkedin.com/in/pallavi-s-a3b977384",
-      Scholar: "",
-      Vidwan: "",
-    },
-    experience: [
-      {
-        year: "",
-        title: "Teaching",
-        company: "GM University Davangere",
-        description: "2 MONTHS.",
-      },
-      {
-        year: "nil",
-        title: "Industry",
-        company: "nil",
-        description: "NIL",
-      },
-    ],
-    contact: {
-      address:
-        "School of Computer Science and Technology, GM University, Davanagere",
-      phone: "9113834469",
-      email: "pallavis.fet.scst@gmu.ac.in",
-    },
-  },
-  {
-    name: "Ms. NAYANA G S",
-    position: "Assistant professor in CS&E",
-    img: NAYANA_G_S,
-    coverImg: gmu,
-    about:
-      "Ms. Nayana G S currenty working as Assistant Professor in the Department of Computer Science and Engineering at GM University. She holds an M.Sc. in Computer Science from Kuvempu University, Shankaraghatta, Shivamogga (2025), and a Bachelor's degree in PMCS from GMS First Grade Academy, Davangere (2023). She is passionate about teaching and committed to inspiring students through innovative learning. Her areas of interest include Artificial Intelligence, Machine Learning, and Deep Learning. She aspires to pursue a Ph.D. specializing in Deep Learning to contribute to research and technological advancement.",
-    social: {
-      linkedin: "https://www.linkedin.com/in/nayana-g-s-153820372",
-      Scholar:
-        "https://scholar.google.co.in/citations?view_op=new_profile&hl=en",
-      Vidwan: "https://vidwan.inflibnet.ac.in/myprofile",
-    },
-    experience: [
-      {
-        year: "nil",
-        title: "Teaching",
-        company: "Gm University, Davangere",
-        description: "1 month.",
-      },
-      {
-        year: "nil",
-        title: "Industry",
-        company: "nil",
-        description: "NIL",
-      },
-      {
-        year: "nil",
-        title: "Research",
-        company: "nil",
-        description: "NIL",
-      },
-    ],
-    contact: {
-      address:
-        "Faculty of Engineering and Technology, GM University, Davanagere",
-      phone: "9036646876",
-      email: "nayanags.fet.scst@gmu.ac.in",
-    },
-  },
-  {
-    name: "Ms. LATHA K B",
-    position: "Assistant Professor in CS&E",
-    img: LATHA_KB,
-    coverImg: gmu,
-    about:
-      "Latha K B, currently working as an Assistant Professor in the Department of Computer Science and Engineering at GM University. She holds a Master of Computer Applications (MCA) degree from BIET and have obtained certifications in Java Full Stack Development and Web Development. Her academic and research interests primarily focus on Artificial Intelligence, Machine Learning and Deep Learning.",
-    social: {
-      linkedin: "https://www.linkedin.com/in/latha-k-b-940198232",
-      Scholar:
-        "https://scholar.google.com/citations?view_op=new_profile&hl=en&authuser=1",
-      Vidwan: "https://vidwan.inflibnet.ac.in/myprofile",
-    },
-    experience: [
-      {
-        year: "",
-        title: "Teaching",
-        company: "",
-        description: "",
-      },
-      {
-        year: "",
-        title: "Industry",
-        company: "",
-        description: "",
-      },
-      {
-        year: "",
-        title: "Research",
-        company: "",
-        description:
-          "Computer vision based food recognition with nutrition analysis",
-      },
-    ],
-    contact: {
-      address:
-        "Faculty of Engineering and Technology, GM University, Davanagere",
-      phone: "9108534770",
-      email: "lathakb.fet.scst@gmu.ac.in",
-    },
-  },
-  {
-    name: "Ms.ShaliniMR",
-    position: "Tutor in CS&E",
-    img: Shalini_MR,
-    coverImg: gmu,
-    about:
-      "Ms. Shalini is currently working as a tutor in the Department of Computer Science and Engineering in GM University. She completed her B.E. from Jain Institute of Technology. Before joining GMuniversity, she joinedQSpiders, Bangalore, where she completed a course in Software Engineering and Testing.She then worked as a Software Test Engineer at Test Yantra for one year, followed by a position as anAssociateSoftware Engineer at Accenture for another year.Presently, she is pursuing herM.Tech in Computer Science and Engineering with a specialization in Deep Learning.",
-    social: {
-      linkedin:
-        "https://www.linkedin.com/in/shalini-mr-947016250/?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app",
-      Scholar: "nil",
-      Vidwan: "nil",
-    },
-    experience: [
-      {
-        year: "nil",
-        title: "Teaching",
-        company: "GMUniveristy,Davangere",
-        description: "1Year.",
-      },
-      {
-        year: "nil",
-        title: "Industry",
-        company: "nil",
-        description: "1 Yearsat",
-      },
-      {
-        year: "nil",
-        title: "Research",
-        company: "nil",
-        description: "NIL",
-      },
-    ],
-    contact: {
-      address:
-        "Faculty of Engineering and Technology, GM University, Davanagere",
-      phone: "953567544",
-      email: "Shalinimr.fet.scst.cse@gmu.ac.in",
-    },
-  },
-  {
-    name: "Ms. NIVEDITHA T NAIK",
-    position: "Assistant Professor in CS&E",
-    img: NIVEDITHA_T_NAIK,
-    coverImg: gmu,
-    about:
-      "Ms. Niveditha T Naik is currently serving as an Assistant Professor in the Department of Computer Science and Engineering at GM University, Davangere. She is an M.Tech graduate in Digital Communication and Networking and B.E graduate in Electronics and Communication Engineering (ECE), with a strong passion for teaching, technology and innovation. She has expertise in wireless communication technologies, cloud computing, IoT, networking, and cybersecurity. Leveraging her knowledge and professional certifications in AWS, DevOps, Linux, and CCNA, she focuses on creating practical, real-world solutions and driving advancements in modern communication and networking technologies.",
-    social: {
-      linkedin: "https://www.linkedin.com/in/niveditha-t-naik-88b993213",
-      Scholar:
-        "https://scholar.google.com/citations?view_op=new_articles&hl=en&imq=Niveditha+T+Naik#",
-      Vidwan: "nil",
-    },
-    experience: [
-      {
-        year: "nil",
-        title: "Teaching",
-        company: "GM University, Davangere",
-        description: "2 months",
-      },
-      {
-        year: "nil",
-        title: "Industry",
-        company: "nil",
-        description: "NIL",
-      },
-      {
-        year: "nil",
-        title: "Research",
-        company: "nil",
-        description: "Nil",
-      },
-    ],
-    contact: {
-      address:
-        "School of Computing science and Technology, GM University, Davanagere",
-      phone: "7349249270",
-      email: "nivedithatnaik.fet.scst@gmu.ac.in",
-    },
-  },
-  {
-    name: "Mr. Ravinandan Jannu",
-    position: "Assistant Professor of CSE Department",
-    img: Ravinandan_Jannu,
-    coverImg: gmu,
-    about:
-      "Mr. Ravinandan R. Jannu has completed his Postgraduate degree in Computer Science and Engineering from BIET in the year 2023. He has also completed a certification course in Java Full Stack Development from Pentagon Space. His areas of interest include programming, web development, and emerging technologies in software engineering. He is passionate about guiding students in practical, project-based learning and fostering technical innovation.",
-    social: {
-      linkedin:
-        "https://www.linkedin.com/in/ravinandan-jannu-assistant-professor-151168384?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B4GMevE2hQi6TfqlB0L7%2B9Q%3D%3D",
-      Scholar: "nil",
-      Vidwan: "nil",
-    },
-    experience: [
-      {
-        year: "nil",
-        title: "Teaching",
-        company: "GM University Davanagere",
-        description: "1.5 Years",
-      },
-      {
-        year: "nil",
-        title: "Industry",
-        company: "DRVL SOFTWARE",
-        description: "1 Years",
-      },
-      {
-        year: "nil",
-        title: "Research",
-        company: "nil",
-        description: "NA",
-      },
-    ],
-    contact: {
-      address: "School of Science and Technology, GM University, Davanagere",
-      phone: "9066623203",
-      email: "ravinandanjannu.fet.scst.cse@gmu.ac.in",
-    },
-  },
-  {
-    name: "Ms. Ranjitha D S",
-    position: "Assistant Professor in CS&E",
-    img: RANJITHA_D_S,
-    coverImg: gmu,
-    about:
-      "Ms. Ranjitha D. S is currently serving as an Assistant Professor in the Department of Computer Science and Engineering. She holds a Master's Degree in Digital Communication and Networking from UBDT College of Engineering, Davanagere. Her areas of interest include Image Processing, Networking, Machine Learning, and Artificial Intelligence. She finds her teaching experience in this institution highly rewarding, as it offers a vibrant and supportive academic environment that encourages innovation and growth.",
-    social: {
-      linkedin: "https://www.linkedin.com/in/ranjitha-ds-9127a716a/",
-      Scholar:
-        "https://scholar.google.com/citations?view_op=new_articles&hl=en&imq=RANJITHA+D+S#",
-      Vidwan: "nil",
-    },
-    experience: [
-      {
-        year: "2023-Currently Working",
-        title: "Teaching",
-        company: "nil",
-        description: "2 Years",
-      },
-      {
-        year: "nil",
-        title: "Industry",
-        company: "nil",
-        description: "Nil",
-      },
-      {
-        year: "nil",
-        title: "Research",
-        company: "nil",
-        description: "Nil",
-      },
-    ],
-    contact: {
-      address:
-        "School of Computer Science and Technology, GM University, Davanagere",
-      phone: "9164066050",
-      email: "ranjithads@gmu.ac.in",
-    },
-  },
-  {
-    name: "Ms. Sahana B R",
-    position: "Tutor in CS&E, GMU",
-    img: SAHANA_B_R,
-    coverImg: gmu,
-    about:
-      "Ms. Sahana B. R. is a dedicated tutor in the Department of Computer Science and Engineering at GM University, Davangere. She holds a Bachelor's degree in Information Science and Engineering from BIET, Davangere, and is currently pursuing her M.Tech in Data Engineering at GM University. With a passion for teaching and technology, she handles courses for 5th semester students in Artificial Intelligence and 3rd semester students in Data Analytics with Excel, inspiring learners to develop strong analytical and problem-solving skills.",
-    social: {
-      linkedin: "https://linkedin.com/in/sahana-budihal-267357255",
-      Scholar: "",
-      Vidwan: "",
-    },
-    experience: [
-      {
-        year: "nil",
-        title: "Teaching",
-        company: "GM university, Davangere",
-        description: "2 months",
-      },
-      {
-        year: "nil",
-        title: "Research",
-        company: "nil",
-        description: "NIL",
-      },
-    ],
-    contact: {
-      address:
-        "School of Computer Science and Technology, GM University, Davanagere",
-      phone: "8431424007",
-      email: "sahanabr.fet.scst@gmu.ac.in",
-    },
-  },
-  {
-    name: "Ms. Sanjana A T",
-    position: "Assistant Professor in dept of CSE",
-    img: SANJANA_A_T,
-    coverImg: gmu,
-    about:
-      "Ms. Sanjana A. T is currently serving as an Assistant Professor in the Department of Computer Science and Engineering at G M University, Davanagere. She has recently joined the institution and has been contributing to the department for the past two months. She holds a Master of Computer Applications (MCA) degree, completed in 2024, and a Bachelor of Science (B.Sc.) in PMCs obtained in 2022. she aspires to pursue a Ph.D. in Computer Science focusing on Cyber Security, Data Mining, and Deep Learning domains. Ms. Sanjana is passionate about teaching, research, and continuous learning in emerging areas of computer science.",
-    social: {
-      linkedin:
-        "https://www.linkedin.com/in/sanjana-a-t-994193384?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      Scholar: "",
-      Vidwan: "",
-    },
-    experience: [
-      {
-        year: "nil",
-        title: "Teaching",
-        company: "nil",
-        description: "NA",
-      },
-      {
-        year: "nil",
-        title: "Industry",
-        company: "nil",
-        description: "NA",
-      },
-      {
-        year: "nil",
-        title: "Research",
-        company: "nil",
-        description: "NA",
-      },
-    ],
-    contact: {
-      address: "School of science and technology, GM University, Davanagere",
-      phone: "9482015238",
-      email: "sanjanaat.fet.scst@gmu.ac.in",
-    },
-  },
-  {
     name: "Ms.Saima Anjum",
-    position: "Tutor of CSE Department",
+    position: "Tutor",
     img: Saima_Anjum_Tutor,
     coverImg: gmu,
     about:
@@ -1173,8 +1276,48 @@ export const faculties = [
     },
   },
   {
+    name: "Ms.Ranjitha J",
+    position: "Tutor",
+    img: Ranjitha_J_Tutor,
+    coverImg: gmu,
+    about:
+      "Ms.Ranjitha J has completed her Graduation degree in Computer Science and Engineering from UBDT in the year 2024. She has also completed a intership on AWS from EUPHORIC Thought Technology Banglore. Her areas of interest include programming, web development, and emerging technologies in software engineering. She is passionate about guiding students in practical, project-based learning while inspiring creativity, innovation, and a deep understanding of technology.",
+    social: {
+      linkedin:
+        "https://www.linkedin.com/in/ranjitha-j-ranju-240738281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      Scholar:
+        "https://scholar.google.com/citations?view_op=new_profile&hl=en&authuser=1",
+      Vidwan: "https://vidwan.inflibnet.ac.in/myprofile",
+    },
+    experience: [
+      {
+        year: "",
+        title: "Teaching",
+        company: "G M University Davanagere",
+        description: "1.3 Year",
+      },
+      {
+        year: "",
+        title: "Industry",
+        company: "",
+        description: "NA",
+      },
+      {
+        year: "",
+        title: "Research",
+        company: "",
+        description: "NA",
+      },
+    ],
+    contact: {
+      address: "School of Science and Technology, GM University, Davanagere",
+      phone: "9880736934",
+      email: "ranjithaj.fet.scst.cse@gmu.ac.in",
+    },
+  },
+  {
     name: "Mrs Sindhu R R",
-    position: "Tutor in CS&E",
+    position: "Tutor",
     img: Sindhu_R_R,
     coverImg: gmu,
     about:
@@ -1217,89 +1360,10 @@ export const faculties = [
       email: "Sindhurr.fet.scst@gmu.sc.in",
     },
   },
-  {
-    name: "Ms.Ranjitha J",
-    position: "Tutor of CSE Department",
-    img: Ranjitha_J_Tutor,
-    coverImg: gmu,
-    about:
-      "Ms.Ranjitha J has completed her Graduation degree in Computer Science and Engineering from UBDT in the year 2024. She has also completed a intership on AWS from EUPHORIC Thought Technology Banglore. Her areas of interest include programming, web development, and emerging technologies in software engineering. She is passionate about guiding students in practical, project-based learning while inspiring creativity, innovation, and a deep understanding of technology.",
-    social: {
-      linkedin:
-        "https://www.linkedin.com/in/ranjitha-j-ranju-240738281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      Scholar:
-        "https://scholar.google.com/citations?view_op=new_profile&hl=en&authuser=1",
-      Vidwan: "https://vidwan.inflibnet.ac.in/myprofile",
-    },
-    experience: [
-      {
-        year: "",
-        title: "Teaching",
-        company: "G M University Davanagere",
-        description: "1.3 Year",
-      },
-      {
-        year: "",
-        title: "Industry",
-        company: "",
-        description: "NA",
-      },
-      {
-        year: "",
-        title: "Research",
-        company: "",
-        description: "NA",
-      },
-    ],
-    contact: {
-      address: "School of Science and Technology, GM University, Davanagere",
-      phone: "9880736934",
-      email: "ranjithaj.fet.scst.cse@gmu.ac.in",
-    },
-  },
-  {
-    name: "Mr. Srijan Roy",
-    position: "Assistant Professor in CSE Department",
-    img: Srijan_Roy,
-    coverImg: gmu,
-    about:
-      "Srijan Roy is an Assistant Professor in the Department of Computer Science & Engineering at GM University, Davangere. He joined GMU on June 6th, bringing a strong academic background from premier institutions and a specialized focus on cutting-edge technologies. He is a dedicated academician and researcher, actively contributing to the fields of AI and Machine Learning.He is passionate about enhancing his skills and knowledge and is eager to contribute to the academic and research ecosystem.",
-    social: {
-      linkedin:
-        "https://www.linkedin.com/in/srijan-roy-9a355721a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      Scholar:
-        "https://scholar.google.com/citations?user=WTRohpQAAAAJ&hl=en&oi=ao",
-      Vidwan: "https://vidwan.inflibnet.ac.in/myprofile",
-    },
-    experience: [
-      {
-        year: "",
-        title: "Teaching",
-        company: "GM University Davangere",
-        description: "1 Year 3 months",
-      },
-      {
-        year: "",
-        title: "Industry",
-        company: "",
-        description: "NA",
-      },
-      {
-        year: "",
-        title: "Research",
-        company: "",
-        description: "",
-      },
-    ],
-    contact: {
-      address: "School of Science and Technology, GM University, Davanagere",
-      phone: "7005374477",
-      email: "srijanroy.fet.cs@gmu.ac.in",
-    },
-  },
+
   {
     name: "Mrs. Supriya M Kerakkanavar",
-    position: "Tutor in CS&E",
+    position: "Tutor",
     img: SUPRIYA_KERAKKANAVAR,
     coverImg: gmu,
     about:
@@ -1331,101 +1395,78 @@ export const faculties = [
     },
   },
   {
-    name: "Prof. Nayana K",
-    position: "Assistant Professor in CSE",
-    img: NAYANA_K,
+    name: "Ms. Sahana B R",
+    position: "Tutor",
+    img: SAHANA_B_R,
     coverImg: gmu,
     about:
-      "Prof. Nayana K is an Assistant Professor in the Department of Computer Science & Engineering at GM University, Davanagere. She joined GMU on January 2, 2023, with nearly 16 years of experience in academics, research, and administration, gained at PESITM, Shivamogga, and SCT Institute of Technology, Bengaluru. She believes in creating an interactive learning environment that bridges theoretical concepts with practical applications. Her approach emphasizes hands-on experience with cutting-edge technologies in AI and Deep Learning, while fostering research-oriented thinking among students. She is committed to mentoring students to become proficient in both foundational knowledge and emerging technologies in computer science. At GMU, she also serves as the Program Director for M.Tech in Deep Learning. She is responsible for overseeing and coordinating all academic activities of the program, including curriculum planning, course delivery, student mentoring, research facilitation, and ensuring overall academic excellence.",
+      "Ms. Sahana B. R. is a dedicated tutor in the Department of Computer Science and Engineering at GM University, Davangere. She holds a Bachelor’s degree in Information Science and Engineering from BIET, Davangere, and is currently pursuing her M.Tech in Data Engineering at GM University. With a passion for teaching and technology, she handles courses for 5th semester students in Artificial Intelligence and 3rd semester students in Data Analytics with Excel, inspiring learners to develop strong analytical and problem-solving skills.",
     social: {
-      linkedin: "//www.linkedin.com/in/nayana-k-921205371/recent-activity/all/",
-      Scholar:
-        "https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;user=6hbQNOsAA",
-      Vidwan: "https://vidwan.inflibnet.ac.in/profile/345497",
+      linkedin: "https://linkedin.com/in/sahana-budihal-267357255",
+      Scholar: "",
+      Vidwan: "",
     },
     experience: [
       {
-        year: "",
+        year: "nil",
         title: "Teaching",
-        company:
-          "SCT Institute of Technology, Vignan Nagar, Bengaluru, Karnataka",
-        description: "2 Years",
+        company: "GM university, Davangere",
+        description: "2 months",
       },
       {
-        year: "",
-        title: "Teaching",
-        company: "PES Institute of Technology, Shivamogga, Karnataka",
-        description: "12 Years",
-      },
-      {
-        year: "2023 – Present",
-        title: "Teaching",
-        company: "GM University Davangere",
-        description: "2 .10 Years",
-      },
-      {
-        year: "",
+        year: "nil",
         title: "Research",
-        company: "",
-        description:
-          "Specialisation in Artificial Intelligence, Machine Learning and Deep Le...",
+        company: "nil",
+        description: "NIL",
       },
     ],
     contact: {
       address:
         "School of Computer Science and Technology, GM University, Davanagere",
-      phone: "",
-      email: "",
+      phone: "8431424007",
+      email: "sahanabr.fet.scst@gmu.ac.in",
     },
   },
   {
-    name: "Mrs Kavyashree P N",
-    position: "Assistant Professor in CSE",
-    img: KAVYASHREE_p_N,
+    name: "Mrs. Pallavi.S",
+    position: "Tutor",
+    img: PALLAVI,
     coverImg: gmu,
     about:
-      "Mrs Kavyashree P N is an Assistant Professor in the Department of Computer Science and Engineering GM University, Davanagere. She holds B.E,M.Tech and currently pursuingPh.D in GM University. She is having 4+ years of teaching experience various subjects like C Programming, Java Programming, Python Programming, Software Engineering, Full Stack Development, Mobile Application Development, Cloud Computing, Machine Learning, and Deep Learning. Shehas actively involved in Placement activities and conducted training program for students in Departmental level.",
+      "Mrs. Pallavi S is a Tutor in the Department of Computer Science and Engineering at GM University, Davangere. She holds a B.E. degree in Information Science and Engineering at SSIT Tumkur and is currently pursuing her M. Tech in Computer Science and Engineering, having completed all examinations and awaiting final results. Her areas of interest include Blockchain Technology and Deep Learning. She has actively contributed to research with publications in both journals and conferences, including a Journal Paper (IJTE-ISTE, Paper ID: 1410625) and a Conference Paper (ICETSE-2025, Paper ID: 389). She is also a member of the Indian Society for Technical Education (ISTE). Mrs. Pallavi is passionate about exploring innovative technologies and aims to promote research-driven and technology-enhanced learning in the field of computer science.",
     social: {
-      linkedin:
-        "https://www.linkedin.com/in/kavyashree-p-n-954b791b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      Scholar: "https://scholar.google.com/citations?user=3Wu2bXkAAAAJ&hl=en",
-      Vidwan: "https://vidwan.inflibnet.ac.in/profile/238286",
+      linkedin: "https://www.linkedin.com/in/pallavi-s-a3b977384",
+      Scholar: "",
+      Vidwan: "",
     },
     experience: [
       {
         year: "",
         title: "Teaching",
-        company: "GMIT",
-        description: "4+ years",
+        company: "GM University Davangere",
+        description: "2 MONTHS.",
       },
       {
-        year: "",
-        title: "Teaching",
-        company: "G M University",
-        description: "6months years",
-      },
-      {
-        year: "",
-        title: "Research",
-        company: "",
-        description:
-          "Deep Learning-Based Approach to Interpret NIFTY 50 Prediction with Explainable AI Insights",
+        year: "nil",
+        title: "Industry",
+        company: "nil",
+        description: "NIL",
       },
     ],
     contact: {
       address:
         "School of Computer Science and Technology, GM University, Davanagere",
-      phone: "",
-      email: "",
+      phone: "9113834469",
+      email: "pallavis.fet.scst@gmu.ac.in",
     },
   },
   {
     name: "Ms. Tanushree.V.Mugalikatti",
-    position: "Assistant Professor in CS&E",
+    position: "Assistant Professor",
     img: Tanushree_V_M,
     coverImg: gmu,
     about:
-      "Ms. Tanushree .V. Mugalikatti is an Assistant Professor in the Department of Computer Science and Engineering. She is proficient in various programming languages including C, Java, and Data Structures and Algorithms. Her areas of interest include Computer Networks and Network Simulation using NS2. She is currently working on a research project titled Detecting Node Failures in Wireless Sensor Networks, with a publication in progress. She is passionate about guiding students in innovative projects and fostering practical problem-solving skills through coding and research-oriented learning.",
+      "Ms. Tanushree .V. Mugalikatti is an Assistant Professor in the Department of Computer Science and Engineering. She is proficient in various programming languages including C, Java, and Data Structures and Algorithms. Her areas of interest include Computer Networks and Network Simulation using NS2. She is currently working on a research project titled “Detecting Node Failures in Wireless Sensor Networks”, with a publication in progress. She is passionate about guiding students in innovative projects and fostering practical problem-solving skills through coding and research-oriented learning.",
     social: {
       linkedin: "www.linkedin.com/in/tanushree-v-mugalikatti-561012270",
       Scholar: "",

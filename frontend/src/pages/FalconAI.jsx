@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { GoogleGenAI } from "@google/genai";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, Loader2, Bot, User } from "lucide-react";
+import { assets } from "../assets/assets";
 
 const FalconAI = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -340,7 +341,7 @@ When users ask about the department, respond with structured, informative, and f
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => setIsOpen(!isOpen)}
-          className="w-16 h-16 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 rounded-2xl shadow-2xl flex items-center justify-center hover:shadow-3xl transition-all duration-300 relative group"
+          className="w-16 h-16  rounded-2xl shadow-2xl flex items-center justify-center hover:shadow-3xl transition-all duration-300 relative group"
         >
           <motion.div
             animate={{ rotate: isOpen ? 90 : 0 }}
@@ -349,7 +350,12 @@ When users ask about the department, respond with structured, informative, and f
             {isOpen ? (
               <X className="w-7 h-7 text-white" />
             ) : (
-              <MessageCircle className="w-7 h-7 text-white" />
+              <img
+                src={assets.falcon_logo}
+                alt=""
+                className="rounded-full"
+                srcset=""
+              />
             )}
           </motion.div>
 

@@ -319,9 +319,8 @@ const Cards = () => {
             transition={{ delay: 0.1, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Our{" "}
             <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-              Core Values
+              Know Us Know World!
             </span>
           </motion.h2>
           <motion.p

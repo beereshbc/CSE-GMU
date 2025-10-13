@@ -607,13 +607,25 @@ const LearningResources = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl pb-2 font-bold text-gray-900 mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             CS Learning Hub
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Discover the best free computer science resources. Master
-            programming, algorithms, web development, and more with curated
-            courses and tutorials.
+          <p className="text-sm mt-4 text-center text-gray-600 max-w-3xl mx-auto mb-8">
+            Across the globe, countless intellects and institutions have
+            generously made high-quality learning resources freely available —
+            from MIT OpenCourseWare, Harvard Online Learning, and NPTEL, to many
+            other open educational repositories. These initiatives embody the
+            true spirit of knowledge sharing and lifelong learning.
+            <br />
+            At the Department of Computer Science & Engineering (CSE), GM
+            University, we encourage our students to make the right and
+            responsible use of such world-class resources. Every concept taught
+            in the classroom is further reinforced through carefully recommended
+            open courses, video lectures, and reference materials curated from
+            globally recognized platforms. <br /> By aligning classroom learning
+            with these open knowledge streams, we aim to cultivate self-directed
+            learners, critical thinkers, and innovators who stay connected with
+            the evolving frontiers of science and technology
           </p>
         </div>
 

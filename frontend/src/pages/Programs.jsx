@@ -152,94 +152,196 @@ const programData = {
       },
     ],
     // B.Tech specific table
+    // B.Tech specific table
     curriculumTable: (
       <div className="mt-12">
         <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
           B.Tech Curriculum Resources
         </h3>
-        <div className="overflow-x-auto shadow-lg rounded-lg">
+        <div className="overflow-x-auto shadow-lg rounded-lg border border-gray-200">
           <table className="min-w-full bg-white">
-            <thead className="bg-blue-600 text-white">
+            <thead className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
               <tr>
-                <th className="py-4 px-6 text-left font-semibold text-lg">
+                <th
+                  rowSpan="2"
+                  className="py-4 px-6 text-center font-bold text-lg border-r border-blue-500"
+                >
                   Degree
                 </th>
-                <th className="py-4 px-6 text-center font-semibold text-lg">
-                  23-Scheme Program
+                <th
+                  colSpan="6"
+                  className="py-4 px-6 text-center font-bold text-lg border-r border-blue-500"
+                >
+                  Schemes
                 </th>
-                <th className="py-4 px-6 text-center font-semibold text-lg">
-                  24-Scheme Course
+                <th
+                  colSpan="3"
+                  className="py-4 px-6 text-center font-bold text-lg"
+                >
+                  Resources
                 </th>
-                <th className="py-4 px-6 text-center font-semibold text-lg">
-                  25-Scheme Program
+              </tr>
+              <tr className="bg-blue-500">
+                {/* 23-Scheme Sub-headers */}
+                <th
+                  colSpan="2"
+                  className="py-3 px-4 text-center font-semibold border-r border-blue-400"
+                >
+                  23-Scheme
                 </th>
-                <th className="py-4 px-6 text-center font-semibold text-lg">
+                {/* 24-Scheme Sub-headers */}
+                <th
+                  colSpan="2"
+                  className="py-3 px-4 text-center font-semibold border-r border-blue-400"
+                >
+                  24-Scheme
+                </th>
+                {/* 25-Scheme Sub-headers */}
+                <th
+                  colSpan="2"
+                  className="py-3 px-4 text-center font-semibold border-r border-blue-400"
+                >
+                  25-Scheme
+                </th>
+                {/* Resources */}
+                <th className="py-3 px-4 text-center font-semibold border-r border-blue-400">
                   Program Brochure
                 </th>
-                <th className="py-4 px-6 text-center font-semibold text-lg">
+                <th className="py-3 px-4 text-center font-semibold border-r border-blue-400">
                   Lab Recordings
                 </th>
-                <th className="py-4 px-6 text-center font-semibold text-lg">
+                <th className="py-3 px-4 text-center font-semibold">
                   Department Details
                 </th>
               </tr>
+              <tr className="bg-blue-400">
+                {/* Empty cell for Degree column */}
+                <th className="border-r border-blue-300"></th>
+
+                {/* 23-Scheme Program/Course sub-headers */}
+                <th className="py-2 px-4 text-center font-medium border-r border-blue-300">
+                  Program
+                </th>
+                <th className="py-2 px-4 text-center font-medium border-r border-blue-300">
+                  Course
+                </th>
+
+                {/* 24-Scheme Program/Course sub-headers */}
+                <th className="py-2 px-4 text-center font-medium border-r border-blue-300">
+                  Program
+                </th>
+                <th className="py-2 px-4 text-center font-medium border-r border-blue-300">
+                  Course
+                </th>
+
+                {/* 25-Scheme Program/Course sub-headers */}
+                <th className="py-2 px-4 text-center font-medium border-r border-blue-300">
+                  Program
+                </th>
+                <th className="py-2 px-4 text-center font-medium border-r border-blue-300">
+                  Course
+                </th>
+
+                {/* Resources sub-headers */}
+                <th className="py-2 px-4 text-center font-medium border-r border-blue-300"></th>
+                <th className="py-2 px-4 text-center font-medium border-r border-blue-300"></th>
+                <th className="py-2 px-4 text-center font-medium"></th>
+              </tr>
             </thead>
             <tbody>
-              <tr className="border-b border-blue-100 hover:bg-blue-50 transition-colors duration-200">
-                <td className="py-4 px-6 font-semibold text-gray-800">
-                  B.Tech
+              <tr className="border-b border-gray-200 hover:bg-blue-50 transition-all duration-200 even:bg-gray-50">
+                <td className="py-4 px-6 font-bold text-gray-800 border-r border-gray-200">
+                  <div className="flex items-center gap-3">
+                    <GraduationCap className="w-5 h-5 text-blue-600" />
+                    B.Tech
+                  </div>
                 </td>
-                <td className="py-4 px-6 text-center">
+
+                {/* 23-Scheme Program & Course */}
+                <td className="py-4 px-4 text-center border-r border-gray-200">
                   <a
-                    href="/pdfs/btech-23-program.pdf"
-                    className="text-blue-600 hover:text-blue-800 hover:underline font-medium flex items-center justify-center gap-2 transition-colors"
+                    href="https://gmu.ac.in/pdfview_assets%5Cdownloadmaterial%5CUG%20Programs%5Cpd%5CProgram%20Document%20-%20CSE%20-2023.pdf"
+                    className="inline-flex items-center gap-2 px-3 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 hover:text-blue-800 transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md"
                   >
-                    <FileText className="w-5 h-5" />
+                    <FileText className="w-4 h-4" />
                     View
                   </a>
                 </td>
-                <td className="py-4 px-6 text-center">
+                <td className="py-4 px-4 text-center border-r border-gray-200">
                   <a
-                    href="/pdfs/btech-24-course.pdf"
-                    className="text-blue-600 hover:text-blue-800 hover:underline font-medium flex items-center justify-center gap-2 transition-colors"
+                    href="https://gmu.ac.in/pdfview_assets%5Cdownloadmaterial%5CUG%20Programs%5Ccourse_details%5CCD_2023_CSEPD_2023_CSE.pdf"
+                    className="inline-flex items-center gap-2 px-3 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 hover:text-blue-800 transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md"
                   >
-                    <FileText className="w-5 h-5" />
+                    <FileText className="w-4 h-4" />
                     View
                   </a>
                 </td>
-                <td className="py-4 px-6 text-center">
+
+                {/* 24-Scheme Program & Course */}
+                <td className="py-4 px-4 text-center border-r border-gray-200">
                   <a
-                    href="/pdfs/btech-25-program.pdf"
-                    className="text-blue-600 hover:text-blue-800 hover:underline font-medium flex items-center justify-center gap-2 transition-colors"
+                    href="https://gmu.ac.in/pdfview_assets%5Cdownloadmaterial%5CUG%20Programs%5Cpd%5CPD_2024_CSE.pdf"
+                    className="inline-flex items-center gap-2 px-3 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 hover:text-green-800 transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md"
                   >
-                    <FileText className="w-5 h-5" />
+                    <FileText className="w-4 h-4" />
                     View
                   </a>
                 </td>
-                <td className="py-4 px-6 text-center">
+                <td className="py-4 px-4 text-center border-r border-gray-200">
                   <a
-                    href="/pdfs/btech-brochure.pdf"
-                    className="text-blue-600 hover:text-blue-800 hover:underline font-medium flex items-center justify-center gap-2 transition-colors"
+                    href="https://gmu.ac.in/pdfview_assets%5Cdownloadmaterial%5CUG%20Programs%5Ccourse_details%5CCD_2024_CSE.pdf.pdf"
+                    className="inline-flex items-center gap-2 px-3 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 hover:text-green-800 transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md"
                   >
-                    <FileText className="w-5 h-5" />
+                    <FileText className="w-4 h-4" />
                     View
                   </a>
                 </td>
-                <td className="py-4 px-6 text-center">
+
+                {/* 25-Scheme Program & Course */}
+                <td className="py-4 px-4 text-center border-r border-gray-200">
                   <a
-                    href="/recordings/btech-labs"
-                    className="text-blue-600 hover:text-blue-800 hover:underline font-medium flex items-center justify-center gap-2 transition-colors"
+                    href="https://gmu.ac.in/pdfview_assets%5Cdownloadmaterial%5CUG%20Programs%5Cpd%5CPD_2025_CSE.pdf"
+                    className="inline-flex items-center gap-2 px-3 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200 hover:text-purple-800 transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md"
                   >
-                    <FileText className="w-5 h-5" />
+                    <FileText className="w-4 h-4" />
                     View
                   </a>
                 </td>
-                <td className="py-4 px-6 text-center">
+                <td className="py-4 px-4 text-center border-r border-gray-200">
                   <a
-                    href="/department/cse"
-                    className="text-blue-600 hover:text-blue-800 hover:underline font-medium flex items-center justify-center gap-2 transition-colors"
+                    href="https://gmu.ac.in/pdfview_assets%5Cdownloadmaterial%5CUG%20Programs%5Cprogram%5CCD_2025_CSE.pdf"
+                    className="inline-flex items-center gap-2 px-3 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200 hover:text-purple-800 transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md"
                   >
-                    <FileText className="w-5 h-5" />
+                    <FileText className="w-4 h-4" />
+                    View
+                  </a>
+                </td>
+
+                {/* Resources */}
+                <td className="py-4 px-4 text-center border-r border-gray-200">
+                  <a
+                    href="https://gmu.ac.in/pdfview_assets%5Cdownloadmaterial%5CUG%20Programs%5Ccourse_details%5CCSE_Organized_compressed.pdf"
+                    className="inline-flex items-center gap-2 px-3 py-2 bg-orange-100 text-orange-700 rounded-lg hover:bg-orange-200 hover:text-orange-800 transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md"
+                  >
+                    <FileText className="w-4 h-4" />
+                    View
+                  </a>
+                </td>
+                <td className="py-4 px-4 text-center border-r border-gray-200">
+                  <a
+                    href="https://gmu.ac.in/pdfview_assets%5Cdownloadmaterial%5CUG%20Programs%5Ccourse_details%5CCSE_Organized_compressed.pdf"
+                    className="inline-flex items-center gap-2 px-3 py-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 hover:text-red-800 transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md"
+                  >
+                    <FileText className="w-4 h-4" />
+                    View
+                  </a>
+                </td>
+                <td className="py-4 px-4 text-center">
+                  <a
+                    href="https://gmu.ac.in/public/admission-card/branch/cse.html"
+                    className="inline-flex items-center gap-2 px-3 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 hover:text-indigo-800 transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md"
+                  >
+                    <FileText className="w-4 h-4" />
                     View
                   </a>
                 </td>
@@ -535,15 +637,69 @@ const programData = {
     curriculumTable: (
       <div className="mt-12">
         <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-          <a href="https://gmu.ac.in/GMBSdeptprog">
-            {" "}
-            M.Tech Curriculum Resources
-          </a>
+          M.Tech Curriculum Resources
         </h3>
-
+        <div className="overflow-x-auto shadow-lg rounded-lg border border-gray-200">
+          <table className="min-w-full bg-white">
+            <thead className="bg-gradient-to-r from-purple-600 to-purple-700 text-white">
+              <tr>
+                <th className="py-4 px-6 text-left font-bold text-lg border-r border-purple-500">
+                  Degree
+                </th>
+                <th className="py-4 px-6 text-center font-bold text-lg border-r border-purple-500">
+                  Program Details
+                </th>
+                <th className="py-4 px-6 text-center font-bold text-lg border-r border-purple-500">
+                  Course Details
+                </th>
+                <th className="py-4 px-6 text-center font-bold text-lg">
+                  Program Brochure
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {/* Deep Learning Row */}
+              <tr className="border-b border-gray-200 hover:bg-purple-50 transition-all duration-200 even:bg-gray-50">
+                <td className="py-4 px-6 font-bold text-gray-800 border-r border-gray-200">
+                  <div className="flex items-center gap-3">
+                    <GraduationCap className="w-5 h-5 text-purple-600" />
+                    Deep Learning
+                  </div>
+                </td>
+                <td className="py-4 px-6 text-center border-r border-gray-200">
+                  <a
+                    href="/pdfs/mtech-deep-learning-program.pdf"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 hover:text-blue-800 transition-all duration-200 font-medium shadow-sm hover:shadow-md"
+                  >
+                    <FileText className="w-4 h-4" />
+                    View
+                  </a>
+                </td>
+                <td className="py-4 px-6 text-center border-r border-gray-200">
+                  <a
+                    href="/pdfs/mtech-deep-learning-course.pdf"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 hover:text-green-800 transition-all duration-200 font-medium shadow-sm hover:shadow-md"
+                  >
+                    <FileText className="w-4 h-4" />
+                    View
+                  </a>
+                </td>
+                <td className="py-4 px-6 text-center">
+                  <a
+                    href="/pdfs/mtech-deep-learning-brochure.pdf"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 text-orange-700 rounded-lg hover:bg-orange-200 hover:text-orange-800 transition-all duration-200 font-medium shadow-sm hover:shadow-md"
+                  >
+                    <FileText className="w-4 h-4" />
+                    View
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <p className="text-sm text-gray-600 mt-4 text-center">
           Click on "View" to access detailed curriculum resources for M.Tech
-          program
+          programs
         </p>
       </div>
     ),

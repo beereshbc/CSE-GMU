@@ -3,16 +3,13 @@ import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Search,
-  Filter,
   Calendar,
   User,
   BookOpen,
   TrendingUp,
-  Download,
   ExternalLink,
   ChevronDown,
   X,
-  BarChart3,
   RefreshCw,
   Building,
   FileText,
@@ -32,11 +29,9 @@ const ResearchPublications = () => {
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterYear, setFilterYear] = useState("");
-  const [filterDepartment, setFilterDepartment] = useState("");
   const [sortBy, setSortBy] = useState("year");
   const [sortOrder, setSortOrder] = useState("desc");
   const [expandedRow, setExpandedRow] = useState(null);
-  const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
 
   useEffect(() => {
     fetchPublications();
@@ -105,7 +100,7 @@ const ResearchPublications = () => {
     }
   };
 
-  // ✅ FIX: Enhanced filter logic with array validation
+  // ✅ FIXED: Enhanced filter logic with proper year comparison
   const filteredPublications = Array.isArray(publications)
     ? publications.filter((pub) => {
         const matchesSearch =
@@ -114,14 +109,11 @@ const ResearchPublications = () => {
           pub?.facultyName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
           pub?.publication?.toLowerCase().includes(searchTerm.toLowerCase());
 
-        const matchesYear = !filterYear || pub?.year === parseInt(filterYear);
-        const matchesDepartment =
-          !filterDepartment ||
-          pub?.facultyDepartment
-            ?.toLowerCase()
-            .includes(filterDepartment.toLowerCase());
+        // ✅ FIX: Proper year comparison - handle both string and number types
+        const matchesYear =
+          !filterYear || String(pub?.year) === String(filterYear);
 
-        return matchesSearch && matchesYear && matchesDepartment;
+        return matchesSearch && matchesYear;
       })
     : []; // Return empty array if publications is not an array
 
@@ -155,19 +147,11 @@ const ResearchPublications = () => {
     }
   });
 
-  // ✅ FIX: Get unique values for filters with safe array access
+  // ✅ FIX: Get unique years for filter with safe array access and proper formatting
   const uniqueYears = Array.isArray(publications)
-    ? [...new Set(publications.map((pub) => pub?.year).filter(Boolean))].sort(
-        (a, b) => b - a
-      )
-    : [];
-
-  const uniqueDepartments = Array.isArray(publications)
-    ? [
-        ...new Set(
-          publications.map((pub) => pub?.facultyDepartment).filter(Boolean)
-        ),
-      ].sort()
+    ? [...new Set(publications.map((pub) => pub?.year).filter(Boolean))]
+        .sort((a, b) => b - a)
+        .map((year) => String(year)) // Convert all years to string for consistent comparison
     : [];
 
   // Generate Google Scholar profile URL
@@ -489,7 +473,7 @@ const ResearchPublications = () => {
       {/* Main Content */}
       <div className="py-8 px-4 sm:px-6 lg:px-8" id="publications-table">
         <div className="max-w-7xl mx-auto">
-          {/* Enhanced Search and Filters */}
+          {/* Enhanced Search and Year Filter */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -497,115 +481,92 @@ const ResearchPublications = () => {
             className="bg-white rounded-2xl shadow-lg border border-blue-100 mb-8 overflow-hidden"
           >
             <div className="p-6">
-              <div className="flex flex-col lg:flex-row gap-4 mb-4">
+              <div className="flex flex-col lg:flex-row gap-4 items-center">
                 {/* Search Input */}
-                <div className="flex-1 relative">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="text"
-                    placeholder="Search publications, authors, faculty..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all duration-200 bg-gray-50/50"
-                  />
+                <div className="flex-1 w-full lg:w-auto">
+                  <div className="relative">
+                    <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    <input
+                      type="text"
+                      placeholder="Search publications, authors, faculty..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all duration-200 bg-gray-50/50"
+                    />
+                  </div>
                 </div>
 
-                {/* Advanced Filters Toggle */}
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => setShowAdvancedFilters(!showAdvancedFilters)}
-                  className="flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-xl font-medium transition-colors duration-200"
-                >
-                  <Filter className="w-4 h-4" />
-                  Filters
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      showAdvancedFilters ? "rotate-180" : ""
-                    }`}
-                  />
-                </motion.button>
+                {/* Year Filter */}
+                <div className="w-full lg:w-64">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-5 h-5 text-gray-400" />
+                    <select
+                      value={filterYear}
+                      onChange={(e) => setFilterYear(e.target.value)}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-400 focus:border-blue-400 bg-white transition-colors duration-200"
+                    >
+                      <option value="">All Years</option>
+                      {uniqueYears.map((year) => (
+                        <option key={year} value={year}>
+                          {year}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                {/* Sort Order Toggle */}
+                <div className="w-full lg:w-auto">
+                  <button
+                    onClick={() =>
+                      setSortOrder(sortOrder === "asc" ? "desc" : "asc")
+                    }
+                    className="w-full lg:w-auto px-6 py-3 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center gap-2"
+                  >
+                    <TrendingUp className="w-4 h-4" />
+                    {sortOrder === "asc" ? "↑ Ascending" : "↓ Descending"}
+                  </button>
+                </div>
               </div>
 
-              {/* Advanced Filters */}
-              <AnimatePresence>
-                {showAdvancedFilters && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-gray-200">
-                      {/* Enhanced Year Filter */}
-                      <div>
-                        <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
-                          <Calendar className="w-4 h-4" />
-                          Publication Year
-                        </label>
-                        <select
-                          value={filterYear}
-                          onChange={(e) => setFilterYear(e.target.value)}
-                          className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 bg-white transition-colors duration-200"
-                        >
-                          <option value="">All Years</option>
-                          {uniqueYears.map((year) => (
-                            <option key={year} value={year}>
-                              {year}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
+              {/* Active Filters Info */}
+              {(searchTerm || filterYear) && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  className="mt-4 pt-4 border-t border-gray-200"
+                >
+                  <div className="flex flex-wrap gap-2 items-center">
+                    <span className="text-sm text-gray-600">
+                      Active filters:
+                    </span>
 
-                      <div>
-                        <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
-                          <Building className="w-4 h-4" />
-                          Department
-                        </label>
-                        <select
-                          value={filterDepartment}
-                          onChange={(e) => setFilterDepartment(e.target.value)}
-                          className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 bg-white transition-colors duration-200"
+                    {searchTerm && (
+                      <span className="inline-flex items-center gap-1 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">
+                        Search: "{searchTerm}"
+                        <button
+                          onClick={() => setSearchTerm("")}
+                          className="hover:text-blue-900"
                         >
-                          <option value="">All Departments</option>
-                          {uniqueDepartments.map((dept) => (
-                            <option key={dept} value={dept}>
-                              {dept}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
+                          <X className="w-3 h-3" />
+                        </button>
+                      </span>
+                    )}
 
-                      <div>
-                        <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
-                          <TrendingUp className="w-4 h-4" />
-                          Sort By
-                        </label>
-                        <div className="flex gap-2">
-                          <select
-                            value={sortBy}
-                            onChange={(e) => setSortBy(e.target.value)}
-                            className="flex-1 px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 bg-white transition-colors duration-200"
-                          >
-                            <option value="year">Year</option>
-                            <option value="citations">Citations</option>
-                            <option value="title">Title</option>
-                            <option value="faculty">Faculty</option>
-                          </select>
-                          <button
-                            onClick={() =>
-                              setSortOrder(sortOrder === "asc" ? "desc" : "asc")
-                            }
-                            className="px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors duration-200"
-                          >
-                            {sortOrder === "asc" ? "↑" : "↓"}
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                    {filterYear && (
+                      <span className="inline-flex items-center gap-1 bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
+                        Year: {filterYear}
+                        <button
+                          onClick={() => setFilterYear("")}
+                          className="hover:text-green-900"
+                        >
+                          <X className="w-3 h-3" />
+                        </button>
+                      </span>
+                    )}
+                  </div>
+                </motion.div>
+              )}
             </div>
           </motion.div>
 
@@ -815,9 +776,9 @@ const ResearchPublications = () => {
                   {publications.length}
                 </span>{" "}
                 publications
-                {sortBy && (
+                {filterYear && (
                   <span className="text-sm text-gray-500 ml-2">
-                    • Sorted by {sortBy} ({sortOrder})
+                    • Filtered by year: {filterYear}
                   </span>
                 )}
               </p>

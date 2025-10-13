@@ -119,16 +119,6 @@ const StudentAchievements = () => {
   // Student achievements data with proper images
   const studentAchievements = [
     {
-      id: 1,
-      image: assets.Abhiram,
-      title: "National-level Vyoma Hackathon",
-      students: "Rahul, Abhiram, Yashaswini, Yashwanth",
-      department: "Computer Science",
-      description:
-        "Under the leadership of DS Yashaswini, our team created an impactful Generative AI solution aimed at enhancing health and well-being during an intense 24-hour challenge in Hyderabad.",
-      hasLink: true,
-    },
-    {
       id: 2,
       image: assets.bindu,
       title: "Paper Presentation on Climate Change",
@@ -210,6 +200,47 @@ const StudentAchievements = () => {
         "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
       title: "Code Quality Visualizer Project",
       description: "Student entrepreneurs securing funding",
+    },
+    {
+      src: assets.SA1,
+      largeSrc:
+        "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=600&fit=crop",
+      title: "",
+      description: "",
+    },
+    {
+      src: assets.SA2,
+      largeSrc: "AI Investment Strategy Predictor",
+      title: "",
+      description: "",
+    },
+    {
+      src: assets.SA3,
+      largeSrc:
+        "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop",
+      title: "",
+      description: "",
+    },
+    {
+      src: assets.SA4,
+      largeSrc:
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+      title: "",
+      description: "",
+    },
+    {
+      src: assets.SA5,
+      largeSrc:
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+      title: "",
+      description: "",
+    },
+    {
+      src: assets.SA6,
+      largeSrc:
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+      title: "",
+      description: "",
     },
   ];
 
@@ -395,45 +426,6 @@ const StudentAchievements = () => {
                       )}
                     </a>
                   )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Gallery Section */}
-      <div className="py-16 bg-white mx-4 sm:mx-[6%]">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 relative">
-              Achievement Moments
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-yellow-500 to-orange-400 rounded-full mt-2"></div>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Capturing the memorable moments of success and recognition
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {galleryImages.map((item, index) => (
-              <div
-                key={index}
-                className="gallery-item relative rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 h-64"
-                onClick={() => openLightbox(item.largeSrc)}
-              >
-                <img
-                  src={item.src}
-                  alt={item.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="gallery-overlay absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent text-white p-6">
-                  <div className="gallery-title font-semibold text-lg mb-1">
-                    {item.title}
-                  </div>
-                  <div className="gallery-description text-sm opacity-90">
-                    {item.description}
-                  </div>
                 </div>
               </div>
             ))}
