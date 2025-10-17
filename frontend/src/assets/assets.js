@@ -877,38 +877,98 @@ export const faculties = [
     ],
   },
   {
-    name: "Dr. SantoshKumar Mahendrakar",
-    position: "Associate Professor",
+    name: "Dr. Santoshkumar Mahendrakar",
+    position: "Assistant Professor",
     img: SANTOSHKUMAR_M,
     coverImg: gmu,
     about:
-      "Dr. Santoshkumar Mahendrakar is an Assistant Professor in the Department of Computer Science & Engineering at GM University, Davangere, with more than 22 years of academic and research experience. He is currently pursuing his Ph.D. in Artificial Intelligence and Machine Learning (AIML), with research contributions in computational models, machine learning for agriculture (including SlimNet for foxtail millet growth analysis), and blockchain technologies. Over the years, he has been actively engaged in teaching, curriculum design, and accreditation processes. He has strong expertise in NBA Accreditation, theory of computation, programming languages, and modern pedagogical practices.",
+      "Dr. Santoshkumar Mahendrakar is an Assistant Professor in the Department of Computer Science & Engineering at GM University, Davangere, with more than 23 years of academic and research experience. He has pursued his Ph.D. in Artificial Intelligence and Machine Learning (AIML), with research contributions in computational models, machine learning for agriculture, and blockchain technologies. His teaching philosophy combines theoretical depth with hands-on problem-solving, encouraging students to develop computational thinking and apply knowledge to real-world problems.",
     social: {
       linkedin: "https://www.linkedin.com/in/santosh-mahendrakar-6908a299/",
       Scholar:
         "https://scholar.google.com/citations?view_op=list_works&hl=id&user=faavbjwAAAAJ",
-      Vidwan: "nil",
+      Vidwan: "https://vidwan.inflibnet.ac.in/myprofile",
     },
     experience: [
       {
-        year: "nil",
-        title: "Teaching",
-        company: "",
-        description: "nil",
-      },
-      {
-        year: "nil",
-        title: "Industry",
-        company: "nil",
-        description: "Nil",
+        year: "2001-Present",
+        title: "Teaching and Research",
+        company: "GM University, Davangere",
+        description: "23+ years of academic and research experience",
       },
     ],
     contact: {
       address:
-        "Faculty of Engineering and Technology, GM University, Davanagere",
-      phone: "9242163128",
-      email: "santoshkumarm@gmit.ac.in",
+        "Department of Computer Science & Engineering, GM University, P. B. Road, Davanagere – 577 006 KARNATAKA, INDIA",
+      phone: "Not specified",
+      email: "Not specified",
     },
+    qualifications: [
+      {
+        degree: "Ph.D (CSE)",
+        institution: "VTU, Belgavi",
+        year: "2025",
+      },
+      {
+        degree: "M.Tech (CSE)",
+        institution: "First Class with Distinction",
+        year: "2007",
+      },
+      {
+        degree: "B.E. (CSE)",
+        institution: "First Class with Distinction",
+        year: "2001",
+      },
+    ],
+    researchInterests: [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Blockchain Technology",
+      "Automata Theory",
+      "Smart Contracts",
+      "Computational Models",
+      "Machine Learning for Agriculture",
+    ],
+    awards: [
+      {
+        title: "Silver and Bronze Partnership Awards",
+        organization: "Infosys",
+        year: "Not specified",
+      },
+    ],
+    administrativeRoles: [
+      "Secretary of GMIT Alumni association",
+      "Chief coordinator of Institute Internal audit committee",
+      "Deputy director for Student Affairs",
+      "Resource person for NBA accreditation under MargDarshak Scheme",
+    ],
+    professionalMemberships: ["Member, Computer Society of India (CSI)"],
+    publications: {
+      internationalJournals: 7,
+      internationalConferences: 3,
+      patents: 1,
+    },
+    projectsGuided: {
+      ug: "Multiple",
+      pg: "Not specified",
+      ongoing: "Not specified",
+    },
+    fundedProjects: ["Not specified in the document"],
+    teachingCourses: [
+      "Theory of Computation",
+      "Data structures and Applications",
+      "Programming Languages (C, Python, Java)",
+      "Blockchain Technology",
+      "Artificial Intelligence & Machine Learning",
+      "Agile Technology",
+      "Data mining and Data warehousing",
+    ],
+    eventOrganization: [
+      "Natya Taranga 2025 - University-level dance competition",
+      "GMU Idol 2025 - Singing competition",
+      "Kala Vaibhav - 2024 Karnataka Rajyotsava celebration",
+      "Mallika 2024 and Mallika 2025 - Inter-collegiate cultural competition",
+    ],
   },
   {
     name: "Prof. Nayana K",

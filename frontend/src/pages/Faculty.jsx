@@ -315,7 +315,7 @@ const FacultyDetailView = ({ faculty, onClose }) => {
               {/* Social Links */}
               <div className="bg-blue-50 rounded-xl p-6">
                 <h3 className="text-lg font-semibold text-blue-900 mb-4">
-                  Connect with {faculty.name.split(" ")[0]}
+                  Connect with {faculty.name}
                 </h3>
                 <div className="flex space-x-3">
                   {faculty.social.linkedin &&
