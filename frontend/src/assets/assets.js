@@ -602,26 +602,32 @@ export const faculties = [
         year: "2004-2023",
         title: "Teaching",
         company: "SDMCET, Dharwad",
-        description: "21 Years of teaching experience.",
+        description: "21 Years of teaching experience",
       },
       {
         year: "2023-Present",
         title: "Teaching",
-        company: "GM University Davangere",
-        description: "2 Years of teaching experience.",
+        company: "GM University, Davangere",
+        description: "2 Years of teaching experience",
       },
       {
         year: "2006",
         title: "Industry Sabbatical",
         company: "Infosys, Bangalore DC",
-        description: "3 months Sabbatical on Refactoring.",
+        description: "3 months Sabbatical on Refactoring",
       },
       {
-        year: "",
+        year: "2009-2010",
         title: "Research",
-        company: "GM University",
+        company: "IIT Delhi",
         description:
-          "Focus on Personalized Learning Systems and Academic Technology Innovation.",
+          "60 Days QIP Scholar and Two Courses work at Department of CSE, IITD",
+      },
+      {
+        year: "2019-2020",
+        title: "Research Grant",
+        company: "VTU, Belagavi",
+        description: "Competitive Research Grant of INR 2 Lakhs",
       },
     ],
     contact: {
@@ -630,6 +636,76 @@ export const faculties = [
       phone: "+91 7892644508",
       email: "shivana.gowda@gmail.com, shivanagowda@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "Ph.D. (CSE)",
+        institution:
+          "Visvesvaraya Technological University, Belagavi, Karnataka",
+        year: "2019",
+        thesis:
+          "Knowledge Modelling and Questioning Systems with Applications to Personalized Educating Systems",
+      },
+      {
+        degree: "M.Tech. (CSE)",
+        institution: "B.I.E.T. Davangere / VTU, Belagavi, Karnataka",
+        year: "2004",
+        thesis: "Design and Implementation of Programming Language 'MINE'",
+      },
+      {
+        degree: "BE (IT)",
+        institution: "B.I.E.T. Davangere / Kuvempu University, Shimoga",
+        year: "2000",
+      },
+    ],
+    researchInterests: [
+      "Personalized Learning Systems",
+      "Human-Computer Interface",
+      "Automated Software Engineering",
+      "Local Positioning system and Precision Drone Landing",
+      "Engineering Education and Technology driven academic administration",
+    ],
+    awards: [
+      {
+        title: "Faculty of Excellence",
+        organization: "School of Computer Science and Technology",
+        year: "2024-25",
+      },
+      {
+        title: "Contribution to Global Computing Curricula 2020",
+        organization: "ACM and IEEE-CS Taskforce",
+        year: "2020",
+      },
+      {
+        title: "Competitive Research Grant",
+        organization: "VTU, Belagavi",
+        year: "2019-2020",
+        amount: "INR 2 Lakhs",
+      },
+    ],
+    administrativeRoles: [
+      "Head of Department of Computer Science and Engineering",
+      "NEP Nodal Officer",
+      "Scholarship Nodal Officer",
+      "Associate Director, ERP Development",
+      "Associate Editor, GMU Times Workshops",
+    ],
+    professionalMemberships: [
+      "Senior Professional Member - Association for Computing Machinery (ACM) since 2013",
+    ],
+    publications: {
+      books: 1,
+      internationalJournals: 6,
+      internationalConferences: 3,
+      patents: 1,
+    },
+    projectsGuided: {
+      ug: 40,
+      pg: 15,
+      ongoing: 3,
+    },
+    fundedProjects: [
+      "Personalised & Collaborative Learning Environment for Readable Learning Resources (VTU, 2019-2020)",
+    ],
   },
   {
     name: "Dr. Chethan Chandra S Basavaraddi",
@@ -710,19 +786,19 @@ export const faculties = [
     social: {
       linkedin: "//www.linkedin.com/in/nayana-k-921205371/recent-activity/all/",
       Scholar:
-        ":https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;user=6hbQNOsAA",
-      Vidwan: "I:https://vidwan.inflibnet.ac.in/profile/345497",
+        "https://scholar.google.com/citations?view_op=list_works&hl=en&user=6hbQNOsAA",
+      Vidwan: "https://vidwan.inflibnet.ac.in/profile/345497",
     },
     experience: [
       {
-        year: "",
+        year: "2011-2013",
         title: "Teaching",
         company:
           "SCT Institute of Technology, Vignan Nagar, Bengaluru, Karnataka",
         description: "2 Years of teaching experience",
       },
       {
-        year: "",
+        year: "2004-2016",
         title: "Teaching",
         company: "PES Institute of Technology, Shivamogga, Karnataka",
         description: "12 Years of teaching experience",
@@ -731,14 +807,14 @@ export const faculties = [
         year: "2023 – Present",
         title: "Teaching",
         company: "GM University Davangere",
-        description: "2 .10 Years of teaching experience",
+        description: "2.10 Years of teaching experience",
       },
       {
-        year: "",
+        year: "2019-Present",
         title: "Research",
-        company: "",
+        company: "VTU / GM University",
         description:
-          "Specialisation in Artificial Intelligence, Machine Learning and Deep Le...",
+          "Specialisation in Artificial Intelligence, Machine Learning and Deep Learning. Her research has resulted in publications and funded projects from VTU under the KSCST Research Grant scheme.",
       },
     ],
     contact: {
@@ -747,37 +823,94 @@ export const faculties = [
       phone: "9945692143",
       email: "nayanak@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "Ph.D. (CSE) - Pursuing",
+        institution: "Visvesvaraya Technological University (VTU), Belagavi",
+        thesis:
+          "ECG Anomaly Detection using LSTM Autoencoder and SHAP for Explainability",
+      },
+      {
+        degree: "M.Tech. (CSE)",
+        institution: "VTU, Belagavi",
+        year: "2011",
+        specialization:
+          "Information and Communication Technology (ICT) in Computer Science and Engineering",
+      },
+      {
+        degree: "BE (ECE)",
+        institution: "VTU",
+        year: "2007",
+      },
+    ],
+    researchInterests: [
+      "Deep Learning applications in healthcare, particularly ECG anomaly detection",
+      "Explainable AI using SHAP (SHapley Additive exPlanations)",
+      "LSTM Autoencoders for time-series data analysis",
+      "Artificial Intelligence and Machine Learning methodologies",
+    ],
+    administrativeRoles: [
+      "Program Director: M.Tech in Deep Learning program at GM University",
+      "Academic Co-coordinator",
+      "Research coordinator for Centre of Excellence AIML",
+      "Technical Seminar coordinator",
+      "BOS member for PG programs",
+      "Reporter from School of Computer Science and Technology for GMU Times",
+    ],
+    professionalMemberships: [
+      "Life Member of Indian Society for Technical Education (ISTE), Bangalore, India",
+      "Member for Association for Computing Machinery (ACM) student chapter",
+    ],
+    publications: {
+      nationalConferencePapers: 1,
+      internationalConferencePapers: 1,
+      nationalJournalPapers: 1,
+    },
+    projectsGuided: {
+      ug: 40,
+      pg: 15,
+    },
+    fundedProjects: [
+      "KSCST Projects: 03",
+      "VTU: 01",
+      "ART: 01",
+      "ECO-CHARGE: EMPOWERING HOMES FOR SUSTAINABLE MOBILITY",
+      "EDU AR: AUGMENTED REALITY ENHANCED E-LEARNING APPLICATION FOR KIDS WITH DOWN SYNDROME",
+    ],
   },
+
   {
     name: "Mrs Kavyashree P N",
     position: "Assistant Professor",
     img: KAVYASHREE_p_N,
     coverImg: gmu,
     about:
-      "Mrs Kavyashree P N is an Assistant Professor in the Department of Computer Science and Engineering GM University, Davanagere. She holds B.E,M.Tech and currently pursuingPh.D in GM University. She is having 4+ years of teaching experience various subjects like C Programming, Java Programming, Python Programming, Software Engineering, Full Stack Development, Mobile Application Development, Cloud Computing, Machine Learning, and Deep Learning. Shehas actively involved in Placement activities and conducted training program for students in Departmental level.",
+      "Mrs Kavyashree P N is an Assistant Professor in the Department of Computer Science and Engineering GM University, Davanagere. She holds B.E, M.Tech and currently pursuing Ph.D in GM University. She is having 4+ years of teaching experience various subjects like C Programming, Java Programming, Python Programming, Software Engineering, Full Stack Development, Mobile Application Development, Cloud Computing, Machine Learning, and Deep Learning. She has actively involved in Placement activities and conducted training program for students in Departmental level.",
     social: {
       linkedin:
         "https://www.linkedin.com/in/kavyashree-p-n-954b791b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       Scholar: "https://scholar.google.com/citations?user=3Wu2bXkAAAAJ&hl=en",
       Vidwan: "https://vidwan.inflibnet.ac.in/profile/238286",
+      researchgate:
+        "https://www.researchgate.net/profile/Kavyashree-P-N?ev=hdr_xprf",
     },
     experience: [
       {
-        year: "",
+        year: "2018-2022",
         title: "Teaching",
-        company: "GMIT",
-        description: "4+ years",
+        company: "GM Institute of Technology (GMIT), Davanagere",
+        description: "4+ years of teaching experience",
       },
       {
-        year: "",
+        year: "2023-Present",
         title: "Teaching",
-        company: "G M University",
-        description: "6months years",
+        company: "GM University, Davanagere",
+        description: "6 months of teaching experience",
       },
       {
-        year: "",
+        year: "2024-Present",
         title: "Research",
-        company: "",
+        company: "GM University, Davanagere",
         description:
           "Deep Learning-Based Approach to Interpret NIFTY 50 Prediction with Explainable AI Insights",
       },
@@ -788,6 +921,80 @@ export const faculties = [
       phone: "8123506523",
       email: "Kavyashreepn@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "Ph.D. (CSE) - Pursuing",
+        institution: "GM University, Davanagere",
+        year: "2024 (Registered)",
+      },
+      {
+        degree: "M.Tech (CSE)",
+        institution: "UBDT College of Engineering (UBDTCE), Davanagere, VTU",
+        year: "2020",
+      },
+      {
+        degree: "BE (ISE)",
+        institution: "GM Institute of Technology (GMIT), Davanagere, VTU",
+        year: "2018",
+      },
+    ],
+    researchInterests: [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Deep Learning",
+    ],
+    administrativeRoles: [
+      "Secretary – Coding and Web Development Club",
+      "Department Level: NBA criteria 4, Placement Coordinator, Alumni Coordinator",
+      "University Level: IBP Coordinator for GM University",
+      "BOS Member for framing GMU UG Syllabus",
+    ],
+    professionalMemberships: [
+      // Not explicitly mentioned in the document
+    ],
+    publications: {
+      patents: 1,
+      internationalConferences: 1,
+    },
+    projectsGuided: {
+      ug: {
+        "2021-2024": "2 batches each year",
+        2025: "3 batches + Project based learning for Lower semester UG Students",
+      },
+    },
+    fundedProjects: [
+      "BLINDOPHILE - A SMART ASSISTIVE DEVICE FOR VISUALLY IMPAIRED PEOPLE (KSCST, Rs.5000/-)",
+    ],
+    trainingPrograms: {
+      attended: [
+        "National Intellectual Property Awareness Mission Program (2022)",
+        "Java Programming and Python Workshop - Wipro Certified Faculty Program (2022)",
+        "Git and Visual Studio Tool Training - GM University",
+        "ICT Tools for Innovative Teaching & Learning Process - RV Institute of Technology (2022)",
+        "Train The Trainer Program on Java Programming - Infosys (2021)",
+        "Programming Fundamentals using Python - Infosys (2022)",
+        "Wipro Certified Faculty Program on Python and Java (2022)",
+        "Artificial Intelligence Faculty Development Program - Microsoft & SAP (2023)",
+        "Introduction to Python Programming & its Applications - AICTE-VTU (2023)",
+        "Cloud Computing and its security - BIET (2025)",
+        "Advancing Frontiers in Super-computing AI and Quantum computing - ATAL FDP (2024)",
+      ],
+      organized: [
+        "FDP on C Programming and its relevance to engineering students (2024)",
+        "FDP on Text mining methods and operations (2024)",
+      ],
+    },
+    subjectsTaught: [
+      "C Programming",
+      "Java Programming",
+      "Python Programming",
+      "Software Engineering",
+      "Full Stack Development",
+      "Mobile Application Development",
+      "Cloud Computing",
+      "Machine Learning",
+      "Deep Learning",
+    ],
   },
   {
     name: "Ms. Ranjitha D S",
@@ -795,31 +1002,19 @@ export const faculties = [
     img: RANJITHA_D_S,
     coverImg: gmu,
     about:
-      "Ms. Ranjitha D. S is currently serving as an Assistant Professor in the Department of Computer Science and Engineering. She holds a Master’s Degree in Digital Communication and Networking from UBDT College of Engineering, Davanagere. Her areas of interest include Image Processing, Networking, Machine Learning, and Artificial Intelligence. She finds her teaching experience in this institution highly rewarding, as it offers a vibrant and supportive academic environment that encourages innovation and growth.",
+      "Ms. Ranjitha D. S is currently serving as an Assistant Professor in the Department of Computer Science and Engineering. She holds a Master's Degree in Digital Communication and Networking from UBDT College of Engineering, Davanagere. Her areas of interest include Image Processing, Networking, Machine Learning, and Artificial Intelligence. She finds her teaching experience in this institution highly rewarding, as it offers a vibrant and supportive academic environment that encourages innovation and growth.",
     social: {
-      linkedin: "https://www.linkedin.com/in/ranjitha-ds-9127a716a/",
+      linkedin: "https://www.linkedin.com/in/ranjithad-s-9127a716a/",
       Scholar:
         "https://scholar.google.com/citations?view_op=new_articles&hl=en&imq=RANJITHA+D+S#",
       Vidwan: "nil",
     },
     experience: [
       {
-        year: "2023-Currently Working",
+        year: "2023-Present",
         title: "Teaching",
-        company: "nil",
-        description: "2 Years",
-      },
-      {
-        year: "nil",
-        title: "Industry",
-        company: "nil",
-        description: "Nil",
-      },
-      {
-        year: "nil",
-        title: "Research",
-        company: "nil",
-        description: "Nil",
+        company: "GM University, Davanagere",
+        description: "2 Years of teaching experience",
       },
     ],
     contact: {
@@ -828,6 +1023,178 @@ export const faculties = [
       phone: "9164066050",
       email: "ranjithads@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "M.Tech (Digital Communication and Networking)",
+        institution: "UBDT College of Engineering, Davanagere, Karnataka",
+        year: "2022",
+      },
+      {
+        degree: "BE (Electronics and Communication Engineering)",
+        institution: "Jain Institute of Technology, Davanagere",
+        year: "2020",
+      },
+    ],
+    researchInterests: [
+      "Image Processing",
+      "Networking",
+      "Machine Learning",
+      "Artificial Intelligence",
+    ],
+    publications: {
+      journals: [
+        {
+          title:
+            "Credit Card Fraud Detection and Prevention By Two Step Verification",
+          authors: "Ranjitha D.S and Dr. Geetha V",
+          journal: "GIS Science Journal",
+          volume: "Volume 9, Issue 7",
+          year: "2022",
+        },
+      ],
+    },
+    administrativeRoles: [
+      "Department Level: Cultural Coordinator, Forum Coordinator, Project Coordinator",
+      "University Level: NEP Saarthi Coordinator",
+    ],
+    trainingPrograms: {
+      attended: [
+        "Training Program on 'Application Software for Enhanced Course Delivery (ASECD)' - GM University",
+        "FDP on 'Full Stack Development' - BIT, Bangalore (April 2024)",
+        "ATAL FDP - Department of ISE, GMIT (December 2024)",
+        "FDP on 'Deep Learning and Gen AI Applications' - EICT Academy, IIT Roorkee (January 2025)",
+        "FDP on Cloud Computing and Its Security - BIET, Davanagere (March 2025)",
+      ],
+      organized: [
+        "'Network Programming and its Real time Applications' Workshop for 5th sem Students (February 2024)",
+      ],
+    },
+    projectsGuided: {
+      ug: [
+        "Virtual Trial room for online shopping System",
+        "Virtual Mouse using Hand Gestures",
+        "Stress Detection using Image Processing Techniques",
+        "Sign Language to Text and Speech",
+        "Ai based smart contract generator using Blockchain in digital banking",
+        "An Integrated Framework for Cryptocurrency Trading Using AI-Based Prediction and Automated Real-Time Technical Analysis",
+      ],
+    },
+    fundedProjects: [
+      {
+        title:
+          "Intelligent Couture: AI-Enhanced Unisex Smart Gown with Embedded Capacitive Sensors for Adaptive Fit",
+        organization: "GM University Seed Grant",
+        amount: "Rs. 15,000/-",
+        year: "2025-2026",
+        status: "Ongoing",
+      },
+    ],
+  },
+
+  {
+    name: "Ms. Nanditha G",
+    position: "Assistant Professor",
+    img: NANDITHA_G, // You'll need to add this image import
+    coverImg: gmu,
+    about:
+      "Prof. Nanditha G is an Assistant Professor in the Department of Computer Science & Engineering at GM University, Davanagere. She joined GMU on July 24, 2023, with nearly 2.5 years of experience. At GMU, she also serves in the National Service Scheme (NSS), where she is responsible for overseeing and coordinating all academic activities of the program, including, course delivery, student mentoring, and ensuring overall academic excellence. Additionally, she serves as the Co-ordinator for the Institution's Innovation Council (IIC) at GMIT, an initiative of the Ministry of Education (MoE), Government of India, aimed at promoting innovation and entrepreneurship in higher education institutions.",
+    social: {
+      linkedin: "nil",
+      Scholar: "nil",
+      Vidwan: "nil",
+    },
+    experience: [
+      {
+        year: "2021-2023",
+        title: "Teaching",
+        company: "GM Institute of Technology, Davangere",
+        description: "2 Years of teaching experience",
+      },
+      {
+        year: "2023-Present",
+        title: "Teaching",
+        company: "GM University, Davanagere",
+        description: "6 months of teaching experience",
+      },
+      {
+        year: "2023-Present",
+        title: "Research",
+        company: "GM University",
+        description: "Digital Communication and Networking",
+      },
+    ],
+    contact: {
+      address:
+        "Faculty of Engineering and Technology, GM University, Davanagere",
+      phone: "", // Not provided in document
+      email: "", // Not provided in document
+    },
+    qualifications: [
+      {
+        degree: "M.Tech (Digital Communication and Networking)",
+        institution: "UBDT College, Davangere",
+        year: "2022",
+      },
+      {
+        degree: "BE (Electronics and Communication Engineering)",
+        institution: "GM Institute of Technology, Davangere",
+        year: "2020",
+      },
+    ],
+    researchInterests: [
+      "Machine Learning",
+      "Deep Learning",
+      "Artificial Intelligence",
+    ],
+    publications: {
+      journals: [
+        {
+          title:
+            "Automatic Crop Recommender system using machine learning approach",
+          authors: "Nanditha G, Dr. N Manja Naik, Dr. Revanna C R",
+          journal: "Dickension Journal",
+          volume: "Volume 22",
+          year: "2022",
+          pages: "254-258",
+        },
+      ],
+    },
+    administrativeRoles: [
+      "NSS Coordinator (Department Level)",
+      "Scholarship Coordinator (Department Level)",
+      "Co-ordinator for Institution's Innovation Council (IIC) at GMIT",
+    ],
+    trainingPrograms: {
+      attended: [
+        "Three days training program on 'Visual Studio' - GM University",
+        "Virtual lab session in CSE Department",
+        "ATAL FDP on 'Building a Culture of Cyber Security' (November 2024)",
+        "ATAL FDP on 'Advancing Frontiers in Supercomputing, AI and Quantum Computing' (December 2024)",
+      ],
+      organized: [
+        "'Network Programming and its Real time Applications' Workshop for 5th sem Students (February 2024)",
+      ],
+    },
+    awards: [
+      {
+        title: "Best performer in Visual Studio training",
+        description:
+          "Secured A+ Grade and selected for Application Software for enhancing course delivery (ASECD)",
+      },
+    ],
+    projectsGuided: {
+      ug: [
+        "Speech emotion recognition using machine learning",
+        "Deep learning base mobile and web app for multi-plant disease detection and treatment",
+        "Design and implementation of IoT based water quality and leakage monitoring system using machine learning",
+        "A real time driver drowsiness detection system",
+        "Stock market trends analysis using LSTM neural networks",
+        "Vitafuel AI health tracking for better nutrition and wellness",
+        "Fraud Detection: Python-based system to detect fraudulent credit card transactions in real-time",
+        "Economical data analysis using python",
+      ],
+    },
+    otherContributions: ["Syllabus Framed for UG and PG Program of GMU"],
   },
   {
     name: "Mr. Ravinandan Jannu",
@@ -844,22 +1211,16 @@ export const faculties = [
     },
     experience: [
       {
-        year: "nil",
+        year: "2023-Present",
         title: "Teaching",
-        company: "GM University Davanagere",
-        description: "1.5 Years",
+        company: "GM University, Davanagere",
+        description: "1.5 Years of teaching experience",
       },
       {
-        year: "nil",
+        year: "2022-2023",
         title: "Industry",
         company: "DRVL SOFTWARE",
-        description: "1 Years",
-      },
-      {
-        year: "nil",
-        title: "Research",
-        company: "nil",
-        description: "NA",
+        description: "1 Year of industry experience",
       },
     ],
     contact: {
@@ -867,9 +1228,34 @@ export const faculties = [
       phone: "9066623203",
       email: "ravinandanjannu.fet.scst.cse@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "MCA",
+        institution: "BIET, Davanagere, Karnataka",
+        year: "2023",
+      },
+      {
+        degree: "BCA (CSE)",
+        institution: "Davan Institute, Davanagere",
+        year: "2021",
+      },
+    ],
+    certifications: ["Java Full Stack Development - Pentagon Space"],
+    researchInterests: [
+      "Internet of Things (IoT) Systems and Smart Applications",
+      "Cybersecurity and Secure Web Systems",
+    ],
+    trainingPrograms: {
+      attended: [
+        "Faculty Development Program (FDP) on 'Wireshark and Network Traffic Analysis' - GM University (September 2025)",
+      ],
+    },
+    projectsGuided: {
+      ug: "Currently guiding UG projects",
+    },
   },
   {
-    name: "Ms. NIVEDITHA T NAIK",
+    name: "Ms. Niveditha T Naik",
     position: "Assistant Professor",
     img: NIVEDITHA_T_NAIK,
     coverImg: gmu,
@@ -883,30 +1269,84 @@ export const faculties = [
     },
     experience: [
       {
-        year: "nil",
+        year: "2025-Present",
         title: "Teaching",
         company: "GM University, Davangere",
-        description: "2 months",
-      },
-      {
-        year: "nil",
-        title: "Industry",
-        company: "nil",
-        description: "NIL",
-      },
-      {
-        year: "nil",
-        title: "Research",
-        company: "nil",
-        description: "Nil",
+        description: "2 months of teaching experience",
       },
     ],
     contact: {
       address:
-        "School of Computing science and Technology, GM University, Davanagere",
+        "School of Computing Science and Technology, GM University, Davanagere",
       phone: "7349249270",
       email: "nivedithatnaik.fet.scst@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "M.Tech (Digital Communication and Networking)",
+        institution: "University BDT College of Engineering, Davanagere",
+      },
+      {
+        degree: "BE (Electronics and Communication Engineering)",
+        institution:
+          "Bapuji Institute of Engineering and Technology, Davanagere",
+      },
+    ],
+    certifications: ["AWS", "DevOps", "Linux", "CCNA"],
+    researchInterests: [
+      "Wireless communication technology and Networking",
+      "IoT",
+      "Cloud Computing",
+    ],
+    publications: {
+      journals: [
+        {
+          title:
+            "Wind Turbines Performance Monitoring Using LoRa Technology with Alert System",
+          journal: "GIS Science Journal",
+          year: "2023",
+        },
+      ],
+      conferences: [
+        {
+          title:
+            "Wind Turbines Performance Monitoring Using LoRa Technology with Alert System",
+          conference:
+            "Second International Conference on Advancements in Science, Management & Engineering (ICSME 2023)",
+          proceedings: "ICSMEAP026",
+          year: "2023",
+        },
+      ],
+    },
+    awards: [
+      {
+        title: "Best Presenter - 1st Place",
+        organization:
+          "Second International Conference on Advancements in Science, Management & Engineering (ICSME 2023)",
+        year: "2023",
+        description:
+          "Awarded under the PG Specialization category for presentation on 'Wind Turbines Performance Monitoring Using LoRa Technology with Alert System'",
+      },
+    ],
+    administrativeRoles: [
+      "Department of CSE Internship Coordinator for GMU and GMIT",
+    ],
+    trainingPrograms: {
+      attended: [
+        "Faculty Development Programme 'GMU-LEAP' - GM University (August 2025)",
+        "Cybersecurity Skilling Program 2023 - IIT Kanpur, C3iHub (July-September 2023)",
+      ],
+    },
+    projectsGuided: {
+      ug: "Currently guiding undergraduate students on their project work (Ongoing)",
+    },
+    expertise: [
+      "Wireless communication technologies",
+      "Cloud computing",
+      "IoT",
+      "Networking",
+      "Cybersecurity",
+    ],
   },
   {
     name: "Ms. Sanjana A T",
@@ -923,29 +1363,33 @@ export const faculties = [
     },
     experience: [
       {
-        year: "nil",
+        year: "2024-Present",
         title: "Teaching",
-        company: "nil",
-        description: "NA",
-      },
-      {
-        year: "nil",
-        title: "Industry",
-        company: "nil",
-        description: "NA",
-      },
-      {
-        year: "nil",
-        title: "Research",
-        company: "nil",
-        description: "NA",
+        company: "GM University, Davanagere",
+        description: "2 months of teaching experience",
       },
     ],
     contact: {
-      address: "School of science and technology, GM University, Davanagere",
+      address: "School of Science and Technology, GM University, Davanagere",
       phone: "9482015238",
       email: "sanjanaat.fet.scst@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "MCA (Master of Computer Applications)",
+        institution: "Kuvempu University, Shankarghatta",
+        year: "2024",
+      },
+      {
+        degree: "B.Sc. (PMCs)",
+        institution: "DVS College of Arts and Science, Shivamogga",
+        year: "2022",
+      },
+    ],
+    researchInterests: ["Cyber Security", "Data Mining"],
+    futureAspirations: [
+      "Pursue Ph.D. in Computer Science focusing on Cyber Security, Data Mining, and Deep Learning",
+    ],
   },
   {
     name: "Mr. Srijan Roy",
@@ -953,7 +1397,7 @@ export const faculties = [
     img: Srijan_Roy,
     coverImg: gmu,
     about:
-      "Srijan Roy is an Assistant Professor in the Department of Computer Science & Engineering at GM University, Davangere. He joined GMU on June 6th, bringing a strong academic background from premier institutions and a specialized focus on cutting-edge technologies. He is a dedicated academician and researcher, actively contributing to the fields of AI and Machine Learning.He is passionate about enhancing his skills and knowledge and is eager to contribute to the academic and research ecosystem.",
+      "Srijan Roy is an Assistant Professor in the Department of Computer Science & Engineering at GM University, Davangere. He joined GMU on June 6th, bringing a strong academic background from premier institutions and a specialized focus on cutting-edge technologies. He is a dedicated academician and researcher, actively contributing to the fields of AI and Machine Learning. He is passionate about enhancing his skills and knowledge and is eager to contribute to the academic and research ecosystem.",
     social: {
       linkedin:
         "https://www.linkedin.com/in/srijan-roy-9a355721a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -963,37 +1407,110 @@ export const faculties = [
     },
     experience: [
       {
-        year: "",
+        year: "2024-Present",
         title: "Teaching",
-        company: "GM University Davangere",
-        description: "1 Year 3 months",
+        company: "GM University, Davangere",
+        description: "1 Year 3 months of teaching experience",
       },
       {
-        year: "",
-        title: "Industry",
-        company: "",
-        description: "NA",
-      },
-      {
-        year: "",
+        year: "2022-2024",
         title: "Research",
-        company: "",
-        description: "",
+        company: "Various Research Projects",
+        description:
+          "2 years of research experience in AI and Machine Learning",
       },
     ],
     contact: {
       address: "School of Science and Technology, GM University, Davanagere",
       phone: "7005374477",
-      email: "srijanroy.fet.cs@gmu.ac.in",
+      email: "srijanroy.fet.cs@gmu.ac.in, srijanroy.fet.cs@gmail.com",
+    },
+    qualifications: [
+      {
+        degree: "M.Tech (Artificial Intelligence)",
+        institution: "NIT Agartala, Tripura",
+        year: "2024",
+      },
+      {
+        degree: "B.Tech (Computer Science and Engineering)",
+        institution: "Techno College of Engineering Agartala, Tripura",
+        year: "2022",
+      },
+    ],
+    researchInterests: [
+      "Neural Networks",
+      "Artificial Intelligence and Machine Learning",
+      "Deep Learning",
+      "Computer Vision",
+      "Image Processing",
+      "Metaverse",
+    ],
+    publications: {
+      conferences: [
+        {
+          title:
+            "Machine Learning for Forecasting Depression and Anxiety in University Students",
+          authors: "T Biswas, D Bhattacharya, D Rudrapal, S Roy",
+          conference:
+            "International Conference on Information and Communication Technology for Competitive Strategies",
+          year: "2024",
+        },
+        {
+          title:
+            "Motion detection in real-time surveillance using two frame differencing",
+          authors: "T Biswas, D Bhattacharya, D Rudrapal, S Roy, G Mandal",
+          conference:
+            "International Conference on Information and Communication Technology for Competitive Strategies",
+          year: "2024",
+        },
+        {
+          title:
+            "A Comprehensive Analysis of Artificial Intelligence Methods to Detect COVID-19",
+          authors: "S Mitra, P Majumdar, D Bhattacharya, S Roy",
+          conference:
+            "International Conference on Emerging Trends and Technologies on Intelligent Systems (ETTIS 2024)",
+          year: "2024",
+        },
+        {
+          title:
+            "A Comprehensive Analysis of Artificial Intelligence Methods to Detect COVID-19 from Chest X-rays and CT Scans",
+          authors: "S Mitra, P Majumdar, D Bhattacharya, S Roy",
+          conference:
+            "International Conference on Emerging Trends and Technologies on Intelligent Systems",
+          year: "2024",
+        },
+      ],
+    },
+    patents: [
+      {
+        title:
+          "Method of Biosurfactant Production Using a Novel Bacterial Isolate Bacillus thuringiensis SMT2 and Agro-industrial Wastes",
+        number: "358213",
+        date: "10th Feb 2021",
+        applicationNo: "35/DEL/2013",
+      },
+    ],
+    awards: [
+      {
+        title: "Young Scientist Award",
+        organization:
+          "82nd annual session of Indian Science Congress Association",
+        location: "Jadavpur",
+      },
+    ],
+    trainingPrograms: {
+      attended: [
+        "Application Software for Enhanced Course Delivery (ASECD) - GM University",
+      ],
     },
   },
   {
-    name: "Ms. NAYANA G S",
-    position: "Assistant professor",
+    name: "Ms. Nayana G S",
+    position: "Assistant Professor",
     img: NAYANA_G_S,
     coverImg: gmu,
     about:
-      "Ms. Nayana G S currenty working as Assistant Professor in the Department of Computer Science and Engineering at GM University. She holds an M.Sc. in Computer Science from Kuvempu University, Shankaraghatta, Shivamogga (2025), and a Bachelor’s degree in PMCS from GMS First Grade Academy, Davangere (2023). She is passionate about teaching and committed to inspiring students through innovative learning. Her areas of interest include Artificial Intelligence, Machine Learning, and Deep Learning. She aspires to pursue a Ph.D. specializing in Deep Learning to contribute to research and technological advancement.",
+      "Ms. Nayana G S currently working as Assistant Professor in the Department of Computer Science and Engineering at GM University. She holds an M.Sc. in Computer Science from Kuvempu University, Shankaraghatta, Shivamogga (2025), and a Bachelor's degree in PMCS from GMS First Grade Academy, Davangere (2023). She is passionate about teaching and committed to inspiring students through innovative learning. Her areas of interest include Artificial Intelligence, Machine Learning, and Deep Learning. She aspires to pursue a Ph.D. specializing in Deep Learning to contribute to research and technological advancement.",
     social: {
       linkedin: "https://www.linkedin.com/in/nayana-g-s-153820372",
       Scholar:
@@ -1002,22 +1519,10 @@ export const faculties = [
     },
     experience: [
       {
-        year: "nil",
+        year: "2025-Present",
         title: "Teaching",
-        company: "Gm University, Davangere",
-        description: "1 month.",
-      },
-      {
-        year: "nil",
-        title: "Industry",
-        company: "nil",
-        description: "NIL",
-      },
-      {
-        year: "nil",
-        title: "Research",
-        company: "nil",
-        description: "NIL",
+        company: "GM University, Davangere",
+        description: "1 month of teaching experience",
       },
     ],
     contact: {
@@ -1026,9 +1531,23 @@ export const faculties = [
       phone: "9036646876",
       email: "nayanags.fet.scst@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "M.Sc. in Computer Science",
+        institution: "Kuvempu University, Shankaraghatta, Shivamogga",
+        year: "2025",
+      },
+      {
+        degree: "B.Sc. in PMCS",
+        institution: "GMS First Grade Academy, Davangere",
+        year: "2023",
+      },
+    ],
+    researchInterests: ["Deep Learning", "Machine Learning"],
+    futureAspirations: ["Pursue Ph.D. specializing in Deep Learning"],
   },
   {
-    name: "Ms. LATHA K B",
+    name: "Ms. Latha K B",
     position: "Assistant Professor",
     img: LATHA_KB,
     coverImg: gmu,
@@ -1043,20 +1562,8 @@ export const faculties = [
     experience: [
       {
         year: "",
-        title: "Teaching",
-        company: "",
-        description: "",
-      },
-      {
-        year: "",
-        title: "Industry",
-        company: "",
-        description: "",
-      },
-      {
-        year: "",
         title: "Research",
-        company: "",
+        company: "GM University",
         description:
           "Computer vision based food recognition with nutrition analysis",
       },
@@ -1067,9 +1574,71 @@ export const faculties = [
       phone: "9108534770",
       email: "lathakb.fet.scst@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "MCA (Master of Computer Applications)",
+        institution: "BIET, Davanagere",
+        year: "2023",
+      },
+      {
+        degree: "BCA",
+        institution: "SBC College, Davanagere",
+        year: "2021",
+      },
+    ],
+    certifications: ["Java Full Stack Development", "Web Development"],
+    researchInterests: [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Deep Learning",
+    ],
+    researchProjects: [
+      "Computer vision based food recognition with nutrition analysis",
+    ],
   },
   {
-    name: "Ms. DEEPTI H G",
+    name: "Ms. Rakshitha H",
+    position: "Assistant Professor",
+    img: Rakshitha_h, // You'll need to add this image import
+    coverImg: gmu,
+    about:
+      "Ms. Rakshitha H currently working as Assistant Professor in the Department of Computer Science and Engineering at GM University. She holds an M.Sc. in Computer Science from Kuvempu University, Shankaraghatta, Shivamogga (2025), and a Bachelor's degree in PMCS from Sahyadri Science College Shivamogga (2023). She is passionate about teaching and committed to inspiring students through innovative learning. Her areas of interest include Artificial Intelligence, Machine Learning, and Deep Learning. She aspires to pursue a Ph.D. specializing in Deep Learning to contribute to research and technological advancement.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/rakshithah-739b93383",
+      Scholar: "https://scholar.google.com/citations?view_op=new_profile&hl=en",
+      Vidwan: "https://vidwan.inflibnet.ac.in/myprofile",
+    },
+    experience: [
+      {
+        year: "2025-Present",
+        title: "Teaching",
+        company: "GM University, Davangere",
+        description: "1 month of teaching experience",
+      },
+    ],
+    contact: {
+      address:
+        "Faculty of Engineering and Technology, GM University, Davanagere",
+      phone: "9353683416",
+      email: "rakshithah.fet.scst@gmu.ac.in",
+    },
+    qualifications: [
+      {
+        degree: "M.Sc. in Computer Science",
+        institution: "Kuvempu University, Shankaraghatta, Shivamogga",
+        year: "2025",
+      },
+      {
+        degree: "B.Sc. in PMCS",
+        institution: "Sahyadri Science College, Shivamogga",
+        year: "2023",
+      },
+    ],
+    researchInterests: ["Deep Learning", "Machine Learning"],
+    futureAspirations: ["Pursue Ph.D. specializing in Deep Learning"],
+  },
+  {
+    name: "Ms. Deepti H G",
     position: "Assistant Professor",
     img: DEEPTI_H_G,
     coverImg: gmu,
@@ -1083,29 +1652,23 @@ export const faculties = [
     },
     experience: [
       {
-        year: "",
-        title: "Teaching",
-        company: "",
-        description: "",
+        year: "2024",
+        title: "Industry Internship",
+        company: "Mindset Systems LLP",
+        description: "6 Months as AI/ML Intern",
       },
       {
-        year: "",
-        title: "Industry",
-        company: "Mindset Systems LLP (AI/ML Intern)",
-        description: "6 Months",
+        year: "2023",
+        title: "Industry Internship",
+        company: "Cranes Varsity Pvt. Ltd.",
+        description: "6 Months as Data Science Intern",
       },
       {
-        year: "",
-        title: "Industry",
-        company: "Cranes Varsity Pvt. Ltd. (Data Science Intern)",
-        description: "6 Months",
-      },
-      {
-        year: "",
+        year: "2025-Present",
         title: "Research",
-        company: "",
+        company: "GM University",
         description:
-          "RasaScape: Emotion-Guided Landscape Generation Grounded in Indian Aesthetic Theory",
+          "RasaScape: Emotion-Guided Landscape Generation Grounded in Indian Aesthetic Theory, AI-based Image Processing and Object Detection",
       },
     ],
     contact: {
@@ -1114,6 +1677,34 @@ export const faculties = [
       phone: "8073385935",
       email: "deeptihg.fet.scst@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "M.Tech (Computer Science Engineering)",
+        institution: "M.S. Ramaiah Institute of Technology, Bengaluru",
+        year: "2025",
+      },
+      {
+        degree: "B.E. (Information Science and Engineering)",
+        institution: "M.V.J College of Engineering, Bengaluru",
+        year: "2023",
+      },
+    ],
+    researchInterests: [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Deep Learning",
+      "Computer Vision",
+      "AI-based Image Processing and Object Detection",
+    ],
+    researchProjects: [
+      "RasaScape: Emotion-Guided Landscape Generation Grounded in Indian Aesthetic Theory",
+      "AI-based Image Processing and Object Detection",
+    ],
+    expertise: [
+      "Object Detection",
+      "Medical Image Analysis",
+      "AI/ML Project Development",
+    ],
   },
   {
     name: "Ms. Deepika M D",
@@ -1121,7 +1712,7 @@ export const faculties = [
     img: Deepika_MD,
     coverImg: gmu,
     about:
-      "Ms. Deepika M D joined GM University, Davanagere, as a Tutor in September 2024. She completed her Bachelor of Computer Applications (BCA) at SBC First Grade Women’s College, Davanagere (2021) and her Master of Computer Applications (MCA) in 2023 from UBDT College of Engineering, Davanagere, graduating with distinction. She has one year of professional experience at GM University, where she developed strong academic and technical expertise in Java programming, database management, and project development.",
+      "Ms. Deepika M D joined GM University, Davanagere, as a Tutor in September 2024. She completed her Bachelor of Computer Applications (BCA) at SBC First Grade Women's College, Davanagere (2021) and her Master of Computer Applications (MCA) in 2023 from UBDT College of Engineering, Davanagere, graduating with distinction. She has one year of professional experience at GM University, where she developed strong academic and technical expertise in Java programming, database management, and project development.",
     social: {
       linkedin: "https://www.linkedin.com/in/deepikamd",
       Scholar: "nil",
@@ -1129,22 +1720,10 @@ export const faculties = [
     },
     experience: [
       {
-        year: "nil",
+        year: "2024-Present",
         title: "Teaching",
-        company: "GM University, Davangere",
-        description: "1 Year.",
-      },
-      {
-        year: "nil",
-        title: "Industry",
-        company: "nil",
-        description: "Nil",
-      },
-      {
-        year: "",
-        title: "Research",
-        company: "",
-        description: "Nil",
+        company: "GM University, Davanagere",
+        description: "1 Year of teaching experience",
       },
     ],
     contact: {
@@ -1153,38 +1732,79 @@ export const faculties = [
       phone: "8088978173",
       email: "deepikamd.fet.scst.cse@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "MCA (Master of Computer Applications)",
+        institution: "UBDT College of Engineering, Davanagere",
+        year: "2023",
+        distinction: "Graduated with distinction",
+      },
+      {
+        degree: "BCA (Bachelor of Computer Applications)",
+        institution: "SBC First Grade Women's College, Davanagere",
+        year: "2021",
+      },
+    ],
+    researchInterests: [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Internet of Things (IoT)",
+    ],
+    publications: {
+      internationalJournals: [
+        {
+          title:
+            "GLAUCOMA DETECTION BASED ON DEEP CONVOLUTIONAL NEURAL NETWORK",
+          journal: "JETIR",
+        },
+      ],
+    },
+    trainingPrograms: {
+      attended: [
+        "FDP on 'Cyber Security' - GM University (2024)",
+        "Faculty Development Programme 'GMU-LEAP' - GM University (August 2025)",
+      ],
+    },
+    technicalExpertise: [
+      "Java Programming",
+      "Database Management",
+      "Project Development",
+    ],
+    projectsGuided: {
+      ug: "Currently guiding UG projects",
+    },
   },
   {
-    name: "Ms.Shalini M R",
+    name: "Ms. Shalini M R",
     position: "Tutor",
     img: Shalini_MR,
     coverImg: gmu,
     about:
-      "Ms. Shalini is currently working as a tutor in the Department of Computer Science and Engineering in GM University. She completed her B.E. from Jain Institute of Technology. Before joining GMuniversity, she joinedQSpiders, Bangalore, where she completed a course in Software Engineering and Testing.She then worked as a Software Test Engineer at Test Yantra for one year, followed by a position as anAssociateSoftware Engineer at Accenture for another year.Presently, she is pursuing herM.Tech in Computer Science and Engineering with a specialization in Deep Learning.",
+      "Ms. Shalini is currently working as a tutor in the Department of Computer Science and Engineering in GM University. She completed her B.E. from Jain Institute of Technology. Before joining GM university, she joined QSpiders, Bangalore, where she completed a course in Software Engineering and Testing. She then worked as a Software Test Engineer at Test Yantra for one year, followed by a position as an Associate Software Engineer at Accenture for another year. Presently, she is pursuing her M.Tech in Computer Science and Engineering with a specialization in Deep Learning.",
     social: {
       linkedin:
-        "https://www.linkedin.com/in/shalini-mr-947016250/?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app",
+        "https://www.linkedin.com/in/shalini-mr-947016250/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       Scholar: "nil",
       Vidwan: "nil",
     },
     experience: [
       {
-        year: "nil",
+        year: "2024-Present",
         title: "Teaching",
-        company: "GM Univeristy,Davangere",
-        description: "1 Year at GM Univeristy , Davangere",
+        company: "GM University, Davangere",
+        description: "1 Year of teaching experience",
       },
       {
-        year: "nil",
+        year: "2021-2022",
         title: "Industry",
-        company: "nil",
-        description: "1 Yearsat",
+        company: "Accenture, Bangalore",
+        description: "1 Year as Associate Software Engineer",
       },
       {
-        year: "nil",
-        title: "Research",
-        company: "nil",
-        description: "NIL",
+        year: "2020-2021",
+        title: "Industry",
+        company: "Test Yantra",
+        description: "1 Year as Software Test Engineer",
       },
     ],
     contact: {
@@ -1193,6 +1813,31 @@ export const faculties = [
       phone: "953567544",
       email: "Shalinimr.fet.scst.cse@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "M.Tech (Deep Learning) - Pursuing",
+        institution: "GM University, Davangere",
+        year: "2026 (Expected)",
+      },
+      {
+        degree: "BE (Civil Engineering)",
+        institution: "Jain Institute of Engineering and Technology, Davangere",
+        year: "2020",
+      },
+    ],
+    certifications: ["Software Engineering and Testing - QSpiders, Bangalore"],
+    researchInterests: [
+      "Machine Learning",
+      "Deep Learning",
+      "Artificial Intelligence",
+    ],
+    trainingPrograms: {
+      attended: [
+        "FDP on 'BURPSUITE' - GM University (2024)",
+        "Faculty Development Programme 'GMU-LEAP' - GM University (August 2025)",
+      ],
+    },
+    industryExpertise: ["Software Testing", "Software Engineering"],
   },
   {
     name: "Mrs. Sumana C",
@@ -1208,22 +1853,16 @@ export const faculties = [
     },
     experience: [
       {
-        year: "",
+        year: "2024-Present",
         title: "Teaching",
         company: "GM University, Davangere",
-        description: "1 Year.",
+        description: "1 Year of teaching experience",
       },
       {
-        year: "",
+        year: "2018-2020",
         title: "Industry",
         company: "Tata Consultancy Services, Bangalore",
-        description: "2 Years.",
-      },
-      {
-        year: "",
-        title: "Research",
-        company: "",
-        description: "NIL",
+        description: "2 Years of industry experience",
       },
     ],
     contact: {
@@ -1232,14 +1871,38 @@ export const faculties = [
       phone: "9886575049",
       email: "Sumanac.fet.scst.cse@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "M.Tech (Deep Learning) - Pursuing",
+        institution: "GM University, Davangere",
+        year: "2026 (Expected)",
+      },
+      {
+        degree: "BE (Computer Science and Engineering)",
+        institution:
+          "Bapuji Institute of Engineering and Technology, Davanagere",
+        year: "2018",
+      },
+    ],
+    researchInterests: [
+      "Machine Learning",
+      "Deep Learning",
+      "Artificial Intelligence",
+    ],
+    trainingPrograms: {
+      attended: [
+        "FDP on 'MongoDB' - GM University (2024)",
+        "Faculty Development Programme 'GMU-LEAP' - GM University (August 2025)",
+      ],
+    },
   },
   {
-    name: "Ms.Saima Anjum",
+    name: "Ms. Saima Anjum",
     position: "Tutor",
     img: Saima_Anjum_Tutor,
     coverImg: gmu,
     about:
-      "Ms.Saima Anjum has completed her Graduation degree in Computer Science and Engineering from BIET in the year 2023. She has also completed a certification course in Java Full Stack Development from Pentagon Space Banglore. Her areas of interest include programming, web development, and emerging technologies in software engineering. She is passionate about guiding students through practical, project-based learning, encouraging hands-on experimentation, and nurturing a spirit of technical innovation and creativity.",
+      "Ms. Saima Anjum has completed her Graduation degree in Computer Science and Engineering from BIET in the year 2023. She has also completed a certification course in Java Full Stack Development from Pentagon Space Bangalore. Her areas of interest include programming, web development, and emerging technologies in software engineering. She is passionate about guiding students through practical, project-based learning, encouraging hands-on experimentation, and nurturing a spirit of technical innovation and creativity.",
     social: {
       linkedin:
         "https://www.linkedin.com/in/saima-anjum-b6a021225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -1249,22 +1912,23 @@ export const faculties = [
     },
     experience: [
       {
-        year: "",
+        year: "2023-Present",
         title: "Teaching",
-        company: "G M University Davanagere",
-        description: "1.3 Year",
+        company: "GM University, Davanagere",
+        description: "1.3 Years of teaching experience",
       },
       {
-        year: "",
+        year: "2022-2023",
         title: "Industry",
         company: "TekWorks Company",
-        description: "1 Year",
+        description: "1 Year of industry experience",
       },
       {
-        year: "",
+        year: "2024-Present",
         title: "Research",
-        company: "",
-        description: "Research Based on the PBL is in Progress",
+        company: "GM University",
+        description:
+          "Research Based on Project-Based Learning (PBL) is in Progress",
       },
     ],
     contact: {
@@ -1272,39 +1936,60 @@ export const faculties = [
       phone: "6360397892",
       email: "saimaanjum.fet.scst.cse@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "B.E (Computer Science and Engineering)",
+        institution: "BIET, Davanagere, Karnataka",
+        year: "2023",
+      },
+      {
+        degree: "Diploma in Computer Science and Engineering",
+        institution: "Jain Polytechnic, Davanagere",
+        year: "2020",
+      },
+    ],
+    certifications: ["Java Full Stack Development - Pentagon Space, Bangalore"],
+    researchInterests: [
+      "Data Engineering",
+      "Cyber Security and Privacy",
+      "BlockChain Technology",
+      "Artificial Intelligence and Machine Learning",
+    ],
+    trainingPrograms: {
+      attended: [
+        "Faculty Development Program (FDP) on 'Cyber Security Essentials' - GM University (September 2025)",
+        "Leadership Training Program",
+      ],
+    },
+    projectsGuided: {
+      ug: "Currently guiding UG projects",
+    },
+    expertise: [
+      "Programming",
+      "Web Development",
+      "Emerging Technologies in Software Engineering",
+    ],
   },
   {
-    name: "Ms.Ranjitha J",
+    name: "Ms. Ranjitha J",
     position: "Tutor",
     img: Ranjitha_J_Tutor,
     coverImg: gmu,
     about:
-      "Ms.Ranjitha J has completed her Graduation degree in Computer Science and Engineering from UBDT in the year 2024. She has also completed a intership on AWS from EUPHORIC Thought Technology Banglore. Her areas of interest include programming, web development, and emerging technologies in software engineering. She is passionate about guiding students in practical, project-based learning while inspiring creativity, innovation, and a deep understanding of technology.",
+      "Ms. Ranjitha J has completed her Graduation degree in Computer Science and Engineering from UBDT in the year 2024. She has also completed a internship on AWS from EUPHORIC Thought Technology Bangalore. Her areas of interest include programming, web development, and emerging technologies in software engineering. She is passionate about guiding students in practical, project-based learning while inspiring creativity, innovation, and a deep understanding of technology.",
     social: {
       linkedin:
-        "https://www.linkedin.com/in/ranjitha-j-ranju-240738281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        "https://www.linkedin.com/in/ranjithaj-ranju-240738281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       Scholar:
         "https://scholar.google.com/citations?view_op=new_profile&hl=en&authuser=1",
       Vidwan: "https://vidwan.inflibnet.ac.in/myprofile",
     },
     experience: [
       {
-        year: "",
+        year: "2024-Present",
         title: "Teaching",
-        company: "G M University Davanagere",
-        description: "1.3 Year",
-      },
-      {
-        year: "",
-        title: "Industry",
-        company: "",
-        description: "NA",
-      },
-      {
-        year: "",
-        title: "Research",
-        company: "",
-        description: "NA",
+        company: "GM University, Davanagere",
+        description: "1.3 Years of teaching experience",
       },
     ],
     contact: {
@@ -1312,9 +1997,44 @@ export const faculties = [
       phone: "9880736934",
       email: "ranjithaj.fet.scst.cse@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "B.E (Computer Science and Engineering)",
+        institution: "UBDT, Davanagere, Karnataka",
+        year: "2024",
+      },
+      {
+        degree: "Diploma in Computer Science and Engineering",
+        institution: "Government Residential Women's Polytechnic, Shivamogga",
+        year: "2020",
+      },
+    ],
+    certifications: ["AWS Internship - EUPHORIC Thought Technology, Bangalore"],
+    researchInterests: [
+      "Data Engineering",
+      "Cyber Security and Privacy",
+      "BlockChain Technology",
+      "Artificial Intelligence and Machine Learning",
+      "Computer Networking",
+    ],
+    trainingPrograms: {
+      attended: [
+        "Faculty Development Program (FDP) on 'Cyber Security Essentials' - GM University (September 2025)",
+        "Leadership Training Program",
+      ],
+    },
+    projectsGuided: {
+      ug: "Currently guiding UG projects",
+    },
+    expertise: [
+      "Programming",
+      "Web Development",
+      "Emerging Technologies in Software Engineering",
+      "AWS Cloud Technologies",
+    ],
   },
   {
-    name: "Mrs Sindhu R R",
+    name: "Mrs. Sindhu R R",
     position: "Tutor",
     img: Sindhu_R_R,
     coverImg: gmu,
@@ -1327,28 +2047,22 @@ export const faculties = [
     },
     experience: [
       {
-        year: "01/07/2017 To 31/06/2019",
+        year: "2017-2019",
         title: "Teaching",
         company: "Government Poly-Technic College, Siddapur",
-        description: "2 Years",
+        description: "2 Years of teaching experience",
       },
       {
-        year: "01/07/2019 To 30/11/2020",
+        year: "2019-2020",
         title: "Teaching",
         company: "Government Poly-Technic College, Soraba",
-        description: "1 and half Years",
+        description: "1.5 Years of teaching experience",
       },
       {
-        year: "",
+        year: "2025-Present",
         title: "Teaching",
-        company: "GM University Davanagere",
-        description: "2 months",
-      },
-      {
-        year: "",
-        title: "Research",
-        company: "",
-        description: "NIL",
+        company: "GM University, Davanagere",
+        description: "2 months of teaching experience",
       },
     ],
     contact: {
@@ -1357,6 +2071,21 @@ export const faculties = [
       phone: "7353878546",
       email: "Sindhurr.fet.scst@gmu.sc.in",
     },
+    qualifications: [
+      {
+        degree: "BE (Computer Science and Engineering)",
+        institution: "UBDTCE, Davanagere",
+        year: "2015",
+      },
+    ],
+    researchInterests: [
+      "Machine Learning",
+      "Deep Learning",
+      "Artificial Intelligence",
+      "Computer Networks",
+      "Image Processing",
+    ],
+    technicalSkills: ["C Programming", "C++ Programming", "Java Programming"],
   },
 
   {
@@ -1373,16 +2102,22 @@ export const faculties = [
     },
     experience: [
       {
-        year: "",
+        year: "2023-2025",
         title: "Teaching",
-        company: "Learn On-Line Bangalore",
-        description: "2 Years",
+        company: "Learn On-Line, Bangalore",
+        description: "2 Years of teaching experience",
       },
       {
-        year: "",
+        year: "2022",
         title: "Industry",
-        company: "Able Design Engineering Hubli",
-        description: "6 Months",
+        company: "Able Design Engineering, Hubli",
+        description: "6 Months of industry experience",
+      },
+      {
+        year: "2025-Present",
+        title: "Teaching",
+        company: "GM University, Davanagere",
+        description: "Currently serving as Tutor",
       },
     ],
     contact: {
@@ -1391,6 +2126,38 @@ export const faculties = [
       phone: "8095163087",
       email: "Supriyakerakkanavar.fet.scst@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "M.Tech (Data Communication and Networking)",
+        institution: "UBDT College, Davanagere",
+        year: "2025",
+      },
+      {
+        degree: "BE (Electronics and Communication Engineering)",
+        institution: "STJ Institute of Technology, Ranebennur",
+        year: "2019",
+      },
+    ],
+    researchInterests: [
+      "Artificial Intelligence and Machine Learning for threat detection",
+      "Security for Internet of Things (IoT)",
+      "Cloud Computing Security",
+    ],
+    administrativeRoles: [
+      "Final Year Project Coordinator (GMIT)",
+      "AICTC Coordinator (GMIT)",
+    ],
+    trainingPrograms: {
+      attended: [
+        "Faculty Development Programme 'GMU-LEAP' - GM University (August 2025)",
+      ],
+    },
+    awards: [
+      {
+        title: "Exemplary academic performance",
+        description: "Achieved in 1st year M.Tech",
+      },
+    ],
   },
   {
     name: "Ms. Sahana B R",
@@ -1398,7 +2165,7 @@ export const faculties = [
     img: SAHANA_B_R,
     coverImg: gmu,
     about:
-      "Ms. Sahana B. R. is a dedicated tutor in the Department of Computer Science and Engineering at GM University, Davangere. She holds a Bachelor’s degree in Information Science and Engineering from BIET, Davangere, and is currently pursuing her M.Tech in Data Engineering at GM University. With a passion for teaching and technology, she handles courses for 5th semester students in Artificial Intelligence and 3rd semester students in Data Analytics with Excel, inspiring learners to develop strong analytical and problem-solving skills.",
+      "Ms. Sahana B. R. is a dedicated tutor in the Department of Computer Science and Engineering at GM University, Davangere. She holds a Bachelor's degree in Information Science and Engineering from BIET, Davangere, and is currently pursuing her M.Tech in Data Engineering at GM University. With a passion for teaching and technology, she handles courses for 5th semester students in Artificial Intelligence and 3rd semester students in Data Analytics with Excel, inspiring learners to develop strong analytical and problem-solving skills.",
     social: {
       linkedin: "https://linkedin.com/in/sahana-budihal-267357255",
       Scholar: "",
@@ -1406,16 +2173,10 @@ export const faculties = [
     },
     experience: [
       {
-        year: "nil",
+        year: "2025-Present",
         title: "Teaching",
-        company: "GM university, Davangere",
-        description: "2 months",
-      },
-      {
-        year: "nil",
-        title: "Research",
-        company: "nil",
-        description: "NIL",
+        company: "GM University, Davangere",
+        description: "2 months of teaching experience",
       },
     ],
     contact: {
@@ -1424,77 +2185,180 @@ export const faculties = [
       phone: "8431424007",
       email: "sahanabr.fet.scst@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "M.Tech (Data Engineering) - Pursuing",
+        institution: "GM University, Davanagere",
+        year: "2027 (Expected)",
+      },
+      {
+        degree: "BE (Information Science and Engineering)",
+        institution:
+          "Bapuji Institute of Engineering and Technology, Davanagere",
+        year: "2025",
+      },
+    ],
+    researchInterests: [
+      "Natural Language Processing (NLP)",
+      "Data Engineering",
+    ],
+    publications: {
+      internationalJournals: [
+        {
+          title: "Garbage Management System for Smart City",
+          authors: "Sahana B R and Sinchana R B",
+          journal:
+            "International Journal of Innovative Research in Computer and Communication Engineering (IJIRCCE)",
+          volume: "Volume 13, Issue 5",
+          year: "2025",
+          doi: "10.15680/IJIRCCE.2025.1305257",
+          guidedBy: "Sheik Imram, Assistant Professor, BIET",
+        },
+      ],
+    },
+    trainingPrograms: {
+      attended: [
+        "Faculty Development Programme 'GMU-LEAP' - GM University (August 2025)",
+        "Workshop on Frontend Development - Abeyaantrix SoftLab, Davangere (August 2023)",
+        "Workshop on GUIs (AIML) Hands-on session - PADAAMS Innovative TechnoLabs, Mysuru",
+      ],
+    },
+    coursesHandled: [
+      "Artificial Intelligence (5th Semester)",
+      "Data Analytics with Excel (3rd Semester)",
+    ],
   },
   {
-    name: "Mrs. Pallavi.S",
+    name: "Mrs. Pallavi S",
     position: "Tutor",
     img: PALLAVI,
     coverImg: gmu,
     about:
-      "Mrs. Pallavi S is a Tutor in the Department of Computer Science and Engineering at GM University, Davangere. She holds a B.E. degree in Information Science and Engineering at SSIT Tumkur and is currently pursuing her M. Tech in Computer Science and Engineering, having completed all examinations and awaiting final results. Her areas of interest include Blockchain Technology and Deep Learning. She has actively contributed to research with publications in both journals and conferences, including a Journal Paper (IJTE-ISTE, Paper ID: 1410625) and a Conference Paper (ICETSE-2025, Paper ID: 389). She is also a member of the Indian Society for Technical Education (ISTE). Mrs. Pallavi is passionate about exploring innovative technologies and aims to promote research-driven and technology-enhanced learning in the field of computer science.",
+      "Mrs. Pallavi S is a Tutor in the Department of Computer Science and Engineering at GM University, Davangere. She holds a B.E. degree in Information Science and Engineering from Sri Siddhartha Institute of Technology, Tumkur, and is currently pursuing her M.Tech in Computer Science and Engineering, having completed all examinations and awaiting final results. Her areas of interest include Blockchain Technology and Deep Learning. She is passionate about exploring innovative technologies and aims to promote research-driven and technology-enhanced learning in the field of computer science.",
     social: {
-      linkedin: "https://www.linkedin.com/in/pallavi-s-a3b977384",
+      linkedin: "",
       Scholar: "",
       Vidwan: "",
     },
     experience: [
       {
-        year: "",
+        year: "2025-Present",
         title: "Teaching",
-        company: "GM University Davangere",
-        description: "2 MONTHS.",
-      },
-      {
-        year: "nil",
-        title: "Industry",
-        company: "nil",
-        description: "NIL",
+        company: "GM University, Davangere",
+        description: "2 months of teaching experience",
       },
     ],
     contact: {
       address:
         "School of Computer Science and Technology, GM University, Davanagere",
-      phone: "9113834469",
-      email: "pallavis.fet.scst@gmu.ac.in",
+      phone: "",
+      email: "",
     },
+    qualifications: [
+      {
+        degree: "M.Tech (Computer Science and Engineering) - Pursuing",
+        institution: "Sri Siddhartha Institute of Technology, Tumkur",
+        year: "2025",
+      },
+      {
+        degree: "B.E (Information Science and Engineering)",
+        institution: "Sri Siddhartha Institute of Technology, Tumkur",
+        year: "2022",
+      },
+    ],
+    researchInterests: [
+      "Blockchain Technology",
+      "Deep Learning",
+      "IoT",
+      "AIML",
+    ],
+    publications: {
+      internationalJournals: [
+        {
+          title:
+            "Traceability of counterfeit medicine supply chain through blockchain",
+          authors: "Pallavi S",
+          journal: "IJTE-ISTE",
+          year: "2025",
+          paperId: "1410625",
+        },
+      ],
+      internationalConferences: [
+        {
+          title:
+            "Traceability of counterfeit medicine supply chain through blockchain",
+          authors: "Pallavi S",
+          conference: "ICETSE-2025",
+          year: "2025",
+          paperId: "389",
+        },
+      ],
+    },
+    trainingPrograms: {
+      attended: [
+        "Faculty Development Programme 'GMU-LEAP' - GM University, Davangere (August 2025)",
+      ],
+    },
+    professionalMemberships: ["Indian Society for Technical Education (ISTE)"],
+    administrativeResponsibilities: [
+      "Department of CSE LEAP Co-ordinator for GMU",
+    ],
+    projectsGuided: [
+      "UG Projects (Ongoing) - Currently guiding under graduate students on their project works",
+    ],
   },
   {
-    name: "Ms. Tanushree.V.Mugalikatti",
+    name: "Ms. Tanushree V M",
     position: "Assistant Professor",
     img: Tanushree_V_M,
     coverImg: gmu,
     about:
-      "Ms. Tanushree .V. Mugalikatti is an Assistant Professor in the Department of Computer Science and Engineering. She is proficient in various programming languages including C, Java, and Data Structures and Algorithms. Her areas of interest include Computer Networks and Network Simulation using NS2. She is currently working on a research project titled “Detecting Node Failures in Wireless Sensor Networks”, with a publication in progress. She is passionate about guiding students in innovative projects and fostering practical problem-solving skills through coding and research-oriented learning.",
+      "Ms. Tanushree V Mugalikatti is an Assistant Professor in the Department of Computer Science and Engineering at GM University. She is proficient in various programming languages including C, Java, and Data Structures and Algorithms. Her areas of interest include Computer Networks and Network Simulation using NS2. She is currently working on a research project titled 'Detecting Node Failures in Wireless Sensor Networks', with a publication in progress. She is passionate about guiding students in innovative projects and fostering practical problem-solving skills through coding and research-oriented learning.",
     social: {
-      linkedin: "www.linkedin.com/in/tanushree-v-mugalikatti-561012270",
+      linkedin: "",
       Scholar: "",
       Vidwan: "",
     },
     experience: [
       {
-        year: "",
+        year: "2025-Present",
         title: "Teaching",
-        company: "",
-        description: "Nil",
-      },
-      {
-        year: "",
-        title: "Industry",
-        company: "",
-        description: "NA",
-      },
-      {
-        year: "",
-        title: "Research",
-        company: "",
-        description: "Interested in research opportunities",
+        company: "GM University, Davangere",
+        description: "Fresher - No prior work experience",
       },
     ],
     contact: {
       address:
         "Faculty of Engineering and Technology, GM University, Davanagere",
-      phone: "7619677415",
-      email: "tanushreevm@gmu.ac.in",
+      phone: "",
+      email: "",
     },
+    qualifications: [
+      {
+        degree: "MCA",
+        institution: "VTU University, Belgaum",
+        year: "2025",
+      },
+      {
+        degree: "BCA",
+        institution: "Kuvempu University, Shimoga",
+        year: "2022",
+      },
+    ],
+    researchInterests: [
+      "Computer Networks",
+      "NS2 Simulation",
+      "Wireless Sensor Networks",
+    ],
+    publications: {
+      internationalJournals: [],
+      internationalConferences: [],
+    },
+    trainingPrograms: {
+      attended: [],
+    },
+    professionalMemberships: [],
+    administrativeResponsibilities: [],
+    projectsGuided: [],
   },
 ];

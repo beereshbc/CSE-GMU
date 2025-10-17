@@ -53,11 +53,11 @@ const Navbar = () => {
         path: "/research-publications",
         icon: <FileText size={16} />,
       },
-      {
-        name: "Student Projects",
-        path: "/student-projects",
-        icon: <Award size={16} />,
-      },
+      // {
+      //   name: "Student Projects",
+      //   path: "/student-projects",
+      //   icon: <Award size={16} />,
+      // },
     ],
     Achievements: [
       {

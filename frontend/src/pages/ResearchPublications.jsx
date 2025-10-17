@@ -22,6 +22,7 @@ import {
   Star,
   Target,
 } from "lucide-react";
+import { assets } from "../assets/assets";
 
 const ResearchPublications = () => {
   const [publications, setPublications] = useState([]);
@@ -353,31 +354,19 @@ const ResearchPublications = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                className="flex flex-col sm:flex-row gap-4  justify-center lg:justify-start"
               >
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() =>
-                    document
-                      .getElementById("publications-table")
-                      .scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-2xl flex items-center gap-2 group"
-                >
-                  Explore Publications
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </motion.button>
-
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href="#stats"
-                  className="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-white/10 backdrop-blur-sm flex items-center gap-2"
-                >
-                  <TrendingUp className="w-5 h-5" />
-                  View Impact
-                </motion.a>
+                <img
+                  src={assets.Dr_CHETHAN_CHANDRA_S_BASAVARADDI}
+                  className="w-32 h-32 rounded-full justify-center "
+                  alt=""
+                />{" "}
+                <div>
+                  <p className="text-indigo-200">Research Coordinator</p>
+                  <p className="font-medium">
+                    Dr.CHETHAN CHANDRA S BASAVARADDI
+                  </p>
+                </div>
               </motion.div>
             </motion.div>
 

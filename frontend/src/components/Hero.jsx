@@ -166,7 +166,7 @@ const Hero = () => {
           </motion.h1>
           <div>
             <motion.p className="text-xl   font-semibold text-blue-700 relative inline-block">
-              <span className="relative z-10 sm:text-3xl">
+              <span className="relative z-10 sm:text-5xl">
                 School of Computer Science and Technology
               </span>
             </motion.p>
@@ -181,7 +181,7 @@ const Hero = () => {
             transition={{ delay: 1.4, duration: 0.6 }}
             className="relative"
           >
-            <motion.p className="text-md md:text-xl   font-semibold text-blue-700 relative inline-block">
+            <motion.p className="text-2xl md:text-3xl   font-semibold text-blue-700 relative inline-block">
               <span className="relative z-10">
                 Faculty of Engineering and Technology
               </span>

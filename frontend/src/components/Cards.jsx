@@ -9,7 +9,7 @@ const Cards = () => {
       icon: Eye,
       title: "Department Vision",
       description:
-        "Department of Computer Science and Engineering (CSE) we have a transformative impact on society through continual innovation in Computer engineering education, research, skill development, creativity, and entrepreneurship",
+        "Department of Computer Science and Engineering (CSE) will have a transformative impact on society through continual innovation in Computer engineering education, research, skill development, creativity, and entrepreneurship",
       color: "from-blue-500 to-blue-700",
       bgColor: "from-blue-50 to-blue-100",
       accentColor: "bg-blue-500",
