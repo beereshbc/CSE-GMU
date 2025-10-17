@@ -195,9 +195,9 @@ const Hero = () => {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.6, duration: 0.8 }}
-        className="w-full  relative flex-1 flex flex-col justify-center mb-4"
+        className="w-full  relative flex-1 flex flex-col justify-center mb-8"
       >
-        <div className="relative h-64 md:h-96 lg:h-[550px] rounded-2xl overflow-hidden  border border-blue-200/60">
+        <div className="relative h-64 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden  border border-blue-200/60">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
