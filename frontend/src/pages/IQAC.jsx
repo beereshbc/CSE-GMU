@@ -109,26 +109,26 @@ const IQAC = () => {
             <div className="flex items-start gap-4">
               <img
                 className="w-24 h-24 text-blue-700 rounded-full scale-110"
-                src={assets.SANTOSHKUMAR_M}
+                src={assets.NIVEDITHA_T_NAIK}
                 alt=""
               />
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-blue-900 mb-3 group-hover:text-blue-700 transition-colors">
-                  Dr. Santoshkumar M
+                  Ms. Niveditha T Naik
                 </h3>
                 <div className="space-y-3">
                   <p className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors">
                     <Mail className="w-5 h-5 text-blue-600 flex-shrink-0" />
                     <a
-                      href="mailto:santoshkumarm@gmit.ac.in"
+                      href="mailto:nivedithatnaik.fet.scst@gmu.ac.in"
                       className="hover:underline truncate"
                     >
-                      santoshkumarm@gmit.ac.in
+                      nivedithatnaik.fet.scst@gmu.ac.in
                     </a>
                   </p>
                   <p className="flex items-center gap-3 text-gray-700">
                     <Phone className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                    <span>+91 92421 63128</span>
+                    <span>+91 7349249270</span>
                   </p>
                 </div>
               </div>

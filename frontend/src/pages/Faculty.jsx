@@ -518,7 +518,7 @@ const Faculty = () => {
                     <GraduationCap className="w-5 h-5" />
                   </a>
                   <a
-                    href={universitySocialLinks.Vidwan}
+                    href={universitySocialLinks.F}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all duration-300 transform hover:scale-110"

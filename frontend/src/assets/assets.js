@@ -200,6 +200,7 @@ export const assets = {
   AY2223,
   KAVYASHREE_p_N,
   falcon_logo,
+  NIVEDITHA_T_NAIK,
 
   p1,
   p2,

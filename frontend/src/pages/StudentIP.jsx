@@ -122,6 +122,7 @@ const StudentIP = () => {
       logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_Logo.svg/1200px-Dell_Logo.svg.png",
     },
   ];
+
   // Student data from the document - 2020-21 placements
   const allStudentsData = [
     { name: "ANANDACHARI M M", usn: "4GM17CS004", company: "TCS" },
@@ -387,158 +388,174 @@ const StudentIP = () => {
         </div>
       </section>
 
+      {/* Placement Coordinators Section */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12 font-serif"
+          >
+            Placement Coordinators
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto ">
+            {/* Coordinator 2 - Santhoshkumar */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="bg-white rounded-2xl p-6 shadow-2xl border border-blue-200"
+            >
+              <div className="flex flex-col items-center text-center space-y-6 pt-4">
+                {/* Profile Image */}
+                <div className="relative">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-xl">
+                    <User className="text-white text-2xl" />
+                    <img
+                      src={assets.SANTOSHKUMAR_M}
+                      className="shadow-xl rounded-full scale-150"
+                      alt="Mrs. Kavyashree P N"
+                    />
+                  </div>
+                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center border-2 border-white">
+                    <Check className="text-white w-4 h-4" />
+                  </div>
+                </div>
+
+                {/* Coordinator Info */}
+                <div className="space-y-3">
+                  <h3 className="text-xl font-bold text-blue-900">
+                    Dr. SantoshKumar Mahendrakar
+                  </h3>
+                  <p className="text-gray-600 font-medium">
+                    Placement Coordinator
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    Department of Computer Science & Engineering
+                  </p>
+
+                  {/* Contact Info */}
+                  <div className="bg-blue-50 rounded-xl p-4 space-y-2">
+                    <div className="flex items-center justify-center gap-2 text-blue-700">
+                      <Mail className="w-4 h-4 text-blue-600" />
+                      <span className="font-medium text-sm">
+                        santoshkumarm@gmit.ac.in
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            {/* Coordinator 1 - Kavyashree */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-white rounded-2xl p-6 shadow-2xl border border-blue-200"
+            >
+              <div className="flex flex-col items-center text-center space-y-6 pt-4">
+                {/* Profile Image */}
+                <div className="relative">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-xl">
+                    <User className="text-white text-2xl" />
+                    <img
+                      src={assets.KAVYASHREE_p_N}
+                      className="shadow-xl rounded-full scale-150"
+                      alt="Mrs. Kavyashree P N"
+                    />
+                  </div>
+                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center border-2 border-white">
+                    <Check className="text-white w-4 h-4" />
+                  </div>
+                </div>
+
+                {/* Coordinator Info */}
+                <div className="space-y-3">
+                  <h3 className="text-xl font-bold text-blue-900">
+                    Mrs. Kavyashree P N
+                  </h3>
+                  <p className="text-gray-600 font-medium">
+                    Placement Coordinator
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    Department of Computer Science & Engineering
+                  </p>
+
+                  {/* Contact Info */}
+                  <div className="bg-blue-50 rounded-xl p-4 space-y-2">
+                    <div className="flex items-center justify-center gap-2 text-blue-700">
+                      <Mail className="w-4 h-4 text-blue-600" />
+                      <span className="font-medium text-sm">
+                        kavyashreepn@gmit.ac.in
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Light Themed Hero Section */}
       <section className="relative  overflow-hidden">
         <div className="container mx-auto px-4">
           {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 py-12">
-            {/* Left Column - University Info */}
-            <div className="lg:col-span-2 space-y-8">
-              {/* University Header */}
-              <div className="text-center lg:text-left">
-                <motion.h1
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-blue-900 mb-4 font-serif tracking-tight"
-                >
-                  G M University
-                </motion.h1>
-                <motion.p
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="text-xl md:text-2xl lg:text-3xl font-semibold text-blue-700 mb-6"
-                >
-                  Department of Computer Science & Engineering
-                </motion.p>
-              </div>
-
-              {/* Image Slider */}
-              <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden shadow-2xl">
-                {heroImages.map((image, index) => (
-                  <div
-                    key={index}
-                    className={`absolute inset-0 transition-opacity duration-1000 ${
-                      index === currentSlide ? "opacity-100" : "opacity-0"
-                    }`}
-                  >
-                    <img
-                      src={image}
-                      alt={`Placement ${index + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                    {/* Light overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-50/60 to-indigo-100/40"></div>
-                  </div>
-                ))}
-
-                {/* Placement Stats */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="text-center text-blue-900 p-6"
-                  >
-                    <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-blue-200 shadow-lg">
-                      <h3 className="text-2xl md:text-3xl font-bold mb-4 text-blue-900">
-                        Placement Excellence
-                      </h3>
-                      <div className="grid grid-cols-2 gap-4 md:gap-6">
-                        <div className="text-center">
-                          <div className="text-3xl md:text-4xl font-bold text-blue-700 mb-1">
-                            37
-                          </div>
-                          <div className="text-blue-600 text-sm md:text-base">
-                            Students Placed
-                          </div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-3xl md:text-4xl font-bold text-blue-700 mb-1">
-                            74%
-                          </div>
-                          <div className="text-blue-600 text-sm md:text-base">
-                            Placement Rate
-                          </div>
-                        </div>
-                      </div>
-                      <p className="text-blue-600 text-sm mt-4">
-                        Academic Year 2020-21
-                      </p>
-                    </div>
-                  </motion.div>
-                </div>
-
-                {/* Slide Indicators */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
-                  {heroImages.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentSlide(index)}
-                      className={`w-3 h-3 rounded-full transition-all ${
-                        index === currentSlide
-                          ? "bg-blue-600 scale-125"
-                          : "bg-blue-300"
-                      }`}
-                    />
-                  ))}
-                </div>
-              </div>
+          <div className="grid grid-cols-1 gap-8 py-12">
+            {/* University Header */}
+            <div className="text-center">
+              <motion.h1
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-blue-900 mb-4 font-serif tracking-tight"
+              >
+                G M University
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-xl md:text-2xl lg:text-3xl font-semibold text-blue-700 mb-6"
+              >
+                Department of Computer Science & Engineering
+              </motion.p>
             </div>
 
-            {/* Right Column - Placement Coordinator */}
-            <div className="lg:col-span-1">
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="bg-white rounded-2xl p-6 shadow-2xl border border-blue-200 h-full"
-              >
-                <h2 className="text-2xl md:text-3xl font-bold text-center text-blue-900 mb-6 font-serif">
-                  Placement Coordinator
-                </h2>
-
-                <div className="flex flex-col items-center text-center space-y-6">
-                  {/* Profile Image */}
-                  <div className="relative">
-                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-xl">
-                      <User className="text-white text-2xl" />
-                      <img
-                        src={assets.KAVYASHREE_p_N}
-                        className=" shadow-xl rounded-full scale-150"
-                        alt=""
-                      />
-                    </div>
-                    <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center border-2 border-white">
-                      <Check className="text-white w-4 h-4" />
-                    </div>
-                  </div>
-
-                  {/* Coordinator Info */}
-                  <div className="space-y-3">
-                    <h3 className="text-xl font-bold text-blue-900">
-                      Mrs. Kavyashree P N
-                    </h3>
-                    <p className="text-gray-600 font-medium">
-                      Placement Coordinator
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      Department of Computer Science & Engineering
-                    </p>
-
-                    {/* Contact Info */}
-                    <div className="bg-blue-50 rounded-xl p-4 space-y-2">
-                      <div className="flex items-center justify-center gap-2 text-blue-700">
-                        <Mail className="w-4 h-4 text-blue-600" />
-                        <span className="font-medium text-sm">
-                          kavyashreepn@gmit.ac.in
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+            {/* Image Slider */}
+            <div className="relative h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl">
+              {heroImages.map((image, index) => (
+                <div
+                  key={index}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${
+                    index === currentSlide ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  <img
+                    src={image}
+                    alt={`Placement ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Light overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50/60 to-indigo-100/40"></div>
                 </div>
-              </motion.div>
+              ))}
+
+              {/* Slide Indicators */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+                {heroImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-3 h-3 rounded-full transition-all ${
+                      index === currentSlide
+                        ? "bg-blue-600 scale-125"
+                        : "bg-blue-300"
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
