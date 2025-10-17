@@ -709,38 +709,171 @@ export const faculties = [
   },
   {
     name: "Dr. Chethan Chandra S Basavaraddi",
-    position: "Associate Professor",
-    img: Dr_CHETHAN_CHANDRA_S_BASAVARADDI,
+    position: "Associate Professor in CS&E",
+    img: Dr_CHETHAN_CHANDRA_S_BASAVARADDI, // replace with your imported image variable
     coverImg: gmu,
     about:
-      "Dr. Chethan Chandra S. Basavaraddi is an Associate Professor in the Department of Computer Science and Engineering at G M University, Davanagere. He holds B.E., B.Ed., M.Tech., Ph.D., and D.Litt. degrees with KEA-KSET qualification. With over 14 years of teaching and research experience, his expertise spans Artificial Intelligence, Machine Learning, Data Mining, IoT, MANETs, NLP, and Image Processing. He has published numerous research papers, authored book chapters, and holds patents in emerging technologies. He has received several prestigious awards, including the Global Teaching Excellence Award (2021), Best Faculty Award (2021), Young Scientist Award (2022), and India Prime Icon Award (2022). He is a member of ISTE, IEEE, IFERP, IARA, IYA, and ACM. His research credentials include Scopus ID: 57226547078, ORCID: 0000-0002-3133-7234, and AICTE Faculty ID: 1-1475809096. Dr. Chethan Chandra is dedicated to fostering innovation, research excellence, and outcome-based education.",
+      "Dr. Chethan Chandra S. Basavaraddi is an Associate Professor in the Department of Computer Science and Engineering at G M University, Davanagere. He holds B.E., B.Ed., M.Tech., Ph.D., and D.Litt. degrees with KEA-KSET qualification. With over 14 years of teaching and research experience, his expertise spans Artificial Intelligence, Machine Learning, Data Mining, IoT, MANETs, NLP, and Image Processing. He has published numerous research papers, authored book chapters, and holds patents in emerging technologies. He has received several prestigious awards including the Global Teaching Excellence Award (2021), Best Faculty Award (2021), Young Scientist Award (2022), and India Prime Icon Award (2022). He is a member of ISTE, IEEE, IFERP, IARA, IYA, and ACM, and is passionate about fostering innovation and outcome-based education.",
     social: {
       linkedin:
-        "https://www.linkedin.com/in/dr-chethan-chandra-s-basavaraddi-5b523750?originalSubdomain=in",
+        "https://www.linkedin.com/in/dr-chethan-chandra-s-basavaraddi-5b523750",
       Scholar:
-        "https://scholar.google.co.in/scholar?q=chethan+chandra+s+basavaraddi&hl=en&as_sdt=0&as_vis=1&oi=scholart",
+        "https://scholar.google.co.in/scholar?q=chethan+chandra+s+basavaraddi",
+      orcid: "https://orcid.org/0000-0002-3133-7234",
+      researchGate: "https://www.researchgate.net/profile/Chethan-Basavaraddi",
       Vidwan: "https://vidwan.inflibnet.ac.in/myprofile",
+      academia:
+        "https://www.academia.edu/48284382/Chethan_Chandra_S_Basavaraddi",
+      publons:
+        "https://publons.com/wos-op/researcher/3700557/chethan-chandra-s-basavaraddi/",
+      scopus: "https://www.scopus.com/authid/detail.uri?authorId=57226547078",
+      github:
+        "https://github.com/chethanraddi04/Dr.-Chethan-Chandra-S-Basavaraddi",
+      kaggle: "https://www.kaggle.com/drchethanchandrasb",
+      facebook: "https://www.facebook.com/chethan.raddi",
     },
     experience: [
       {
-        year: "nil",
-        title: "Teaching",
-        company: "",
-        description: "14 Years of teaching experience.",
+        year: "2012-2014",
+        title: "Lecturer",
+        company: "KIT, Tiptur",
+        description: "Department of Computer Science and Engineering",
       },
       {
-        year: "nil",
-        title: "Industry",
-        company: "nil",
-        description: "Nil",
+        year: "2014-2022",
+        title: "Assistant Professor",
+        company: "KIT, Tiptur",
+        description: "Department of Computer Science and Engineering",
+      },
+      {
+        year: "2022-2024",
+        title: "Associate Professor",
+        company: "KIT, Tiptur",
+        description: "Department of Computer Science and Engineering",
+      },
+      {
+        year: "2024-2025",
+        title: "Associate Professor",
+        company: "DBIT, Bangalore",
+        description: "Department of Computer Science and Engineering (AI & ML)",
+      },
+      {
+        year: "2025-Present",
+        title: "Associate Professor",
+        company: "GM University, Davanagere",
+        description: "School of Computer Science and Technology",
       },
     ],
     contact: {
       address:
-        "Faculty of Engineering and Technology, GM University, Davanagere",
-      phone: "9844508359",
-      email: "Chethanchandrasb.cse@gmu.ac.in",
+        "Department of Computer Science & Engineering, GM University, Davanagere, Karnataka, India",
+      phone: "+91 9844508359",
+      email: "chethanchandrasb.cse@gmu.ac.in",
     },
+    qualifications: [
+      {
+        degree: "Ph.D. (Computer Science and Engineering)",
+        institution:
+          "North East Frontier Technical University (NEFTU), Arunachal Pradesh",
+        year: "2020",
+        thesis:
+          "A Detection Based on Deep Affinity Towards Multiple Object Tracking Using Hybrid Neuro Fuzzy Network Applied to Face Recognition",
+      },
+      {
+        degree: "M.Tech. (Computer Science and Engineering)",
+        institution:
+          "UBDT College of Engineering, Davanagere University, Karnataka",
+        year: "2012",
+      },
+      {
+        degree: "B.E. (Computer Science and Engineering)",
+        institution:
+          "BCET, Bangalore / Visvesvaraya Technological University, Belagavi",
+        year: "2010",
+      },
+      {
+        degree: "B.Ed.",
+        institution: "Recognized Institution, Karnataka",
+        year: "Not specified",
+      },
+      {
+        degree: "D.Litt.",
+        institution: "Awarded (details not specified)",
+        year: "Not specified",
+      },
+    ],
+    researchInterests: [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Data Mining",
+      "Internet of Things (IoT)",
+      "Mobile Ad Hoc Networks (MANETs)",
+      "Natural Language Processing (NLP)",
+      "Image Processing",
+    ],
+    awards: [
+      {
+        title: "Global Teaching Excellence Award",
+        organization: "Team GTAE, Kiteskraft Productions LLP",
+        year: "2021",
+      },
+      {
+        title: "Best Faculty Award (Junior Category)",
+        organization: "Vertex Research & Technology",
+        year: "2021",
+      },
+      {
+        title: "Young Scientist Award",
+        organization:
+          "International Scientist Awards on Engineering, Science and Medicine (VDGOOD Association)",
+        year: "2022",
+      },
+      {
+        title: "India Prime Icon Award – Author and Researcher",
+        organization:
+          "India Prime Awards Research Group in association with Foxclues Team Fox Story India",
+        year: "2022",
+      },
+      {
+        title:
+          "KSET (Karnataka State Eligibility Test) Qualified for Assistant Professor",
+        organization: "KEA-KSET",
+        year: "2023",
+      },
+    ],
+    administrativeRoles: [
+      "CSE Research Coordinator, GMU",
+      "IQAC Coordinator, GMU",
+      "NBA Coordinator (KIT, 2018–2024)",
+      "NAAC Main Coordinator (KIT, 2022–2024)",
+      "NIRF Main Coordinator (KIT, 2022–2024)",
+    ],
+    professionalMemberships: [
+      "ISTE Life Member (LM 91591)",
+      "IFERP Member (PMIN75901368)",
+      "Indian Yoga Association Life Member (IYA/LM/287)",
+      "Indian Academic Researchers Association Life Member (LM-753)",
+      "IEEE Professional Member (98367601)",
+      "ACM Professional Member (2834822)",
+      "Vidwan ID: 392350",
+      "AICTE Faculty ID: 1-1475809096",
+      "ResearcherID: AEB-4378-2022",
+      "Scopus Author ID: 57226547078",
+    ],
+    publications: {
+      patents: 1,
+      internationalJournals: 35,
+      internationalConferences: 15,
+      books: 0,
+    },
+    projectsGuided: {
+      ug: 4,
+      pg: 3,
+      phd: 1,
+    },
+    fundedProjects: [
+      "IoT Based Online Doctor Robot for Healthcare and Telemedicine Consultation with Patients (Patent No. PT-661, 2024)",
+    ],
   },
   {
     name: "Dr. SantoshKumar Mahendrakar",
