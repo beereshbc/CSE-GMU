@@ -15,6 +15,7 @@ import {
   User,
   ChevronDown,
   BarChart3,
+  Handshake,
 } from "lucide-react";
 
 const Navbar = () => {
@@ -74,6 +75,11 @@ const Navbar = () => {
         name: "Internships & Placements",
         path: "/student-internships-placements",
         icon: <Briefcase size={16} />,
+      },
+      {
+        name: "Contributers",
+        path: "/contributers",
+        icon: <Handshake size={16} />,
       },
     ],
     Community: [

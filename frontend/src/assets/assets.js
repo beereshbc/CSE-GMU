@@ -188,6 +188,10 @@ import SA4 from "../assets/Stud_Achiv/SA4.jpeg";
 import SA5 from "../assets/Stud_Achiv/SA5.jpeg";
 import SA6 from "../assets/Stud_Achiv/SA6.jpeg";
 
+import Beeresh from "../assets/Contributers/Beeresh.jpg";
+import Arjun_Kerodi from "../assets/Contributers/Arjun.jpeg";
+import shashidhar from "../assets/Contributers/shashidhar.jpeg";
+import sachin from "../assets/Contributers/Sachin.jpeg";
 export const assets = {
   hod_img,
   gmu_logo,
@@ -234,6 +238,11 @@ export const assets = {
   SA4,
   SA5,
   SA6,
+
+  Beeresh,
+  Arjun_Kerodi,
+  shashidhar,
+  sachin,
 };
 
 export const boxData = [
@@ -2554,5 +2563,31 @@ export const faculties = [
     professionalMemberships: [],
     administrativeResponsibilities: [],
     projectsGuided: [],
+  },
+];
+
+//Contribution Team
+export const contributersFacultyData = [
+  {
+    id: 1,
+    name: "Shivanagouda",
+    role: "HOD",
+    email: "shivanagouda@college.edu",
+    department: "Computer Science",
+    priority: "high",
+    image: hod_img,
+    description:
+      "Head of Department guiding the project with technical expertise and mentorship.",
+  },
+  {
+    id: 2,
+    name: "Dr. Chethan Chandra S Basavaraddi",
+    role: "Project Guide",
+    email: "chethan.chandra@college.edu",
+    department: "Computer Science",
+    priority: "high",
+    image: Dr_CHETHAN_CHANDRA_S_BASAVARADDI,
+    description:
+      "Project guide providing continuous support and technical direction throughout development.",
   },
 ];

@@ -22,6 +22,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 import BottomNavbar from "./components/BottomNavbar";
 import Benchmarking from "./pages/Benchmarking";
+import Contributers from "./pages/Contributers";
 
 const App = () => {
   return (
@@ -51,6 +52,7 @@ const App = () => {
         <Route path="/falconai" element={<FalconAI />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/benchmarks" element={<Benchmarking />} />
+        <Route path="/contributers" element={<Contributers />} />
       </Routes>
       <BottomNavbar />
       <Footer />
