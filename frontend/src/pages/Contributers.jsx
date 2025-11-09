@@ -48,7 +48,7 @@ const Contributers = () => {
   };
 
   const teamIcons = {
-    "Development Lead": Crown,
+    "Development Lead": Code,
     "Supporting Developers": Code,
     "AI Content & Multimedia Generation": Zap,
     "Video Shooting, Editing & Deployment": Camera,
@@ -60,8 +60,8 @@ const Contributers = () => {
       usn: "4GM23CS017",
       email: "bcbeereshkumar@gmail.com",
       role: "Development Lead",
-      linkedin: "https://linkedin.com/in/beereshkumar",
-      github: "https://github.com/beereshkumar",
+      linkedin: "https://www.linkedin.com/in/beereshkumar-b-c-004397341/",
+      github: "https://github.com/beereshbc",
       image: assets.Beeresh,
     },
     {
