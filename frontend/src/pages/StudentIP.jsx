@@ -12,7 +12,7 @@ import {
   Legend,
 } from "chart.js";
 import { motion } from "framer-motion";
-import { assets, featuredStudents } from "../assets/assets";
+import { assets, featuredStudents, recentPlacedStud } from "../assets/assets";
 import {
   GraduationCap,
   User,
@@ -27,6 +27,8 @@ import {
   Download,
   Award,
   TrendingUp,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 // Register ChartJS components
@@ -44,42 +46,38 @@ ChartJS.register(
 const StudentIP = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentStudent, setCurrentStudent] = useState(0);
+  const [currentRecentIndex, setCurrentRecentIndex] = useState(0);
+  const studentsPerView = 5; // Number of students to show at once
 
   // Hero section images
-  const heroImages = [
-    "images_placements/pla1.jpg",
-    "images_placements/pla2.jpg",
-    "images_placements/pla3.jpg",
-    "images_placements/pla4.jpg",
-    "images_placements/pla5.jpg",
-    "images_placements/placement.jpg",
-  ];
+  const heroImages = [assets.ps1, assets.ps2, assets.ps3, assets.ps4];
 
-  // Company logos for slideshow
+  // Company logos for slideshow (working URLs)
+
   const companyLogos = [
     {
       name: "TCS",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/1200px-Tata_Consultancy_Services_Logo.svg.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/2560px-Tata_Consultancy_Services_Logo.svg.png",
     },
     {
       name: "Infosys",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/1200px-Infosys_logo.svg.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/2560px-Infosys_logo.svg.png",
     },
     {
       name: "Accenture",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/1200px-Accenture.svg.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/2560px-Accenture.svg.png",
     },
     {
       name: "Wipro",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Wipro_Logo.svg/1200px-Wipro_Logo.svg.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Wipro_Logo.svg/2560px-Wipro_Logo.svg.png",
     },
     {
       name: "Mindtree",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Mindtree_logo.svg/1200px-Mindtree_logo.svg.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Mindtree_logo.svg/2560px-Mindtree_logo.svg.png",
     },
     {
       name: "Robosoft",
-      logo: "https://www.robosoftin.com/wp-content/uploads/2020/10/logo.png",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHltL0TzOGY2wxkQ4yG5H6ElQEXG1LJg3SdA&s",
     },
     {
       name: "CEI India",
@@ -91,35 +89,55 @@ const StudentIP = () => {
     },
     {
       name: "Google",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png",
     },
     {
       name: "Microsoft",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1200px-Microsoft_logo.svg.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2560px-Microsoft_logo.svg.png",
     },
     {
       name: "Amazon",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png",
     },
     {
       name: "IBM",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/1200px-IBM_logo.svg.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/2560px-IBM_logo.svg.png",
     },
     {
       name: "Oracle",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/1200px-Oracle_logo.svg.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/2560px-Oracle_logo.svg.png",
     },
     {
       name: "Cisco",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/2560px-Cisco_logo_blue_2016.svg.png",
     },
     {
       name: "Intel",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Intel_logo_%282006-2020%29.svg/1200px-Intel_logo_%282006-2020%29.svg.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Intel_logo_%282006-2020%29.svg/2560px-Intel_logo_%282006-2020%29.svg.png",
     },
     {
       name: "Dell",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_Logo.svg/1200px-Dell_Logo.svg.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_Logo.svg/2560px-Dell_Logo.svg.png",
+    },
+    {
+      name: "Capgemini",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Capgemini_2017_logo.svg/2560px-Capgemini_2017_logo.svg.png",
+    },
+    {
+      name: "Cognizant",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Cognizant_logo_2022.svg/2560px-Cognizant_logo_2022.svg.png",
+    },
+    {
+      name: "HCL",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/HCL_Technologies_logo.svg/2560px-HCL_Technologies_logo.svg.png",
+    },
+    {
+      name: "Tech Mahindra",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Tech_Mahindra_New_Logo.svg/2560px-Tech_Mahindra_New_Logo.svg.png",
+    },
+    {
+      name: "SLK Software",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4DhoKYpsItHPrbKz6BY3z4W7IV-ATzSVYxw&s",
     },
   ];
 
@@ -189,6 +207,16 @@ const StudentIP = () => {
 
   // Enhanced placement stats with average package
   const placementStats = [
+    {
+      year: "2024-25",
+      intake: 120,
+      placed: 50,
+      highest: "34.4 LPA",
+      average: "8.5 LPA",
+      lowest: "4.5 LPA",
+      higherStudies: 3,
+      percentage: "74%",
+    },
     {
       year: "2020-21",
       intake: 60,
@@ -332,6 +360,26 @@ const StudentIP = () => {
     window.open(pdfUrls[year], "_blank");
   };
 
+  // Calculate total pages for recent students carousel
+  const totalRecentPages = Math.ceil(recentPlacedStud.length / studentsPerView);
+
+  // Navigation functions for recent students carousel
+  const nextRecentStudents = () => {
+    setCurrentRecentIndex((prev) => (prev + 1) % totalRecentPages);
+  };
+
+  const prevRecentStudents = () => {
+    setCurrentRecentIndex(
+      (prev) => (prev - 1 + totalRecentPages) % totalRecentPages
+    );
+  };
+
+  // Get current chunk of recent students
+  const getCurrentRecentStudents = () => {
+    const start = currentRecentIndex * studentsPerView;
+    return recentPlacedStud.slice(start, start + studentsPerView);
+  };
+
   // Auto slide change for hero
   useEffect(() => {
     const interval = setInterval(() => {
@@ -347,6 +395,14 @@ const StudentIP = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, [allStudentsData.length]);
+
+  // Auto slide change for recent students (optional)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextRecentStudents();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [currentRecentIndex]);
 
   return (
     <div className="min-h-screen  sm:mx-[10%] mx-4">
@@ -739,6 +795,122 @@ const StudentIP = () => {
         `}</style>
       </section>
 
+      {/* Recent Placements 2025-26 Section */}
+      <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <motion.h2
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-4xl md:text-5xl font-bold text-blue-900 mb-4 font-serif"
+            >
+              Recent Placements 2025-26
+            </motion.h2>
+            <p className="text-lg text-blue-700 max-w-2xl mx-auto mb-8">
+              Our students have secured placements in top companies with
+              excellent packages
+            </p>
+          </div>
+
+          {/* Recent Students Carousel */}
+          <div className="relative max-w-6xl mx-auto">
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevRecentStudents}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-10 bg-white p-3 rounded-full shadow-lg hover:bg-blue-50 transition-colors border border-blue-200"
+            >
+              <ChevronLeft className="w-6 h-6 text-blue-700" />
+            </button>
+
+            <button
+              onClick={nextRecentStudents}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10 bg-white p-3 rounded-full shadow-lg hover:bg-blue-50 transition-colors border border-blue-200"
+            >
+              <ChevronRight className="w-6 h-6 text-blue-700" />
+            </button>
+
+            {/* Students Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              {getCurrentRecentStudents().map((student, index) => (
+                <motion.div
+                  key={student.id}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden border border-blue-200 group cursor-pointer"
+                >
+                  {/* Student Image */}
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      src={student.img}
+                      alt={student.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+
+                  {/* Student Info */}
+                  <div className="p-4">
+                    <h3 className="font-bold text-lg text-blue-900 mb-1 truncate">
+                      {student.name}
+                    </h3>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                        {student.company}
+                      </span>
+                      <span className="text-xs text-gray-500">
+                        {student.passedOutYear}
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Carousel Indicators */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {Array.from({ length: totalRecentPages }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentRecentIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    index === currentRecentIndex
+                      ? "bg-blue-600 scale-125"
+                      : "bg-blue-300 hover:bg-blue-400"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Statistics Summary */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl p-8 text-white text-center"
+          >
+            <h3 className="text-2xl font-bold mb-4">
+              Placement Highlights 2025-26
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+              <div>
+                <div className="text-3xl font-bold">85%</div>
+                <div className="text-sm opacity-90">Placement Rate</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold">34.4 LPA</div>
+                <div className="text-sm opacity-90">Highest Package</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold">8.5 LPA</div>
+                <div className="text-sm opacity-90">Average Package</div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Linear Placement Statistics Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -812,14 +984,14 @@ const StudentIP = () => {
                 </h4>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-4 bg-blue-50 rounded-xl">
-                    <div className="text-2xl font-bold text-blue-700">74%</div>
+                    <div className="text-2xl font-bold text-blue-700">85%</div>
                     <div className="text-sm text-blue-600">
-                      Average Placement Rate
+                      Current Placement Rate
                     </div>
                   </div>
                   <div className="text-center p-4 bg-green-50 rounded-xl">
                     <div className="text-2xl font-bold text-green-700">
-                      12 LPA
+                      34.4 LPA
                     </div>
                     <div className="text-sm text-green-600">
                       Highest Package
@@ -827,7 +999,7 @@ const StudentIP = () => {
                   </div>
                   <div className="text-center p-4 bg-purple-50 rounded-xl">
                     <div className="text-2xl font-bold text-purple-700">
-                      6.5 LPA
+                      8.5 LPA
                     </div>
                     <div className="text-sm text-purple-600">
                       Average Package
@@ -850,6 +1022,10 @@ const StudentIP = () => {
                   Growth Trend
                 </h4>
                 <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span>2025-26</span>
+                    <span className="font-bold">85% ↗</span>
+                  </div>
                   <div className="flex justify-between items-center">
                     <span>2020-21</span>
                     <span className="font-bold">74% ↗</span>
@@ -928,9 +1104,9 @@ const StudentIP = () => {
                       </td>
                       <td
                         className={`py-4 px-4 text-center font-bold border border-blue-100 ${
-                          parseFloat(stat.percentage) > 75
+                          parseFloat(stat.percentage) > 80
                             ? "text-green-600 bg-green-50"
-                            : parseFloat(stat.percentage) > 60
+                            : parseFloat(stat.percentage) > 70
                             ? "text-blue-600 bg-blue-50"
                             : "text-orange-600 bg-orange-50"
                         }`}

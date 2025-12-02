@@ -153,6 +153,33 @@ import sport9 from "../assets/sports/sp9.jpg";
 import pb2 from "../assets/pbl/pb2.jpg";
 import pb3 from "../assets/pbl/pb3.jpg";
 
+import place_25_1 from "../assets/PlacedStud/placed_25/infosys1.jpeg";
+import place_25_2 from "../assets/PlacedStud/placed_25/infosys2.jpeg";
+import place_25_3 from "../assets/PlacedStud/placed_25/infosys3.jpeg";
+import place_25_4 from "../assets/PlacedStud/placed_25/infosys4.jpeg";
+import place_25_5 from "../assets/PlacedStud/placed_25/infosys5.jpeg";
+import place_25_6 from "../assets/PlacedStud/placed_25/infosys6.jpeg";
+import place_25_7 from "../assets/PlacedStud/placed_25/infosys7.jpeg";
+import place_25_8 from "../assets/PlacedStud/placed_25/infosys8.jpeg";
+
+import place_25_slk1 from "../assets/PlacedStud/placed_25/slk1.png";
+import place_25_slk2 from "../assets/PlacedStud/placed_25/slk2.jpeg";
+import place_25_slk3 from "../assets/PlacedStud/placed_25/slk3.jpeg";
+import place_25_slk4 from "../assets/PlacedStud/placed_25/slk4.jpeg";
+import place_25_slk5 from "../assets/PlacedStud/placed_25/slk5.jpeg";
+import place_25_slk6 from "../assets/PlacedStud/placed_25/slk6.jpeg";
+import place_25_slk7 from "../assets/PlacedStud/placed_25/slk7.jpeg";
+import place_25_slk8 from "../assets/PlacedStud/placed_25/slk8.jpeg";
+import place_25_slk9 from "../assets/PlacedStud/placed_25/slk9.jpeg";
+import place_25_slk10 from "../assets/PlacedStud/placed_25/slk10.jpeg";
+import place_25_slk11 from "../assets/PlacedStud/placed_25/slk11.jpeg";
+import place_25_slk12 from "../assets/PlacedStud/placed_25/slk12.jpeg";
+import place_25_slk13 from "../assets/PlacedStud/placed_25/slk13.jpeg";
+import place_25_slk14 from "../assets/PlacedStud/placed_25/slk14.jpeg";
+import place_25_slk15 from "../assets/PlacedStud/placed_25/slk15.jpeg";
+import place_25_slk16 from "../assets/PlacedStud/placed_25/slk16.jpeg";
+import place_25_slk17 from "../assets/PlacedStud/placed_25/slk17.jpeg";
+
 import National_conf1 from "../assets/National_conf/n1.jpg";
 import National_conf2 from "../assets/National_conf/n2.jpg";
 import National_conf3 from "../assets/National_conf/n3.jpg";
@@ -188,6 +215,11 @@ import SA4 from "../assets/Stud_Achiv/SA4.jpeg";
 import SA5 from "../assets/Stud_Achiv/SA5.jpeg";
 import SA6 from "../assets/Stud_Achiv/SA6.jpeg";
 
+import ps1 from "../assets/Placement_slider/ps1.jpg";
+import ps2 from "../assets/Placement_slider/ps2.jpg";
+import ps3 from "../assets/Placement_slider/ps3.jpg";
+import ps4 from "../assets/Placement_slider/ps4.jpg";
+
 import Beeresh from "../assets/Contributers/Beeresh.jpg";
 import Arjun_Kerodi from "../assets/Contributers/Arjun.jpeg";
 import shashidhar from "../assets/Contributers/shashidhar.jpeg";
@@ -210,6 +242,11 @@ export const assets = {
   p2,
   p3,
   p4,
+
+  ps1,
+  ps2,
+  ps3,
+  ps4,
 
   hero1,
   hero2,
@@ -244,6 +281,187 @@ export const assets = {
   shashidhar,
   sachin,
 };
+
+export const recentPlacedStud = [
+  // ---------- INFOSYS ----------
+  {
+    id: 1,
+    name: "Aishwarya N",
+    company: "Infosys",
+    passedOutYear: "2025-26",
+    img: place_25_7,
+  },
+  {
+    id: 2,
+    name: "Meghana R",
+    company: "Infosys",
+    passedOutYear: "2025-26",
+    img: place_25_4,
+  },
+  {
+    id: 3,
+    name: "Misha T",
+    company: "Infosys",
+    passedOutYear: "2025-26",
+    img: place_25_6,
+  },
+  {
+    id: 5,
+    name: "P R Harshita",
+    company: "Infosys",
+    passedOutYear: "2025-26",
+    img: place_25_5,
+  },
+  {
+    id: 6,
+    name: "Sanjana B M",
+    company: "Infosys",
+    passedOutYear: "2025-26",
+    img: place_25_1,
+  },
+  {
+    id: 7,
+    name: "Spoorthi J",
+    company: "Infosys",
+    passedOutYear: "2025-26",
+    img: place_25_2,
+  },
+  {
+    id: 8,
+    name: "Varsha A Hajare",
+    company: "Infosys",
+    passedOutYear: "2025-26",
+    img: place_25_8,
+  },
+  {
+    id: 9,
+    name: "Varshitha L U",
+    company: "Infosys",
+    passedOutYear: "2025-26",
+    img: place_25_3,
+  },
+
+  // ---------- SLK SOFTWARE ----------
+  {
+    id: 10,
+    name: "Disha S Kumar",
+    company: "SLK Software",
+    passedOutYear: "2025-26",
+    img: place_25_slk3,
+  },
+  {
+    id: 11,
+    name: "Bhavana C T",
+    company: "SLK Software",
+    passedOutYear: "2025-26",
+    img: place_25_slk1,
+  },
+  {
+    id: 12,
+    name: "Kruthika R Gowdar",
+    company: "SLK Software",
+    passedOutYear: "2025-26",
+    img: place_25_slk6,
+  },
+  {
+    id: 13,
+    name: "H N Sagar",
+    company: "SLK Software",
+    passedOutYear: "2025-26",
+    img: place_25_slk4,
+  },
+  {
+    id: 14,
+    name: "Khushi Gujjar",
+    company: "SLK Software",
+    passedOutYear: "2025-26",
+    img: place_25_slk5,
+  },
+  {
+    id: 15,
+    name: "Lavanya G S",
+    company: "SLK Software",
+    passedOutYear: "2025-26",
+    img: place_25_slk7,
+  },
+  {
+    id: 16,
+    name: "Nikitha G R",
+    company: "SLK Software",
+    passedOutYear: "2025-26",
+    img: place_25_slk8,
+  },
+  {
+    id: 17,
+    name: "Pavan C",
+    company: "SLK Software",
+    passedOutYear: "2025-26",
+    img: place_25_slk9,
+  },
+  {
+    id: 18,
+    name: "Prem S",
+    company: "SLK Software",
+    passedOutYear: "2025-26",
+    img: place_25_slk10,
+  },
+  {
+    id: 19,
+    name: "Sharath B",
+    company: "SLK Software",
+    passedOutYear: "2025-26",
+    img: place_25_slk11,
+  },
+  {
+    id: 20,
+    name: "Shraddha M A",
+    company: "SLK Software",
+    passedOutYear: "2025-26",
+    img: place_25_slk12,
+  },
+  {
+    id: 21,
+    name: "Srinivas H K",
+    company: "SLK Software",
+    passedOutYear: "2025-26",
+    img: place_25_slk14,
+  },
+  {
+    id: 22,
+    name: "Shree Lakshmi M",
+    company: "SLK Software",
+    passedOutYear: "2025-26",
+    img: place_25_slk13,
+  },
+  {
+    id: 23,
+    name: "Varsha H",
+    company: "SLK Software",
+    passedOutYear: "2025-26",
+    img: place_25_slk15,
+  },
+  {
+    id: 24,
+    name: "Vishaka R S",
+    company: "SLK Software",
+    passedOutYear: "2025-26",
+    img: place_25_slk16,
+  },
+  {
+    id: 25,
+    name: "Gulam Abul K",
+    company: "SLK Software",
+    passedOutYear: "2025-26",
+    img: place_25_slk17,
+  },
+  {
+    id: 26,
+    name: "Diganth D R",
+    company: "SLK Software",
+    passedOutYear: "2025-26",
+    img: place_25_slk2,
+  },
+];
 
 export const boxData = [
   {
