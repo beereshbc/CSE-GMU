@@ -18,7 +18,7 @@ import RANJITHA_D_S from "../assets/faculties/RANJITHA_D_S.jpg";
 import Ranjitha_J_Tutor from "../assets/faculties/Ranjitha_J_Tutor.jpeg";
 import Ravinandan_Jannu from "../assets/faculties/Ravinandan_Jannu.jpeg";
 import react from "../assets/faculties/react.svg";
-import SAHANA_B_R from "../assets/faculties/SAHANA_B _R.jpeg";
+
 import Saima_Anjum_Tutor from "../assets/faculties/Saima_Anjum_Tutor.jpg";
 import SANJANA_A_T from "../assets/faculties/SANJANA_A_T.jpg";
 import SANTOSHKUMAR_M from "../assets/faculties/SANTOSHKUMAR_M.jpg";
@@ -2580,75 +2580,7 @@ export const faculties = [
       },
     ],
   },
-  {
-    name: "Ms. Sahana B R",
-    position: "Tutor",
-    img: SAHANA_B_R,
-    coverImg: gmu,
-    about:
-      "Ms. Sahana B. R. is a dedicated tutor in the Department of Computer Science and Engineering at GM University, Davangere. She holds a Bachelor's degree in Information Science and Engineering from BIET, Davangere, and is currently pursuing her M.Tech in Data Engineering at GM University. With a passion for teaching and technology, she handles courses for 5th semester students in Artificial Intelligence and 3rd semester students in Data Analytics with Excel, inspiring learners to develop strong analytical and problem-solving skills.",
-    social: {
-      linkedin: "https://linkedin.com/in/sahana-budihal-267357255",
-      Scholar: "",
-      Vidwan: "",
-    },
-    experience: [
-      {
-        year: "2025-Present",
-        title: "Teaching",
-        company: "GM University, Davangere",
-        description: "2 months of teaching experience",
-      },
-    ],
-    contact: {
-      address:
-        "School of Computer Science and Technology, GM University, Davanagere",
-      phone: "8431424007",
-      email: "sahanabr.fet.scst@gmu.ac.in",
-    },
-    qualifications: [
-      {
-        degree: "M.Tech (Data Engineering) - Pursuing",
-        institution: "GM University, Davanagere",
-        year: "2027 (Expected)",
-      },
-      {
-        degree: "BE (Information Science and Engineering)",
-        institution:
-          "Bapuji Institute of Engineering and Technology, Davanagere",
-        year: "2025",
-      },
-    ],
-    researchInterests: [
-      "Natural Language Processing (NLP)",
-      "Data Engineering",
-    ],
-    publications: {
-      internationalJournals: [
-        {
-          title: "Garbage Management System for Smart City",
-          authors: "Sahana B R and Sinchana R B",
-          journal:
-            "International Journal of Innovative Research in Computer and Communication Engineering (IJIRCCE)",
-          volume: "Volume 13, Issue 5",
-          year: "2025",
-          doi: "10.15680/IJIRCCE.2025.1305257",
-          guidedBy: "Sheik Imram, Assistant Professor, BIET",
-        },
-      ],
-    },
-    trainingPrograms: {
-      attended: [
-        "Faculty Development Programme 'GMU-LEAP' - GM University (August 2025)",
-        "Workshop on Frontend Development - Abeyaantrix SoftLab, Davangere (August 2023)",
-        "Workshop on GUIs (AIML) Hands-on session - PADAAMS Innovative TechnoLabs, Mysuru",
-      ],
-    },
-    coursesHandled: [
-      "Artificial Intelligence (5th Semester)",
-      "Data Analytics with Excel (3rd Semester)",
-    ],
-  },
+ 
   {
     name: "Mrs. Pallavi S",
     position: "Tutor",
