@@ -297,17 +297,17 @@ const FacultyDetailView = ({ faculty, onClose }) => {
                   Contact Information
                 </h3>
                 <div className="space-y-3">
-                  <div className="flex items-center text-blue-700">
-                    <MapPin className="w-4 h-4 mr-3 text-blue-500" />
+                  <div className="flex items-start text-blue-700">
+                    <MapPin className="w-4 h-4 mr-3 mt-0.5 text-blue-500 flex-shrink-0" />
                     <span className="text-sm">{faculty.contact.address}</span>
                   </div>
                   <div className="flex items-center text-blue-700">
-                    <Phone className="w-4 h-4 mr-3 text-blue-500" />
+                    <Phone className="w-4 h-4 mr-3 text-blue-500 flex-shrink-0" />
                     <span className="text-sm">{faculty.contact.phone}</span>
                   </div>
                   <div className="flex items-center text-blue-700">
-                    <Mail className="w-4 h-4 mr-3 text-blue-500" />
-                    <span className="text-sm">{faculty.contact.email}</span>
+                    <Mail className="w-4 h-4 mr-3 text-blue-500 flex-shrink-0" />
+                    <span className="text-sm break-all">{faculty.contact.email}</span>
                   </div>
                 </div>
               </div>
