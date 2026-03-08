@@ -21,5 +21,6 @@ export const facultyData = [
     name: "Santoshkumar M",
     department: "CSE",
   },
+
   // Add more faculties if needed
 ];
