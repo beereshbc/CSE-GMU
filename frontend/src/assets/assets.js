@@ -18,7 +18,7 @@ import PALLAVI from "../assets/faculties/PALLAVI_S.jpg";
 import RANJITHA_D_S from "../assets/faculties/RANJITHA_D_S.jpg";
 import Ranjitha_J_Tutor from "../assets/faculties/Ranjitha_J_Tutor.jpg";
 import Ravinandan_Jannu from "../assets/faculties/Ravinandan_Jannu.jpg";
-import react from "../assets/faculties/react.svg";
+
 import Pooja_Bidari from "../assets/faculties/Pooja_Bidari.jpg .jpg";
 import Saurya_Ranjan_Das from "../assets/faculties/Saurya_Ranjan_Das.jpg";
 import Saima_Anjum_Tutor from "../assets/faculties/Saima_Anjum_Tutor.jpg";
@@ -521,7 +521,7 @@ export const boxData = [
     id: 3,
     title: "Workshop/FDP",
     description: "",
-    images: [Orientation1, Orientation2, Orientation1, Orientation2, Orientation3, Orientation4, Orientation5, Orientation6, Orientation7, Orientation8],
+    images: [Orientation1, Orientation2, Orientation1, Orientation3, Orientation4, Orientation5, Orientation6, Orientation7, Orientation8],
   },
   {
     id: 4,
@@ -3030,7 +3030,7 @@ export const faculties = [
   {
     name: "Ms. Sahana B R",
     position: "Tutor",
-    img: SAHANA_B_R,
+    img: "",
     coverImg: gmu,
     about:
       "Ms. Sahana B. R. is a dedicated tutor in the Department of Computer Science and Engineering at GM University, Davangere. She holds a Bachelor's degree in Information Science and Engineering from BIET, Davangere, and is currently pursuing her M.Tech in Data Engineering at GM University. With a passion for teaching and technology, she handles courses for 5th semester students in Artificial Intelligence and 3rd semester students in Data Analytics with Excel, inspiring learners to develop strong analytical and problem-solving skills.",
