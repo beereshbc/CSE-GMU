@@ -16,7 +16,7 @@ import PALLAVI from "../assets/faculties/PALLAVI_S.jpg";
 import RANJITHA_D_S from "../assets/faculties/RANJITHA_D_S.jpg";
 import Ranjitha_J_Tutor from "../assets/faculties/Ranjitha_J_Tutor.jpg";
 import Ravinandan_Jannu from "../assets/faculties/Ravinandan_Jannu.jpg";
-import react from "../assets/faculties/react.svg";
+
 import Pooja_Bidari from "../assets/faculties/Pooja_Bidari.jpg .jpg";
 import Saurya_Ranjan_Das from "../assets/faculties/Saurya_Ranjan_Das.jpg";
 import Saima_Anjum_Tutor from "../assets/faculties/Saima_Anjum_Tutor.jpg";
@@ -195,6 +195,15 @@ import Stud_work_Sft3 from "../assets/Stud_work_Sft/s3.jpg";
 
 import Orientation1 from "../assets/Orientation/o1.jpg";
 import Orientation2 from "../assets/Orientation/o2.jpg";
+import Orientation3 from "../assets/Orientation/FDP1.jpeg";
+import Orientation4 from "../assets/Orientation/FDP2.jpeg";
+import Orientation5 from "../assets/Orientation/FDP3.jpeg";
+import Orientation6 from "../assets/Orientation/FDP4.jpeg";
+import Orientation7 from "../assets/Orientation/FDP5.jpeg";
+import Orientation8 from "../assets/Orientation/FDP6.jpeg";
+
+
+
 
 import Seminar1 from "../assets/seminar/se1.JPG";
 import Seminar2 from "../assets/seminar/se2.JPG";
@@ -478,9 +487,9 @@ export const boxData = [
   },
   {
     id: 3,
-    title: "Workshop",
+    title: "Workshop/FDP",
     description: "",
-    images: [Orientation1, Orientation2, Orientation1],
+    images: [Orientation1, Orientation2, Orientation1, Orientation2, Orientation3, Orientation4, Orientation5, Orientation6, Orientation7, Orientation8],
   },
   {
     id: 4,
