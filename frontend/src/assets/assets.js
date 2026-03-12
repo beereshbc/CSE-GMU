@@ -296,19 +296,7 @@ export const assets = {
   shashidhar,
   sachin,
 
-  FDP1,
-  FDP2,
-  FDP3,
-  FDP4,
-  FDP5,
-  FDP6,
-
-  event1,
-  event2,
-  event3,
-  event4,
-  event5,
-  eventvideo1,
+  
 };
 
 export const recentPlacedStud = [
