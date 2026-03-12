@@ -236,21 +236,9 @@ import Arjun_Kerodi from "../assets/Contributers/Arjun.jpeg";
 import shashidhar from "../assets/Contributers/shashidhar.jpeg";
 import sachin from "../assets/Contributers/Sachin.jpeg";
 
-// Workshops and FDPs
-import FDP1 from "../assets/Workshops-FDP/FDP1.jpeg";
-import FDP2 from "../assets/Workshops-FDP/FDP2.jpeg";
-import FDP3 from "../assets/Workshops-FDP/FDP3.jpeg";
-import FDP4 from "../assets/Workshops-FDP/FDP4.jpeg";
-import FDP5 from "../assets/Workshops-FDP/FDP5.jpeg";
-import FDP6 from "../assets/Workshops-FDP/FDP6.jpeg";
 
-// Events
-import event1 from "../assets/Tallest-Tower(Events)/event1.jpeg";
-import event2 from "../assets/Tallest-Tower(Events)/event2.jpeg";
-import event3 from "../assets/Tallest-Tower(Events)/event3.jpeg";
-import event4 from "../assets/Tallest-Tower(Events)/event4.jpeg";
-import event5 from "../assets/Tallest-Tower(Events)/event5.jpeg";
-import eventvideo1 from "../assets/Tallest-Tower(Events)/eventvideo1.mp4";
+
+
 export const assets = {
   hod_img,
   gmu_logo,
