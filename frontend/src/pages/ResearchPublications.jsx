@@ -46,7 +46,7 @@ const ResearchPublications = () => {
       const response = await axios.get(
         "https://cse-gmu-stlo.vercel.app/api/all-publications",
         {
-          timeout: 10000,
+          timeout: 30000,
         }
       );
 

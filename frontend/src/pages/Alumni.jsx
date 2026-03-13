@@ -137,7 +137,14 @@ const ThreeDCard = ({ member, onClick }) => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          height: 8px;
+          transform: perspective(1000px);
+          transform-style: preserve-3d;
+          cursor: pointer;
+        }
+
         .card-wrap {
           margin: 12px;
           transform: perspective(1000px);

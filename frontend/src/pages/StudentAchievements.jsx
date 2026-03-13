@@ -247,7 +247,21 @@ const StudentAchievements = () => {
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
       {/* Custom Styles for animations */}
-      <style jsx>{`
+      <style>{`
+        ::-webkit-scrollbar {
+          width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
         @keyframes gridMove {
           0% {
             background-position: 0 0;
