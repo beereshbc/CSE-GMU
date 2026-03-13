@@ -354,7 +354,6 @@ When users ask about the department, respond with structured, informative, and f
                 src={assets.falcon_logo}
                 alt=""
                 className="rounded-full"
-                srcset=""
               />
             )}
           </motion.div>

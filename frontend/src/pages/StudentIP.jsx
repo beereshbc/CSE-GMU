@@ -1,3 +1,16 @@
+import accentureLogo from "../assets/companyLogos/accenture.png";
+import brigoshaLogo from "../assets/companyLogos/brigosha.png";
+import ceiLogo from "../assets/companyLogos/cei.png";
+import infosysLogo from "../assets/companyLogos/infosys.png";
+import mindtreeLogo from "../assets/companyLogos/mindtree.png";
+import tcsLogo from "../assets/companyLogos/tcs.png";
+import wiproLogo from "../assets/companyLogos/wipro.png";
+import googleLogo from "../assets/companyLogos/google.png";
+import microsoftLogo from "../assets/companyLogos/microsoft.png";
+import ibmLogo from "../assets/companyLogos/ibm.png";
+import oracleLogo from "../assets/companyLogos/oracle.png";
+import amazonLogo from "../assets/companyLogos/amazon.png";
+
 import React, { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
 import {
@@ -54,92 +67,58 @@ const StudentIP = () => {
 
   // Company logos for slideshow (working URLs)
 
-  const companyLogos = [
-    {
-      name: "TCS",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/2560px-Tata_Consultancy_Services_Logo.svg.png",
-    },
-    {
-      name: "Infosys",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/2560px-Infosys_logo.svg.png",
-    },
-    {
-      name: "Accenture",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/2560px-Accenture.svg.png",
-    },
-    {
-      name: "Wipro",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Wipro_Logo.svg/2560px-Wipro_Logo.svg.png",
-    },
-    {
-      name: "Mindtree",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Mindtree_logo.svg/2560px-Mindtree_logo.svg.png",
-    },
-    {
-      name: "Robosoft",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHltL0TzOGY2wxkQ4yG5H6ElQEXG1LJg3SdA&s",
-    },
-    {
-      name: "CEI India",
-      logo: "https://ceiindia.com/images/logo.png",
-    },
-    {
-      name: "Brigosha",
-      logo: "https://brigosha.com/wp-content/uploads/2022/02/brigosha-logo.png",
-    },
-    {
-      name: "Google",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png",
-    },
-    {
-      name: "Microsoft",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2560px-Microsoft_logo.svg.png",
-    },
-    {
-      name: "Amazon",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png",
-    },
-    {
-      name: "IBM",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/2560px-IBM_logo.svg.png",
-    },
-    {
-      name: "Oracle",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/2560px-Oracle_logo.svg.png",
-    },
-    {
-      name: "Cisco",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/2560px-Cisco_logo_blue_2016.svg.png",
-    },
-    {
-      name: "Intel",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Intel_logo_%282006-2020%29.svg/2560px-Intel_logo_%282006-2020%29.svg.png",
-    },
-    {
-      name: "Dell",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_Logo.svg/2560px-Dell_Logo.svg.png",
-    },
-    {
-      name: "Capgemini",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Capgemini_2017_logo.svg/2560px-Capgemini_2017_logo.svg.png",
-    },
-    {
-      name: "Cognizant",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Cognizant_logo_2022.svg/2560px-Cognizant_logo_2022.svg.png",
-    },
-    {
-      name: "HCL",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/HCL_Technologies_logo.svg/2560px-HCL_Technologies_logo.svg.png",
-    },
-    {
-      name: "Tech Mahindra",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Tech_Mahindra_New_Logo.svg/2560px-Tech_Mahindra_New_Logo.svg.png",
-    },
-    {
-      name: "SLK Software",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4DhoKYpsItHPrbKz6BY3z4W7IV-ATzSVYxw&s",
-    },
-  ];
+const companyLogos = [
+  {
+    name: "TCS",
+    logo: tcsLogo,
+  },
+  {
+    name: "Infosys",
+    logo: infosysLogo,
+  },
+  {
+    name: "Accenture",
+    logo: accentureLogo,
+  },
+  {
+    name: "Wipro",
+    logo: wiproLogo,
+  },
+  {
+    name: "Mindtree",
+    logo: mindtreeLogo,
+  },
+  {
+    name: "CEI India",
+    logo: ceiLogo,
+  },
+  {
+    name: "Brigosha",
+    logo: brigoshaLogo,
+  },
+  {
+    name: "Google",
+    logo: googleLogo,
+  },
+  {
+    name: "Microsoft",
+    logo: microsoftLogo,
+  },
+  {
+    name: "Amazon",
+    logo: amazonLogo,
+  },
+
+  {
+  name: "IBM",
+  logo: ibmLogo,
+  },
+ {
+  name: "Oracle",
+  logo: oracleLogo,
+ },
+
+];
 
   // Student data from the document - 2020-21 placements
   const allStudentsData = [
@@ -353,6 +332,8 @@ const StudentIP = () => {
 
   const openPdf = (year) => {
     const pdfUrls = {
+      "2024-25": "https://drive.google.com/drive/folders/1kEKm9AzUNrUeCi9oacwOr4fRN_uL5tEq",
+      "2023-24": "https://drive.google.com/drive/folders/1Z82crBw8ZAlhNbLemwxdBU_FU64vjVr9",
       "2022-23": assets.AY2021,
       "2021-22": assets.AY2122,
       "2020-21": assets.AY2223,
@@ -761,7 +742,7 @@ const StudentIP = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-3xl font-bold text-center text-blue-900 mb-8 font-serif"
           >
-            Our Recruiting Partners 2020-21
+            Our Recruiting Partners 
           </motion.h2>
           <div className="relative">
             <div className="flex space-x-8 animate-marquee whitespace-nowrap">
@@ -773,14 +754,14 @@ const StudentIP = () => {
                   <img
                     src={company.logo}
                     alt={company.name}
-                    className="max-h-12 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    className="h-12 w-auto object-contain transition-transform duration-300 hover:scale-110"
                   />
                 </div>
               ))}
             </div>
           </div>
         </div>
-        <style jsx>{`
+        <style>{`
           @keyframes marquee {
             0% {
               transform: translateX(0);
@@ -941,6 +922,8 @@ const StudentIP = () => {
             </h3>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
               {[
+                { year: "2024-25", label: "2024-25 Report" },
+                { year: "2023-24", label: "2023-24 Report" },
                 { year: "2022-23", label: "2022-23 Report" },
                 { year: "2021-22", label: "2021-22 Report" },
                 { year: "2020-21", label: "2020-21 Report" },

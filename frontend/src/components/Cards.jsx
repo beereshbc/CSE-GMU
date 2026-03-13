@@ -362,7 +362,7 @@ const Cards = () => {
       </div>
 
       {/* Add custom CSS for the 3D effect and grid */}
-      <style jsx>{`
+      <style>{`
         .perspective-1000 {
           perspective: 1000px;
         }

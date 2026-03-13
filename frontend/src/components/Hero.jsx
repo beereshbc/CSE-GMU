@@ -121,7 +121,7 @@ const Hero = () => {
             className=" cursor-pointer flex items-center gap-3"
           >
             <motion.div>
-              <img src={assets.gmu_logo} className="w-44" alt="" srcset="" />
+              <img src={assets.gmu_logo} className="w-44" alt="" />
             </motion.div>
           </motion.div>
         </motion.div>

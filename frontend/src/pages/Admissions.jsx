@@ -401,7 +401,7 @@ const Admissions = () => {
       </section>
 
       {/* Additional Styles */}
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%,
           100% {
