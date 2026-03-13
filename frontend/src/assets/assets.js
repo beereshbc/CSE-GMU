@@ -295,7 +295,15 @@ export const assets = {
   Arjun_Kerodi,
   shashidhar,
   sachin,
-
+  
+  Orientation1,
+  Orientation2,
+  Orientation3,
+  Orientation4,
+  Orientation5,
+  Orientation6,
+  Orientation7,
+  Orientation8,
   
 };
 
