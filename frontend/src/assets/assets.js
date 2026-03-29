@@ -140,6 +140,11 @@ import Priyanka from "../assets/Stud_Achiv/Priyanka.jpg";
 import Sachin from "../assets/Stud_Achiv/Sachin.jpg";
 import Shreya from "../assets/Stud_Achiv/Shreya.jpg";
 import Sinchana from "../assets/Stud_Achiv/Sinchana.jpg";
+import Anveshana from "../assets/Stud_Achiv/Anveshana.jpg";
+import Techzone from "../assets/Stud_Achiv/Techzone.jpg";
+import AgriHack from "../assets/Stud_Achiv/AgriHack.jpg";
+import Tanzila from "../assets/Stud_Achiv/Tanzila.jpg";
+import HackHire from "../assets/Stud_Achiv/HackHire.jpg";
 
 //Sports section
 import sport1 from "../assets/sports/sp1.jpg";
@@ -282,6 +287,11 @@ export const assets = {
   Sachin,
   Shreya,
   Sinchana,
+  Anveshana,
+  Techzone,
+  AgriHack,
+  Tanzila,
+  HackHire,
 
   FA1,
   FA2,

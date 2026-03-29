@@ -186,57 +186,57 @@ const companyLogos = [
 
   // Enhanced placement stats with average package
   const placementStats = [
-    {
-      year: "2024-25",
-      intake: 120,
-      placed: 50,
-      highest: "34.4 LPA",
-      average: "8.5 LPA",
-      lowest: "4.5 LPA",
-      higherStudies: 3,
-      percentage: "74%",
-    },
-    {
-      year: "2020-21",
-      intake: 60,
-      placed: 37,
-      highest: "12 LPA",
-      average: "6.5 LPA",
-      lowest: "3.5 LPA",
-      higherStudies: 5,
-      percentage: "74%",
-    },
-    {
-      year: "2019-20",
-      intake: 58,
-      placed: 42,
-      highest: "11 LPA",
-      average: "6.2 LPA",
-      lowest: "3.2 LPA",
-      higherStudies: 4,
-      percentage: "76%",
-    },
-    {
-      year: "2018-19",
-      intake: 55,
-      placed: 35,
-      highest: "10 LPA",
-      average: "5.8 LPA",
-      lowest: "3.0 LPA",
-      higherStudies: 6,
-      percentage: "73%",
-    },
-    {
-      year: "2017-18",
-      intake: 52,
-      placed: 30,
-      highest: "9 LPA",
-      average: "5.5 LPA",
-      lowest: "2.8 LPA",
-      higherStudies: 7,
-      percentage: "67%",
-    },
-  ];
+  {
+    year: "2024-25",
+    intake: 120,
+    placed: 50,
+    highest: "34.4 LPA",
+    average: "8.5 LPA",
+    lowest: "4.5 LPA",
+    higherStudies: 3,
+    percentage: "74%",
+  },
+  {
+    year: "2023-24",
+    intake: 120,
+    placed: 80,
+    highest: "14.5 LPA",
+    average: "4.5 LPA",
+    lowest: "3.5 LPA",
+    higherStudies: 4,
+    percentage: "66%",
+  },
+  {
+    year: "2022-23",
+    intake: 110,
+    placed: 70,
+    highest: "12 LPA",
+    average: "6 LPA",
+    lowest: "3.2 LPA",
+    higherStudies: 5,
+    percentage: "63%",
+  },
+  {
+    year: "2021-22",
+    intake: 100,
+    placed: 65,
+    highest: "12 LPA",
+    average: "6.5 LPA",
+    lowest: "3.5 LPA",
+    higherStudies: 5,
+    percentage: "65%",
+  },
+  {
+    year: "2020-21",
+    intake: 90,
+    placed: 55,
+    highest: "10 LPA",
+    average: "5.8 LPA",
+    lowest: "3.0 LPA",
+    higherStudies: 2,
+    percentage: "61%",
+  },
+];
 
   // Enhanced Chart Data with Blue-White Theme
   const enhancedChartData = {
@@ -420,10 +420,10 @@ const companyLogos = [
                 persistence, passion, and consistent practice, success becomes a
                 natural outcome."
               </p>
-            </motion.div>
+           </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* Placement Coordinators Section */}
       <section className="py-12 bg-white">
@@ -1000,29 +1000,38 @@ const companyLogos = [
               </div>
 
               {/* Placement Growth */}
-              <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl p-6 text-white">
-                <h4 className="text-xl font-bold mb-3 text-center">
-                  Growth Trend
-                </h4>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span>2025-26</span>
-                    <span className="font-bold">85% ↗</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span>2020-21</span>
-                    <span className="font-bold">74% ↗</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span>2019-20</span>
-                    <span className="font-bold">76% →</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span>2018-19</span>
-                    <span className="font-bold">73% ↗</span>
-                  </div>
-                </div>
-              </div>
+<div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl p-6 text-white">
+  <h4 className="text-xl font-bold mb-3 text-center">
+    Growth Trend
+  </h4>
+
+  <div className="space-y-3">
+    <div className="flex justify-between items-center">
+      <span>2024-25</span>
+      <span className="font-bold text-green-200">74% ↗</span>
+    </div>
+
+    <div className="flex justify-between items-center">
+      <span>2023-24</span>
+      <span className="font-bold">66% ↗</span>
+    </div>
+
+    <div className="flex justify-between items-center">
+      <span>2022-23</span>
+      <span className="font-bold">63% →</span>
+    </div>
+
+    <div className="flex justify-between items-center">
+      <span>2021-22</span>
+      <span className="font-bold">65% ↗</span>
+    </div>
+
+    <div className="flex justify-between items-center">
+      <span>2020-21</span>
+      <span className="font-bold">61% →</span>
+    </div>
+  </div>
+</div>
             </motion.div>
           </div>
 
