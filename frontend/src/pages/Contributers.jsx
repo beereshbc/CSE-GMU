@@ -56,7 +56,7 @@ const Contributers = () => {
 
   const contributors = [
     {
-      name: "Beereshkumar B C",
+      name: "Beeresh kumar B C",
       usn: "4GM23CS017",
       email: "bcbeereshkumar@gmail.com",
       role: "Development Lead",
@@ -65,12 +65,21 @@ const Contributers = () => {
       image: assets.Beeresh,
     },
     {
+      name: "Yashwanth M",
+      usn: "4GM24CS098",
+      email: "yy6996843@gmail.com",
+      role: "Development Lead",
+      linkedin: "https://www.linkedin.com/in/yashwanth-m-74034230b/",
+      github: "#",
+      image: assets.yashwanth, 
+    },
+    {
       name: "Sachin M Poojar",
       usn: "U23E01CS060",
       email: "sachinmpoojarya@gmail.com",
       role: "Development Lead",
       linkedin: "https://linkedin.com/in/sachinpoojar",
-      github: "https://github.com/sachinpoojar",
+      github: "https://github.com/Sachinmpoojarya",
       image: assets.sachin,
     },
     {
@@ -80,8 +89,7 @@ const Contributers = () => {
       role: "Supporting Developers",
       linkedin: "https://linkedin.com/in/soujanyajain",
       github: "https://github.com/soujanyajain",
-      image:
-        ".unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+      image:assets.soujanya,
     },
     {
       name: "Shashidhar Bhattad",
@@ -108,8 +116,7 @@ const Contributers = () => {
       role: "Supporting Developers",
       linkedin: "https://linkedin.com/in/bindupatil",
       github: "https://github.com/bindupatil",
-      image:
-        ".unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+      image: assets.binduPatil,
     },
 
     {
@@ -117,20 +124,18 @@ const Contributers = () => {
       usn: "U23E01CS016",
       email: "jeevanhosamani07@gmail.com",
       role: "Video Shooting, Editing & Deployment",
-      linkedin: "https://linkedin.com/in/jeevanhosamani",
-      github: "https://github.com/jeevanhosamani",
-      image:
-        ".unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+      linkedin: "https://www.linkedin.com/in/jeevan-hosamani/",
+      github: "https://github.com/jeevanhosamani07",
+      image:assets.jeevan,
     },
     {
       name: "Sujan M N",
       usn: "U23E01CS075",
       email: "sujanneelgund@gmail.com",
       role: "Video Shooting, Editing & Deployment",
-      linkedin: "https://linkedin.com/in/sujann",
-      github: "https://github.com/sujann",
-      image:
-        ".unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+      linkedin: "https://www.linkedin.com/in/sujan-n-m/",
+      github: "https://github.com/SujanNeelgund",
+      image:assets.sujan,
     },
     {
       name: "Raveena Choudhary",
@@ -139,8 +144,7 @@ const Contributers = () => {
       role: "Video Shooting, Editing & Deployment",
       linkedin: "https://linkedin.com/in/raveenachoudhary",
       github: "https://github.com/raveenachoudhary",
-      image:
-        ".unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+      image:assets.raveena,
     },
   ];
 
@@ -160,7 +164,7 @@ const Contributers = () => {
       title: "Development Lead",
       icon: Crown,
       color: "from-purple-500 to-pink-500",
-      members: ["Beereshkumar B C", "Sachin M Poojar"],
+      members: ["Beereshkumar B C","Yashwanth M", "Sachin M Poojar"],
     },
     {
       title: "Supporting Developers",
@@ -205,7 +209,10 @@ const Contributers = () => {
     const backgroundY = useTransform(mouseY, [-300, 300], [20, -20]);
 
     const TeamIcon = teamIcons[contributor.role];
-    const style = teamStyles[contributor.role];
+    const style =
+    contributor.name === "Soujanya Jain Brahmaraj"
+      ? teamStyles["Development Lead"]
+        : teamStyles[contributor.role];
 
     const handleMouseMove = (e) => {
       if (!cardRef.current) return;
@@ -231,7 +238,7 @@ const Contributers = () => {
     return (
       <motion.div
         ref={cardRef}
-        className="card-wrap cursor-pointer"
+        className="card-wrap cursor-pointer w-full flex justify-center"
         style={{
           perspective: 800,
         }}
@@ -253,17 +260,10 @@ const Contributers = () => {
           }}
           transition={{ duration: 0.6 }}
         >
-          <motion.div
-            className="card-bg absolute -top-5 -left-5 w-[120%] h-[120%] bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${contributor.image})`,
-              x: backgroundX,
-              y: backgroundY,
-            }}
-            animate={{
-              opacity: isHovered ? 0.8 : 0.6,
-            }}
-            transition={{ duration: 0.6 }}
+          <img
+            src={contributor.image}
+            alt={contributor.name}
+            className="absolute top-0 left-0 w-full h-full object-cover"
           />
 
           <motion.div
@@ -284,7 +284,7 @@ const Contributers = () => {
             />
 
             <div className="relative z-10">
-              <motion.h1
+             <motion.h1
                 className="text-2xl font-bold mb-2 text-white font-serif italic"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
@@ -300,10 +300,13 @@ const Contributers = () => {
                 transition={{ delay: isHovered ? 0.4 : 0 }}
               >
                 <TeamIcon className={`w-4 h-4 ${style.icon}`} />
-                <span className="text-sm font-medium text-gray-200">
-                  {contributor.role}
+              <span className="text-sm font-medium text-gray-200">
+              {contributor.name === "Sachin M Poojar"||
+              contributor.name === "Soujanya Jain Brahmaraj"
+                ? "Developer"
+                : contributor.role}
                 </span>
-              </motion.div>
+             </motion.div>
 
               <motion.div
                 className="flex items-center gap-2 mb-4 text-gray-300"
@@ -356,7 +359,9 @@ const Contributers = () => {
             <span
               className={`bg-gradient-to-r ${style.gradient} bg-clip-text text-transparent`}
             >
-              {contributor.role.split(" ")[0]}
+          {contributor.role === "Supporting Developers"
+          ? "Development"
+          : contributor.role.split(" ")[0]}
             </span>
           </motion.div>
         </motion.div>
@@ -426,7 +431,7 @@ const Contributers = () => {
 
       {/* Contributors Section */}
       <section className="py-16 px-4 ">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -450,8 +455,8 @@ const Contributers = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 justify-items-center">
-            {contributors.map((contributor, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+           {contributors.map((contributor, index) => (
               <Card3D key={index} contributor={contributor} index={index} />
             ))}
           </div>
@@ -460,7 +465,7 @@ const Contributers = () => {
 
       {/* Team Contributions Section */}
       <section className="py-16 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}

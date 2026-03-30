@@ -10,6 +10,8 @@ import microsoftLogo from "../assets/companyLogos/microsoft.png";
 import ibmLogo from "../assets/companyLogos/ibm.png";
 import oracleLogo from "../assets/companyLogos/oracle.png";
 import amazonLogo from "../assets/companyLogos/amazon.png";
+import p6 from "../assets/PlacedStud/p6.jpg";
+import p7 from "../assets/PlacedStud/p7.jpg";
 
 import React, { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
@@ -837,10 +839,17 @@ const companyLogos = [
                       {student.name}
                     </h3>
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                        {student.company}
-                      </span>
-                      <span className="text-xs text-gray-500">
+                      <div className="flex flex-wrap gap-2">
+  {student.company.split(",").map((comp, index) => (
+    <span
+      key={index}
+      className="text-[10px] text-blue-700 bg-blue-100 px-1.5 py-0.5 rounded-full"
+    >
+      {comp.trim()}
+    </span>
+  ))}
+</div>
+                      <span className="text-xs text-gray-500 whitespace-nowrap">
                         {student.passedOutYear}
                       </span>
                     </div>
@@ -1187,7 +1196,33 @@ const companyLogos = [
               </motion.div>
             ))}
           </div>
-        </div>
+          {/* Placement Posters */}
+{/* Placement Posters */}
+<div className="mt-12">
+  <h3 className="text-2xl font-bold text-center text-blue-900 mb-6">
+    Latest Placement Highlights
+  </h3>
+
+  <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
+
+    <div className="rounded-2xl overflow-hidden shadow-lg border border-blue-200 aspect-square">
+      <img
+        src={p6}
+        alt="Placement Poster 1"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    <div className="rounded-2xl overflow-hidden shadow-lg border border-blue-200 aspect-square">
+      <img
+        src={p7}
+        alt="Placement Poster 2"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+  </div>
+</div>        </div>
       </section>
     </div>
   );

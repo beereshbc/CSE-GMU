@@ -186,6 +186,9 @@ import place_25_slk14 from "../assets/PlacedStud/placed_25/slk14.jpeg";
 import place_25_slk15 from "../assets/PlacedStud/placed_25/slk15.jpeg";
 import place_25_slk16 from "../assets/PlacedStud/placed_25/slk16.jpeg";
 import place_25_slk17 from "../assets/PlacedStud/placed_25/slk17.jpeg";
+import bhumika from "../assets/PlacedStud/placed_25/bhumika.jpg";
+import marulasiddesh from "../assets/PlacedStud/placed_25/marulasiddesh.jpg";
+import vivek from "../assets/PlacedStud/placed_25/vivek.jpg";
 
 import National_conf1 from "../assets/National_conf/n1.jpg";
 import National_conf2 from "../assets/National_conf/n2.jpg";
@@ -240,6 +243,13 @@ import Beeresh from "../assets/Contributers/Beeresh.jpg";
 import Arjun_Kerodi from "../assets/Contributers/Arjun.jpeg";
 import shashidhar from "../assets/Contributers/shashidhar.jpeg";
 import sachin from "../assets/Contributers/Sachin.jpeg";
+import yashwanth from "../assets/Contributers/yashwanth.jpeg";
+import jeevan from "../assets/Contributers/jeevan.jpeg";
+import soujanya from "../assets/Contributers/soujanya.jpeg";
+import sujan from "../assets/Contributers/sujan.jpeg";
+import raveena from "../assets/Contributers/raveena.jpeg";
+import binduPatil from "../assets/Contributers/bindu_c_patil.jpeg";
+
 
 // Events
 import event1 from "../assets/Tallest-Tower(Events)/event1.jpeg";
@@ -309,7 +319,12 @@ export const assets = {
   Arjun_Kerodi,
   shashidhar,
   sachin,
-
+  yashwanth,
+  jeevan,
+  soujanya,
+  sujan,
+  raveena,
+  binduPatil,
 
 
   event1,
@@ -360,7 +375,7 @@ export const recentPlacedStud = [
   {
     id: 7,
     name: "Spoorthi J",
-    company: "Infosys",
+    company: "Infosys,Deloitte",
     passedOutYear: "2025-26",
     img: place_25_2,
   },
@@ -383,7 +398,7 @@ export const recentPlacedStud = [
   {
     id: 10,
     name: "Disha S Kumar",
-    company: "SLK Software",
+    company: "SLK Software,Deloitte",
     passedOutYear: "2025-26",
     img: place_25_slk3,
   },
@@ -432,7 +447,7 @@ export const recentPlacedStud = [
   {
     id: 17,
     name: "Pavan C",
-    company: "SLK Software",
+    company: "SLK Software,Mu Sigma",
     passedOutYear: "2025-26",
     img: place_25_slk9,
   },
@@ -446,7 +461,7 @@ export const recentPlacedStud = [
   {
     id: 19,
     name: "Sharath B",
-    company: "SLK Software",
+    company: "SLK Software, Mu Sigma",
     passedOutYear: "2025-26",
     img: place_25_slk11,
   },
@@ -481,7 +496,7 @@ export const recentPlacedStud = [
   {
     id: 24,
     name: "Vishaka R S",
-    company: "SLK Software",
+    company: "SLK Software, Mu Sigma",
     passedOutYear: "2025-26",
     img: place_25_slk16,
   },
@@ -499,6 +514,27 @@ export const recentPlacedStud = [
     passedOutYear: "2025-26",
     img: place_25_slk2,
   },
+  {
+  id: 27,
+  name: "Vivek P M",
+  company: "Mu Sigma",
+  passedOutYear: "2025-26",
+  img: vivek,
+},
+{
+  id: 28,
+  name: "Bhumika N",
+  company: "Mu Sigma",
+  passedOutYear: "2025-26",
+  img: bhumika,
+},
+{
+  id: 29,
+  name: "Marulasiddesh",
+  company: "Deloitte",
+  passedOutYear: "2025-26",
+  img: marulasiddesh,
+},
 ];
 
 export const boxData = [
