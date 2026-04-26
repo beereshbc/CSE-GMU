@@ -68,7 +68,7 @@ const Contributers = () => {
       name: "Yashwanth M",
       usn: "4GM24CS098",
       email: "yy6996843@gmail.com",
-      role: "Developer",
+      role: "Supporting Developers",
       linkedin: "https://www.linkedin.com/in/yashwanth-m-74034230b/",
       github: "#",
       image: assets.yashwanth, 
