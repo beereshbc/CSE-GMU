@@ -16,6 +16,7 @@ import {
   ChevronDown,
   BarChart3,
   Handshake,
+  PenSquareIcon,
 } from "lucide-react";
 
 const Navbar = () => {
@@ -34,6 +35,7 @@ const Navbar = () => {
       { name: "Admissions", path: "/admissions", icon: <User size={16} /> },
     ],
     Academics: [
+      { name: "Blog", path: "/blog", icon: <PenSquareIcon size={16} /> },
       { name: "Faculty", path: "/faculty", icon: <Users size={16} /> },
       { name: "BoS", path: "/bos", icon: <Users size={16} /> },
       {
