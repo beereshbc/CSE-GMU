@@ -78,7 +78,7 @@ const Contributers = () => {
       usn: "U23E01CS060",
       email: "sachinmpoojarya@gmail.com",
       role: "Supporting Developers",
-      linkedin: "https://linkedin.com/in/sachinpoojar",
+      linkedin: "https://www.linkedin.com/in/sachin-mp/",
       github: "https://github.com/Sachinmpoojarya",
       image: assets.sachin,
     },
@@ -87,7 +87,7 @@ const Contributers = () => {
       usn: "U23E01CS071",
       email: "janyajain7722@gmail.com",
       role: "Supporting Developers",
-      linkedin: "https://linkedin.com/in/soujanyajain",
+      linkedin: "https://www.linkedin.com/in/soujanyajain",
       github: "https://github.com/soujanyajain",
       image:assets.soujanya,
     },
@@ -204,9 +204,6 @@ const Contributers = () => {
 
     const dampedRotateY = useSpring(rotateY, { damping: 20, stiffness: 200 });
     const dampedRotateX = useSpring(rotateX, { damping: 20, stiffness: 200 });
-
-    const backgroundX = useTransform(mouseX, [-300, 300], [20, -20]);
-    const backgroundY = useTransform(mouseY, [-300, 300], [20, -20]);
 
     const TeamIcon = teamIcons[contributor.role];
     const style =
