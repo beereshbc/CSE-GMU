@@ -936,11 +936,7 @@ export const faculties = [
         year: "2004",
         thesis: "Design and Implementation of Programming Language \u2018MINE\u2019",
       },
-      {
-        degree: "BE (IT)",
-        institution: "B.I.E.T. Davangere / Kuvempu University, Shimoga",
-        year: "2000",
-      },
+      
     ],
     researchInterests: [
       "Personalized Learning Systems",
@@ -1167,16 +1163,8 @@ export const faculties = [
         institution: "BCET, Bangalore, Visvesvaraya Technological University, Belagavi",
         year: "2010",
       },
-      {
-        degree: "B.Ed.",
-        institution: "Recognized Institution, Karnataka",
-        year: "Not specified",
-      },
-      {
-        degree: "D.Litt.",
-        institution: "Awarded",
-        year: "Not specified",
-      },
+     
+     
     ],
     researchInterests: [
       "Artificial Intelligence",
@@ -2010,7 +1998,7 @@ export const faculties = [
         year: "2024-Present",
         title: "Teaching",
         company: "GM University, Davangere",
-        description: "1 Year 3 months of teaching experience",
+        description: "1 Year 8 months of teaching experience",
       },
       {
         year: "2022-2024",
@@ -2039,7 +2027,7 @@ export const faculties = [
     ],
     researchInterests: [
       "Neural Networks",
-      "Artificial Intelligence and Machine Learning",
+      "Artificial Intelligence and Machine Learning,DL",
       "Deep Learning",
       "Computer Vision",
       "Image Processing",
@@ -2216,7 +2204,7 @@ export const faculties = [
     },
     experience: [
       {
-        year: "2024-Present",
+        year: "2025-Present",
         title: "Teaching",
         company: "GM University, Davanagere",
         description: "6 months of teaching experience",
@@ -2595,7 +2583,7 @@ export const faculties = [
   },
   {
     name: "Mrs. Supriya M Kerakkanavar",
-    position: "Tutor",
+    position: "Assistant Professor ",
     img: SUPRIYA_KERAKKANAVAR,
     coverImg: gmu,
     about:
@@ -2667,7 +2655,7 @@ export const faculties = [
   },
   {
     name: "Mrs. Pallavi S",
-    position: "Tutor",
+    position: "Assistant Professor ",
     img: PALLAVI,
     coverImg: gmu,
     about:
@@ -2770,7 +2758,7 @@ export const faculties = [
         year: "13.8 Years",
         title: "Industry",
         company: "HCL Technologies & Sutherland Global Services Ltd",
-        description: "13.8 Years of industry experience in Avionics/Aerospace, Telecom and Embedded domain. Held Lead positions at HCL Technologies (India, Japan) and Manager Position at Sutherland Global Services Ltd, Bangalore.",
+        description: "13.8 Years of industry experience at HCL Technologies and Sutherland Global Services Ltd",
       },
     ],
     contact: {
@@ -2846,12 +2834,7 @@ export const faculties = [
         company: "Accenture, Bangalore",
         description: "Associate Software Engineer for 1 Year",
       },
-      {
-        year: "1 Year",
-        title: "Industry",
-        company: "Test Yantra",
-        description: "Software Test Engineer for 1 Year",
-      },
+      
     ],
     contact: {
       address: "Faculty of Engineering and Technology, GM University, Davanagere",
