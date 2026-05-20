@@ -2,8 +2,6 @@ import hod_img from "../assets/public-images/HOD_Img.jpeg";
 import gmu_logo from "../assets/public-images/log-gmu.png";
 import gmu from "../assets/public-images/gmit_front.jpg";
 
-
-
 import Adithya_MS from "../assets/faculties/Adithya_MS.jpg";
 import Deepika_MD from "../assets/faculties/Deepika_MD.jpg";
 import DEEPTI_H_G from "../assets/faculties/DEEPTI_H_G.jpg";
@@ -213,9 +211,6 @@ import Orientation6 from "../assets/Orientation/FDP4.jpeg";
 import Orientation7 from "../assets/Orientation/FDP5.jpeg";
 import Orientation8 from "../assets/Orientation/FDP6.jpeg";
 
-
-
-
 import Seminar1 from "../assets/seminar/se1.JPG";
 import Seminar2 from "../assets/seminar/se2.JPG";
 import Seminar3 from "../assets/seminar/se3.JPG";
@@ -244,6 +239,12 @@ import Beeresh from "../assets/Contributers/Beeresh.jpg";
 import Arjun_Kerodi from "../assets/Contributers/Arjun.jpeg";
 import shashidhar from "../assets/Contributers/shashidhar.jpeg";
 import sachin from "../assets/Contributers/Sachin.jpeg";
+import yashwanth from "../assets/Contributers/yashwanth.jpeg";
+import jeevan from "../assets/Contributers/jeevan.jpeg";
+import soujanya from "../assets/Contributers/soujanya.jpeg";
+import sujan from "../assets/Contributers/sujan.jpeg";
+import raveena from "../assets/Contributers/raveena.jpeg";
+import binduPatil from "../assets/Contributers/bindu_c_patil.jpeg";
 
 // Events
 import event1 from "../assets/Tallest-Tower(Events)/event1.jpeg";
@@ -314,7 +315,6 @@ export const assets = {
   Arjun_Kerodi,
   shashidhar,
   sachin,
-
 
 
   event1,
@@ -505,26 +505,26 @@ export const recentPlacedStud = [
     img: place_25_slk2,
   },
   {
-  id: 27,
-  name: "Vivek P M",
-  company: "Mu Sigma",
-  passedOutYear: "2025-26",
-  img: vivek,
-},
-{
-  id: 28,
-  name: "Bhumika N",
-  company: "Mu Sigma",
-  passedOutYear: "2025-26",
-  img: bhumika,
-},
-{
-  id: 29,
-  name: "Marulasiddesh",
-  company: "Deloitte",
-  passedOutYear: "2025-26",
-  img: marulasiddesh,
-},
+    id: 27,
+    name: "Vivek P M",
+    company: "Mu Sigma",
+    passedOutYear: "2025-26",
+    img: vivek,
+  },
+  {
+    id: 28,
+    name: "Bhumika N",
+    company: "Mu Sigma",
+    passedOutYear: "2025-26",
+    img: bhumika,
+  },
+  {
+    id: 29,
+    name: "Marulasiddesh",
+    company: "Deloitte",
+    passedOutYear: "2025-26",
+    img: marulasiddesh,
+  },
 ];
 
 export const boxData = [
@@ -544,7 +544,17 @@ export const boxData = [
     id: 3,
     title: "Workshop/FDP",
     description: "",
-    images: [Orientation1, Orientation2, Orientation1, Orientation3, Orientation4, Orientation5, Orientation6, Orientation7, Orientation8],
+    images: [
+      Orientation1,
+      Orientation2,
+      Orientation1,
+      Orientation3,
+      Orientation4,
+      Orientation5,
+      Orientation6,
+      Orientation7,
+      Orientation8,
+    ],
   },
   {
     id: 4,
@@ -846,7 +856,7 @@ export const teamMembers = [
 export const faculties = [
   {
     name: "Dr. Sanjay Pande M. B.",
-    position: "Professor & Director",
+    designation: "Professor & Director",
     img: Principal,
     coverImg: gmu,
     about:
@@ -879,7 +889,7 @@ export const faculties = [
   },
   {
     name: "Dr. Shivanagowda G. M.",
-    position: "Professor & Head",
+    designation: "Professor & Head",
     img: hod_img,
     coverImg: gmu,
     about:
@@ -906,13 +916,15 @@ export const faculties = [
         year: "2006",
         title: "Industry Sabbatical",
         company: "Infosys, Bangalore DC",
-        description: "3 months Sabbatical on Refactoring at Infosys, Bangalore DC, 2006",
+        description:
+          "3 months Sabbatical on Refactoring at Infosys, Bangalore DC, 2006",
       },
       {
         year: "2009-2010",
         title: "Research",
         company: "IIT Delhi",
-        description: "60 Days QIP Scholar for the Contact program under Dr. Sanjeeva Prasad at IITD, New Delhi. Two courses work at Department of CSE, IITD, Delhi 2010. Focus on Personalized Learning Systems and Academic Technology Management.",
+        description:
+          "60 Days QIP Scholar for the Contact program under Dr. Sanjeeva Prasad at IITD, New Delhi. Two courses work at Department of CSE, IITD, Delhi 2010. Focus on Personalized Learning Systems and Academic Technology Management.",
       },
     ],
     contact: {
@@ -934,7 +946,8 @@ export const faculties = [
         degree: "M.Tech. (CSE)",
         institution: "B.I.E.T. Davangere / VTU, Belagavi, Karnataka",
         year: "2004",
-        thesis: "Design and Implementation of Programming Language \u2018MINE\u2019",
+        thesis:
+          "Design and Implementation of Programming Language \u2018MINE\u2019",
       },
       
     ],
@@ -956,7 +969,8 @@ export const faculties = [
     },
     awards: [
       {
-        title: "Contribution to Global Computing Curricula 2020 (CC2020 Report)",
+        title:
+          "Contribution to Global Computing Curricula 2020 (CC2020 Report)",
         organization: "ACM and IEEE-CS Taskforce",
         year: "2020",
         link: "https://www.acm.org/binaries/content/assets/education/curricula-recommendations/cc2020.pdf",
@@ -978,48 +992,67 @@ export const faculties = [
     publications: {
       internationalJournals: [
         {
-          title: "Selection Algorithm for Dynamic Question Requirements in Different Learning Environments From an Unstructured Repository",
+          title:
+            "Selection Algorithm for Dynamic Question Requirements in Different Learning Environments From an Unstructured Repository",
           authors: "G. M. Shivanagowda, R. H. Goudar, U. P. Kulkarni",
-          journal: "Journal International Journal of Computational Complexity and Intelligent Algorithms (INDERSCIE)",
+          journal:
+            "Journal International Journal of Computational Complexity and Intelligent Algorithms (INDERSCIE)",
           volume: "Vol. 3, 2020, pp. 259-278",
-          theme: "Adaptive assessment algorithms and intelligent question repositories for personalized e-learning",
+          theme:
+            "Adaptive assessment algorithms and intelligent question repositories for personalized e-learning",
         },
         {
-          title: "Open Assessment Methodology-Based Decision Support System in Blended Learning Environments",
+          title:
+            "Open Assessment Methodology-Based Decision Support System in Blended Learning Environments",
           authors: "Shivanagowda G. M., Goudar R. H., Kulkarni U. P.",
           journal: "Journal of Knowledge and Learning",
           volume: "Vol. 11, 2020, pp. 81-97",
-          theme: "Data-driven decision-making models in blended and personalized learning",
+          theme:
+            "Data-driven decision-making models in blended and personalized learning",
         },
         {
-          title: "CRETAL: A Personalized Learning Environment in Conventional Setup",
+          title:
+            "CRETAL: A Personalized Learning Environment in Conventional Setup",
           authors: "Shivanagowda G., Goudar R., Kulkarni U.",
-          conference: "8th International Conference Proceedings Series, 2017, pp. 143-148",
-          theme: "Personalized learning architectures bridging traditional and e-learning paradigms",
+          conference:
+            "8th International Conference Proceedings Series, 2017, pp. 143-148",
+          theme:
+            "Personalized learning architectures bridging traditional and e-learning paradigms",
         },
         {
-          title: "Analysis of New Data Sources in Modern Teaching and Learning Processes in the Perspective of Personalized Recommendation",
+          title:
+            "Analysis of New Data Sources in Modern Teaching and Learning Processes in the Perspective of Personalized Recommendation",
           authors: "Shivanagowda-Pre, Goudar R., Kulkarni U. K.",
-          journal: "Book Series: Smart Innovation, Systems and Technologies, Vol. 31, 2015, pp. 329-339",
-          theme: "Exploration of educational data sources for learner-specific recommendation systems",
+          journal:
+            "Book Series: Smart Innovation, Systems and Technologies, Vol. 31, 2015, pp. 329-339",
+          theme:
+            "Exploration of educational data sources for learner-specific recommendation systems",
         },
         {
-          title: "A Knowledge-Based Method for Better Understanding of Student's Learnability to Create Personalized Recommendations",
+          title:
+            "A Knowledge-Based Method for Better Understanding of Student's Learnability to Create Personalized Recommendations",
           authors: "G. M. Shivanagowda, R. H. Goudar, U. P. Kulkarni",
-          conference: "International Conference on Transformations in Engineering Education (ICTEE), 2015, p. 185",
-          theme: "Predictive analysis of student learning patterns for adaptive assessments",
+          conference:
+            "International Conference on Transformations in Engineering Education (ICTEE), 2015, p. 185",
+          theme:
+            "Predictive analysis of student learning patterns for adaptive assessments",
         },
         {
-          title: "Extension to the Basic Data Type for Better Data Representation",
+          title:
+            "Extension to the Basic Data Type for Better Data Representation",
           authors: "Shivanagowda G. M.",
-          conference: "International Conference SETP'07, Orlando, Florida, USA, 2007, p. 104",
-          theme: "Proposal of the ANY operator to increase flexibility in relational database queries",
+          conference:
+            "International Conference SETP'07, Orlando, Florida, USA, 2007, p. 104",
+          theme:
+            "Proposal of the ANY operator to increase flexibility in relational database queries",
         },
         {
           title: "Extension to Programming Language Expressivity",
           authors: "Shivanagowda G. M.",
-          conference: "International Conference SETP'08, Orlando, Florida, USA, 2008",
-          theme: "Extension to programming language expressivity via data type extensions",
+          conference:
+            "International Conference SETP'08, Orlando, Florida, USA, 2008",
+          theme:
+            "Extension to programming language expressivity via data type extensions",
         },
       ],
       patents: [
@@ -1066,21 +1099,26 @@ export const faculties = [
   },
   {
     name: "Dr. Chethan Chandra S Basavaraddi",
-    position: "Associate Professor",
+    designation: "Associate Professor",
     img: Dr_CHETHAN_CHANDRA_S_BASAVARADDI,
     coverImg: gmu,
     about:
       "Dr. Chethan Chandra S. Basavaraddi is an Associate Professor in the Department of Computer Science and Engineering at G M University, Davanagere. He holds B.E., B.Ed., M.Tech., Ph.D., and D.Litt. degrees with KEA-KSET qualification. With over 14 years of teaching and research experience, his expertise spans Artificial Intelligence, Machine Learning, Data Mining, IoT, MANETs, NLP, and Image Processing. He has published numerous research papers, authored book chapters, and holds patents in emerging technologies. He has received several prestigious awards, including the Global Teaching Excellence Award (2021), Best Faculty Award (2021), Young Scientist Award (2022), and India Prime Icon Award (2022). He is a member of ISTE, IEEE, IFERP, IARA, IYA, and ACM. His research credentials include Scopus ID: 57226547078, ORCID: 0000-0002-3133-7234, and AICTE Faculty ID: 1-1475809096. Dr. Chethan Chandra is dedicated to fostering innovation, research excellence, and outcome-based education.",
     social: {
-      linkedin: "https://www.linkedin.com/in/dr-chethan-chandra-s-basavaraddi-5b523750?originalSubdomain=in",
-      Scholar: "https://scholar.google.co.in/scholar?q=chethan+chandra+s+basavaraddi&hl=en&as_sdt=0&as_vis=1&oi=scholart",
+      linkedin:
+        "https://www.linkedin.com/in/dr-chethan-chandra-s-basavaraddi-5b523750?originalSubdomain=in",
+      Scholar:
+        "https://scholar.google.co.in/scholar?q=chethan+chandra+s+basavaraddi&hl=en&as_sdt=0&as_vis=1&oi=scholart",
       orcid: "https://orcid.org/0000-0002-3133-7234",
       researchGate: "https://www.researchgate.net/profile/Chethan-Basavaraddi",
       Vidwan: "https://vidwan.inflibnet.ac.in/profile/392350",
-      academia: "https://www.academia.edu/48284382/Chethan_Chandra_S_Basavaraddi",
-      publons: "https://publons.com/wos-op/researcher/3700557/chethan-chandra-s-basavaraddi/",
+      academia:
+        "https://www.academia.edu/48284382/Chethan_Chandra_S_Basavaraddi",
+      publons:
+        "https://publons.com/wos-op/researcher/3700557/chethan-chandra-s-basavaraddi/",
       scopus: "https://www.scopus.com/authid/detail.uri?authorId=57226547078",
-      github: "https://github.com/chethanraddi04/Dr.-Chethan-Chandra-S-Basavaraddi",
+      github:
+        "https://github.com/chethanraddi04/Dr.-Chethan-Chandra-S-Basavaraddi",
       kaggle: "https://www.kaggle.com/drchethanchandrasb",
       facebook: "https://www.facebook.com/chethan.raddi",
       webOfScience: "https://www.webofscience.com/wos/author/record/2547307",
@@ -1090,19 +1128,22 @@ export const faculties = [
         year: "01-08-2012 to 31-07-2014",
         title: "Lecturer",
         company: "KIT, Tiptur",
-        description: "Dept. of Computer Science and Engineering, KIT, Tiptur-572201",
+        description:
+          "Dept. of Computer Science and Engineering, KIT, Tiptur-572201",
       },
       {
         year: "01-08-2014 to 31-08-2022",
         title: "Assistant Professor",
         company: "KIT, Tiptur",
-        description: "Dept. of Computer Science and Engineering, KIT, Tiptur-572201",
+        description:
+          "Dept. of Computer Science and Engineering, KIT, Tiptur-572201",
       },
       {
         year: "01-09-2022 to 24-05-2024",
         title: "Associate Professor",
         company: "KIT, Tiptur",
-        description: "Dept. of Computer Science and Engineering, KIT, Tiptur-572201",
+        description:
+          "Dept. of Computer Science and Engineering, KIT, Tiptur-572201",
       },
       {
         year: "01-08-2018 to 24-05-2024",
@@ -1132,35 +1173,42 @@ export const faculties = [
         year: "27-05-2024 to 05-03-2025",
         title: "NAAC Criteria-5 Coordinator",
         company: "DBIT, Bangalore",
-        description: "Accredited 2024-29 with 'A' Grade, DBIT, Bangalore, 560074",
+        description:
+          "Accredited 2024-29 with 'A' Grade, DBIT, Bangalore, 560074",
       },
       {
         year: "01-04-2025 to Till Date",
         title: "Associate Professor",
         company: "G M University, Davanagere",
-        description: "Dept. of CSE, School of CS&T, Faculty of Engineering Technology, G M University, Davanagere-577006",
+        description:
+          "Dept. of CSE, School of CS&T, Faculty of Engineering Technology, G M University, Davanagere-577006",
       },
     ],
     contact: {
-      address: "Dept. CSE, School of CS&T, Faculty of Engineering Technology, G M University, Post Box No-4, PB Road, Davanagere-577006",
+      address:
+        "Dept. CSE, School of CS&T, Faculty of Engineering Technology, G M University, Post Box No-4, PB Road, Davanagere-577006",
       phone: "+91 9844508359",
       email: "Chethanchandrasb.cse@gmu.ac.in",
     },
     qualifications: [
       {
         degree: "Ph.D. (Computer Science and Engineering)",
-        institution: "North East Frontier Technical University (NEFTU), Arunachal Pradesh",
+        institution:
+          "North East Frontier Technical University (NEFTU), Arunachal Pradesh",
         year: "2020",
-        thesis: "A Detection Based on Deep Affinity Towards Multiple Object Tracking Using Hybrid Neuro Fuzzy Network Applied to Face Recognition from Feed Forward Neural Network",
+        thesis:
+          "A Detection Based on Deep Affinity Towards Multiple Object Tracking Using Hybrid Neuro Fuzzy Network Applied to Face Recognition from Feed Forward Neural Network",
       },
       {
         degree: "M.Tech. (Computer Science and Engineering)",
-        institution: "UBDT College of Engineering (UBDTCE), Davanagere University",
+        institution:
+          "UBDT College of Engineering (UBDTCE), Davanagere University",
         year: "2012",
       },
       {
         degree: "BE (Computer Science and Engineering)",
-        institution: "BCET, Bangalore, Visvesvaraya Technological University, Belagavi",
+        institution:
+          "BCET, Bangalore, Visvesvaraya Technological University, Belagavi",
         year: "2010",
       },
      
@@ -1184,27 +1232,32 @@ export const faculties = [
       },
       {
         title: "Best Faculty Award (Junior Category)",
-        organization: "Vertex Research & Technology [Government Registered], www.vertexrt.org",
+        organization:
+          "Vertex Research & Technology [Government Registered], www.vertexrt.org",
         year: "2021",
         date: "7th September 2021",
       },
       {
-        title: "Young Scientist Award – International Scientist Awards on Engineering, Science and Medicine",
+        title:
+          "Young Scientist Award – International Scientist Awards on Engineering, Science and Medicine",
         organization: "VDGOOD Professional Association",
         year: "2022",
         date: "18th June 2022",
       },
       {
         title: "India Prime Icon Award 2022 – Author and Researcher",
-        organization: "India Prime Awards Research Group in association with Foxclues Team Fox Story India",
+        organization:
+          "India Prime Awards Research Group in association with Foxclues Team Fox Story India",
         year: "2022",
         date: "8th July 2022",
       },
       {
-        title: "Karnataka State Eligibility Test (KSET) for Assistant Professor – 2023",
+        title:
+          "Karnataka State Eligibility Test (KSET) for Assistant Professor – 2023",
         organization: "KEA-KSET",
         year: "2023",
-        details: "Application No.: KS1090708 | Reference No.: 20231460540 | Exam: 13th January 2024 | Result: 28th May 2024 | Certificate: 22nd July 2024",
+        details:
+          "Application No.: KS1090708 | Reference No.: 20231460540 | Exam: 13th January 2024 | Result: 28th May 2024 | Certificate: 22nd July 2024",
       },
     ],
     administrativeRoles: [
@@ -1228,7 +1281,8 @@ export const faculties = [
     publications: {
       patents: [
         {
-          title: "IoT Based Online Doctor Robot for Healthcare and Telemedicine Consultation with Patients",
+          title:
+            "IoT Based Online Doctor Robot for Healthcare and Telemedicine Consultation with Patients",
           applicationNo: "202441010550",
           status: "Granted on 15th February 2024",
         },
@@ -1238,12 +1292,14 @@ export const faculties = [
           status: "Application filed November 2025",
         },
         {
-          title: "The Role of Artificial Intelligence in Fintech: Enhancing Efficiency and Security",
+          title:
+            "The Role of Artificial Intelligence in Fintech: Enhancing Efficiency and Security",
           applicationNo: "202541109867",
           status: "Application filed November 2025",
         },
         {
-          title: "AI-Based Integrated Digital Platform for Academic and Administrative Management in Higher Education Institutes for Multi-Disciplinary Research",
+          title:
+            "AI-Based Integrated Digital Platform for Academic and Administrative Management in Higher Education Institutes for Multi-Disciplinary Research",
           applicationNo: "202511112923",
           status: "Application filed November 2025",
         },
@@ -1253,12 +1309,14 @@ export const faculties = [
           status: "Design/Patent Application filed November 2025",
         },
         {
-          title: "AI-Based Cybersecurity Awareness and Digital Financial Literacy for Administrative Management in Higher Institutions for Multidisciplinary Research",
+          title:
+            "AI-Based Cybersecurity Awareness and Digital Financial Literacy for Administrative Management in Higher Institutions for Multidisciplinary Research",
           applicationNo: "202621001014",
           status: "Application filed December 2025",
         },
         {
-          title: "A Financial Intelligence System Management for Higher Education Institutions using AI-Driven Analytics and Humanities-Based Curriculum Multidisciplinary Research",
+          title:
+            "A Financial Intelligence System Management for Higher Education Institutions using AI-Driven Analytics and Humanities-Based Curriculum Multidisciplinary Research",
           applicationNo: "202621003572",
           status: "Application filed January 2026",
         },
@@ -1268,7 +1326,8 @@ export const faculties = [
           status: "Application filed February 2026",
         },
         {
-          title: "A Financial Intelligence System Management for Higher Education Institutions using AI-Driven Analytics and Humanities based Curriculum Multidisciplinary Research",
+          title:
+            "A Financial Intelligence System Management for Higher Education Institutions using AI-Driven Analytics and Humanities based Curriculum Multidisciplinary Research",
           applicationNo: "202621023911",
           status: "Application filed February 2026",
         },
@@ -1289,7 +1348,8 @@ export const faculties = [
       ],
       bookChapters: [
         {
-          title: "Exploring Practical Applications of AI in Additive Manufacturing through Case Studies",
+          title:
+            "Exploring Practical Applications of AI in Additive Manufacturing through Case Studies",
           publisher: "Springer Nature (Scopus Indexed Book Chapter)",
           year: "2026",
         },
@@ -1320,19 +1380,22 @@ export const faculties = [
     reviewerRoles: [
       {
         role: "Session Chair",
-        event: "International Conference on Data Science and Network Security (ICDSNS), IEEE-2023",
+        event:
+          "International Conference on Data Science and Network Security (ICDSNS), IEEE-2023",
         date: "28 & 29 July 2023",
         organizer: "Kalpataru Institute of Technology, Tiptur",
       },
       {
         role: "Finance Chair",
-        event: "International Conference on Data Science and Network Security (ICDSNS), IEEE-2023",
+        event:
+          "International Conference on Data Science and Network Security (ICDSNS), IEEE-2023",
         date: "28 & 29 July 2023",
         organizer: "Kalpataru Institute of Technology, Tiptur",
       },
       {
         role: "Reviewer Chair",
-        event: "4th International Conference on Knowledge Engineering and Communication Systems (ICKECS 2026)",
+        event:
+          "4th International Conference on Knowledge Engineering and Communication Systems (ICKECS 2026)",
         date: "24 April 2026",
         location: "Chickaballapura, India",
       },
@@ -1343,30 +1406,36 @@ export const faculties = [
       },
       {
         role: "Article Reviewer",
-        event: "Journal of Emerging Technologies and Innovative Research (JETIR) (ISSN: 2349-5162), Member ID: 222995",
+        event:
+          "Journal of Emerging Technologies and Innovative Research (JETIR) (ISSN: 2349-5162), Member ID: 222995",
         date: "Since 2023",
       },
       {
         role: "Journal Editor",
-        event: "Institute for Engineering Research and Publication (IFERP), Membership/ID: PMIN75901368",
+        event:
+          "Institute for Engineering Research and Publication (IFERP), Membership/ID: PMIN75901368",
         date: "Since 2019",
       },
       {
         role: "Editorial Board Member",
-        event: "Innovation (Innov), Science Publishing Group (SciencePG), Open Access publisher",
+        event:
+          "Innovation (Innov), Science Publishing Group (SciencePG), Open Access publisher",
         date: "Since 2024",
       },
     ],
     lettersOfAppreciation: [
       {
-        title: "IIC Institution's Innovation Council (MOE's Innovation Cell), Government of India",
+        title:
+          "IIC Institution's Innovation Council (MOE's Innovation Cell), Government of India",
         year: "2022-23",
-        details: "For contributions to the IIC of Kalpataru Institute of Technology",
+        details:
+          "For contributions to the IIC of Kalpataru Institute of Technology",
       },
       {
         title: "INTUITIVEDATA Solutions Pvt. Ltd.",
         date: "26 & 27 November 2025",
-        details: "For successfully coordinating the Certified Hedera Developer Course at GM University for 170+ students using blockchain technology",
+        details:
+          "For successfully coordinating the Certified Hedera Developer Course at GM University for 170+ students using blockchain technology",
       },
     ],
     anyOtherContributions: [
@@ -1379,7 +1448,7 @@ export const faculties = [
   },
   {
     name: "Dr. Santoshkumar Mahendrakar",
-    position: "Assistant Professor & Deputy Director Student Affairs",
+    designation: "Assistant Professor",
     img: SANTOSHKUMAR_M,
     coverImg: gmu,
     about:
@@ -1389,14 +1458,16 @@ export const faculties = [
       Scholar: "https://scholar.google.com/citations?hl=en&user=faavbjwAAAAJ",
       orcid: "https://orcid.org/0000-0003-0334-4880",
       scopus: "https://www.scopus.com/authid/detail.uri?authorId=57224059604",
-      researchGate: "https://www.researchgate.net/profile/Santoshkumar-Mahendrakar-2",
+      researchGate:
+        "https://www.researchgate.net/profile/Santoshkumar-Mahendrakar-2",
     },
     experience: [
       {
         year: "2001-Present",
         title: "Teaching",
         company: "GMIT / GM University, Davangere",
-        description: "24 Years of teaching experience at GMIT/GMU, Davangere, Karnataka",
+        description:
+          "24 Years of teaching experience at GMIT/GMU, Davangere, Karnataka",
       },
       {
         year: "Ongoing",
@@ -1406,7 +1477,8 @@ export const faculties = [
       },
     ],
     contact: {
-      address: "Department of Computer Science & Engineering, GM University, P. B. Road, Davanagere – 577 006, Karnataka, India",
+      address:
+        "Department of Computer Science & Engineering, GM University, P. B. Road, Davanagere – 577 006, Karnataka, India",
       phone: "9242163128",
       email: "santoshkumarm@gmit.ac.in",
     },
@@ -1418,7 +1490,8 @@ export const faculties = [
       },
       {
         degree: "M.Tech. (Computer Science and Engineering)",
-        institution: "Bapuji Institute of Engineering and Technology, Visvesvaraya Technological University, Belagavi, Karnataka",
+        institution:
+          "Bapuji Institute of Engineering and Technology, Visvesvaraya Technological University, Belagavi, Karnataka",
         year: "2007",
         note: "First Class with Distinction",
       },
@@ -1447,7 +1520,8 @@ export const faculties = [
       {
         title: "Silver and Bronze Partnership Awards",
         organization: "Infosys",
-        details: "In recognition of academic-industry collaboration initiatives",
+        details:
+          "In recognition of academic-industry collaboration initiatives",
       },
       {
         title: "Best Paper Research Scholar Award",
@@ -1494,21 +1568,24 @@ export const faculties = [
   },
   {
     name: "Mrs. Nayana K",
-    position: "Assistant Professor & Program Director, M.Tech – Deep Learning",
+    designation: "Assistant Professor",
     img: NAYANA_K,
     coverImg: gmu,
     about:
       "Prof. Nayana K is an Assistant Professor in the Department of Computer Science & Engineering at GM University, Davanagere. She joined GMU on January 2, 2023, with nearly 16 years of experience in academics, research, and administration, gained at PESITM, Shivamogga, and SCT Institute of Technology, Bengaluru. She believes in creating an interactive learning environment that bridges theoretical concepts with practical applications. Her approach emphasizes hands-on experience with cutting-edge technologies in AI and Deep Learning, while fostering research-oriented thinking among students. She is committed to mentoring students to become proficient in both foundational knowledge and emerging technologies in computer science. At GMU, she also serves as the Program Director for M.Tech in Deep Learning, responsible for overseeing and coordinating all academic activities of the program, including curriculum planning, course delivery, student mentoring, research facilitation, and ensuring overall academic excellence.",
     social: {
-      linkedin: "https://www.linkedin.com/in/nayana-k-921205371/recent-activity/all/",
-      Scholar: "https://scholar.google.com/citations?view_op=list_works&hl=en&user=6hbQNOsAA",
+      linkedin:
+        "https://www.linkedin.com/in/nayana-k-921205371/recent-activity/all/",
+      Scholar:
+        "https://scholar.google.com/citations?view_op=list_works&hl=en&user=6hbQNOsAA",
       Vidwan: "https://vidwan.inflibnet.ac.in/profile/345497",
     },
     experience: [
       {
         year: "2011-2013",
         title: "Teaching",
-        company: "SCT Institute of Technology, Vignan Nagar, Bengaluru, Karnataka",
+        company:
+          "SCT Institute of Technology, Vignan Nagar, Bengaluru, Karnataka",
         description: "2 Years of teaching experience",
       },
       {
@@ -1527,25 +1604,30 @@ export const faculties = [
         year: "2019-Present",
         title: "Research",
         company: "VTU / GM University",
-        description: "Specialisation in Artificial Intelligence, Machine Learning and Deep Learning. Her research has resulted in publications and funded projects from VTU under the KSCST Research Grant scheme.",
+        description:
+          "Specialisation in Artificial Intelligence, Machine Learning and Deep Learning. Her research has resulted in publications and funded projects from VTU under the KSCST Research Grant scheme.",
       },
     ],
     contact: {
-      address: "School of Computer Science and Technology, GM University, Davanagere",
+      address:
+        "School of Computer Science and Technology, GM University, Davanagere",
       phone: "9945692143",
       email: "nayanak@gmu.ac.in",
     },
     qualifications: [
       {
         degree: "Ph.D. (CSE) – Pursuing",
-        institution: "Visvesvaraya Technological University (VTU), Belagavi, at PES College of Engineering, Mandya",
-        thesis: "ECG Anomaly Detection using LSTM Autoencoder and SHAP for Explainability",
+        institution:
+          "Visvesvaraya Technological University (VTU), Belagavi, at PES College of Engineering, Mandya",
+        thesis:
+          "ECG Anomaly Detection using LSTM Autoencoder and SHAP for Explainability",
       },
       {
         degree: "M.Tech. (CSE)",
         institution: "SJCE Mysore, VTU, Belagavi",
         year: "2011",
-        specialization: "Information and Communication Technology (ICT) in Computer Science and Engineering",
+        specialization:
+          "Information and Communication Technology (ICT) in Computer Science and Engineering",
       },
       {
         degree: "BE (ECE)",
@@ -1605,7 +1687,7 @@ export const faculties = [
   },
   {
     name: "Mrs. Kavyashree P N",
-    position: "Assistant Professor & Secretary – Coding and Web Development Club",
+    designation: "Assistant Professor",
     img: KAVYASHREE_p_N,
     coverImg: gmu,
     about:
@@ -1724,7 +1806,7 @@ export const faculties = [
   },
   {
     name: "Ms. Ranjitha D S",
-    position: "Assistant Professor",
+    designation: "Assistant Professor",
     img: RANJITHA_D_S,
     coverImg: gmu,
     about:
@@ -1822,14 +1904,16 @@ export const faculties = [
   },
   {
     name: "Ms. Nanditha G",
-    position: "Assistant Professor",
+    designation: "Assistant Professor",
     img: NANDITHA_G,
     coverImg: gmu,
     about:
       "Prof. Nanditha G is an Assistant Professor in the Department of Computer Science & Engineering at GM University, Davanagere. She joined GMU on July 24, 2023, with nearly 2.5 years of experience. At GMU, she also serves in the National Service Scheme (NSS), where she is responsible for overseeing and coordinating all academic activities of the program, including course delivery, student mentoring, and ensuring overall academic excellence. Additionally, she serves as the Co-ordinator for the Institution's Innovation Council (IIC) at GMIT, an initiative of the Ministry of Education (MoE), Government of India, aimed at promoting innovation and entrepreneurship in higher education institutions.",
     social: {
-      linkedin: "https://www.linkedin.com/in/nanditha-g-b490321b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      Scholar: "https://scholar.google.com/citations?view_op=new_articles&hl=en&imq=Nanditha+G#",
+      linkedin:
+        "https://www.linkedin.com/in/nanditha-g-b490321b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      Scholar:
+        "https://scholar.google.com/citations?view_op=new_articles&hl=en&imq=Nanditha+G#",
       Vidwan: "https://vidwan.inflibnet.ac.in/profile/440214",
     },
     experience: [
@@ -1890,7 +1974,8 @@ export const faculties = [
     publications: {
       journals: [
         {
-          title: "Automatic Crop Recommender System using Machine Learning Approach",
+          title:
+            "Automatic Crop Recommender System using Machine Learning Approach",
           authors: "Nanditha G, Dr. N Manja Naik, Dr. Revanna C R",
           journal: "Dickension Journal",
           volume: "Volume 22",
@@ -1915,13 +2000,11 @@ export const faculties = [
         "Economical Data Analysis using Python",
       ],
     },
-    anyOtherContributions: [
-      "Syllabus Framed for UG and PG Program of GMU",
-    ],
+    anyOtherContributions: ["Syllabus Framed for UG and PG Program of GMU"],
   },
   {
     name: "Mr. Ravinandan Jannu",
-    position: "Assistant Professor",
+    designation: "Assistant Professor",
     img: Ravinandan_Jannu,
     coverImg: gmu,
     about:
@@ -1981,7 +2064,7 @@ export const faculties = [
   },
   {
     name: "Mr. Srijan Roy",
-    position: "Assistant Professor",
+    designation: "Assistant Professor",
     img: Srijan_Roy,
     coverImg: gmu,
     about:
@@ -2094,7 +2177,7 @@ export const faculties = [
   },
   {
     name: "Ms. Niveditha T Naik",
-    position: "Assistant Professor",
+    designation: "Assistant Professor",
     img: NIVEDITHA_T_NAIK,
     coverImg: gmu,
     about:
@@ -2191,7 +2274,7 @@ export const faculties = [
   },
   {
     name: "Ms. Sanjana A T",
-    position: "Assistant Professor",
+    designation: "Assistant Professor",
     img: SANJANA_A_T,
     coverImg: gmu,
     about:
@@ -2234,7 +2317,7 @@ export const faculties = [
   },
   {
     name: "Ms. Nayana G S",
-    position: "Assistant Professor",
+    designation: "Assistant Professor",
     img: NAYANA_G_S,
     coverImg: gmu,
     about:
@@ -2278,8 +2361,10 @@ export const faculties = [
     publications: {
       journals: [
         {
-          title: "Automated Detection of Oral Squamous Cell Carcinoma Using Deep Learning",
-          journal: "International Journal of Engineering Research & Technology (IJERT)",
+          title:
+            "Automated Detection of Oral Squamous Cell Carcinoma Using Deep Learning",
+          journal:
+            "International Journal of Engineering Research & Technology (IJERT)",
           issn: "2278-0181",
           volume: "Vol. 15 Issue 01",
           year: "January 2026",
@@ -2296,7 +2381,7 @@ export const faculties = [
   },
   {
     name: "Ms. Latha K B",
-    position: "Assistant Professor",
+    designation: "Assistant Professor",
     img: LATHA_KB,
     coverImg: gmu,
     about:
@@ -2318,7 +2403,8 @@ export const faculties = [
         year: "Ongoing",
         title: "Research",
         company: "GM University",
-        description: "Computer vision based food recognition with nutrition analysis",
+        description:
+          "Computer vision based food recognition with nutrition analysis",
       },
     ],
     contact: {
@@ -2360,7 +2446,7 @@ export const faculties = [
   },
   {
     name: "Ms. Deepti H G",
-    position: "Assistant Professor",
+    designation: "Assistant Professor",
     img: DEEPTI_H_G,
     coverImg: gmu,
     about:
@@ -2394,7 +2480,8 @@ export const faculties = [
         year: "2025-Present",
         title: "Research",
         company: "GM University",
-        description: "RasaScape: Emotion-Guided Landscape Generation Grounded in Indian Aesthetic Theory; AI-based Image Processing and Object Detection",
+        description:
+          "RasaScape: Emotion-Guided Landscape Generation Grounded in Indian Aesthetic Theory; AI-based Image Processing and Object Detection",
       },
     ],
     contact: {
@@ -2434,8 +2521,10 @@ export const faculties = [
     publications: {
       conferences: [
         {
-          title: "Design of an Interactive GPU-Accelerated Visualisation Tool for Teaching Parallel Algorithms",
-          conference: "EduHiPC Workshop at IEEE International Conference on High Performance Computing, Data, and Analytics (HiPC 2025)",
+          title:
+            "Design of an Interactive GPU-Accelerated Visualisation Tool for Teaching Parallel Algorithms",
+          conference:
+            "EduHiPC Workshop at IEEE International Conference on High Performance Computing, Data, and Analytics (HiPC 2025)",
           location: "IIT Hyderabad, India",
           date: "December 17–20, 2025",
         },
@@ -2449,7 +2538,7 @@ export const faculties = [
   },
   {
     name: "Ms. Tanushree V M",
-    position: "Assistant Professor",
+    designation: "Assistant Professor",
     img: Tanushree_V_M,
     coverImg: gmu,
     about:
@@ -2494,8 +2583,10 @@ export const faculties = [
     publications: {
       internationalConferences: [
         {
-          title: "Intelligent Fault Detection for IoT Enabled in Wireless Sensor Networks",
-          conference: "4th International Conference on Advance Communication and Machine Intelligence (MICA 2025)",
+          title:
+            "Intelligent Fault Detection for IoT Enabled in Wireless Sensor Networks",
+          conference:
+            "4th International Conference on Advance Communication and Machine Intelligence (MICA 2025)",
           organizer: "ICFAI University Tripura",
           date: "22nd–24th December 2025",
         },
@@ -2517,7 +2608,7 @@ export const faculties = [
   },
   {
     name: "Ms. Deepika M D",
-    position: "Assistant Professor",
+    designation: "Assistant Professor",
     img: Deepika_MD,
     coverImg: gmu,
     about:
@@ -2584,6 +2675,7 @@ export const faculties = [
   {
     name: "Mrs. Supriya M Kerakkanavar",
     position: "Assistant Professor ",
+    designation: "Assistant Professor",
     img: SUPRIYA_KERAKKANAVAR,
     coverImg: gmu,
     about:
@@ -2612,7 +2704,6 @@ export const faculties = [
         company: "GM University, Davanagere",
         description: "Currently serving as Tutor",
       },
-      
     ],
     contact: {
       address:
@@ -2656,6 +2747,7 @@ export const faculties = [
   {
     name: "Mrs. Pallavi S",
     position: "Assistant Professor ",
+    designation: "Assistant Professor",
     img: PALLAVI,
     coverImg: gmu,
     about:
@@ -2691,15 +2783,12 @@ export const faculties = [
         year: "2022",
       },
     ],
-    researchInterests: [
-      "Blockchain Technology",
-      "IoT",
-      "AIML",
-    ],
+    researchInterests: ["Blockchain Technology", "IoT", "AIML"],
     publications: {
       internationalJournals: [
         {
-          title: "Traceability of counterfeit medicine supply chain through blockchain",
+          title:
+            "Traceability of counterfeit medicine supply chain through blockchain",
           journal: "IJTE-ISTE",
           year: "2025",
           paperId: "1410625",
@@ -2707,7 +2796,8 @@ export const faculties = [
       ],
       internationalConferences: [
         {
-          title: "Traceability of counterfeit medicine supply chain through blockchain",
+          title:
+            "Traceability of counterfeit medicine supply chain through blockchain",
           conference: "ICETSE-2025",
           year: "2025",
           paperId: "389",
@@ -2731,7 +2821,7 @@ export const faculties = [
   },
   {
     name: "Mr. Saurya Ranjan Das",
-    position: "Assistant Professor",
+    designation: "Assistant Professor",
     img: Saurya_Ranjan_Das,
     coverImg: gmu,
     about:
@@ -2751,7 +2841,8 @@ export const faculties = [
       {
         year: "1.7 Years",
         title: "Teaching",
-        company: "Centurion University of Technology and Management, Paralakhemundi, Odisha",
+        company:
+          "Centurion University of Technology and Management, Paralakhemundi, Odisha",
         description: "1.7 Years of teaching experience",
       },
       {
@@ -2759,6 +2850,8 @@ export const faculties = [
         title: "Industry",
         company: "HCL Technologies & Sutherland Global Services Ltd",
         description: "13.8 Years of industry experience at HCL Technologies and Sutherland Global Services Ltd",
+        description:
+          "13.8 Years of industry experience in Avionics/Aerospace, Telecom and Embedded domain. Held Lead positions at HCL Technologies (India, Japan) and Manager Position at Sutherland Global Services Ltd, Bangalore.",
       },
     ],
     contact: {
@@ -2805,13 +2898,11 @@ export const faculties = [
     projectsGuided: {
       ug: "Currently guiding UG projects",
     },
-    fundedProjects: [
-      "Project-based Learning Module for Industrial Automation",
-    ],
+    fundedProjects: ["Project-based Learning Module for Industrial Automation"],
   },
   {
     name: "Ms. Shalini M R",
-    position: "Tutor",
+    designation: "Tutor",
     img: Shalini_MR,
     coverImg: gmu,
     about:
@@ -2837,7 +2928,8 @@ export const faculties = [
       
     ],
     contact: {
-      address: "Faculty of Engineering and Technology, GM University, Davanagere",
+      address:
+        "Faculty of Engineering and Technology, GM University, Davanagere",
       phone: "953567544",
       email: "Shalinimr.fet.scst.cse@gmu.ac.in",
     },
@@ -2867,7 +2959,7 @@ export const faculties = [
   },
   {
     name: "Mrs. Sumana C",
-    position: "Tutor",
+    designation: "Tutor",
     img: Sumana_C,
     coverImg: gmu,
     about:
@@ -2924,7 +3016,7 @@ export const faculties = [
   },
   {
     name: "Ms. Saima Anjum",
-    position: "Tutor",
+    designation: "Tutor",
     img: Saima_Anjum_Tutor,
     coverImg: gmu,
     about:
@@ -2990,19 +3082,16 @@ export const faculties = [
     projectsGuided: {
       ug: "Currently guiding UG projects",
     },
-    administrativeResponsibilities: [
-      "Department Level",
-    ],
+    administrativeResponsibilities: ["Department Level"],
     expertise: [
       "Programming",
       "Web Development",
       "Emerging Technologies in Software Engineering",
     ],
-    
   },
   {
     name: "Ms. Ranjitha J",
-    position: "Tutor",
+    designation: "Tutor",
     img: Ranjitha_J_Tutor,
     coverImg: gmu,
     about:
@@ -3065,7 +3154,7 @@ export const faculties = [
   },
   {
     name: "Mrs. Sindhu R R",
-    position: "Tutor",
+    designation: "Tutor",
     img: Sindhu_R_R,
     coverImg: gmu,
     about:
@@ -3133,7 +3222,7 @@ export const faculties = [
   },
   {
     name: "Ms. Pooja S Bidari",
-    position: "Tutor",
+    designation: "Tutor",
     img: Pooja_Bidari,
     coverImg: gmu,
     about:
@@ -3171,7 +3260,8 @@ export const faculties = [
       },
       {
         degree: "B.E (ISE)",
-        institution: "Bapuji Institute of Engineering and Technology, Davanagere",
+        institution:
+          "Bapuji Institute of Engineering and Technology, Davanagere",
         year: "2025",
       },
     ],
@@ -3194,7 +3284,7 @@ export const faculties = [
   },
   {
     name: "Mr. Adithya M S",
-    position: "Tutor",
+    designation: "Tutor",
     img: Adithya_MS,
     coverImg: gmu,
     about:
@@ -3229,7 +3319,8 @@ export const faculties = [
     qualifications: [
       {
         degree: "B.E (CSE)",
-        institution: "Bapuji institute of Engineering and Technology, Davanagere",
+        institution:
+          "Bapuji institute of Engineering and Technology, Davanagere",
         year: "2025",
       },
     ],
@@ -3259,10 +3350,8 @@ export const faculties = [
   },
 ];
 
-
-
 //Contribution Team
- export const contributersFacultyData = [
+export const contributersFacultyData = [
   {
     id: 1,
     name: "Shivanagouda",
