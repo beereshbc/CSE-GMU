@@ -50,7 +50,7 @@ const FacultyCard = ({ faculty, onClick }) => (
             {faculty.name}
           </h3>
           <p className="text-xs text-blue-600 mb-2 line-clamp-2 leading-tight">
-            {faculty.position}
+            {faculty.designation}
           </p>
 
           {/* Quick Social Links - Very Compact */}
@@ -143,7 +143,7 @@ const FacultyDetailView = ({ faculty, onClose }) => {
                   <h2 className="text-2xl font-bold text-blue-900 mb-2">
                     {faculty.name}
                   </h2>
-                  <p className="text-lg text-blue-600">{faculty.position}</p>
+                  <p className="text-lg text-blue-600">{faculty.designation}</p>
                 </div>
                 {/* Quick Stats */}
                 <div className="flex space-x-4 mt-4 sm:mt-0">
@@ -160,7 +160,7 @@ const FacultyDetailView = ({ faculty, onClose }) => {
                       <div className="text-lg font-bold text-blue-600">
                         {
                           faculty.experience.filter(
-                            (exp) => exp.title === "Teaching"
+                            (exp) => exp.title === "Teaching",
                           ).length
                         }
                       </div>
@@ -307,7 +307,9 @@ const FacultyDetailView = ({ faculty, onClose }) => {
                   </div>
                   <div className="flex items-center text-blue-700">
                     <Mail className="w-4 h-4 mr-3 text-blue-500 flex-shrink-0" />
-                    <span className="text-sm break-all">{faculty.contact.email}</span>
+                    <span className="text-sm break-all">
+                      {faculty.contact.email}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -408,7 +410,7 @@ const FacultyDetailView = ({ faculty, onClose }) => {
                           <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></div>
                           {membership}
                         </div>
-                      )
+                      ),
                     )}
                   </div>
                 </div>

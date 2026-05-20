@@ -23,6 +23,8 @@ import Footer from "./components/Footer";
 import BottomNavbar from "./components/BottomNavbar";
 import Benchmarking from "./pages/Benchmarking";
 import Contributers from "./pages/Contributers";
+import Blog from "./pages/Blog";
+import AddBlog from "./pages/admin/AddBlog";
 
 const App = () => {
   return (
@@ -38,6 +40,8 @@ const App = () => {
         <Route path="/learning-resources" element={<LearningResources />} />
         <Route path="/faculty" element={<Faculty />} />
         <Route path="/bos" element={<BoS />} />
+        <Route path="/blog" element={<Blog />} />
+
         <Route
           path="/research-publications"
           element={<ResearchPublications />}
@@ -53,6 +57,9 @@ const App = () => {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/benchmarks" element={<Benchmarking />} />
         <Route path="/contributers" element={<Contributers />} />
+
+        {/* Admin route */}
+        <Route path="/admin/addblog" element={<AddBlog />} />
       </Routes>
       <BottomNavbar />
       <Footer />
