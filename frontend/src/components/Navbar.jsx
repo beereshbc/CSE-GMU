@@ -35,7 +35,7 @@ const Navbar = () => {
       { name: "Admissions", path: "/admissions", icon: <User size={16} /> },
     ],
     Academics: [
-      { name: "Blog", path: "/blog", icon: <PenSquareIcon size={16} /> },
+    
       { name: "Faculty", path: "/faculty", icon: <Users size={16} /> },
       { name: "BoS", path: "/bos", icon: <Users size={16} /> },
       {
@@ -85,6 +85,7 @@ const Navbar = () => {
       },
     ],
     Community: [
+       { name: "Blog", path: "/blog", icon: <PenSquareIcon size={16} /> },
       { name: "Alumni", path: "/alumni", icon: <GraduationCap size={16} /> },
       { name: "Contact Us", path: "/contact-us", icon: <Mail size={16} /> },
     ],
