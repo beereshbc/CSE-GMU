@@ -126,8 +126,18 @@ const StudentAchievements = () => {
   department: "Smart Governance",
   description:
     "Ranked among Top 25 out of 546 teams nationwide at MIT Vishwaprayag University. Developed a Smart Water Pressure Management System addressing urban water challenges.",
-}
-  ];
+},
+{
+  id: 12,
+  image: assets.hackclashcompetition, // add image in assets
+  title: "Hack Clash 2026 – Winners",
+  students:
+    "Team Gamma : Chandrashekar Karabasappa Talawar,Jagadeesh S Bentoor",
+  department: "Hackathon",
+  description:
+    "Won the prestigious Hack Clash 2026 organized by GM  University, Davangere with a Prize Money of rs.2000.",
+},
+];
 
   return (
     <div className="min-h-screen bg-gray-50">
