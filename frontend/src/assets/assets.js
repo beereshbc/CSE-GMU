@@ -144,7 +144,8 @@ import AgriHack from "../assets/Stud_Achiv/AgriHack.jpg";
 import Tanzila from "../assets/Stud_Achiv/Tanzila.jpg";
 import HackHire from "../assets/Stud_Achiv/HackHire.jpg";
 import samved from "../assets/Stud_Achiv/samved.png";
-import hackclashcompetition from "../assets/Stud_Achiv/hackclashcompetition.jpeg"; 
+import hackclashcompetition from "../assets/Stud_Achiv/hackclashcompetition.jpeg";
+
 
 //Sports section
 import sport1 from "../assets/sports/sp1.jpg";
@@ -300,6 +301,7 @@ export const assets = {
   HackHire,
   samved,
   hackclashcompetition,
+  
 
   FA1,
   FA2,

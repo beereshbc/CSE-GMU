@@ -129,14 +129,14 @@ const StudentAchievements = () => {
 },
 {
   id: 12,
-  image: assets.hackclashcompetition, // add image in assets
-  title: "Hack Clash 2026 – Winners",
-  students:
-    "Team Gamma : Chandrashekar Karabasappa Talawar,Jagadeesh S Bentoor",
+  image: assets.hackclashcompetition, // add image in assets    
+  title: "Hack Clash Competition 2026 - Winners",
+  students: "Chandrashekar Karabasappa Talawar , Jagadeesha S Bentoor",
   department: "Hackathon",
   description:
-    "Won the prestigious Hack Clash 2026 organized by GM  University, Davangere with a Prize Money of rs.2000.",
+    "Won the Hack Clash Competition 2026 organized by GM University , Davangere. Secured 1st place and won a cash prize of ₹2000 for their innovative solution in the hackathon.",
 },
+
 ];
 
   return (
