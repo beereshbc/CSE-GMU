@@ -302,6 +302,7 @@ export const assets = {
   samved,
   hackclashcompetition,
   
+  
 
   FA1,
   FA2,
