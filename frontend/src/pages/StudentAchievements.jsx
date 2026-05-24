@@ -117,7 +117,27 @@ const StudentAchievements = () => {
       description:
         "Won startup hackathon at PES Campus with internship opportunities.",
     },
-  ];
+     {
+  id: 11,
+  image: assets.samved, // add image in assets
+  title: "Samved Hackathon 2026 – National Finalist",
+  students:
+    "Shreya B Yadav, Likitha C Y, Nisha V Pawar, Rakshita R, Priya Manohar C",
+  department: "Smart Governance",
+  description:
+    "Ranked among Top 25 out of 546 teams nationwide at MIT Vishwaprayag University. Developed a Smart Water Pressure Management System addressing urban water challenges.",
+},
+{
+  id: 12,
+  image: assets.hackclashcompetition, // add image in assets    
+  title: "Hack Clash Competition 2026 - Winners",
+  students: "Chandrashekar Karabasappa Talawar , Jagadeesha S Bentoor",
+  department: "Hackathon",
+  description:
+    "Won the Hack Clash Competition 2026 organized by GM University , Davangere. Secured 1st place and won a cash prize of ₹2000 for their innovative solution in the hackathon.",
+},
+
+];
 
   return (
     <div className="min-h-screen bg-gray-50">
