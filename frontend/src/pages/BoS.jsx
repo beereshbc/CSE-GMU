@@ -144,7 +144,7 @@ const BoS = () => {
                           "Subject Expert / Associate Professor / Professor",
                         preferred:
                           "Reputed University/Institution (outside State/region)",
-                        name: "Dr. Pavan Kumar, Dept. of CSE, IIIT Dharwad",
+                        name: "",
                       },
                       {
                         id: 8,
@@ -152,7 +152,7 @@ const BoS = () => {
                         designation: "Senior Professor",
                         preferred:
                           "Any Recognized Institution (nominated by VC)",
-                        name: "Dr. Rajasekhar K, IIT Dharwad",
+                        name: "",
                       },
                       {
                         id: 9,
@@ -161,7 +161,7 @@ const BoS = () => {
                           "Industry Expert / Senior Alumnus (10+ years experience)",
                         preferred:
                           "Reputed Industry / Alumni (earlier batches)",
-                        name: "Dr. Girish Ithal, Ex-Infosys and Entrepreneur",
+                        name: "",
                       },
                       {
                         id: 10,
