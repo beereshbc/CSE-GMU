@@ -190,6 +190,8 @@ import place_25_slk17 from "../assets/PlacedStud/placed_25/slk17.jpeg";
 import bhumika from "../assets/PlacedStud/placed_25/bhumika.jpg";
 import marulasiddesh from "../assets/PlacedStud/placed_25/marulasiddesh.jpg";
 import vivek from "../assets/PlacedStud/placed_25/vivek.jpg";
+import unisys1 from "../assets/PlacedStud/placed_25/unisys1.jpeg";
+import unisys2 from "../assets/PlacedStud/placed_25/unisys2.jpeg";
 
 import National_conf1 from "../assets/National_conf/n1.jpg";
 import National_conf2 from "../assets/National_conf/n2.jpg";
@@ -536,6 +538,21 @@ export const recentPlacedStud = [
     company: "Deloitte",
     passedOutYear: "2025-26",
     img: marulasiddesh,
+  },
+  // ---------- UNISYS ----------
+  {
+    id: 100,
+    name: "Shreya R H",
+    company: "Unisys",
+    passedOutYear: "2025-26",
+    img: unisys1,
+  },
+  {
+    id: 101,
+    name: "Yashaswini R",
+    company: "Unisys",
+    passedOutYear: "2025-26",
+    img: unisys2,
   },
 ];
 

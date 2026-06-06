@@ -12,6 +12,7 @@ import oracleLogo from "../assets/companyLogos/oracle.png";
 import amazonLogo from "../assets/companyLogos/amazon.png";
 import p6 from "../assets/PlacedStud/p6.jpg";
 import p7 from "../assets/PlacedStud/p7.jpg";
+import p8 from "../assets/PlacedStud/p8.jpg";
 
 import React, { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
@@ -69,58 +70,58 @@ const StudentIP = () => {
 
   // Company logos for slideshow (working URLs)
 
-const companyLogos = [
-  {
-    name: "TCS",
-    logo: tcsLogo,
-  },
-  {
-    name: "Infosys",
-    logo: infosysLogo,
-  },
-  {
-    name: "Accenture",
-    logo: accentureLogo,
-  },
-  {
-    name: "Wipro",
-    logo: wiproLogo,
-  },
-  {
-    name: "Mindtree",
-    logo: mindtreeLogo,
-  },
-  {
-    name: "CEI India",
-    logo: ceiLogo,
-  },
-  {
-    name: "Brigosha",
-    logo: brigoshaLogo,
-  },
-  {
-    name: "Google",
-    logo: googleLogo,
-  },
-  {
-    name: "Microsoft",
-    logo: microsoftLogo,
-  },
-  {
-    name: "Amazon",
-    logo: amazonLogo,
-  },
+  const companyLogos = [
+    {
+      name: "TCS",
+      logo: tcsLogo,
+    },
+    {
+      name: "Infosys",
+      logo: infosysLogo,
+    },
+    {
+      name: "Accenture",
+      logo: accentureLogo,
+    },
+    {
+      name: "Wipro",
+      logo: wiproLogo,
+    },
+    {
+      name: "Mindtree",
+      logo: mindtreeLogo,
+    },
+    {
+      name: "CEI India",
+      logo: ceiLogo,
+    },
+    {
+      name: "Brigosha",
+      logo: brigoshaLogo,
+    },
+    {
+      name: "Google",
+      logo: googleLogo,
+    },
+    {
+      name: "Microsoft",
+      logo: microsoftLogo,
+    },
+    {
+      name: "Amazon",
+      logo: amazonLogo,
+    },
 
-  {
-  name: "IBM",
-  logo: ibmLogo,
-  },
- {
-  name: "Oracle",
-  logo: oracleLogo,
- },
+    {
+      name: "IBM",
+      logo: ibmLogo,
+    },
+    {
+      name: "Oracle",
+      logo: oracleLogo,
+    },
 
-];
+  ];
 
   // Student data from the document - 2020-21 placements
   const allStudentsData = [
@@ -188,57 +189,57 @@ const companyLogos = [
 
   // Enhanced placement stats with average package
   const placementStats = [
-  {
-    year: "2024-25",
-    intake: 120,
-    placed: 50,
-    highest: "34.4 LPA",
-    average: "8.5 LPA",
-    lowest: "4.5 LPA",
-    higherStudies: 3,
-    percentage: "74%",
-  },
-  {
-    year: "2023-24",
-    intake: 120,
-    placed: 80,
-    highest: "14.5 LPA",
-    average: "4.5 LPA",
-    lowest: "3.5 LPA",
-    higherStudies: 4,
-    percentage: "66%",
-  },
-  {
-    year: "2022-23",
-    intake: 110,
-    placed: 70,
-    highest: "12 LPA",
-    average: "6 LPA",
-    lowest: "3.2 LPA",
-    higherStudies: 5,
-    percentage: "63%",
-  },
-  {
-    year: "2021-22",
-    intake: 100,
-    placed: 65,
-    highest: "12 LPA",
-    average: "6.5 LPA",
-    lowest: "3.5 LPA",
-    higherStudies: 5,
-    percentage: "65%",
-  },
-  {
-    year: "2020-21",
-    intake: 90,
-    placed: 55,
-    highest: "10 LPA",
-    average: "5.8 LPA",
-    lowest: "3.0 LPA",
-    higherStudies: 2,
-    percentage: "61%",
-  },
-];
+    {
+      year: "2024-25",
+      intake: 120,
+      placed: 50,
+      highest: "34.4 LPA",
+      average: "8.5 LPA",
+      lowest: "4.5 LPA",
+      higherStudies: 3,
+      percentage: "74%",
+    },
+    {
+      year: "2023-24",
+      intake: 120,
+      placed: 80,
+      highest: "14.5 LPA",
+      average: "4.5 LPA",
+      lowest: "3.5 LPA",
+      higherStudies: 4,
+      percentage: "66%",
+    },
+    {
+      year: "2022-23",
+      intake: 110,
+      placed: 70,
+      highest: "12 LPA",
+      average: "6 LPA",
+      lowest: "3.2 LPA",
+      higherStudies: 5,
+      percentage: "63%",
+    },
+    {
+      year: "2021-22",
+      intake: 100,
+      placed: 65,
+      highest: "12 LPA",
+      average: "6.5 LPA",
+      lowest: "3.5 LPA",
+      higherStudies: 5,
+      percentage: "65%",
+    },
+    {
+      year: "2020-21",
+      intake: 90,
+      placed: 55,
+      highest: "10 LPA",
+      average: "5.8 LPA",
+      lowest: "3.0 LPA",
+      higherStudies: 2,
+      percentage: "61%",
+    },
+  ];
 
   // Enhanced Chart Data with Blue-White Theme
   const enhancedChartData = {
@@ -422,10 +423,10 @@ const companyLogos = [
                 persistence, passion, and consistent practice, success becomes a
                 natural outcome."
               </p>
-           </motion.div>
-            </div>
+            </motion.div>
           </div>
-        </section>
+        </div>
+      </section>
 
       {/* Placement Coordinators Section */}
       <section className="py-12 bg-white">
@@ -567,9 +568,8 @@ const companyLogos = [
               {heroImages.map((image, index) => (
                 <div
                   key={index}
-                  className={`absolute inset-0 transition-opacity duration-1000 ${
-                    index === currentSlide ? "opacity-100" : "opacity-0"
-                  }`}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
+                    }`}
                 >
                   <img
                     src={image}
@@ -587,11 +587,10 @@ const companyLogos = [
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-all ${
-                      index === currentSlide
-                        ? "bg-blue-600 scale-125"
-                        : "bg-blue-300"
-                    }`}
+                    className={`w-3 h-3 rounded-full transition-all ${index === currentSlide
+                      ? "bg-blue-600 scale-125"
+                      : "bg-blue-300"
+                      }`}
                   />
                 ))}
               </div>
@@ -744,7 +743,7 @@ const companyLogos = [
             animate={{ opacity: 1, y: 0 }}
             className="text-3xl font-bold text-center text-blue-900 mb-8 font-serif"
           >
-            Our Recruiting Partners 
+            Our Recruiting Partners
           </motion.h2>
           <div className="relative">
             <div className="flex space-x-8 animate-marquee whitespace-nowrap">
@@ -840,15 +839,15 @@ const companyLogos = [
                     </h3>
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex flex-wrap gap-2">
-  {student.company.split(",").map((comp, index) => (
-    <span
-      key={index}
-      className="text-[10px] text-blue-700 bg-blue-100 px-1.5 py-0.5 rounded-full"
-    >
-      {comp.trim()}
-    </span>
-  ))}
-</div>
+                        {student.company.split(",").map((comp, index) => (
+                          <span
+                            key={index}
+                            className="text-[10px] text-blue-700 bg-blue-100 px-1.5 py-0.5 rounded-full"
+                          >
+                            {comp.trim()}
+                          </span>
+                        ))}
+                      </div>
                       <span className="text-xs text-gray-500 whitespace-nowrap">
                         {student.passedOutYear}
                       </span>
@@ -864,11 +863,10 @@ const companyLogos = [
                 <button
                   key={index}
                   onClick={() => setCurrentRecentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-all ${
-                    index === currentRecentIndex
-                      ? "bg-blue-600 scale-125"
-                      : "bg-blue-300 hover:bg-blue-400"
-                  }`}
+                  className={`w-3 h-3 rounded-full transition-all ${index === currentRecentIndex
+                    ? "bg-blue-600 scale-125"
+                    : "bg-blue-300 hover:bg-blue-400"
+                    }`}
                 />
               ))}
             </div>
@@ -1009,38 +1007,38 @@ const companyLogos = [
               </div>
 
               {/* Placement Growth */}
-<div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl p-6 text-white">
-  <h4 className="text-xl font-bold mb-3 text-center">
-    Growth Trend
-  </h4>
+              <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl p-6 text-white">
+                <h4 className="text-xl font-bold mb-3 text-center">
+                  Growth Trend
+                </h4>
 
-  <div className="space-y-3">
-    <div className="flex justify-between items-center">
-      <span>2024-25</span>
-      <span className="font-bold text-green-200">74% ↗</span>
-    </div>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span>2024-25</span>
+                    <span className="font-bold text-green-200">74% ↗</span>
+                  </div>
 
-    <div className="flex justify-between items-center">
-      <span>2023-24</span>
-      <span className="font-bold">66% ↗</span>
-    </div>
+                  <div className="flex justify-between items-center">
+                    <span>2023-24</span>
+                    <span className="font-bold">66% ↗</span>
+                  </div>
 
-    <div className="flex justify-between items-center">
-      <span>2022-23</span>
-      <span className="font-bold">63% →</span>
-    </div>
+                  <div className="flex justify-between items-center">
+                    <span>2022-23</span>
+                    <span className="font-bold">63% →</span>
+                  </div>
 
-    <div className="flex justify-between items-center">
-      <span>2021-22</span>
-      <span className="font-bold">65% ↗</span>
-    </div>
+                  <div className="flex justify-between items-center">
+                    <span>2021-22</span>
+                    <span className="font-bold">65% ↗</span>
+                  </div>
 
-    <div className="flex justify-between items-center">
-      <span>2020-21</span>
-      <span className="font-bold">61% →</span>
-    </div>
-  </div>
-</div>
+                  <div className="flex justify-between items-center">
+                    <span>2020-21</span>
+                    <span className="font-bold">61% →</span>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
 
@@ -1081,9 +1079,8 @@ const companyLogos = [
                   {placementStats.map((stat, index) => (
                     <tr
                       key={index}
-                      className={`transition-all duration-200 hover:bg-blue-50 ${
-                        index % 2 === 0 ? "bg-blue-25" : "bg-white"
-                      }`}
+                      className={`transition-all duration-200 hover:bg-blue-50 ${index % 2 === 0 ? "bg-blue-25" : "bg-white"
+                        }`}
                     >
                       <td className="py-4 px-4 font-semibold text-blue-900 border border-blue-100">
                         {stat.year}
@@ -1104,13 +1101,12 @@ const companyLogos = [
                         {stat.higherStudies}
                       </td>
                       <td
-                        className={`py-4 px-4 text-center font-bold border border-blue-100 ${
-                          parseFloat(stat.percentage) > 80
-                            ? "text-green-600 bg-green-50"
-                            : parseFloat(stat.percentage) > 70
+                        className={`py-4 px-4 text-center font-bold border border-blue-100 ${parseFloat(stat.percentage) > 80
+                          ? "text-green-600 bg-green-50"
+                          : parseFloat(stat.percentage) > 70
                             ? "text-blue-600 bg-blue-50"
                             : "text-orange-600 bg-orange-50"
-                        }`}
+                          }`}
                       >
                         {stat.percentage}
                       </td>
@@ -1197,32 +1193,48 @@ const companyLogos = [
             ))}
           </div>
           {/* Placement Posters */}
-{/* Placement Posters */}
-<div className="mt-12">
-  <h3 className="text-2xl font-bold text-center text-blue-900 mb-6">
-    Latest Placement Highlights
-  </h3>
+          <div className="mt-12">
+            <h3 className="text-2xl font-bold text-center text-blue-900 mb-6">
+              Latest Placement Highlights
+            </h3>
 
-  <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+              {[p6, p7, p8].map((poster, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="relative rounded-2xl shadow-lg overflow-hidden border border-blue-200 group cursor-pointer aspect-square"
+                >
+                  <div className="relative w-full h-full overflow-hidden">
+                    <motion.img
+                      src={poster}
+                      alt={`Placement Poster ${index + 1}`}
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.3 }}
+                    />
 
-    <div className="rounded-2xl overflow-hidden shadow-lg border border-blue-200 aspect-square">
-      <img
-        src={p6}
-        alt="Placement Poster 1"
-        className="w-full h-full object-cover"
-      />
-    </div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-blue-600/40 to-blue-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
 
-    <div className="rounded-2xl overflow-hidden shadow-lg border border-blue-200 aspect-square">
-      <img
-        src={p7}
-        alt="Placement Poster 2"
-        className="w-full h-full object-cover"
-      />
-    </div>
-
-  </div>
-</div>        </div>
+                  <motion.div
+                    initial={{ y: "100%", opacity: 0 }}
+                    whileHover={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="absolute inset-0 flex items-end justify-center pb-6 text-white"
+                  >
+                    <div className="bg-white text-blue-700 px-4 py-2 rounded-full font-semibold shadow-lg">
+                      View Poster
+                    </div>
+                  </motion.div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
