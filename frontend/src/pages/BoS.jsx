@@ -151,11 +151,7 @@ const BoS = () => {
                 BoS Members Composition
               </h2>
 
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 sm:p-6 rounded-xl sm:rounded-2xl mb-4 sm:mb-6">
-                <p className="text-center text-sm sm:text-lg font-semibold">
-                  A detailed list of BoS members of the Department of CSE is provided below.
-                </p>
-              </div>
+      
 
               {/* ── Desktop Table (hidden on mobile) ────────────── */}
               <div className="hidden sm:block overflow-hidden rounded-2xl shadow-lg border border-gray-200">
