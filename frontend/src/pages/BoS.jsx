@@ -95,40 +95,40 @@ const BoS = () => {
                       {
                         id: 1,
                         category: "Chairperson",
-                        designation: "Head of the Department (HoD)",
+                        designation: "Professor & Head, Department of Computer Science & Engineering, School of Computer Science & Technology (SoCST), GM University, Davanagere",
                         preferred: "Concerned Department",
                         name: "Dr. Shivanagowda G. M",
                       },
                       {
                         id: 2,
-                        category: "Member Secretary",
+                        category: "BoS Coordinators",
                         designation:
-                          "Program Coordinator / DUGC Member Secretary / Senior Faculty",
+                          "Assistant Professor, Department of Computer Science & Engineering, SoCST, GM University, Davanagere",
                         preferred: "Concerned Department",
-                        name: "Prof. Nayana K",
+                        name: "Ms. Ranjitha D S, Dr. Santosh Kumar M",
                       },
                       {
                         id: 3,
-                        category: "Internal Members (4–6)",
+                        category: "BoS Member",
                         designation:
-                          "Professors / Associate Professors / Senior Faculty",
+                          "Associate Professor, Department of Computer Science & Engineering, SoCST, GM University, Davanagere",
                         preferred: "Concerned Department",
-                        name: "Dr. Sanjay Pande M. B, Dr. Santosh Kumar, Dr. Chethan Chandra",
+                        name: "Dr. Chethan Chandra S Basavaraddi",
                       },
                       {
                         id: 4,
-                        category: "Internal Administrative Members",
+                        category: "BoS Member",
                         designation:
-                          "Placement Officer / Dean (Evaluation) / Other relevant role",
+                          "Assistant Professor, Department of Computer Science & Engineering, SoCST, GM University, Davanagere",
                         preferred: "Concerned Department / Institution",
-                        name: "Dr. Sanjay Kumar, Dr. Asha K, Dr. Neelambike, Dr. Arun Kumar",
+                        name: "Mrs. Nayana K",
                       },
                       {
                         id: 5,
-                        category: "Academic Council Nominee – 1",
-                        designation: "Senior Faculty (Professor/Assoc. Prof.)",
+                        category: "External Expert Member",
+                        designation: "Professor, Department of Computer Science & Engineering, Indian Institute of Technology Hyderabad (IIT Hyderabad), Telangana",
                         preferred: "State/Central/Private University",
-                        name: "Dr. R. H. Goudar / Dr. Sreedhar",
+                        name: "Dr. Madhu Mutyam",
                       },
                       {
                         id: 6,
@@ -139,39 +139,46 @@ const BoS = () => {
                       },
                       {
                         id: 7,
-                        category: "Academic Council Nominee – 3",
+                        category: "External Expert Member",
                         designation:
-                          "Subject Expert / Associate Professor / Professor",
+                          "Professor, Department of Computer Science & Engineering, Indian Institute of Technology Hyderabad (IIT Hyderabad), Telangana",
                         preferred:
                           "Reputed University/Institution (outside State/region)",
-                        name: "",
+                        name: "Dr. Satyanarayana Peri",
                       },
                       {
                         id: 8,
-                        category: "Vice-Chancellor Nominee",
-                        designation: "Senior Professor",
+                        category: "External Expert Member",
+                        designation: "Assistant Professor, Department of Computer Science & Engineering, Indian Institute of Information Technology Dharwad (IIIT Dharwad), Karnataka",
                         preferred:
                           "Any Recognized Institution (nominated by VC)",
-                        name: "",
+                        name: "Dr. Pavana Kumar",
                       },
                       {
                         id: 9,
-                        category: "Industry Representative – Senior",
+                        category: "Industry Expert Member",
                         designation:
-                          "Industry Expert / Senior Alumnus (10+ years experience)",
+                          "Senior Technology Leader, Thomson Reuters, Bengaluru (Formerly Wipro Technologies)",
                         preferred:
                           "Reputed Industry / Alumni (earlier batches)",
-                        name: "",
+                        name: "Mr. Manjunath Reddy B H",
                       },
                       {
                         id: 10,
-                        category: "Industry Representative – Young",
+                        category: "Industry Expert Member",
                         designation:
-                          "Recent Alumnus (within last 10–15 years) in Industry/R&D",
+                          "Co-Founder, 4Edge IT Solutions, Bengaluru; Former Education & Assessment Leader, Infosys Ltd.",
                         preferred:
                           "Industry/Research Organization (recent batches alumni)",
-                        name: "Mr. Pranav, Alumni CSE, 2024 Passed Out",
+                        name: "Mr. Girish Aithal",
                       },
+                      {
+                        id: 11,
+                        category: "Internal Expert", 
+                        designation:"Departments from SoCST, GM University, Davanagere",
+                        preferred: "",
+                        name: "HoDs ",
+                      }
                     ].map((member, index) => (
                       <tr
                         key={member.id}
