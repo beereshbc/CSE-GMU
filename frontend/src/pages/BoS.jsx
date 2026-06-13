@@ -4,6 +4,98 @@ const BoS = () => {
     left: 0,
     behavior: "smooth",
   });
+
+  const bosMembers = [
+    {
+      id: 1,
+      slNo: "1",
+      name: "Dr. Shivanagowda G M",
+      category: "Chairperson",
+      designation:
+        "Professor & Head, Department of Computer Science & Engineering, School of Computer Science & Technology (SoCST), GM University, Davanagere",
+    },
+    {
+      id: 2,
+      slNo: "2",
+      name: "Ms. Ranjitha D S, Dr. Santosh Kumar M",
+      category: "BoS Coordinators",
+      designation:
+        "Assistant Professor, Department of Computer Science & Engineering, SoCST, GM University, Davanagere",
+    },
+    {
+      id: 3,
+      slNo: "3",
+      name: "Dr. Chethan Chandra S Basavaraddi",
+      category: "BoS Member",
+      designation:
+        "Associate Professor, Department of Computer Science & Engineering, SoCST, GM University, Davanagere",
+    },
+    {
+      id: 4,
+      slNo: "4",
+      name: "Mrs. Nayana K",
+      category: "BoS Member",
+      designation:
+        "Assistant Professor, Department of Computer Science & Engineering, SoCST, GM University, Davanagere",
+    },
+    {
+      id: 5,
+      slNo: "5",
+      name: "Dr. Madhu Mutyam",
+      category: "External Expert Member",
+      designation:
+        "Professor, Department of Computer Science & Engineering, Indian Institute of Technology Hyderabad (IIT Hyderabad), Telangana",
+    },
+    {
+      id: 6,
+      slNo: "6*",
+      name: "Dr. Satyanarayana Peri",
+      category: "External Expert Member",
+      designation:
+        "Professor, Department of Computer Science & Engineering, Indian Institute of Technology Hyderabad (IIT Hyderabad), Telangana",
+    },
+    {
+      id: 7,
+      slNo: "7",
+      name: "Dr. Pavana Kumar",
+      category: "External Expert Member",
+      designation:
+        "Assistant Professor, Department of Computer Science & Engineering, Indian Institute of Information Technology Dharwad (IIIT Dharwad), Karnataka",
+    },
+    {
+      id: 8,
+      slNo: "8",
+      name: "Mr. Manjunath Reddy B H",
+      category: "Industry Expert Member",
+      designation:
+        "Senior Technology Leader, Thomson Reuters, Bengaluru (Formerly Wipro Technologies)",
+    },
+    {
+      id: 9,
+      slNo: "9",
+      name: "Mr. Girish Aithal",
+      category: "Industry Expert Member",
+      designation:
+        "Co-Founder, 4Edge IT Solutions, Bengaluru; Former Education & Assessment Leader, Infosys Ltd.",
+    },
+    {
+      id: 10,
+      slNo: "10",
+      name: "HoDs",
+      category: "Internal Expert",
+      designation: "Departments from SoCST, GM University, Davanagere",
+    },
+  ];
+
+  const categoryColors = {
+    Chairperson: "bg-blue-100 text-blue-800",
+    "BoS Coordinators": "bg-purple-100 text-purple-800",
+    "BoS Member": "bg-green-100 text-green-800",
+    "External Expert Member": "bg-orange-100 text-orange-800",
+    "Industry Expert Member": "bg-rose-100 text-rose-800",
+    "Internal Expert": "bg-gray-100 text-gray-700",
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
@@ -32,12 +124,13 @@ const BoS = () => {
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p className="text-lg">
                   The Board of Studies (BoS) of the Department of Computer
-                  Science & Engineering is the primary academic body responsible
-                  for designing, reviewing, and updating the curriculum. It
-                  ensures that the courses offered are aligned with the vision
-                  of GM University, the requirements of AICTE/UGC guidelines,
-                  and the evolving needs of the IT industry, Professional Body's
-                  vision of the industry and research community.
+                  Science &amp; Engineering is the primary academic body
+                  responsible for designing, reviewing, and updating the
+                  curriculum. It ensures that the courses offered are aligned
+                  with the vision of GM University, the requirements of
+                  AICTE/UGC guidelines, and the evolving needs of the IT
+                  industry, Professional Body&apos;s vision of the industry and
+                  research community.
                 </p>
 
                 <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
@@ -68,8 +161,8 @@ const BoS = () => {
 
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-2xl mb-6">
                 <p className="text-center text-lg font-semibold">
-                  *A detailed list of BoS members of the Department of CSE is
-                  provided below.*
+                  A detailed list of BoS members of the Department of CSE is
+                  provided below.
                 </p>
               </div>
 
@@ -78,196 +171,58 @@ const BoS = () => {
                 <table className="min-w-full divide-y divide-gray-200">
                   <thead className="bg-gradient-to-r from-blue-800 to-indigo-900">
                     <tr>
-                      <th className="px-6 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider border-r border-blue-700">
-                        Category / Position
+                      <th className="px-4 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider border-r border-blue-700 w-16">
+                        Sl. No.
                       </th>
                       <th className="px-6 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider border-r border-blue-700">
-                        Required Designation / Profile
+                        Name of the BoS Member
                       </th>
-
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider border-r border-blue-700">
+                        Members Category
+                      </th>
                       <th className="px-6 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider">
-                        Name
+                        Designation &amp; Affiliation
                       </th>
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
-                    {[
-                      {
-                        id: 1,
-                        category: "Chairperson",
-                        designation: "Professor & Head, Department of Computer Science & Engineering, School of Computer Science & Technology (SoCST), GM University, Davanagere",
-                        preferred: "Concerned Department",
-                        name: "Dr. Shivanagowda G. M",
-                      },
-                      {
-                        id: 2,
-                        category: "BOS Member",
-                        designation:
-                          "Assistant Professor, Department of Computer Science & Engineering, SoCST, GM University, Davanagere",
-                        preferred: "Concerned Department",
-                        name: "Prof. Nayana K",
-                      },
-                      {
-                        id: 3,
-                        category: "Internal Members (4–6)",
-                        designation:
-                          "Professors / Associate Professors / Senior Faculty",
-                        preferred: "Concerned Department",
-                        name: "Dr. Sanjay Pande M. B, Dr. Santosh Kumar, Dr. Chethan Chandra",
-                      },
-                      {
-                        id: 4,
-                        category: "Internal Administrative Members",
-                        designation:
-                          "Placement Officer / Dean (Evaluation) / Other relevant role",
-                        preferred: "Concerned Department / Institution",
-                        name: "Dr. Sanjay Kumar, Dr. Asha K, Dr. Neelambike, Dr. Arun Kumar",
-                      },
-                      {
-                        id: 5,
-                        category: "Academic Council Nominee – 1",
-                        designation: "Senior Faculty (Professor/Assoc. Prof.)",
-                        preferred: "State/Central/Private University",
-                        name: "Dr. R. H. Goudar / Dr. Sreedhar",
-                      },
-                      {
-                        id: 6,
-                        category: "Academic Council Nominee – 2",
-                        designation: "Senior Faculty (Professor/Assoc. Prof.)",
-                        preferred: "Autonomous Institution (within State)",
-                        name: "Dr. Guruprasad H. S, BMSCE, Bangalore",
-                      },
-                      {
-                        id: 7,
-                        category: "Academic Council Nominee – 3",
-                        designation:
-                          "Subject Expert / Associate Professor / Professor",
-                        preferred:
-                          "Reputed University/Institution (outside State/region)",
-                        name: "",
-                      },
-                      {
-                        id: 8,
-                        category: "Vice-Chancellor Nominee",
-                        designation: "Senior Professor",
-                        preferred:
-                          "Any Recognized Institution (nominated by VC)",
-                        name: "",
-                      },
-                      {
-                        id: 9,
-                        category: "Industry Representative – Senior",
-                        designation:
-                          "Industry Expert / Senior Alumnus (10+ years experience)",
-                        preferred:
-                          "Reputed Industry / Alumni (earlier batches)",
-                        name: "",
-                      },
-                      {
-                        id: 10,
-                        category: "Industry Representative – Young",
-                        designation:
-                          "Recent Alumnus (within last 10–15 years) in Industry/R&D",
-                        preferred:
-                          "Industry/Research Organization (recent batches alumni)",
-                        name: "Mr. Pranav, Alumni CSE, 2024 Passed Out",
-                      },
-                      {
-                        id: 11,
-                        category: "Industry Representative – Startups",
-                        designation:
-                          "Assistant Professor, Department of Computer Science & Engineering, SoCST, GM University, Davanagere",
-                        preferred:
-                          "",
-                        name: "Ms. Ranjitha D S, Dr. Santosh Kumar M",
-                      },
-                      {
-                        id: 12,
-                        category: "BoS Member",
-                        designation:
-                          "Associate Professor, Department of Computer Science & Engineering, SoCST, GM University, Davanagere",
-                        preferred:
-                          "",
-                        name: "Dr. Chethan Chandra S Basavaraddi",
-                      },
-                      {
-                        id: 13,
-                        category: "External Expert Member",
-                        designation:
-                          "Professor, Department of Computer Science & Engineering, Indian Institute of Technology Hyderabad (IIT Hyderabad), Telangana",
-                        preferred:
-                          "",
-                        name: "Dr. Madhu Mutyam",
-                      },
-                      {
-                        id: 14,
-                        category: "External Expert Member",
-                        designation:
-                          "Professor, Department of Computer Science & Engineering, Indian Institute of Technology Hyderabad (IIT Hyderabad), Telangana",
-                        preferred:
-                          "",
-                        name: "Dr. Satyanarayana Peri",
-                      },
-                      {
-                        id: 15,
-                        category: "External Expert Member",
-                        designation:
-                          "Assistant Professor, Department of Computer Science & Engineering, Indian Institute of Information Technology Dharwad (IIIT Dharwad), Karnataka",
-                        preferred:
-                          "",
-                        name: "Dr. Pavana Kumar",
-                      },
-                      {
-                        id: 16,
-                        category: "Industry Expert Member",
-                        designation:
-                          "Senior Technology Leader, Thomson Reuters, Bengaluru (Formerly Wipro Technologies)",
-                        preferred:
-                          "",
-                        name: "Mr. Manjunath Reddy B H",
-                      },
-                      {
-                        id: 17,
-                        category: "Industry Expert Member",
-                        designation:  
-                          "Co-Founder, 4Edge IT Solutions, Bengaluru; Former Education & Assessment Leader, Infosys Ltd.",
-                        preferred:
-                          "",
-                        name: "Mr. Girish Aithal",
-                      },
-                      {
-                        id: 18,
-                        category: "Internal Expert",
-                        designation:
-                          "Departments from SoCST, GM University, Davanagere",
-                        preferred:
-                          "",
-                        name: "HODs",
-                      },
-
-                  
-                    ].map((member, index) => (
+                    {bosMembers.map((member, index) => (
                       <tr
                         key={member.id}
                         className={`transition-all duration-200 hover:bg-blue-50 ${
                           index % 2 === 0 ? "bg-gray-50" : "bg-white"
                         }`}
                       >
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                          {member.category}
+                        <td className="px-4 py-4 text-center text-sm font-semibold text-gray-600">
+                          {member.slNo}
                         </td>
-                        <td className="px-6 py-4 text-sm text-gray-700">
-                          {member.designation}
-                        </td>
-
-                        <td className="px-6 py-4 text-sm text-gray-700">
+                        <td className="px-6 py-4 text-sm font-semibold text-gray-900">
                           {member.name}
+                        </td>
+                        <td className="px-6 py-4 text-sm">
+                          <span
+                            className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
+                              categoryColors[member.category] ||
+                              "bg-gray-100 text-gray-700"
+                            }`}
+                          >
+                            {member.category}
+                          </span>
+                        </td>
+                        <td className="px-6 py-4 text-sm text-gray-700 leading-relaxed">
+                          {member.designation}
                         </td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
+
+              {/* Footnote */}
+              <p className="mt-4 text-sm text-gray-500 italic">
+                * Dr. Satyanarayana Peri (Sl. No. 6) is marked with an asterisk
+                as per the official BoS document.
+              </p>
             </div>
           </div>
         </div>
