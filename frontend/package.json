@@ -12,6 +12,7 @@
   "dependencies": {
     "@google/genai": "^1.23.0",
     "axios": "^1.12.2",
+    "esbuild": "^0.28.1",
     "framer-motion": "^12.23.22",
     "jodit-react": "^5.3.21",
     "lucide-react": "^0.545.0",
