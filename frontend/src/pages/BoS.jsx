@@ -237,10 +237,7 @@ const BoS = () => {
                 ))}
               </div>
 
-              {/* Footnote */}
-              <p className="mt-4 text-xs sm:text-sm text-gray-500 italic px-1">
-                * Dr. Satyanarayana Peri (Sl. No. 6) is marked with an asterisk as per the official BoS document.
-              </p>
+           
             </div>
           </div>
         </div>
