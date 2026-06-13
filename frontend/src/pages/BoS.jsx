@@ -95,15 +95,15 @@ const BoS = () => {
                       {
                         id: 1,
                         category: "Chairperson",
-                        designation: "Head of the Department (HoD)",
+                        designation: "Professor & Head, Department of Computer Science & Engineering, School of Computer Science & Technology (SoCST), GM University, Davanagere",
                         preferred: "Concerned Department",
                         name: "Dr. Shivanagowda G. M",
                       },
                       {
                         id: 2,
-                        category: "Member Secretary",
+                        category: "BOS Member",
                         designation:
-                          "Program Coordinator / DUGC Member Secretary / Senior Faculty",
+                          "Assistant Professor, Department of Computer Science & Engineering, SoCST, GM University, Davanagere",
                         preferred: "Concerned Department",
                         name: "Prof. Nayana K",
                       },
@@ -172,6 +172,80 @@ const BoS = () => {
                           "Industry/Research Organization (recent batches alumni)",
                         name: "Mr. Pranav, Alumni CSE, 2024 Passed Out",
                       },
+                      {
+                        id: 11,
+                        category: "Industry Representative – Startups",
+                        designation:
+                          "Assistant Professor, Department of Computer Science & Engineering, SoCST, GM University, Davanagere",
+                        preferred:
+                          "",
+                        name: "Ms. Ranjitha D S, Dr. Santosh Kumar M",
+                      },
+                      {
+                        id: 12,
+                        category: "BoS Member",
+                        designation:
+                          "Associate Professor, Department of Computer Science & Engineering, SoCST, GM University, Davanagere",
+                        preferred:
+                          "",
+                        name: "Dr. Chethan Chandra S Basavaraddi",
+                      },
+                      {
+                        id: 13,
+                        category: "External Expert Member",
+                        designation:
+                          "Professor, Department of Computer Science & Engineering, Indian Institute of Technology Hyderabad (IIT Hyderabad), Telangana",
+                        preferred:
+                          "",
+                        name: "Dr. Madhu Mutyam",
+                      },
+                      {
+                        id: 14,
+                        category: "External Expert Member",
+                        designation:
+                          "Professor, Department of Computer Science & Engineering, Indian Institute of Technology Hyderabad (IIT Hyderabad), Telangana",
+                        preferred:
+                          "",
+                        name: "Dr. Satyanarayana Peri",
+                      },
+                      {
+                        id: 15,
+                        category: "External Expert Member",
+                        designation:
+                          "Assistant Professor, Department of Computer Science & Engineering, Indian Institute of Information Technology Dharwad (IIIT Dharwad), Karnataka",
+                        preferred:
+                          "",
+                        name: "Dr. Pavana Kumar",
+                      },
+                      {
+                        id: 16,
+                        category: "Industry Expert Member",
+                        designation:
+                          "Senior Technology Leader, Thomson Reuters, Bengaluru (Formerly Wipro Technologies)",
+                        preferred:
+                          "",
+                        name: "Mr. Manjunath Reddy B H",
+                      },
+                      {
+                        id: 17,
+                        category: "Industry Expert Member",
+                        designation:  
+                          "Co-Founder, 4Edge IT Solutions, Bengaluru; Former Education & Assessment Leader, Infosys Ltd.",
+                        preferred:
+                          "",
+                        name: "Mr. Girish Aithal",
+                      },
+                      {
+                        id: 18,
+                        category: "Internal Expert",
+                        designation:
+                          "Departments from SoCST, GM University, Davanagere",
+                        preferred:
+                          "",
+                        name: "HODs",
+                      },
+
+                  
                     ].map((member, index) => (
                       <tr
                         key={member.id}

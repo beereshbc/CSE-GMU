@@ -30,6 +30,7 @@ import SUPRIYA_KERAKKANAVAR from "../assets/faculties/SUPRIYA_KERAKKANAVAR.jpg";
 import Tanushree_V_M from "../assets/faculties/Tanushree_V_M.jpg";
 import Principal from "../assets/faculties/PRINCIPAL.jpeg";
 
+
 // PDFS Placements
 import AY2021 from "../assets/PlacementPdfs/Placement_20-21.pdf";
 import AY2122 from "../assets/PlacementPdfs/Placement_2021-22.pdf";
