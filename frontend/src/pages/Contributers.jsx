@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import {
-  
+  motion,
   useMotionValue,
   useSpring,
   useTransform,
@@ -17,8 +17,6 @@ import {
   Camera,
   Linkedin,
   Github,
-  ArrowDown,
-  Rocket,
 } from "lucide-react";
 import { assets } from "../assets/assets";
 
@@ -48,18 +46,18 @@ const Contributers = () => {
   };
 
   const teamIcons = {
-    "Development Lead": Code,
+    "Development Lead": Crown,
     "Supporting Developers": Code,
     "AI Content & Multimedia Generation": Zap,
     "Video Shooting, Editing & Deployment": Camera,
   };
 
-  const contributors = [
+  const baseContributors = [
     {
       name: "Beeresh kumar B C",
       usn: "4GM23CS017",
       email: "bcbeereshkumar@gmail.com",
-      role: "Development Lead",
+      role: "Development Lead", // Only Beeresh is Development Lead
       linkedin: "https://www.linkedin.com/in/beereshkumar-b-c-004397341/",
       github: "https://github.com/beereshbc",
       image: assets.Beeresh,
@@ -71,14 +69,14 @@ const Contributers = () => {
       role: "Supporting Developers",
       linkedin: "https://www.linkedin.com/in/yashwanth-m-74034230b/",
       github: "#",
-      image: assets.yashwanth, 
+      image: assets.yashwanth,
     },
     {
       name: "Sachin M Poojar",
       usn: "U23E01CS060",
       email: "sachinmpoojarya@gmail.com",
       role: "Supporting Developers",
-      linkedin: "https://www.linkedin.com/in/sachin-mp/",
+      linkedin: "https://linkedin.com/in/sachinpoojar",
       github: "https://github.com/Sachinmpoojarya",
       image: assets.sachin,
     },
@@ -87,9 +85,9 @@ const Contributers = () => {
       usn: "U23E01CS071",
       email: "janyajain7722@gmail.com",
       role: "Supporting Developers",
-      linkedin: "https://www.linkedin.com/in/soujanyajain",
+      linkedin: "https://linkedin.com/in/soujanyajain",
       github: "https://github.com/soujanyajain",
-      image:assets.soujanya,
+      image: assets.soujanya,
     },
     {
       name: "Shashidhar Bhattad",
@@ -118,7 +116,6 @@ const Contributers = () => {
       github: "https://github.com/bindupatil",
       image: assets.binduPatil,
     },
-
     {
       name: "Jeevan Hosamani",
       usn: "U23E01CS016",
@@ -126,7 +123,7 @@ const Contributers = () => {
       role: "Video Shooting, Editing & Deployment",
       linkedin: "https://www.linkedin.com/in/jeevan-hosamani/",
       github: "https://github.com/jeevanhosamani07",
-      image:assets.jeevan,
+      image: assets.jeevan,
     },
     {
       name: "Sujan M N",
@@ -135,7 +132,7 @@ const Contributers = () => {
       role: "Video Shooting, Editing & Deployment",
       linkedin: "https://www.linkedin.com/in/sujan-n-m/",
       github: "https://github.com/SujanNeelgund",
-      image:assets.sujan,
+      image: assets.sujan,
     },
     {
       name: "Raveena Choudhary",
@@ -144,12 +141,12 @@ const Contributers = () => {
       role: "Video Shooting, Editing & Deployment",
       linkedin: "https://linkedin.com/in/raveenachoudhary",
       github: "https://github.com/raveenachoudhary",
-      image:assets.raveena,
+      image: assets.raveena,
     },
   ];
 
-  // Add team role to each contributor
-  contributors.forEach((contributor) => {
+  // Assign correct roles to specific team members
+  baseContributors.forEach((contributor) => {
     if (
       contributor.name === "Bindu C Patil" ||
       contributor.name === "Arjun M Kerodi" ||
@@ -159,23 +156,39 @@ const Contributers = () => {
     }
   });
 
+  // Helper function to extract the 2-digit year from the USN
+  const extractYear = (usn) => {
+    const match = usn.match(/\d{2}/);
+    return match ? parseInt(match[0], 10) : 99; // Returns 23, 24, 25, etc.
+  };
+
+  // Separate Beeresh (Development Lead) from the rest
+  const leadDeveloper = baseContributors.find(
+    (c) => c.name === "Beeresh kumar B C",
+  );
+  const otherContributors = baseContributors.filter(
+    (c) => c.name !== "Beeresh kumar B C",
+  );
+
+  // Sort remaining contributors by USN year priority (23, then 24, then 25)
+  otherContributors.sort((a, b) => extractYear(a.usn) - extractYear(b.usn));
+
+  // Merge back together with Lead at the top
+  const contributors = [leadDeveloper, ...otherContributors];
+
+  // Re-structured roles array accurately reflecting the updated data
   const teamRoles = [
     {
       title: "Development Lead",
       icon: Crown,
       color: "from-purple-500 to-pink-500",
-      members: ["Beereshkumar B C","Yashwanth M", "Sachin M Poojar"],
+      members: ["Beeresh kumar B C"], // Only Beeresh
     },
     {
       title: "Supporting Developers",
       icon: Code,
       color: "from-blue-500 to-cyan-500",
-      members: [
-        "Bindu C Patil",
-        "Arjun Kerodi",
-        "Shashidhar B",
-        "Soujanya Jain Brahmaraj",
-      ],
+      members: ["Yashwanth M", "Sachin M Poojar", "Soujanya Jain Brahmaraj"],
     },
     {
       title: "AI Content & Multimedia Generation",
@@ -192,7 +205,7 @@ const Contributers = () => {
   ];
 
   // 3D Card Component
-  const Card3D = ({ contributor}) => {
+  const Card3D = ({ contributor, index }) => {
     const cardRef = useRef(null);
     const [isHovered, setIsHovered] = useState(false);
 
@@ -205,14 +218,8 @@ const Contributers = () => {
     const dampedRotateY = useSpring(rotateY, { damping: 20, stiffness: 200 });
     const dampedRotateX = useSpring(rotateX, { damping: 20, stiffness: 200 });
 
-    
-    
-
-    const TeamIcon = teamIcons[contributor.role];
-    const style =
-    contributor.name === "Soujanya Jain Brahmaraj"
-      ? teamStyles["Development Lead"]
-        : teamStyles[contributor.role];
+    const TeamIcon = teamIcons[contributor.role] || Code;
+    const style = teamStyles[contributor.role];
 
     const handleMouseMove = (e) => {
       if (!cardRef.current) return;
@@ -284,7 +291,7 @@ const Contributers = () => {
             />
 
             <div className="relative z-10">
-             <motion.h1
+              <motion.h1
                 className="text-2xl font-bold mb-2 text-white font-serif italic"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
@@ -300,13 +307,10 @@ const Contributers = () => {
                 transition={{ delay: isHovered ? 0.4 : 0 }}
               >
                 <TeamIcon className={`w-4 h-4 ${style.icon}`} />
-              <span className="text-sm font-medium text-gray-200">
-              {contributor.name === "Sachin M Poojar"||
-              contributor.name === "Soujanya Jain Brahmaraj"
-                ? "Developer"
-                : contributor.role}
+                <span className="text-sm font-medium text-gray-200">
+                  {contributor.role}
                 </span>
-             </motion.div>
+              </motion.div>
 
               <motion.div
                 className="flex items-center gap-2 mb-4 text-gray-300"
@@ -359,9 +363,9 @@ const Contributers = () => {
             <span
               className={`bg-gradient-to-r ${style.gradient} bg-clip-text text-transparent`}
             >
-          {contributor.role === "Supporting Developers"
-          ? "Development"
-          : contributor.role.split(" ")[0]}
+              {contributor.role === "Supporting Developers"
+                ? "Development"
+                : contributor.role.split(" ")[0]}
             </span>
           </motion.div>
         </motion.div>
@@ -412,13 +416,6 @@ const Contributers = () => {
             unique expertise and passion to create extraordinary digital
             experiences.
           </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          ></motion.div>
         </div>
       </div>
     </div>
@@ -456,7 +453,7 @@ const Contributers = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-           {contributors.map((contributor, index) => (
+            {contributors.map((contributor, index) => (
               <Card3D key={index} contributor={contributor} index={index} />
             ))}
           </div>
