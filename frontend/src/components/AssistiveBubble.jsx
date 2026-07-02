@@ -20,6 +20,7 @@ import {
   Trophy,
   BriefcaseBusiness,
   School,
+  CakeSlice,
   Phone,
 } from "lucide-react";
 

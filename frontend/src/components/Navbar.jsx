@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import {
   Menu,
   X,
@@ -16,12 +16,14 @@ import {
   ChevronDown,
   BarChart3,
   Handshake,
+  CakeSlice,
   PenSquareIcon,
 } from "lucide-react";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeMobileDropdown, setActiveMobileDropdown] = useState(null); // Track active mobile accordion
   const location = useLocation();
   const navigate = useNavigate();
   const dropdownRefs = useRef({});
@@ -35,7 +37,6 @@ const Navbar = () => {
       { name: "Admissions", path: "/admissions", icon: <User size={16} /> },
     ],
     Academics: [
-    
       { name: "Faculty", path: "/faculty", icon: <Users size={16} /> },
       { name: "BoS", path: "/bos", icon: <Users size={16} /> },
       {
@@ -56,11 +57,11 @@ const Navbar = () => {
         path: "/research-publications",
         icon: <FileText size={16} />,
       },
-      // {
-      //   name: "Student Projects",
-      //   path: "/student-projects",
-      //   icon: <Award size={16} />,
-      // },
+      {
+        name: "Falcon Bakes",
+        path: "/falcon-bakes",
+        icon: <CakeSlice size={16} />,
+      },
     ],
     Achievements: [
       {
@@ -85,9 +86,21 @@ const Navbar = () => {
       },
     ],
     Community: [
-       { name: "Blog", path: "/blog", icon: <PenSquareIcon size={16} /> },
-      { name: "Alumni", path: "/alumni", icon: <GraduationCap size={16} /> },
-      { name: "Contact Us", path: "/contact-us", icon: <Mail size={16} /> },
+      {
+        name: "Blog",
+        path: "/blog",
+        icon: <PenSquareIcon size={16} />,
+      },
+      {
+        name: "Alumni",
+        path: "/alumni",
+        icon: <GraduationCap size={16} />,
+      },
+      {
+        name: "Contact Us",
+        path: "/contact-us",
+        icon: <Mail size={16} />,
+      },
     ],
   };
 
@@ -95,9 +108,10 @@ const Navbar = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setActiveDropdown(null);
+    setActiveMobileDropdown(null);
   }, [location]);
 
-  // Scroll animation - optimized for mobile
+  // Scroll animation
   useEffect(() => {
     const handleScroll = () => {
       if (document.body.scrollHeight <= window.innerHeight) {
@@ -105,16 +119,13 @@ const Navbar = () => {
         return;
       }
       if (window.scrollY > 50) {
-        // Reduced from 100 to 50 for mobile
         controls.start({ opacity: 1, y: 0 });
       } else {
-        controls.start({ opacity: 0, y: -30 }); // Reduced from -50 to -30
+        controls.start({ opacity: 0, y: -30 });
       }
     };
-
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // initial check on mount
-
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, [controls]);
 
@@ -127,7 +138,6 @@ const Navbar = () => {
         }
       });
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
@@ -136,32 +146,37 @@ const Navbar = () => {
     setActiveDropdown(activeDropdown === groupName ? null : groupName);
   };
 
-  // Handle logo click - navigate to home using React Router
+  const toggleMobileDropdown = (groupName) => {
+    setActiveMobileDropdown(
+      activeMobileDropdown === groupName ? null : groupName,
+    );
+  };
+
   const handleLogoClick = () => {
     navigate("/");
   };
 
-  // Handle direct navigation for desktop menu items
   const handleDirectNavigation = (path) => {
     navigate(path);
     setActiveDropdown(null);
+    setIsMobileMenuOpen(false);
   };
 
   return (
     <motion.nav
       animate={controls}
-      initial={{ opacity: 0, y: -30 }} // Reduced from -50 to -30
-      transition={{ duration: 0.4, ease: "easeOut" }} // Slightly faster transition
+      initial={{ opacity: 0, y: -30 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       className="fixed top-0 left-0 w-full z-50"
     >
-      {/* Navbar Container - Optimized for mobile */}
+      {/* Navbar Container */}
       <div
         className="max-w-6xl mx-2 md:mx-auto flex items-center justify-between px-4 py-2 mt-2
         border border-blue-300/20 rounded-xl md:rounded-2xl
         bg-gradient-to-r from-blue-900/95 to-blue-800/95
         text-blue-50 backdrop-blur-xl shadow-lg shadow-blue-900/40"
       >
-        {/* Logo - Smaller on mobile */}
+        {/* Logo */}
         <div
           className="flex items-center gap-1 cursor-pointer"
           onClick={handleLogoClick}
@@ -200,7 +215,7 @@ const Navbar = () => {
                 ></span>
               </button>
 
-              {/* Dropdown Menu */}
+              {/* Desktop Dropdown Menu */}
               <div
                 className={`absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-xl rounded-lg shadow-2xl border border-blue-200/20 overflow-hidden transition-all duration-300 z-50 ${
                   activeDropdown === groupName
@@ -235,7 +250,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Menu Button - Smaller */}
+        {/* Mobile Menu Button */}
         <div className="lg:hidden flex items-center gap-2">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -246,48 +261,74 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu - More compact */}
-      {isMobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.2 }}
-          className="lg:hidden bg-gradient-to-br from-blue-900/95 to-blue-800/95 
-          backdrop-blur-xl rounded-lg mx-2 mt-1 p-3 border border-blue-300/20 shadow-xl shadow-blue-900/40"
-        >
-          <div className="space-y-2">
-            {Object.entries(linkGroups).map(([groupName, links]) => (
-              <div
-                key={groupName}
-                className="border-b border-blue-700/30 last:border-b-0 pb-2 last:pb-0"
-              >
-                <h3 className="text-blue-300 text-xs font-semibold mb-2 uppercase tracking-wide">
-                  {groupName}
-                </h3>
-                <div className="space-y-1">
-                  {links.map((link) => (
+      {/* Mobile Menu - Scrollable Accordion */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden absolute top-full left-0 right-0 mx-2 mt-2 bg-gradient-to-br from-blue-900/95 to-blue-800/95 
+            backdrop-blur-xl rounded-xl border border-blue-300/20 shadow-xl shadow-blue-900/40 overflow-hidden z-40"
+          >
+            {/* Scrollable Container Area */}
+            <div className="max-h-[75vh] overflow-y-auto p-2 scrollbar-thin scrollbar-thumb-blue-600 scrollbar-track-transparent">
+              <div className="space-y-1">
+                {Object.entries(linkGroups).map(([groupName, links]) => (
+                  <div
+                    key={groupName}
+                    className="border-b border-blue-700/30 last:border-b-0"
+                  >
+                    {/* Mobile Category Toggle Button */}
                     <button
-                      key={link.name}
-                      onClick={() => {
-                        handleDirectNavigation(link.path);
-                        setIsMobileMenuOpen(false);
-                      }}
-                      className={`flex items-center gap-2 w-full text-left px-2 py-1.5 rounded-md transition-colors text-sm ${
-                        location.pathname === link.path
-                          ? "bg-blue-600/30 text-blue-200 font-semibold"
-                          : "text-blue-100 hover:text-blue-200 hover:bg-blue-700/20"
-                      }`}
+                      onClick={() => toggleMobileDropdown(groupName)}
+                      className="flex items-center justify-between w-full p-3 text-left text-blue-100 hover:bg-blue-700/20 rounded-lg transition-colors"
                     >
-                      {link.icon}
-                      {link.name}
+                      <span className="text-sm font-semibold tracking-wide">
+                        {groupName}
+                      </span>
+                      <ChevronDown
+                        size={16}
+                        className={`text-blue-300 transition-transform duration-300 ${
+                          activeMobileDropdown === groupName ? "rotate-180" : ""
+                        }`}
+                      />
                     </button>
-                  ))}
-                </div>
+
+                    {/* Mobile Collapsible Content */}
+                    <motion.div
+                      initial={false}
+                      animate={{
+                        height: activeMobileDropdown === groupName ? "auto" : 0,
+                        opacity: activeMobileDropdown === groupName ? 1 : 0,
+                      }}
+                      className="overflow-hidden"
+                    >
+                      <div className="p-2 space-y-1 bg-blue-950/30 rounded-lg mb-2 mx-2">
+                        {links.map((link) => (
+                          <button
+                            key={link.name}
+                            onClick={() => handleDirectNavigation(link.path)}
+                            className={`flex items-center gap-3 w-full text-left px-3 py-2.5 rounded-md transition-colors text-sm ${
+                              location.pathname === link.path
+                                ? "bg-blue-600/40 text-blue-50 font-semibold"
+                                : "text-blue-200 hover:text-white hover:bg-blue-700/40"
+                            }`}
+                          >
+                            <span className="text-blue-400">{link.icon}</span>
+                            {link.name}
+                          </button>
+                        ))}
+                      </div>
+                    </motion.div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </motion.div>
-      )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };

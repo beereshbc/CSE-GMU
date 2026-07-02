@@ -25,6 +25,7 @@ import Benchmarking from "./pages/Benchmarking";
 import Contributers from "./pages/Contributers";
 import Blog from "./pages/Blog";
 import AddBlog from "./pages/admin/AddBlog";
+import FalconBakes from "./pages/FalconBakes";
 
 const App = () => {
   return (
@@ -57,6 +58,7 @@ const App = () => {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/benchmarks" element={<Benchmarking />} />
         <Route path="/contributers" element={<Contributers />} />
+        <Route path="/falcon-bakes" element={<FalconBakes />} />
 
         {/* Admin route */}
         <Route path="/admin/addblog" element={<AddBlog />} />
