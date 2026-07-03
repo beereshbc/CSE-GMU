@@ -17,7 +17,7 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Facebook,
-      href: "https://facebook.com",
+      href: "https://www.facebook.com/profile.php?id=61557598646220",
       label: "Facebook",
       color: "hover:text-blue-600",
     },
@@ -29,7 +29,7 @@ const Footer = () => {
     },
     {
       icon: Instagram,
-      href: "https://instagram.com",
+      href: "https://www.instagram.com/gmuniversity_official_dvg?igsh=b3V4bWQzMWtxcWdv",
       label: "Instagram",
       color: "hover:text-pink-600",
     },
@@ -41,7 +41,7 @@ const Footer = () => {
     },
     {
       icon: Youtube,
-      href: "https://youtube.com",
+      href: "https://youtube.com/@gmudvg?si=5K4Ah_is4FlQ7neR",
       label: "YouTube",
       color: "hover:text-red-600",
     },
@@ -60,7 +60,7 @@ const Footer = () => {
     },
     {
       icon: Phone,
-      text: "+91-987-654-3210",
+      text: "9066623203/ 8105093625",
     },
     {
       icon: Mail,
