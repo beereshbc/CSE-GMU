@@ -258,6 +258,15 @@ import event3 from "../assets/Tallest-Tower(Events)/event3.jpeg";
 import event4 from "../assets/Tallest-Tower(Events)/event4.jpeg";
 import event5 from "../assets/Tallest-Tower(Events)/event5.jpeg";
 import eventvideo1 from "../assets/Tallest-Tower(Events)/eventvideo1.mp4";
+import drone_workshop1 from "../assets/Drone_Workshop/drone_workshop1.jpeg";
+import drone_workshop2 from "../assets/Drone_Workshop/drone_workshop2.jpeg";
+import drone_workshop3 from "../assets/Drone_Workshop/drone_workshop3.jpeg";
+import drone_workshop4 from "../assets/Drone_Workshop/drone_workshop4.jpeg";
+import drone_workshop5 from "../assets/Drone_Workshop/drone_workshop5.jpeg";
+import drone_workshop6 from "../assets/Drone_Workshop/drone_workshop6.jpeg";
+import drone_workshop7 from "../assets/Drone_Workshop/drone_workshop7.jpeg";
+import drone_workshop8 from "../assets/Drone_Workshop/drone_workshop8.jpeg";
+
 export const assets = {
   hod_img,
   gmu_logo,
@@ -338,6 +347,15 @@ export const assets = {
   event4,
   event5,
   eventvideo1,
+
+  drone_workshop1,
+  drone_workshop2,
+  drone_workshop3,
+  drone_workshop4,
+  drone_workshop5,
+  drone_workshop6,
+  drone_workshop7,
+  drone_workshop8,
 };
 
 export const recentPlacedStud = [
@@ -726,6 +744,12 @@ export const boxData = [
   //   description: "Interaction with parents",
   //   images: [],
   // },
+  {
+    id : 21,
+    title : "Drone Workshop",
+    description : "",
+    images : [drone_workshop1, drone_workshop2, drone_workshop3, drone_workshop4, drone_workshop5, drone_workshop6, drone_workshop7, drone_workshop8],
+  },
 ];
 
 export const slides = [
