@@ -30,7 +30,6 @@ import SUPRIYA_KERAKKANAVAR from "../assets/faculties/SUPRIYA_KERAKKANAVAR.jpg";
 import Tanushree_V_M from "../assets/faculties/Tanushree_V_M.jpg";
 import Principal from "../assets/faculties/PRINCIPAL.jpeg";
 
-
 // PDFS Placements
 import AY2021 from "../assets/PlacementPdfs/Placement_20-21.pdf";
 import AY2122 from "../assets/PlacementPdfs/Placement_2021-22.pdf";
@@ -146,7 +145,6 @@ import Tanzila from "../assets/Stud_Achiv/Tanzila.jpg";
 import HackHire from "../assets/Stud_Achiv/HackHire.jpg";
 import samved from "../assets/Stud_Achiv/samved.png";
 import hackclashcompetition from "../assets/Stud_Achiv/hackclashcompetition.jpeg";
-
 
 //Sports section
 import sport1 from "../assets/sports/sp1.jpg";
@@ -313,8 +311,6 @@ export const assets = {
   HackHire,
   samved,
   hackclashcompetition,
-  
-  
 
   FA1,
   FA2,
@@ -338,8 +334,6 @@ export const assets = {
   sujan,
   raveena,
   binduPatil,
-
-
 
   event1,
   event2,
@@ -1003,7 +997,6 @@ export const faculties = [
         thesis:
           "Design and Implementation of Programming Language \u2018MINE\u2019",
       },
-      
     ],
     researchInterests: [
       "Personalized Learning Systems",
@@ -1265,8 +1258,6 @@ export const faculties = [
           "BCET, Bangalore, Visvesvaraya Technological University, Belagavi",
         year: "2010",
       },
-     
-     
     ],
     researchInterests: [
       "Artificial Intelligence",
@@ -2903,8 +2894,8 @@ export const faculties = [
         year: "13.8 Years",
         title: "Industry",
         company: "HCL Technologies & Sutherland Global Services Ltd",
-        description: "13.8 Years of industry experience at HCL Technologies and Sutherland Global Services Ltd",
-
+        description:
+          "13.8 Years of industry experience at HCL Technologies and Sutherland Global Services Ltd",
       },
     ],
     contact: {
@@ -2978,7 +2969,6 @@ export const faculties = [
         company: "Accenture, Bangalore",
         description: "Associate Software Engineer for 1 Year",
       },
-      
     ],
     contact: {
       address:
@@ -3426,5 +3416,25 @@ export const contributersFacultyData = [
     image: Dr_CHETHAN_CHANDRA_S_BASAVARADDI,
     description:
       "Project guide providing continuous support and technical direction throughout development.",
+  },
+];
+
+// frontend/src/assets/assets.js
+
+export const falconBakesProjects = [
+  {
+    id: 1,
+    title: "Academic Attendance Analytics",
+    description:
+      "A comprehensive data analytics dashboard for monitoring and analyzing academic attendance patterns across various departments.",
+    liveLink:
+      "https://academicceattendanceanalytics-47rnazyis24mtuhs43omq3.streamlit.app/",
+    sourceCode:
+      "https://github.com/Falcon-Bakes/Academic_ce_attendance_analytics",
+    creatorName: "Dr. Shivanagowda G M",
+    creatorGithub: "https://github.com/Falcon-Bakes",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop", // Placeholder analytics image
+    tags: ["Streamlit", "Python", "Data Analytics"],
   },
 ];

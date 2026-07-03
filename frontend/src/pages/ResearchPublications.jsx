@@ -44,10 +44,10 @@ const ResearchPublications = () => {
       setError(null);
 
       const response = await axios.get(
-        "https://cse-gmu-stlo.vercel.app/api/all-publications",
+        "https://cse-gmu.onrender.com/api/all-publications",
         {
           timeout: 30000,
-        }
+        },
       );
 
       // ✅ FIX: Validate and ensure response data is an array
@@ -78,7 +78,7 @@ const ResearchPublications = () => {
         } else {
           // If we can't find an array, create empty array
           console.warn(
-            "Response data is not an array, using empty array instead"
+            "Response data is not an array, using empty array instead",
           );
           publicationsData = [];
         }
@@ -171,7 +171,7 @@ const ResearchPublications = () => {
     uniqueFaculty: Array.isArray(publications)
       ? [
           ...new Set(
-            publications.map((pub) => pub?.facultyName).filter(Boolean)
+            publications.map((pub) => pub?.facultyName).filter(Boolean),
           ),
         ].length
       : 0,
@@ -650,7 +650,7 @@ const ResearchPublications = () => {
                               <motion.a
                                 whileHover={{ scale: 1.05 }}
                                 href={getGoogleScholarUrl(
-                                  publication?.facultyName
+                                  publication?.facultyName,
                                 )}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -694,7 +694,7 @@ const ResearchPublications = () => {
                                   setExpandedRow(
                                     expandedRow === publication?.citation_id
                                       ? null
-                                      : publication?.citation_id
+                                      : publication?.citation_id,
                                   )
                                 }
                                 className="p-2 hover:bg-blue-100 rounded-lg transition-colors duration-200 text-blue-500"

@@ -7,10 +7,14 @@ import {
   BookOpen,
   Users,
   FileText,
+  CakeSlice,
   Award,
   Briefcase,
   Mail,
   User,
+  BarChart3,
+  Handshake,
+  PenSquareIcon,
 } from "lucide-react";
 
 const BottomNavbar = () => {
@@ -23,51 +27,58 @@ const BottomNavbar = () => {
     setActiveTab(location.pathname);
   }, [location]);
 
-  // All navigation items - no dropdown, all visible
+  // Comprehensive navigation items matching the main Navbar
   const allNavItems = [
-    { name: "Home", path: "/", icon: <Home size={18} /> },
-    { name: "About", path: "/about", icon: <User size={18} /> },
-    { name: "Programs", path: "/programs", icon: <BookOpen size={18} /> },
+    { name: "Home", path: "/", icon: <Home size={14} /> },
+    { name: "About", path: "/about", icon: <User size={14} /> },
+    { name: "Programs", path: "/programs", icon: <BookOpen size={14} /> },
+    {
+      name: "Admissions",
+      path: "/admissions",
+      icon: <GraduationCap size={14} />,
+    },
+    { name: "Faculty", path: "/faculty", icon: <Users size={14} /> },
+    { name: "BoS", path: "/bos", icon: <Users size={14} /> },
     {
       name: "Resources",
       path: "/learning-resources",
-      icon: <BookOpen size={18} />,
+      icon: <BookOpen size={14} />,
     },
-    { name: "BOS", path: "/bos", icon: <Users size={18} /> },
-    { name: "Faculty", path: "/faculty", icon: <Users size={18} /> },
-    { name: "IQAC", path: "/iqac", icon: <Award size={18} /> },
-    {
-      name: "Benchmark",
-      path: "/benchmarks",
-      icon: <BookOpen size={18} />,
-    },
+    { name: "IQAC", path: "/iqac", icon: <Award size={14} /> },
+    { name: "Benchmark", path: "/benchmarks", icon: <BarChart3 size={14} /> },
     {
       name: "Research",
       path: "/research-publications",
-      icon: <FileText size={18} />,
+      icon: <FileText size={14} />,
     },
     {
-      name: "Achievements",
+      name: "Falcon Bakes",
+      path: "/falcon-bakes",
+      icon: <CakeSlice size={14} />,
+    },
+    {
+      name: "Faculty Achv.",
       path: "/faculty-achievements",
-      icon: <Award size={18} />,
+      icon: <Award size={14} />,
     },
-    { name: "Alumni", path: "/alumni", icon: <GraduationCap size={18} /> },
     {
-      name: "Student Achievements",
+      name: "Student Achv.",
       path: "/student-achievements",
-      icon: <Award size={18} />,
+      icon: <Award size={14} />,
     },
     {
       name: "Placements",
       path: "/student-internships-placements",
-      icon: <Briefcase size={18} />,
+      icon: <Briefcase size={14} />,
     },
     {
-      name: "Admissions",
-      path: "/admissions",
-      icon: <GraduationCap size={18} />,
+      name: "Contributers",
+      path: "/contributers",
+      icon: <Handshake size={14} />,
     },
-    { name: "Contact", path: "/contact-us", icon: <Mail size={18} /> },
+    { name: "Blog", path: "/blog", icon: <PenSquareIcon size={14} /> },
+    { name: "Alumni", path: "/alumni", icon: <GraduationCap size={14} /> },
+    { name: "Contact", path: "/contact-us", icon: <Mail size={14} /> },
   ];
 
   // Handle navigation
@@ -76,104 +87,50 @@ const BottomNavbar = () => {
     setActiveTab(path);
   };
 
-  // Handle logo click
-  const handleLogoClick = () => {
-    navigate("/");
-    setActiveTab("/");
-  };
-
   return (
     <motion.nav
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="w-full max-w-6xl mx-auto my-8" // Added margin for spacing between components
+      className="w-full max-w-7xl mx-auto my-6 px-4"
     >
-      {/* Main Navbar Container - Inline Style */}
+      {/* Sleek, Thin Navbar Container with Horizontal Scroll */}
       <div
-        className="flex flex-col items-center px-8 py-6
-        border border-blue-300/30 rounded-2xl
-        bg-gradient-to-r from-blue-900/95 to-blue-800/95
-        text-blue-50 backdrop-blur-xl shadow-2xl shadow-blue-900/50"
+        className="flex items-center overflow-x-auto py-2 px-3 gap-1.5
+        border border-blue-300/20 rounded-full
+        bg-gradient-to-r from-blue-950/95 to-blue-900/95
+        text-blue-50 backdrop-blur-xl shadow-lg shadow-blue-900/40
+        [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
       >
-        {/* Navigation Items - Two rows to fit all items */}
-        <div className="w-full">
-          {/* First row of navigation items */}
-          <div className="flex justify-center gap-2 mb-2 flex-wrap">
-            {allNavItems.slice(0, 6).map((item, index) => (
-              <button
-                key={index}
-                onClick={() => handleNavigation(item.path)}
-                className={`relative flex flex-col items-center gap-1 p-3 transition-all duration-300 group min-w-20 ${
-                  activeTab === item.path
-                    ? "text-blue-300"
-                    : "text-blue-200 hover:text-blue-300"
-                }`}
+        {allNavItems.map((item, index) => {
+          const isActive = activeTab === item.path;
+
+          return (
+            <button
+              key={index}
+              onClick={() => handleNavigation(item.path)}
+              className={`relative flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 group shrink-0 ${
+                isActive
+                  ? "bg-blue-600/40 text-white shadow-inner border border-blue-400/30"
+                  : "hover:bg-blue-800/50 text-blue-200 hover:text-blue-100 border border-transparent"
+              }`}
+            >
+              <span
+                className={`transition-transform duration-300 ${isActive ? "scale-110" : "group-hover:scale-110"}`}
               >
                 {item.icon}
-                <span className="text-xs font-medium whitespace-nowrap">
-                  {item.name}
-                </span>
+              </span>
+              <span className="text-xs font-semibold tracking-wide whitespace-nowrap">
+                {item.name}
+              </span>
 
-                {/* Active indicator dot */}
-                <div
-                  className={`absolute -top-1 w-2 h-2 bg-blue-400 rounded-full transition-all duration-300 ${
-                    activeTab === item.path
-                      ? "opacity-100 scale-100"
-                      : "opacity-0 scale-50"
-                  }`}
-                ></div>
-
-                {/* Hover background effect */}
-                <div
-                  className={`absolute inset-0 rounded-xl transition-all duration-300 ${
-                    activeTab === item.path
-                      ? "bg-blue-600/30 border border-blue-400/30"
-                      : "group-hover:bg-blue-700/20 group-hover:border group-hover:border-blue-400/10"
-                  }`}
-                ></div>
-              </button>
-            ))}
-          </div>
-
-          {/* Second row of navigation items */}
-          <div className="flex justify-center gap-2 flex-wrap">
-            {allNavItems.slice(6).map((item, index) => (
-              <button
-                key={index + 6}
-                onClick={() => handleNavigation(item.path)}
-                className={`relative flex flex-col items-center gap-1 p-3 transition-all duration-300 group min-w-20 ${
-                  activeTab === item.path
-                    ? "text-blue-300"
-                    : "text-blue-200 hover:text-blue-300"
-                }`}
-              >
-                {item.icon}
-                <span className="text-xs font-medium whitespace-nowrap">
-                  {item.name}
-                </span>
-
-                {/* Active indicator dot */}
-                <div
-                  className={`absolute -top-1 w-2 h-2 bg-blue-400 rounded-full transition-all duration-300 ${
-                    activeTab === item.path
-                      ? "opacity-100 scale-100"
-                      : "opacity-0 scale-50"
-                  }`}
-                ></div>
-
-                {/* Hover background effect */}
-                <div
-                  className={`absolute inset-0 rounded-xl transition-all duration-300 ${
-                    activeTab === item.path
-                      ? "bg-blue-600/30 border border-blue-400/30"
-                      : "group-hover:bg-blue-700/20 group-hover:border group-hover:border-blue-400/10"
-                  }`}
-                ></div>
-              </button>
-            ))}
-          </div>
-        </div>
+              {/* Active Underline Glow */}
+              {isActive && (
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-blue-300 rounded-t-full shadow-[0_-2px_8px_rgba(147,197,253,0.8)]" />
+              )}
+            </button>
+          );
+        })}
       </div>
     </motion.nav>
   );
