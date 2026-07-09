@@ -3410,7 +3410,73 @@ export const falconBakesProjects = [
     creatorName: "Dr. Shivanagowda G M",
     creatorGithub: "https://github.com/Falcon-Bakes",
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop", // Placeholder analytics image
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
     tags: ["Streamlit", "Python", "Data Analytics"],
+  },
+  {
+    id: 2,
+    title: "Curriculum Generator",
+    description:
+      "An automated tool designed for generating, organizing, and managing academic curricula and syllabus structures efficiently.",
+    liveLink: "",
+    sourceCode: "",
+    creatorName: "Dr. Shivanagowda G M",
+    creatorGithub: "https://github.com/Falcon-Bakes",
+    image:
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop",
+    tags: ["Education", "Automation", "Curriculum"],
+    facultyTeamMember: {
+      name: "Ms. Ranjitha D S",
+      designation: "Assistant Professor",
+      department: "Department of CSE",
+    },
+    developedBy: "Team Falcon",
+    supportContacts: [
+      {
+        name: "Mr. Beeresh Kumar B C",
+        phone: "6360995219",
+      },
+      {
+        name: "Mr. Jagadeesh Bentoor",
+        phone: "7975500513",
+      },
+      {
+        name: "Mr. Samarth K Hosamani",
+        phone: "7483314447",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "CSE Theory Allotment Studio",
+    description:
+      "This application is developed under Falcon Bakes, a special software development initiative of the Department of CSE, School of Computer Science and Technology, Faculty of Engineering and Technology, GM University, Davanagere.",
+    liveLink: "https://cse-theory-allotment-studio-14ml.vercel.app", // TODO: Add the actual live link
+    sourceCode: "https://github.com/Falcon-Bakes/cse_theory_allotment_studio", // TODO: Add the actual GitHub repository link
+    creatorName: "Dr. Shivanagowda G M",
+    creatorGithub: "https://github.com/Falcon-Bakes",
+    image:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop", // Placeholder desk/planning image
+    tags: ["Education", "Management", "Planning"],
+    facultyTeamMember: {
+      name: "Sumana, Pooja Bidri, and Ranjitha J",
+      designation: "Faculty In-Charge",
+      department: "Department of CSE",
+    },
+    developedBy: "Falcon Bakes",
+    supportContacts: [
+      {
+        name: "Mr. Beeresh Kumar B C",
+        phone: "6360995219",
+      },
+      {
+        name: "Mr. Jagadeesh Bentoor",
+        phone: "7975500513",
+      },
+      {
+        name: "Mr. Samarth K Hosamani",
+        phone: "7483314447",
+      },
+    ],
   },
 ];

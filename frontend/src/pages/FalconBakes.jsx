@@ -103,6 +103,51 @@ const Icon = {
       />
     </svg>
   ),
+  Users: ({ className = "w-4 h-4" }) => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+      <circle cx="9" cy="7" r="4"></circle>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+    </svg>
+  ),
+  Phone: ({ className = "w-4 h-4" }) => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+    </svg>
+  ),
+  UserTie: ({ className = "w-4 h-4" }) => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    </svg>
+  ),
 };
 
 /* ─── Dynamic Tag Colors ────────────────────────────────────────────────────── */
@@ -146,7 +191,9 @@ const FalconBakes = () => {
       !q ||
       p.title?.toLowerCase().includes(q) ||
       p.description?.toLowerCase().includes(q) ||
-      p.creatorName?.toLowerCase().includes(q);
+      p.creatorName?.toLowerCase().includes(q) ||
+      p.developedBy?.toLowerCase().includes(q) ||
+      p.facultyTeamMember?.name.toLowerCase().includes(q);
     const matchTag = activeTag === "All" || p.tags?.includes(activeTag);
     return matchSearch && matchTag;
   });
@@ -155,7 +202,6 @@ const FalconBakes = () => {
     setSearch("");
     setActiveTag("All");
   };
-  const hasFilters = search || activeTag !== "All";
 
   return (
     <div
@@ -321,7 +367,7 @@ const FalconBakes = () => {
                 {/* Hover Gradient Line */}
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                {/* Left Side: Info */}
+                {/* Left Side: Info & Metadata */}
                 <div className="flex-1 min-w-0 flex flex-col justify-center pl-2">
                   <div className="flex items-center gap-3 mb-2">
                     <h3 className="text-lg font-extrabold text-slate-900 truncate group-hover:text-blue-600 transition-colors">
@@ -338,9 +384,46 @@ const FalconBakes = () => {
                       ))}
                     </div>
                   </div>
-                  <p className="text-sm text-slate-500 truncate w-full lg:max-w-3xl">
+                  <p className="text-sm text-slate-500 truncate w-full lg:max-w-3xl mb-3">
                     {project.description}
                   </p>
+
+                  {/* Schema Metadata: List View Structure */}
+                  <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-1">
+                    {project.developedBy && (
+                      <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
+                        <Icon.Users className="w-3.5 h-3.5 text-slate-400" />
+                        <span>
+                          <strong className="text-slate-700 font-semibold">
+                            Team:
+                          </strong>{" "}
+                          {project.developedBy}
+                        </span>
+                      </div>
+                    )}
+                    {project.facultyTeamMember && (
+                      <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
+                        <Icon.UserTie className="w-3.5 h-3.5 text-slate-400" />
+                        <span>
+                          <strong className="text-slate-700 font-semibold">
+                            Faculty:
+                          </strong>{" "}
+                          {project.facultyTeamMember.name}
+                        </span>
+                      </div>
+                    )}
+                    {project.supportContacts?.length > 0 && (
+                      <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
+                        <Icon.Phone className="w-3.5 h-3.5 text-slate-400" />
+                        <span>
+                          <strong className="text-slate-700 font-semibold">
+                            Support:
+                          </strong>{" "}
+                          {project.supportContacts.length} Contacts
+                        </span>
+                      </div>
+                    )}
+                  </div>
                 </div>
 
                 {/* Right Side: Creator & Links */}
@@ -420,13 +503,67 @@ const FalconBakes = () => {
                   <h3 className="text-xl font-extrabold text-slate-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-slate-500 text-sm line-clamp-3 mb-6 flex-grow leading-relaxed">
+                  <p className="text-slate-500 text-sm line-clamp-2 mb-4 leading-relaxed">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-col gap-5 mt-auto">
+                  {/* Schema Metadata: Grid View Structure */}
+                  <div className="flex flex-col gap-2.5 mb-6 pb-5 border-b border-slate-100 flex-grow">
+                    {project.developedBy && (
+                      <div className="flex items-start gap-2">
+                        <Icon.Users className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
+                        <p className="text-[11px] text-slate-500 leading-tight">
+                          <span className="font-bold text-slate-700">
+                            Developed By:
+                          </span>{" "}
+                          {project.developedBy}
+                        </p>
+                      </div>
+                    )}
+                    {project.facultyTeamMember && (
+                      <div className="flex items-start gap-2">
+                        <Icon.UserTie className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
+                        <p className="text-[11px] text-slate-500 leading-tight">
+                          <span className="font-bold text-slate-700">
+                            Faculty:
+                          </span>{" "}
+                          {project.facultyTeamMember.name},{" "}
+                          {project.facultyTeamMember.designation}{" "}
+                          <span className="block opacity-80 mt-0.5">
+                            {project.facultyTeamMember.department}
+                          </span>
+                        </p>
+                      </div>
+                    )}
+                    {project.supportContacts?.length > 0 && (
+                      <div className="flex items-start gap-2 mt-2">
+                        <Icon.Phone className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
+                        <div className="flex flex-col w-full">
+                          <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1.5">
+                            Support Desk
+                          </span>
+                          <div className="flex flex-wrap gap-1.5">
+                            {project.supportContacts.map((contact, i) => (
+                              <div
+                                key={i}
+                                className="bg-slate-50 border border-slate-200 rounded text-[10px] px-1.5 py-0.5 text-slate-600 font-medium whitespace-nowrap"
+                              >
+                                {contact.name}:{" "}
+                                <span className="text-slate-500 font-mono">
+                                  {contact.phone}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Bottom Footer Section */}
+                  <div className="flex flex-col gap-4 mt-auto">
                     {/* Creator Info */}
-                    <div className="flex items-center gap-3 pt-5 border-t border-slate-100">
+                    <div className="flex items-center gap-3">
                       <div className="h-9 w-9 rounded-full bg-slate-900 flex items-center justify-center text-white font-bold text-sm shadow-md">
                         {project.creatorName.charAt(0)}
                       </div>
@@ -446,17 +583,17 @@ const FalconBakes = () => {
                         href={project.liveLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 bg-slate-900 hover:bg-blue-600 text-white px-4 py-3 rounded-xl text-sm font-bold transition-colors shadow-md hover:shadow-lg"
+                        className="flex-1 flex items-center justify-center gap-2 bg-slate-900 hover:bg-blue-600 text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-colors shadow-md hover:shadow-lg"
                       >
-                        <Icon.ExternalLink className="w-4 h-4" /> Live App
+                        <Icon.ExternalLink className="w-3.5 h-3.5" /> Live App
                       </a>
                       <a
                         href={project.sourceCode}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 px-4 py-3 rounded-xl text-sm font-bold transition-colors"
+                        className="flex-1 flex items-center justify-center gap-2 bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 px-4 py-2.5 rounded-xl text-xs font-bold transition-colors"
                       >
-                        <Icon.Github className="w-4 h-4" /> Source
+                        <Icon.Github className="w-3.5 h-3.5" /> Source
                       </a>
                     </div>
                   </div>
