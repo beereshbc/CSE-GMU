@@ -45,40 +45,6 @@ const Icon = {
       <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
     </svg>
   ),
-  Grid: ({ className = "w-4 h-4" }) => (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <rect x="3" y="3" width="7" height="7"></rect>
-      <rect x="14" y="3" width="7" height="7"></rect>
-      <rect x="14" y="14" width="7" height="7"></rect>
-      <rect x="3" y="14" width="7" height="7"></rect>
-    </svg>
-  ),
-  List: ({ className = "w-4 h-4" }) => (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <line x1="8" y1="6" x2="21" y2="6"></line>
-      <line x1="8" y1="12" x2="21" y2="12"></line>
-      <line x1="8" y1="18" x2="21" y2="18"></line>
-      <line x1="3" y1="6" x2="3.01" y2="6"></line>
-      <line x1="3" y1="12" x2="3.01" y2="12"></line>
-      <line x1="3" y1="18" x2="3.01" y2="18"></line>
-    </svg>
-  ),
   ExternalLink: ({ className = "w-4 h-4" }) => (
     <svg
       viewBox="0 0 24 24"
@@ -103,22 +69,6 @@ const Icon = {
       />
     </svg>
   ),
-  Users: ({ className = "w-4 h-4" }) => (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-      <circle cx="9" cy="7" r="4"></circle>
-      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-    </svg>
-  ),
   Phone: ({ className = "w-4 h-4" }) => (
     <svg
       viewBox="0 0 24 24"
@@ -132,20 +82,17 @@ const Icon = {
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
     </svg>
   ),
-  UserTie: ({ className = "w-4 h-4" }) => (
+  ChevronRight: ({ className = "w-4 h-4" }) => (
     <svg
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
     >
-      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-      <circle cx="9" cy="7" r="4" />
-      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   ),
 };
@@ -159,8 +106,11 @@ const tagColor = (tag = "") => {
     Blockchain: "bg-amber-500/10 text-amber-700 border-amber-200",
     MERN: "bg-emerald-500/10 text-emerald-700 border-emerald-200",
     Node: "bg-green-500/10 text-green-700 border-green-200",
+    Education: "bg-blue-500/10 text-blue-700 border-blue-200",
+    Automation: "bg-indigo-500/10 text-indigo-700 border-indigo-200",
+    Management: "bg-orange-500/10 text-orange-700 border-orange-200",
   };
-  return map[tag] || "bg-blue-500/10 text-blue-700 border-blue-200";
+  return map[tag] || "bg-slate-500/10 text-slate-700 border-slate-200";
 };
 
 /* ═══════════════════════════════════════════════════════════════════════════ */
@@ -169,9 +119,21 @@ const tagColor = (tag = "") => {
 const FalconBakes = () => {
   const [search, setSearch] = useState("");
   const [activeTag, setActiveTag] = useState("All");
-  const [viewMode, setViewMode] = useState("list"); // "grid" | "list"
   const [showFilterDrawer, setShowFilterDrawer] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null); // Controls the Inspect Box Modal
   const searchRef = useRef(null);
+
+  // Prevent background scrolling when modal is open
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedProject]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -191,9 +153,7 @@ const FalconBakes = () => {
       !q ||
       p.title?.toLowerCase().includes(q) ||
       p.description?.toLowerCase().includes(q) ||
-      p.creatorName?.toLowerCase().includes(q) ||
-      p.developedBy?.toLowerCase().includes(q) ||
-      p.facultyTeamMember?.name.toLowerCase().includes(q);
+      p.creatorName?.toLowerCase().includes(q);
     const matchTag = activeTag === "All" || p.tags?.includes(activeTag);
     return matchSearch && matchTag;
   });
@@ -210,7 +170,6 @@ const FalconBakes = () => {
     >
       {/* ── Hero Section (Blog-Style Glassmorphism) ──────────────────────── */}
       <header className="relative bg-[#0a1128] overflow-hidden pt-20 pb-16 lg:pt-28 lg:pb-24 border-b border-white/10">
-        {/* Ambient Glowing Blobs */}
         <div
           aria-hidden
           className="absolute inset-0 overflow-hidden pointer-events-none"
@@ -227,7 +186,7 @@ const FalconBakes = () => {
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
             </span>
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-50">
-              Project Gallery
+              Project Directory
             </span>
           </div>
 
@@ -240,10 +199,9 @@ const FalconBakes = () => {
 
           <p className="text-slate-300 text-base md:text-xl max-w-2xl leading-relaxed mb-10 font-medium">
             Explore the cutting-edge tools, web applications, and technical
-            innovations cooked up by our engineering community.
+            innovations engineered by the Department of CSE.
           </p>
 
-          {/* Premium Glass Search Bar */}
           <div className="w-full max-w-2xl group">
             <div className="flex items-center bg-white/10 hover:bg-white/15 border border-white/20 rounded-2xl px-5 py-4 gap-4 backdrop-blur-xl shadow-2xl focus-within:border-cyan-400/50 focus-within:bg-white/15 focus-within:ring-4 focus-within:ring-cyan-500/10 transition-all duration-300">
               <Icon.Search className="w-5 h-5 text-cyan-200 shrink-0" />
@@ -252,7 +210,7 @@ const FalconBakes = () => {
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search projects, technologies, or creators..."
+                placeholder="Search projects or faculty members..."
                 className="flex-1 bg-transparent text-white placeholder-slate-400 text-base md:text-lg outline-none font-medium min-w-0"
               />
               {search && (
@@ -269,28 +227,22 @@ const FalconBakes = () => {
       </header>
 
       {/* ── Main Content ──────────────────────────────────────────────────── */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 -mt-8 relative z-20">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 -mt-8 relative z-20">
         {/* Advanced Toolbar Box */}
         <div className="bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 p-2 sm:p-3 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          {/* Desktop Filter Pills */}
           <div className="hidden lg:flex items-center gap-1.5 flex-wrap flex-1 px-2">
             {allTags.map((tag) => (
               <button
                 key={tag}
                 onClick={() => setActiveTag(tag)}
                 className={`px-4 py-2 rounded-xl text-sm font-bold transition-all duration-300 
-                  ${
-                    activeTag === tag
-                      ? "bg-slate-900 text-white shadow-md shadow-slate-900/20 scale-105"
-                      : "bg-transparent text-slate-500 hover:bg-slate-100 hover:text-slate-800"
-                  }`}
+                  ${activeTag === tag ? "bg-slate-900 text-white shadow-md shadow-slate-900/20 scale-105" : "bg-transparent text-slate-500 hover:bg-slate-100 hover:text-slate-800"}`}
               >
                 {tag}
               </button>
             ))}
           </div>
 
-          {/* Mobile Filter Button */}
           <div className="flex lg:hidden w-full sm:w-auto">
             <button
               onClick={() => setShowFilterDrawer(true)}
@@ -307,28 +259,10 @@ const FalconBakes = () => {
 
           <div className="w-px h-8 bg-slate-200 hidden sm:block mx-2" />
 
-          {/* Controls: Count & View Toggle */}
-          <div className="flex items-center justify-between w-full sm:w-auto gap-4 px-2">
+          <div className="flex items-center justify-between w-full sm:w-auto px-2">
             <div className="text-sm font-bold text-slate-400">
               <span className="text-slate-900">{filteredProjects.length}</span>{" "}
-              projects
-            </div>
-
-            <div className="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200">
-              <button
-                onClick={() => setViewMode("list")}
-                className={`p-2 rounded-md transition-all ${viewMode === "list" ? "bg-white text-slate-900 shadow-sm" : "text-slate-400 hover:text-slate-600"}`}
-                title="List View"
-              >
-                <Icon.List className="w-4 h-4" />
-              </button>
-              <button
-                onClick={() => setViewMode("grid")}
-                className={`p-2 rounded-md transition-all ${viewMode === "grid" ? "bg-white text-slate-900 shadow-sm" : "text-slate-400 hover:text-slate-600"}`}
-                title="Grid View"
-              >
-                <Icon.Grid className="w-4 h-4" />
-              </button>
+              results found
             </div>
           </div>
         </div>
@@ -355,254 +289,187 @@ const FalconBakes = () => {
           </div>
         )}
 
-        {/* ── LIST VIEW (Premium Thin Rows) ── */}
-        {viewMode === "list" && filteredProjects.length > 0 && (
-          <div className="flex flex-col gap-4">
-            {filteredProjects.map((project, index) => (
-              <div
-                key={project.id}
-                className="group relative flex flex-col md:flex-row items-start md:items-center justify-between p-5 lg:p-6 bg-white border border-slate-200 hover:border-blue-300 rounded-2xl transition-all duration-300 gap-6 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 overflow-hidden animate-[fadeUp_0.4s_ease-out_both]"
-                style={{ animationDelay: `${index * 40}ms` }}
-              >
-                {/* Hover Gradient Line */}
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {/* ── ROW LINE VIEW (Clickable Rows) ── */}
+        <div className="flex flex-col gap-3">
+          {filteredProjects.map((project, index) => (
+            <div
+              key={project.id}
+              onClick={() => setSelectedProject(project)}
+              className="group cursor-pointer flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-5 bg-white border border-slate-200 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-900/5 rounded-2xl transition-all duration-300 gap-4 overflow-hidden animate-[fadeUp_0.4s_ease-out_both]"
+              style={{ animationDelay: `${index * 40}ms` }}
+            >
+              {/* Left Side: Title & Description Snippet */}
+              <div className="flex-1 min-w-0 flex flex-col pr-4">
+                <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors mb-1 truncate">
+                  {project.title}
+                </h3>
+                <p className="text-sm text-slate-500 truncate w-full max-w-2xl">
+                  {project.description}
+                </p>
+              </div>
 
-                {/* Left Side: Info & Metadata */}
-                <div className="flex-1 min-w-0 flex flex-col justify-center pl-2">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h3 className="text-lg font-extrabold text-slate-900 truncate group-hover:text-blue-600 transition-colors">
-                      {project.title}
-                    </h3>
-                    <div className="hidden sm:flex items-center gap-2">
-                      {project.tags.slice(0, 3).map((tag, idx) => (
-                        <span
-                          key={idx}
-                          className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border ${tagColor(tag)}`}
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <p className="text-sm text-slate-500 truncate w-full lg:max-w-3xl mb-3">
-                    {project.description}
-                  </p>
-
-                  {/* Schema Metadata: List View Structure */}
-                  <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-1">
-                    {project.developedBy && (
-                      <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
-                        <Icon.Users className="w-3.5 h-3.5 text-slate-400" />
-                        <span>
-                          <strong className="text-slate-700 font-semibold">
-                            Team:
-                          </strong>{" "}
-                          {project.developedBy}
-                        </span>
-                      </div>
-                    )}
-                    {project.facultyTeamMember && (
-                      <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
-                        <Icon.UserTie className="w-3.5 h-3.5 text-slate-400" />
-                        <span>
-                          <strong className="text-slate-700 font-semibold">
-                            Faculty:
-                          </strong>{" "}
-                          {project.facultyTeamMember.name}
-                        </span>
-                      </div>
-                    )}
-                    {project.supportContacts?.length > 0 && (
-                      <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
-                        <Icon.Phone className="w-3.5 h-3.5 text-slate-400" />
-                        <span>
-                          <strong className="text-slate-700 font-semibold">
-                            Support:
-                          </strong>{" "}
-                          {project.supportContacts.length} Contacts
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                {/* Right Side: Creator & Links */}
-                <div className="flex items-center justify-between w-full md:w-auto gap-8 shrink-0 border-t md:border-t-0 border-slate-100 pt-4 md:pt-0">
-                  <div className="flex items-center gap-3 w-40">
-                    <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-slate-100 to-slate-200 border border-slate-300 flex items-center justify-center text-sm font-black text-slate-700 shrink-0 shadow-inner">
-                      {project.creatorName.charAt(0)}
-                    </div>
-                    <span className="text-sm font-bold text-slate-700 truncate">
-                      {project.creatorName}
+              {/* Right Side: Tags, Creator, and Arrow */}
+              <div className="flex items-center justify-between w-full sm:w-auto gap-6 shrink-0 border-t sm:border-t-0 border-slate-100 pt-3 sm:pt-0">
+                <div className="hidden md:flex items-center gap-2">
+                  {project.tags.slice(0, 2).map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border ${tagColor(tag)}`}
+                    >
+                      {tag}
                     </span>
-                  </div>
+                  ))}
+                </div>
 
-                  <div className="flex items-center gap-2 shrink-0 bg-slate-50 p-1.5 rounded-xl border border-slate-100 group-hover:border-blue-100 group-hover:bg-blue-50/50 transition-colors">
-                    <a
-                      href={project.sourceCode}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2.5 text-slate-400 hover:text-slate-900 hover:bg-white rounded-lg transition-all shadow-sm hover:shadow"
-                      title="View Source Code"
-                    >
-                      <Icon.Github className="w-5 h-5" />
-                    </a>
-                    <div className="w-px h-6 bg-slate-200" />
-                    <a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2.5 text-slate-400 hover:text-blue-600 hover:bg-white rounded-lg transition-all shadow-sm hover:shadow"
-                      title="Open Live App"
-                    >
-                      <Icon.ExternalLink className="w-5 h-5" />
-                    </a>
-                  </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-xs font-bold text-slate-600 truncate max-w-[120px] sm:max-w-[180px]">
+                    {project.creatorName}
+                  </span>
+                </div>
+
+                <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-blue-50 group-hover:text-blue-600 transition-colors">
+                  <Icon.ChevronRight className="w-4 h-4" />
                 </div>
               </div>
-            ))}
-          </div>
-        )}
+            </div>
+          ))}
+        </div>
+      </main>
 
-        {/* ── GRID VIEW (Blog-Style Rich Cards) ── */}
-        {viewMode === "grid" && filteredProjects.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
-              <div
-                key={project.id}
-                className="group flex flex-col bg-white rounded-3xl border border-slate-200 hover:border-blue-300 shadow-sm hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-1.5 transition-all duration-400 overflow-hidden animate-[fadeUp_0.4s_ease-out_both]"
-                style={{ animationDelay: `${index * 40}ms` }}
+      {/* ── Detailed Inspect Box (Modal) ──────────────────────────────────── */}
+      {selectedProject && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-900/60 backdrop-blur-sm animate-[fadeIn_0.2s_ease-out]"
+          onClick={() => setSelectedProject(null)} // Click outside to close
+        >
+          <div
+            className="bg-white w-full max-w-3xl rounded-3xl shadow-2xl flex flex-col max-h-[90vh] overflow-hidden animate-[scaleUp_0.3s_ease-out]"
+            onClick={(e) => e.stopPropagation()} // Prevent close when clicking inside modal
+          >
+            {/* Header Image Area */}
+            <div className="relative h-48 sm:h-64 shrink-0 bg-slate-100">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent z-10" />
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.target.src =
+                    "https://placehold.co/800x400/1e293b/ffffff?text=Project";
+                }}
+              />
+
+              {/* Close Button overlay */}
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 z-20 p-2.5 bg-black/20 hover:bg-black/40 backdrop-blur-md text-white rounded-full transition-all"
               >
-                {/* Image Header with Glass Overlay */}
-                <div className="relative h-48 overflow-hidden bg-slate-100 shrink-0">
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-opacity" />
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
-                    loading="lazy"
-                    onError={(e) => {
-                      e.target.src =
-                        "https://placehold.co/600x400/1e293b/ffffff?text=Project";
-                    }}
-                  />
-                  <div className="absolute bottom-4 left-4 z-20 flex flex-wrap gap-2">
-                    {project.tags.slice(0, 2).map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-md bg-white/20 backdrop-blur-md text-white border border-white/30 shadow-lg"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                <Icon.Close className="w-5 h-5" />
+              </button>
 
-                {/* Body Content */}
-                <div className="p-6 flex flex-col flex-grow relative">
-                  <h3 className="text-xl font-extrabold text-slate-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-slate-500 text-sm line-clamp-2 mb-4 leading-relaxed">
-                    {project.description}
+              <div className="absolute bottom-6 left-6 right-6 z-20">
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {selectedProject.tags.map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className="text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-md bg-white/20 backdrop-blur-md text-white border border-white/30 shadow-lg"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight drop-shadow-md">
+                  {selectedProject.title}
+                </h2>
+              </div>
+            </div>
+
+            {/* Content Body Area (Scrollable) */}
+            <div className="flex-1 overflow-y-auto p-6 sm:p-8">
+              <div className="flex flex-col md:flex-row gap-8">
+                {/* Left Column: Description & Contacts */}
+                <div className="flex-1">
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-3">
+                    Project Overview
+                  </h4>
+                  <p className="text-slate-600 leading-relaxed mb-8">
+                    {selectedProject.description}
                   </p>
 
-                  {/* Schema Metadata: Grid View Structure */}
-                  <div className="flex flex-col gap-2.5 mb-6 pb-5 border-b border-slate-100 flex-grow">
-                    {project.developedBy && (
-                      <div className="flex items-start gap-2">
-                        <Icon.Users className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
-                        <p className="text-[11px] text-slate-500 leading-tight">
-                          <span className="font-bold text-slate-700">
-                            Developed By:
-                          </span>{" "}
-                          {project.developedBy}
-                        </p>
-                      </div>
-                    )}
-                    {project.facultyTeamMember && (
-                      <div className="flex items-start gap-2">
-                        <Icon.UserTie className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
-                        <p className="text-[11px] text-slate-500 leading-tight">
-                          <span className="font-bold text-slate-700">
-                            Faculty:
-                          </span>{" "}
-                          {project.facultyTeamMember.name},{" "}
-                          {project.facultyTeamMember.designation}{" "}
-                          <span className="block opacity-80 mt-0.5">
-                            {project.facultyTeamMember.department}
-                          </span>
-                        </p>
-                      </div>
-                    )}
-                    {project.supportContacts?.length > 0 && (
-                      <div className="flex items-start gap-2 mt-2">
-                        <Icon.Phone className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
-                        <div className="flex flex-col w-full">
-                          <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1.5">
-                            Support Desk
-                          </span>
-                          <div className="flex flex-wrap gap-1.5">
-                            {project.supportContacts.map((contact, i) => (
-                              <div
-                                key={i}
-                                className="bg-slate-50 border border-slate-200 rounded text-[10px] px-1.5 py-0.5 text-slate-600 font-medium whitespace-nowrap"
-                              >
-                                {contact.name}:{" "}
-                                <span className="text-slate-500 font-mono">
-                                  {contact.phone}
-                                </span>
-                              </div>
-                            ))}
+                  {selectedProject.supportContacts?.length > 0 && (
+                    <>
+                      <h4 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-3 flex items-center gap-2">
+                        <Icon.Phone className="w-4 h-4" /> Support Desk
+                      </h4>
+                      <div className="flex flex-col gap-2 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                        {selectedProject.supportContacts.map((contact, i) => (
+                          <div
+                            key={i}
+                            className="flex justify-between items-center text-sm"
+                          >
+                            <span className="font-semibold text-slate-700">
+                              {contact.name}
+                            </span>
+                            <span className="text-slate-500 font-mono bg-white px-2 py-1 rounded border border-slate-200">
+                              {contact.phone}
+                            </span>
                           </div>
-                        </div>
+                        ))}
                       </div>
-                    )}
+                    </>
+                  )}
+                </div>
+
+                {/* Right Column: Meta Info & Links */}
+                <div className="w-full md:w-64 shrink-0 flex flex-col gap-6">
+                  {/* Creator Info */}
+                  <div className="bg-blue-50/50 border border-blue-100 p-4 rounded-2xl">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-blue-500 mb-2 block">
+                      Led By
+                    </span>
+                    <p className="text-sm font-bold text-slate-900 leading-snug">
+                      {selectedProject.creatorName}
+                    </p>
                   </div>
 
-                  {/* Bottom Footer Section */}
-                  <div className="flex flex-col gap-4 mt-auto">
-                    {/* Creator Info */}
-                    <div className="flex items-center gap-3">
-                      <div className="h-9 w-9 rounded-full bg-slate-900 flex items-center justify-center text-white font-bold text-sm shadow-md">
-                        {project.creatorName.charAt(0)}
-                      </div>
-                      <div>
-                        <p className="text-sm font-bold text-slate-900 leading-none mb-1">
-                          {project.creatorName}
-                        </p>
-                        <span className="text-[11px] font-semibold text-slate-400">
-                          Creator
-                        </span>
-                      </div>
-                    </div>
+                  {/* Links */}
+                  <div className="flex flex-col gap-3">
+                    <a
+                      href={selectedProject.liveLink || "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-bold transition-all ${selectedProject.liveLink ? "bg-slate-900 hover:bg-blue-600 text-white shadow-md" : "bg-slate-100 text-slate-400 cursor-not-allowed"}`}
+                      onClick={(e) =>
+                        !selectedProject.liveLink && e.preventDefault()
+                      }
+                    >
+                      <Icon.ExternalLink className="w-4 h-4" />
+                      {selectedProject.liveLink
+                        ? "Open Live App"
+                        : "App Not Available"}
+                    </a>
 
-                    {/* Action Buttons */}
-                    <div className="flex items-center gap-3">
-                      <a
-                        href={project.liveLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 bg-slate-900 hover:bg-blue-600 text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-colors shadow-md hover:shadow-lg"
-                      >
-                        <Icon.ExternalLink className="w-3.5 h-3.5" /> Live App
-                      </a>
-                      <a
-                        href={project.sourceCode}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 px-4 py-2.5 rounded-xl text-xs font-bold transition-colors"
-                      >
-                        <Icon.Github className="w-3.5 h-3.5" /> Source
-                      </a>
-                    </div>
+                    <a
+                      href={selectedProject.sourceCode || "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-bold border transition-all ${selectedProject.sourceCode ? "bg-white hover:bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300 shadow-sm" : "bg-slate-50 border-slate-100 text-slate-400 cursor-not-allowed"}`}
+                      onClick={(e) =>
+                        !selectedProject.sourceCode && e.preventDefault()
+                      }
+                    >
+                      <Icon.Github className="w-4 h-4" />
+                      {selectedProject.sourceCode
+                        ? "View Source Code"
+                        : "Source Private"}
+                    </a>
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
-        )}
-      </main>
+        </div>
+      )}
 
       {/* ── Mobile Filter Drawer ──────────────────────────────────────────── */}
       {showFilterDrawer && (
@@ -634,12 +501,7 @@ const FalconBakes = () => {
                     setActiveTag(tag);
                     setShowFilterDrawer(false);
                   }}
-                  className={`px-4 py-3.5 rounded-xl text-sm font-bold border transition-all text-left flex justify-between items-center
-                    ${
-                      activeTag === tag
-                        ? "bg-slate-900 text-white border-slate-900 shadow-md"
-                        : "bg-white text-slate-600 border-slate-200 hover:bg-slate-50"
-                    }`}
+                  className={`px-4 py-3.5 rounded-xl text-sm font-bold border transition-all text-left flex justify-between items-center ${activeTag === tag ? "bg-slate-900 text-white border-slate-900 shadow-md" : "bg-white text-slate-600 border-slate-200 hover:bg-slate-50"}`}
                 >
                   {tag}
                   {activeTag === tag && (
@@ -661,7 +523,14 @@ const FalconBakes = () => {
           from { opacity: 0; transform: translateY(15px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes scaleUp {
+          from { opacity: 0; transform: scale(0.95) translateY(10px); }
+          to { opacity: 1; transform: scale(1) translateY(0); }
+        }
         @keyframes slideUp {
           from { transform: translateY(100%); }
           to { transform: translateY(0); }

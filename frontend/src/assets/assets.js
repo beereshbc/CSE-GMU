@@ -3402,7 +3402,7 @@ export const falconBakesProjects = [
     id: 1,
     title: "Academic Attendance Analytics",
     description:
-      "A comprehensive data analytics dashboard for monitoring and analyzing academic attendance patterns across various departments.",
+      "A comprehensive data analytics dashboard for monitoring and analyzing academic attendance patterns.",
     liveLink:
       "https://academicceattendanceanalytics-47rnazyis24mtuhs43omq3.streamlit.app/",
     sourceCode:
@@ -3412,71 +3412,46 @@ export const falconBakesProjects = [
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
     tags: ["Streamlit", "Python", "Data Analytics"],
+    supportContacts: [
+      { name: "Mr. Beeresh Kumar B C", phone: "6360995219" },
+      { name: "Mr. Jagadeesh Bentoor", phone: "7975500513" },
+      { name: "Mr. Samarth K Hosamani", phone: "7483314447" },
+    ],
   },
   {
     id: 2,
     title: "Curriculum Generator",
     description:
       "An automated tool designed for generating, organizing, and managing academic curricula and syllabus structures efficiently.",
-    liveLink: "",
-    sourceCode: "",
-    creatorName: "Dr. Shivanagowda G M",
+    liveLink: "https://github.com/Falcon-Bakes/Curriculum-Generator",
+    sourceCode: "https://github.com/Falcon-Bakes/Curriculum-Generator",
+    creatorName: " Ms. Ranjitha D S -Assistant Professor",
     creatorGithub: "https://github.com/Falcon-Bakes",
     image:
       "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop",
     tags: ["Education", "Automation", "Curriculum"],
-    facultyTeamMember: {
-      name: "Ms. Ranjitha D S",
-      designation: "Assistant Professor",
-      department: "Department of CSE",
-    },
-    developedBy: "Team Falcon",
     supportContacts: [
-      {
-        name: "Mr. Beeresh Kumar B C",
-        phone: "6360995219",
-      },
-      {
-        name: "Mr. Jagadeesh Bentoor",
-        phone: "7975500513",
-      },
-      {
-        name: "Mr. Samarth K Hosamani",
-        phone: "7483314447",
-      },
+      { name: "Mr. Beeresh Kumar B C", phone: "6360995219" },
+      { name: "Mr. Jagadeesh Bentoor", phone: "7975500513" },
+      { name: "Mr. Samarth K Hosamani", phone: "7483314447" },
     ],
   },
   {
     id: 3,
-    title: "CSE Theory Allotment Studio",
+    title: "Theory Allotment Studio",
     description:
-      "This application is developed under Falcon Bakes, a special software development initiative of the Department of CSE, School of Computer Science and Technology, Faculty of Engineering and Technology, GM University, Davanagere.",
-    liveLink: "https://cse-theory-allotment-studio-14ml.vercel.app", // TODO: Add the actual live link
-    sourceCode: "https://github.com/Falcon-Bakes/cse_theory_allotment_studio", // TODO: Add the actual GitHub repository link
-    creatorName: "Dr. Shivanagowda G M",
+      "An application designed for managing theory course allotments, faculty scheduling, and resource distribution.",
+    liveLink: "https://cse-theory-allotment-studio-14ml.vercel.app",
+    sourceCode: "https://github.com/Falcon-Bakes/cse_theory_allotment_studio",
+    creatorName: "Sumana, Pooja Bidri & Ranjitha J",
     creatorGithub: "https://github.com/Falcon-Bakes",
     image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop", // Placeholder desk/planning image
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop",
     tags: ["Education", "Management", "Planning"],
-    facultyTeamMember: {
-      name: "Sumana, Pooja Bidri, and Ranjitha J",
-      designation: "Faculty In-Charge",
-      department: "Department of CSE",
-    },
-    developedBy: "Falcon Bakes",
     supportContacts: [
-      {
-        name: "Mr. Beeresh Kumar B C",
-        phone: "6360995219",
-      },
-      {
-        name: "Mr. Jagadeesh Bentoor",
-        phone: "7975500513",
-      },
-      {
-        name: "Mr. Samarth K Hosamani",
-        phone: "7483314447",
-      },
+      { name: "Mr. Beeresh Kumar B C", phone: "6360995219" },
+      { name: "Mr. Jagadeesh Bentoor", phone: "7975500513" },
+      { name: "Mr. Samarth K Hosamani", phone: "7483314447" },
     ],
   },
 ];
