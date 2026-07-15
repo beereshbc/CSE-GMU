@@ -3454,4 +3454,18 @@ export const falconBakesProjects = [
       { name: "Mr. Samarth K Hosamani", phone: "7483314447" },
     ],
   },
+  {
+    id: 4,
+    title: "Course Document Management System (PDMS)",
+    description:
+      "A prototype platform built with the MERN stack designed to manage institutional files, streamlining document organization and version control integration.",
+    liveLink: "https://pdms-creater.vercel.app",
+    sourceCode: "https://github.com/beereshbc/PDMS",
+    creatorName: "Beereshkumar B C",
+    creatorGithub: "https://github.com/beereshbc",
+    image:
+      "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80&w=2070&auto=format&fit=crop",
+    tags: ["Management", "Education", "MERN Stack"],
+    supportContacts: [{ name: "Mr. Beereshkumar B C", phone: "6360995219" }],
+  },
 ];
