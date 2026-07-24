@@ -168,6 +168,7 @@ import place_25_5 from "../assets/PlacedStud/placed_25/infosys5.jpeg";
 import place_25_6 from "../assets/PlacedStud/placed_25/infosys6.jpeg";
 import place_25_7 from "../assets/PlacedStud/placed_25/infosys7.jpeg";
 import place_25_8 from "../assets/PlacedStud/placed_25/infosys8.jpeg";
+import place_25_0 from "../assets/PlacedStud/placed_25/Anush.jpeg";
 
 import place_25_slk1 from "../assets/PlacedStud/placed_25/slk1.png";
 import place_25_slk2 from "../assets/PlacedStud/placed_25/slk2.jpeg";
@@ -335,6 +336,13 @@ export const assets = {
 };
 
 export const recentPlacedStud = [
+  {
+    id: 0,
+    name: "Anush Suresh Naik",
+    company: "Digitap.AI",
+    passedOutYear: "2025-26",
+    img: place_25_0,
+  },
   // ---------- INFOSYS ----------
   {
     id: 1,

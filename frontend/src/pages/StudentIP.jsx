@@ -56,7 +56,7 @@ ChartJS.register(
   PointElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
 );
 
 const StudentIP = () => {
@@ -120,7 +120,6 @@ const StudentIP = () => {
       name: "Oracle",
       logo: oracleLogo,
     },
-
   ];
 
   // Student data from the document - 2020-21 placements
@@ -335,8 +334,10 @@ const StudentIP = () => {
 
   const openPdf = (year) => {
     const pdfUrls = {
-      "2024-25": "https://drive.google.com/drive/folders/1kEKm9AzUNrUeCi9oacwOr4fRN_uL5tEq",
-      "2023-24": "https://drive.google.com/drive/folders/1Z82crBw8ZAlhNbLemwxdBU_FU64vjVr9",
+      "2024-25":
+        "https://drive.google.com/drive/folders/1kEKm9AzUNrUeCi9oacwOr4fRN_uL5tEq",
+      "2023-24":
+        "https://drive.google.com/drive/folders/1Z82crBw8ZAlhNbLemwxdBU_FU64vjVr9",
       "2022-23": assets.AY2021,
       "2021-22": assets.AY2122,
       "2020-21": assets.AY2223,
@@ -354,7 +355,7 @@ const StudentIP = () => {
 
   const prevRecentStudents = () => {
     setCurrentRecentIndex(
-      (prev) => (prev - 1 + totalRecentPages) % totalRecentPages
+      (prev) => (prev - 1 + totalRecentPages) % totalRecentPages,
     );
   };
 
@@ -568,8 +569,9 @@ const StudentIP = () => {
               {heroImages.map((image, index) => (
                 <div
                   key={index}
-                  className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
-                    }`}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${
+                    index === currentSlide ? "opacity-100" : "opacity-0"
+                  }`}
                 >
                   <img
                     src={image}
@@ -587,10 +589,11 @@ const StudentIP = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-all ${index === currentSlide
-                      ? "bg-blue-600 scale-125"
-                      : "bg-blue-300"
-                      }`}
+                    className={`w-3 h-3 rounded-full transition-all ${
+                      index === currentSlide
+                        ? "bg-blue-600 scale-125"
+                        : "bg-blue-300"
+                    }`}
                   />
                 ))}
               </div>
@@ -863,10 +866,11 @@ const StudentIP = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentRecentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-all ${index === currentRecentIndex
-                    ? "bg-blue-600 scale-125"
-                    : "bg-blue-300 hover:bg-blue-400"
-                    }`}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    index === currentRecentIndex
+                      ? "bg-blue-600 scale-125"
+                      : "bg-blue-300 hover:bg-blue-400"
+                  }`}
                 />
               ))}
             </div>
@@ -1079,8 +1083,9 @@ const StudentIP = () => {
                   {placementStats.map((stat, index) => (
                     <tr
                       key={index}
-                      className={`transition-all duration-200 hover:bg-blue-50 ${index % 2 === 0 ? "bg-blue-25" : "bg-white"
-                        }`}
+                      className={`transition-all duration-200 hover:bg-blue-50 ${
+                        index % 2 === 0 ? "bg-blue-25" : "bg-white"
+                      }`}
                     >
                       <td className="py-4 px-4 font-semibold text-blue-900 border border-blue-100">
                         {stat.year}
@@ -1101,12 +1106,13 @@ const StudentIP = () => {
                         {stat.higherStudies}
                       </td>
                       <td
-                        className={`py-4 px-4 text-center font-bold border border-blue-100 ${parseFloat(stat.percentage) > 80
-                          ? "text-green-600 bg-green-50"
-                          : parseFloat(stat.percentage) > 70
-                            ? "text-blue-600 bg-blue-50"
-                            : "text-orange-600 bg-orange-50"
-                          }`}
+                        className={`py-4 px-4 text-center font-bold border border-blue-100 ${
+                          parseFloat(stat.percentage) > 80
+                            ? "text-green-600 bg-green-50"
+                            : parseFloat(stat.percentage) > 70
+                              ? "text-blue-600 bg-blue-50"
+                              : "text-orange-600 bg-orange-50"
+                        }`}
                       >
                         {stat.percentage}
                       </td>
