@@ -169,13 +169,13 @@ const programData = {
                   Degree
                 </th>
                 <th
-                  colSpan="6"
+                  colSpan="8"
                   className="py-4 px-6 text-center font-bold text-lg border-r border-blue-500"
                 >
                   Schemes
                 </th>
                 <th
-                  colSpan="3"
+                  colSpan="5"
                   className="py-4 px-6 text-center font-bold text-lg"
                 >
                   Resources
@@ -203,6 +203,13 @@ const programData = {
                 >
                   25-Scheme
                 </th>
+                 <th
+                  colSpan="1"
+                  className="py-3 px-8 text-center font-semibold border-r border-blue-400"
+                >
+                  26-Scheme
+                </th>
+                
                 {/* Resources */}
                 <th className="py-3 px-4 text-center font-semibold border-r border-blue-400">
                   Program Brochure
@@ -241,6 +248,10 @@ const programData = {
                 <th className="py-2 px-4 text-center font-medium border-r border-blue-300">
                   Course
                 </th>
+                   <th className="py-2 px-4 text-center font-medium border-r border-blue-300">
+                  Program
+                </th>
+           
 
                 {/* Resources sub-headers */}
                 <th className="py-2 px-4 text-center font-medium border-r border-blue-300"></th>
@@ -316,6 +327,17 @@ const programData = {
                     View
                   </a>
                 </td>
+                {/* 26-Scheme Program & Course */}
+                <td className="py-4 px-4 text-center border-r border-gray-200">
+                  <a
+                    href="https://gmu-curriculum-portal-2026-tnx4.vercel.app"
+                    className="inline-flex items-center gap-2 px-3 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 hover:text-blue-800 transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md"
+                  >
+                    <FileText className="w-4 h-4" />
+                    View
+                  </a>
+                </td>
+           
 
                 {/* Resources */}
                 <td className="py-4 px-4 text-center border-r border-gray-200">
