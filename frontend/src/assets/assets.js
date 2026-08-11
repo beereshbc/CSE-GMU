@@ -3474,6 +3474,10 @@ export const falconBakesProjects = [
     image:
       "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80&w=2070&auto=format&fit=crop",
     tags: ["Management", "Education", "MERN Stack"],
-    supportContacts: [{ name: "Mr. Beereshkumar B C", phone: "6360995219" }],
+    supportContacts: [{ name: "Mr. Beereshkumar B C", phone: "6360995219" }
+                     { name: "Mr. Malathesh S H", phone: "9901443500" },
+                      { name: "Mr. Abhishek S A", phone: "7483243574" },
+                      { name: "Mr. Manju Medhar", phone: "9148090514" },
+                     ],
   },
 ];
