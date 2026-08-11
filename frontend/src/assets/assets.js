@@ -3469,7 +3469,7 @@ export const falconBakesProjects = [
       "A prototype platform built with the MERN stack designed to manage institutional files, streamlining document organization and version control integration.",
     liveLink: "https://pdms-creater.vercel.app",
     sourceCode: "https://github.com/beereshbc/PDMS",
-    creatorName: "Beereshkumar B C",
+    creatorName: "Dr. Shivanagowda G M",
     creatorGithub: "https://github.com/beereshbc",
     image:
       "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80&w=2070&auto=format&fit=crop",
