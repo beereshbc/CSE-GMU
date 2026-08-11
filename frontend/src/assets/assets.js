@@ -3464,7 +3464,7 @@ export const falconBakesProjects = [
   },
   {
     id: 4,
-    title: "Course Document Management System (PDMS)",
+    title: "CMS:AI POWERED CURRICULUM MANAGEMENT SYSTEM",
     description:
       "A prototype platform built with the MERN stack designed to manage institutional files, streamlining document organization and version control integration.",
     liveLink: "https://pdms-creater.vercel.app",
