@@ -1,3 +1,4 @@
+
 import hod_img from "../assets/public-images/HOD_Img.jpeg";
 import gmu_logo from "../assets/public-images/log-gmu.png";
 import gmu from "../assets/public-images/gmit_front.jpg";
@@ -12,7 +13,8 @@ import NANDITHA_G from "../assets/faculties/NANDITHA_G.jpg";
 import NAYANA_G_S from "../assets/faculties/NAYANA_G_S.jpg";
 import NAYANA_K from "../assets/faculties/NAYANA_K.jpg";
 import NIVEDITHA_T_NAIK from "../assets/faculties/NIVEDITHA_T_NAIK.jpg";
-import PALLAVI from "../assets/faculties/PALLAVI_S.jpg";
+import Harshitha_H_V from "../assets/faculties/Harshitha_H_V.jpg";
+import Yashaswini_N_S from "../assets/faculties/Yashaswini_N_S.jpg";
 import RANJITHA_D_S from "../assets/faculties/RANJITHA_D_S.jpg";
 import Ranjitha_J_Tutor from "../assets/faculties/Ranjitha_J_Tutor.jpg";
 import Ravinandan_Jannu from "../assets/faculties/Ravinandan_Jannu.jpg";
@@ -2511,79 +2513,133 @@ export const faculties = [
     ],
   },
   {
-    name: "Mrs. Pallavi S",
-    position: "Assistant Professor ",
+    name: "Ms. Harshitha H V",
     designation: "Assistant Professor",
-    img: PALLAVI,
+    img: Harshitha_H_V,
     coverImg: gmu,
     about:
-      "Mrs. Pallavi S is a Tutor in the Department of Computer Science and Engineering at GM University, Davangere. She holds a B.E. degree in Information Science and Engineering at SSIT Tumkur and her M. Tech in Computer Science and Engineering. Her areas of interest include Blockchain Technology and Deep Learning. She has actively contributed to research with publications in both journals and conferences, including a Journal Paper (IJTE-ISTE, Paper ID: 1410625) and a Conference Paper (ICETSE-2025, Paper ID: 389). She is also a member of the Indian Society for Technical Education (ISTE). Mrs. Pallavi is passionate about exploring innovative technologies and aims to promote research-driven and technology-enhanced learning in the field of computer science.",
+      "Ms. Harshitha H V is currently working as Assistant Professor in the Department of Computer Science and Engineering at GM University. She holds an M.Tech from JSS University Mysore and BE from GMIT Davangere. She is proficient in various programming languages including C, Java, and Data Structures and Algorithms. Her areas of interest include Machine Learning. She is passionate about guiding students in innovative projects and fostering practical problem-solving skills through coding and research-oriented learning.",
     social: {
-      linkedin: "https://www.linkedin.com/in/pallavi-s-a3b977384",
-      Scholar: "",
-      Vidwan: "",
+      linkedin: "https://www.linkedin.com/in/harshitha-hv-5499b8228",
+      Scholar: "#",
+      Vidwan: "#",
     },
     experience: [
       {
         year: "2025-Present",
         title: "Teaching",
-        company: "GM University, Davangere",
-        description: "6 months of teaching experience",
+        company: "GM University, Davanagere",
+        description: "1 month in GM University",
+      },
+      {
+        year: "2023-2024",
+        title: "Industry",
+        company: "Ganaka Labs Pvt. Limited, Bangalore",
+        description: "6 months in Ganaka Labs Pvt. Limited Bangalore",
       },
     ],
     contact: {
       address:
-        "School of Computer Science and Technology, Faculty of Engineering and Technology, GM University, Davanagere",
-      phone: "9113834469",
-      email: "pallavis.fet.scst@gmu.ac.in",
+        "Department of Computer Science and Engineering, GM University, Davanagere",
+      phone: "7259210994",
+      email: "harshithahv@gmu.ac.in",
     },
     qualifications: [
       {
-        degree: "M.Tech (Computer Science and Engineering)",
-        institution: "Sri Siddhartha Institute of Technology, Tumkur",
-        year: "2025",
+        degree: "Ph.D. (Future Aspirant)",
+        institution: "To be pursued",
+        year: "",
       },
       {
-        degree: "B.E (Information Science and Engineering)",
-        institution: "Sri Siddhartha Institute of Technology, Tumkur",
-        year: "2022",
+        degree: "M.Tech (Software Engineering)",
+        institution: "JSS University, Mysore, Karnataka",
+        year: "2026",
+      },
+      {
+        degree: "BE (CSE)",
+        institution: "GMIT, Davanagere",
+        year: "2023",
       },
     ],
-    researchInterests: ["Blockchain Technology", "IoT", "AIML"],
+    researchInterests: ["Machine Learning", "Deep Learning"],
     publications: {
       internationalJournals: [
         {
           title:
-            "Traceability of counterfeit medicine supply chain through blockchain",
-          journal: "IJTE-ISTE",
-          year: "2025",
-          paperId: "1410625",
-        },
-      ],
-      internationalConferences: [
-        {
-          title:
-            "Traceability of counterfeit medicine supply chain through blockchain",
-          conference: "ICETSE-2025",
-          year: "2025",
-          paperId: "389",
+            "AQI Prediction using Deep Learning",
+          journal: "Indian Journal of Environmental Protection (IJEP)",
+          year: "",
         },
       ],
     },
-    professionalMemberships: ["Indian Society for Technical Education (ISTE)"],
-    administrativeResponsibilities: [
-      "Department of CSE LEAP Co-ordinator for 3rd & 5th sem GMU",
-    ],
-    trainingPrograms: {
-      attended: [
-        "Faculty Development Programme 'GMU-LEAP' organized by GMU, Davangere on 29th Aug 2025",
-        "International Faculty Development Programme on 'Quantum Computing for Modern Computational Domains' organized by the Department of Computer Science, Periyar Maniammai Institute of Science and Technology, Vallam, Thanjavur, Tamilnadu, 08-12-2025 to 13-12-2025",
-        "Faculty Development Program on 'Security and Privacy issues and their countermeasures in the era of Artificial Intelligence' at Delhi Technological University, 15/12/2025 to 20/12/2025",
-      ],
+    professionalMemberships: [],
+    administrativeRoles: [],
+    projectsGuided: ["UG Projects"],
+    fundedProjects: [],
+  },
+  {
+    name: "Ms. Yashaswini N S",
+    designation: "Assistant Professor",
+    img: Yashaswini_N_S,
+    coverImg: gmu,
+    about:
+      "Ms. Yashaswini N S is an Assistant Professor in the Department of Computer Science and Engineering (CSE) at GM University, Davanagere. She holds an M.Tech in Artificial Intelligence and Machine Learning from M.S. Ramaiah University of Applied Sciences, Bengaluru and B.E. in Computer Science and Engineering from BIET, Davanagere. Her professional experience includes working on Generative AI systems and Java Full Stack. She has also worked on machine learning, computer vision and full-stack development projects. Her research interests include Large Language Models, Natural Language Processing, Generative and Agentic AI.",
+    social: {
+      linkedin: "#",
+      Scholar: "#",
+      Vidwan: "#",
     },
-    projectsGuided: [
-      "UG Projects (Ongoing) - Currently guiding under graduate students on their project works",
+    experience: [
+      {
+        year: "2025-Present",
+        title: "Teaching",
+        company: "GM University, Davanagere",
+        description: "1 month in GM University",
+      },
+      {
+        year: "2024-2025",
+        title: "GenAI Engineer",
+        company: "Bosch Global Software Technologies",
+        description: "7 months as GenAI Engineer at Bosch Global Software Technologies",
+      },
+      {
+        year: "2023-2024",
+        title: "Full Stack Developer",
+        company: "Hachidori Robotics Private Limited",
+        description: "1 year as Full Stack Developer at Hachidori Robotics Private Limited",
+      },
     ],
+    contact: {
+      address:
+        "Department of Computer Science and Engineering, GM University, Davanagere",
+      phone: "9880509167",
+      email: "yashaswinins@gmu.ac.in",
+    },
+    qualifications: [
+      {
+        degree: "M.Tech (Artificial Intelligence and Machine Learning)",
+        institution: "M S Ramaiah University of Applied Sciences, Bengaluru",
+        year: "2025",
+      },
+      {
+        degree: "BE (Computer Science and Engineering)",
+        institution: "Bapuji Institute of Engineering and Technology, Davanagere",
+        year: "2023",
+      },
+    ],
+    researchInterests: [
+      "Large Language Models",
+      "Generative AI",
+      "Responsible AI",
+      "Natural Language Processing",
+      "Agentic AI",
+    ],
+    publications: {},
+    fundedProjects: [
+      "B.E project 'Detection of Cyberbullying on Social Media Platforms' sanctioned by the Karnataka State Council for Science and Technology (KSCST), Government of Karnataka",
+    ],
+    professionalMemberships: [],
+    administrativeRoles: [],
   },
   {
     name: "Mr. Saurya Ranjan Das",
@@ -3477,9 +3533,9 @@ export const falconBakesProjects = [
       "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80&w=2070&auto=format&fit=crop",
     tags: ["Management", "Education", "MERN Stack"],
     supportContacts: [{ name: "Mr. Beereshkumar B C", phone: "6360995219" },
-                     { name: "Mr. Malathesh S H", phone: "9901443500" },
-                      { name: "Mr. Abhishek S A", phone: "7483243574" },
-                      { name: "Mr. Manju Medhar", phone: "9148090514" },
-                     ],
+    { name: "Mr. Malathesh S H", phone: "9901443500" },
+    { name: "Mr. Abhishek S A", phone: "7483243574" },
+    { name: "Mr. Manju Medhar", phone: "9148090514" },
+    ],
   },
 ];
