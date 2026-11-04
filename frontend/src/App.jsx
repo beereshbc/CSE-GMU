@@ -1,0 +1,72 @@
+import React from "react";
+import Home from "./pages/Home";
+import { Route, Routes } from "react-router-dom";
+import About from "./pages/About";
+import Programs from "./pages/Programs";
+import LearningResources from "./pages/LearningResources";
+import Faculty from "./pages/Faculty";
+import BoS from "./pages/BoS";
+import ResearchPublications from "./pages/ResearchPublications";
+import StudentProjects from "./pages/StudentProjects";
+import IQAC from "./pages/IQAC";
+import FacultyAchievements from "./pages/FacultyAchievements";
+import StudentIP from "./pages/StudentIP";
+import StudentAchievements from "./pages/StudentAchievements";
+import Alumni from "./pages/Alumni";
+import Admissions from "./pages/Admissions";
+import AssistiveBubble from "./components/AssistiveBubble";
+import FalconAI from "./pages/FalconAI";
+import ContactUs from "./pages/ContactUs";
+import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/Footer";
+import BottomNavbar from "./components/BottomNavbar";
+import Benchmarking from "./pages/Benchmarking";
+import Contributers from "./pages/Contributers";
+import Blog from "./pages/Blog";
+import AddBlog from "./pages/admin/AddBlog";
+import FalconBakes from "./pages/FalconBakes";
+
+const App = () => {
+  return (
+    <div>
+      <ScrollToTop />
+      <AssistiveBubble />
+      <FalconAI />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<Home />} />
+        <Route path="/programs" element={<Programs />} />
+        <Route path="/learning-resources" element={<LearningResources />} />
+        <Route path="/faculty" element={<Faculty />} />
+        <Route path="/bos" element={<BoS />} />
+        <Route path="/blog" element={<Blog />} />
+
+        <Route
+          path="/research-publications"
+          element={<ResearchPublications />}
+        />
+        <Route path="/student-projects" element={<StudentProjects />} />
+        <Route path="/iqac" element={<IQAC />} />
+        <Route path="/faculty-achievements" element={<FacultyAchievements />} />
+        <Route path="/student-internships-placements" element={<StudentIP />} />
+        <Route path="/student-achievements" element={<StudentAchievements />} />
+        <Route path="/alumni" element={<Alumni />} />
+        <Route path="/admissions" element={<Admissions />} />
+        <Route path="/falconai" element={<FalconAI />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/benchmarks" element={<Benchmarking />} />
+        <Route path="/contributers" element={<Contributers />} />
+        <Route path="/falcon-bakes" element={<FalconBakes />} />
+
+        {/* Admin route */}
+        <Route path="/admin/addblog" element={<AddBlog />} />
+      </Routes>
+      <BottomNavbar />
+      <Footer />
+    </div>
+  );
+};
+
+export default App;
