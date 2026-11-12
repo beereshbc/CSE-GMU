@@ -1122,7 +1122,7 @@ export const faculties = [
     img: Dr_CHETHAN_CHANDRA_S_BASAVARADDI,
     coverImg: gmu,
     about:
-      "Dr. Chethan Chandra S. Basavaraddi is an Associate Professor in the Department of Computer Science and Engineering at G M University, Davanagere. He holds B.E., B.Ed., M.Tech., Ph.D., and D.Litt. degrees with KEA-KSET qualification. With over 14 years of teaching and research experience, his expertise spans Artificial Intelligence, Machine Learning, Data Mining, IoT, MANETs, NLP, and Image Processing. He has published numerous research papers, authored book, book chapters, and holds many patents in emerging technologies. He has received several prestigious awards, including the Global Teaching Excellence Award (2021), Best Faculty Award (2021), Young Scientist Award (2022), and India Prime Icon Award (2022). He is a member of ISTE, IEEE, IFERP, IARA, IYA, and ACM. His research credentials include Scopus ID: 57226547078, ORCID: 0000-0002-3133-7234, and AICTE Faculty ID: 1-1475809096. Dr. Chethan Chandra is dedicated to fostering innovation, research excellence, and outcome-based education.",
+      "Dr. Chethan Chandra S. Basavaraddi is an Associate Professor in the Department of Computer Science and Engineering at G M University, Davanagere. He holds B.E., B.Ed., M.Tech., Ph.D., and D.Litt. degrees with KEA-KSET qualification. With over 14 years of teaching and research experience, his expertise spans Artificial Intelligence, Machine Learning, Data Mining, IoT, MANETs, NLP, and Image Processing. He has published 83 research papers, authored 2 books, 2 book chapters, and holds 16 patents in emerging technologies. He has attended 87 workshops/conferences and completed live projects at IIIT-Hyderabad NLP Language Technology Research Centre. He has received several prestigious awards, including the Global Teaching Excellence Award (2021), Best Faculty Award (2021), Young Scientist Award (2022), and India Prime Icon Award (2022). He is a member of ISTE, IEEE, IFERP, IARA, IYA, and ACM. His research credentials include Scopus ID: 57226547078, ORCID: 0000-0002-3133-7234, and AICTE Faculty ID: 1-1475809096. Dr. Chethan Chandra is dedicated to fostering innovation, research excellence, and outcome-based education.",
     social: {
       linkedin:
         "https://www.linkedin.com/in/dr-chethan-chandra-s-basavaraddi-5b523750?originalSubdomain=in",
@@ -1130,7 +1130,7 @@ export const faculties = [
         "https://scholar.google.co.in/scholar?q=chethan+chandra+s+basavaraddi&hl=en&as_sdt=0&as_vis=1&oi=scholart",
       orcid: "https://orcid.org/0000-0002-3133-7234",
       researchGate: "https://www.researchgate.net/profile/Chethan-Basavaraddi",
-      Vidwan: "https://vidwan.inflibnet.ac.in/profile/392350",
+      Vidwan: "https://gmuniv.irins.org/profile/392350",
       academia:
         "https://www.academia.edu/48284382/Chethan_Chandra_S_Basavaraddi",
       publons:
@@ -1141,6 +1141,8 @@ export const faculties = [
       kaggle: "https://www.kaggle.com/drchethanchandrasb",
       facebook: "https://www.facebook.com/chethan.raddi",
       webOfScience: "https://www.webofscience.com/wos/author/record/2547307",
+      mySciencePG: "https://scholarprofiles.com/0000-2566-9696",
+      researcherId: "https://researchid.co/chethanraddi-rid117511",
     },
     experience: [
       {
@@ -1172,13 +1174,13 @@ export const faculties = [
       },
       {
         year: "28-11-2022 to 24-05-2024",
-        title: "NAAC Main Coordinator",
+        title: "NAAC Chief Coordinator",
         company: "KIT, Tiptur",
         description: "Accredited 2024-29 with B+ Grade, KIT, Tiptur-572201",
       },
       {
         year: "28-11-2022 to 24-05-2024",
-        title: "NIRF Main Coordinator",
+        title: "NIRF Chief Coordinator",
         company: "KIT, Tiptur",
         description: "KIT, Tiptur-572201",
       },
@@ -1202,14 +1204,36 @@ export const faculties = [
         description:
           "Dept. of CSE, School of CS&T, Faculty of Engineering Technology, G M University, Davanagere-577006",
       },
+      {
+        year: "01-08-2025 to Till Date",
+        title: "Research Coordinator (R & I)",
+        company: "G M University, Davanagere",
+        description:
+          "Research and Development, Dept. of CSE, GM University",
+      },
+      {
+        year: "01-08-2025 to Till Date",
+        title: "IQAC Coordinator",
+        company: "G M University, Davanagere",
+        description:
+          "Internal Quality Assurance Cell, Dept. of CSE, GM University",
+      },
     ],
     contact: {
       address:
         "Dept. CSE, School of CS&T, Faculty of Engineering Technology, G M University, Post Box No-4, PB Road, Davanagere-577006",
-      phone: "+91 9844508359",
-      email: "Chethanchandrasb.cse@gmu.ac.in",
+      phone: "+91 9844508359, +91 9110291933",
+      email: "raddi04@yahoo.com, Chethanchandrasb.cse@gmu.ac.in",
     },
     qualifications: [
+      {
+        degree: "Ph.D. (Computer & Information Sciences) - Thesis Submitted",
+        institution:
+          "Faculty of Computer and Information Sciences, Government Engineering College Ramanagara, VTU, Belgaum",
+        year: "2026 (Submitted: 21-07-2026)",
+        thesis:
+          "Exploration of Integrated Data Mining Techniques into Telemedicine Systems",
+      },
       {
         degree: "Ph.D. (Computer Science and Engineering)",
         institution:
@@ -1219,16 +1243,50 @@ export const faculties = [
           "A Detection Based on Deep Affinity Towards Multiple Object Tracking Using Hybrid Neuro Fuzzy Network Applied to Face Recognition from Feed Forward Neural Network",
       },
       {
+        degree: "Doctor of Letters (D.Litt.)",
+        institution:
+          "University of South America & Dr. S. Radhakrishnan Research and Development Center India",
+        year: "2017 (Awarded)",
+      },
+      {
+        degree: "Ph.D. Course Work",
+        institution:
+          "Dept. of Computer Science and P.G Studies, Mangalore University, Mangalore",
+        year: "2014 (FCD / CGPA: 74.20)",
+        thesis:
+          "Parser for Kannada Language Based on Constituency and Dependency Analysis",
+      },
+      {
         degree: "M.Tech. (Computer Science and Engineering)",
         institution:
-          "UBDT College of Engineering (UBDTCE), Davanagere University",
-        year: "2012",
+          "University BDT College of Engineering (UBDTCE), Davanagere University",
+        year: "2012 (FCD / CGPA: 7.86)",
+      },
+      {
+        degree: "B.Ed.",
+        institution: "Kalpataru College of Education, Tumkur University",
+        year: "2023 (80% / FCD)",
       },
       {
         degree: "BE (Computer Science and Engineering)",
         institution:
           "BCET, Bangalore, Visvesvaraya Technological University, Belagavi",
         year: "2010",
+      },
+      {
+        degree: "KSET (Assistant Professor)",
+        institution: "Karnataka Examinations Authority (KEA-KSET)",
+        year: "2023 (App: KS1090708, Cert: 22-07-2024)",
+      },
+      {
+        degree: "PUC / 10+2",
+        institution: "Kalpataru Science College, Tiptur (KDPU Education)",
+        year: "2006 (FC / 70.33%)",
+      },
+      {
+        degree: "SSLC",
+        institution: "Govt. Boys High School, Tiptur (KSEE Board)",
+        year: "2004 (FC / 68.64%)",
       },
     ],
     researchInterests: [
@@ -1239,6 +1297,8 @@ export const faculties = [
       "Mobile Ad Hoc Networks (MANETs)",
       "Natural Language Processing (NLP)",
       "Image Processing",
+      "Telemedicine & Digital Health",
+      "Blockchain Security",
     ],
     awards: [
       {
@@ -1278,84 +1338,178 @@ export const faculties = [
       },
     ],
     administrativeRoles: [
-      "Department of CSE Research Coordinator",
-      "Department of CSE IQAC Coordinator",
+      "Coordinator (Research & Innovation), Dept. of CSE, GM University",
+      "IQAC Coordinator, Dept. of CSE, GM University",
+      "Director & Executive Secretary, Kalpataru College Employees Housing Cooperative Society",
     ],
     professionalMemberships: [
-      "Indian Society for Technical Education (ISTE), Membership No. LM 91591 (Life Member)",
-      "Institute for Engineering Research and Publication (IFERP), Membership No. PMIN75901368 / 2024-PROF-78337131",
-      "Indian Yoga Association (IYA), Membership No. IYA/LM/287 (Life Member)",
-      "Indian Academic Researchers Association (IARA), Membership No. LM-753 (Life Member)",
-      "IEEE Professional Member, Membership No. 98367601 (R10 Asia and Pacific)",
+      "Life Member of Indian Society for Technical Education: MISTE [LM 91591]",
+      "Member of Institute for Engineering Research and Publication: IFERP [PMIN75901368 / 2024-PROF-78337131]",
+      "Life membership of Indian Yoga Association - IYA: [IYA/LM/287]",
+      "Life member of Indian Academic Researchers Association - IARA: [LM-753]",
+      "IEEE Professional Member: 98367601 [R10 Asia and Pacific]",
       "Web of Science Researcher ID: AEB-4378-2022",
       "ORCID ID: 0000-0002-3133-7234",
-      "Journal of Emerging Technologies and Innovative Research (JETIR), Review Member, ID: 222995",
+      "JETIR Active Review Member (ISSN: 2349-5162), Member ID: 222995",
       "Expert Database & National Researcher's Network, Vidwan ID: 392350",
-      "ACM Professional Membership, Membership No. 2834822",
+      "ACM Professional Membership: Association for Computing Machinery (ACM) - 2834822",
       "AICTE Faculty ID (Engineering and Technology): 1-1475809096",
       "Scopus Author ID: 57226547078",
+      "My Science PG Profile: 0000-2566-9696",
+      "Researcher ID: chethanraddi-rid117511",
     ],
     publications: {
       patents: [
         {
+          slNo: 1,
           title:
-            "IoT Based Online Doctor Robot for Healthcare and Telemedicine Consultation with Patients",
+            "IOT Based Online Doctor Robot for Healthcare and Telemedicine Consultation with Patients",
           applicationNo: "202441010550",
           status: "Granted on 15th February 2024",
+          date: "15th February 2024",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
         },
         {
-          title: "IoT-Enabled Smart Campus Infrastructure Management System",
+          slNo: 2,
+          title: "IOT-Enabled Smart Campus Infrastructure Management System",
           applicationNo: "202511109865",
-          status: "Application filed November 2025",
+          status: "Published Nov 2025",
+          date: "Nov 2025",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
         },
         {
+          slNo: 3,
           title:
             "The Role of Artificial Intelligence in Fintech: Enhancing Efficiency and Security",
           applicationNo: "202541109867",
-          status: "Application filed November 2025",
+          status: "Published Nov 2025",
+          date: "Nov 2025",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
         },
         {
+          slNo: 4,
           title:
             "AI-Based Integrated Digital Platform for Academic and Administrative Management in Higher Education Institutes for Multi-Disciplinary Research",
           applicationNo: "202511112923",
-          status: "Application filed November 2025",
+          status: "Published Nov 2025",
+          date: "Nov 2025",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
         },
         {
-          title: "IoT-Based Wearable Medical Bio-Signals Monitoring Device",
+          slNo: 5,
+          title: "IOT-Based Wearable Medical Bio-Signals Monitoring Device",
           applicationNo: "481543-001",
-          status: "Design/Patent Application filed November 2025",
+          status: "Granted Nov 2025",
+          date: "Nov 2025",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
         },
         {
+          slNo: 6,
           title:
-            "AI-Based Cybersecurity Awareness and Digital Financial Literacy for Administrative Management in Higher Institutions for Multidisciplinary Research",
+            "AI-Based Cybersecurity Awareness and Digital Financial Literacy for administrative management in Higher Institutions for multidisciplinary research",
           applicationNo: "202621001014",
-          status: "Application filed December 2025",
+          status: "Published June 2026",
+          date: "June 2026",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
         },
         {
-          title:
-            "A Financial Intelligence System Management for Higher Education Institutions using AI-Driven Analytics and Humanities-Based Curriculum Multidisciplinary Research",
-          applicationNo: "202621003572",
-          status: "Application filed January 2026",
-        },
-        {
-          title: "Machine Learning Based Security Device for Cloud Computing",
-          applicationNo: "6508654",
-          status: "Application filed February 2026",
-        },
-        {
+          slNo: 7,
           title:
             "A Financial Intelligence System Management for Higher Education Institutions using AI-Driven Analytics and Humanities based Curriculum Multidisciplinary Research",
+          applicationNo: "202621003572",
+          status: "Published Jan 2026",
+          date: "Jan 2026",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
+        },
+        {
+          slNo: 8,
+          title:
+            "Machine Learning Based Security Device for Cloud Computing (COMPUTER DEVICE FOR CLOUD SECURITY)",
+          applicationNo: "Design No: 6508654",
+          status: "UK-Granted (Reg: 25 Feb 2026, Grant: 10 March 2026)",
+          date: "Feb 2026",
+          location: "Intellectual Property Office - GOV.UK",
+        },
+        {
+          slNo: 9,
+          title:
+            "An Integrated Cyber Security Framework for multidisciplinary research Using Blockchain for Protecting University Data Management Systems",
           applicationNo: "202621023911",
-          status: "Application filed February 2026",
+          status: "Published Feb 2026",
+          date: "Feb 2026",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
+        },
+        {
+          slNo: 10,
+          title:
+            "AI-Powered Cybersecurity System for Administrative Management in Higher Education Institutions with Fintech Legal Compliance and Humanities-Driven User Interface with Multidisciplinary Research",
+          applicationNo: "202631035232",
+          status: "Published Mar 2026",
+          date: "Mar 2026",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
+        },
+        {
+          slNo: 11,
+          title:
+            "Block Chain-Enabled AI-Driven Education Management System with Secure Administrative Data Authentication",
+          applicationNo: "202641060611",
+          status: "Filed May 2026",
+          date: "May 2026",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
+        },
+        {
+          slNo: 12,
+          title:
+            "Artificial Intelligence and the Future of Higher Education Management: Legal, Economic, and Humanistic Perspectives",
+          applicationNo: "202641081648",
+          status: "Published June 2026",
+          date: "June 2026",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
+        },
+        {
+          slNo: 13,
+          title:
+            "A Unified Secure AI Framework For Smart Education, Fintech, Digital Governance, Blockchain Law And Management for Multidisciplinary Research",
+          applicationNo: "202641114150",
+          status: "Published Sep 2026",
+          date: "Sep 2026",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
+        },
+        {
+          slNo: 14,
+          title:
+            "An Integrated AI and Nanotechnology Enabled Framework for Smart Education, FinTech, Digital Governance, Blockchain security, Management and Multidisciplinary Research",
+          applicationNo: "202621114153",
+          status: "Filed Sep 2026",
+          date: "Sep 2026",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
+        },
+        {
+          slNo: 15,
+          title:
+            "A Unified Artificial Intelligence Enabled Integrated System for Smart Education, Fintech, Administrative Governance and Multidisciplinary Research Analytics for Higher Education",
+          applicationNo: "202631126988",
+          status: "Published Oct 2026",
+          date: "Oct 2026",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
+        },
+        {
+          slNo: 16,
+          title:
+            "Next-Generation Artificial Intelligence and Nanotechnology for Cybersecurity, Smart Higher Education, FinTech, Blockchain Applications, Management, and Multidisciplinary Research",
+          applicationNo: "202641122918",
+          status: "Published Oct 2026",
+          date: "Oct 2026",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
         },
       ],
       books: [
         {
-          title: "IoT in the Age of Cloud and Artificial Intelligence",
+          title: "IOT in the Age of Cloud and Artificial Intelligence",
           author: "Dr. Chethan Chandra S Basavaraddi",
           publisher: "REST Publisher",
           isbn: "978-81-997884-4-2",
-          year: "2026",
+          year: "2025-26",
         },
         {
           title: "Computer Aided Design and Manufacturing",
@@ -1366,14 +1520,22 @@ export const faculties = [
       bookChapters: [
         {
           title:
+            "Book: Renewable Energy with IoT and Biomedical Applications | Chapter: Machine Learning Based Driver Distraction Detection",
+          publisher: "Dipti Press (OPC) Pvt. Ltd., Chennai",
+          isbn: "978-81-952585-4-3",
+          year: "2021-22",
+        },
+        {
+          title:
             "Exploring Practical Applications of AI in Additive Manufacturing through Case Studies",
           publisher: "Springer Nature (Scopus Indexed Book Chapter)",
-          year: "2026",
+          year: "2025-26",
         },
       ],
-      totalPapers: 60,
-      internationalJournals: 35,
-      internationalConferences: 25,
+      totalPapers: 83,
+      workshopsConferencesAttended: 87,
+      internationalJournals: 45,
+      internationalConferences: 38,
     },
     projectsGuided: {
       ug: [
@@ -1383,12 +1545,13 @@ export const faculties = [
         "Food Delivery Optimization",
       ],
       pg: [
-        "Single Hop Cryptographic Server Based Data Sharing in Clouds",
-        "Online Social Models using User to User Relationships: Authentication of Privacy Policy under OSN Active User Privacy Setting and Monitoring Approach",
-        "Client Generated Reviews Mining Overall Sentiments",
+        "Single Hop Cryptographic Server Based Data Sharing in Clouds - Akshata A Angadi (1KI14SCS01, M.Tech-2016)",
+        "Online Social Models using User to User Relationships: Authentication of Privacy Policy under OSN Active User Privacy Setting and Monitoring Approach - Sahana A (1KI14SCS08, M.Tech-2016)",
+        "Mining Overall Sentiments Using Client Generated Reviews - Tejashwini P R (1KI16SCS08, M.Tech-2018)",
       ],
       phd: [
-        "Shivakumara B. G (R25E02CS002) – PhD Scholar under Dr. Chethan Chandra S. Basavaraddi",
+        "Shivakumara B G (USN: R25E02CS002, CSE, 2025 - Course Work ongoing)",
+        "Mouneshappa Doddamani (USN: R26E02CS002, CSE, 2026 - Registered ongoing)",
       ],
     },
     fundedProjects: [
@@ -1410,11 +1573,11 @@ export const faculties = [
         organizer: "Kalpataru Institute of Technology, Tiptur",
       },
       {
-        role: "Reviewer Chair",
+        role: "Session Chair / Reviewer",
         event:
           "4th International Conference on Knowledge Engineering and Communication Systems (ICKECS 2026)",
-        date: "24 April 2026",
-        location: "Chickaballapura, India",
+        date: "24 & 25 April 2026",
+        location: "SJCIT, Chickballapur, Karnataka",
       },
       {
         role: "Article Reviewer",
@@ -1452,7 +1615,7 @@ export const faculties = [
         title: "INTUITIVEDATA Solutions Pvt. Ltd.",
         date: "26 & 27 November 2025",
         details:
-          "For successfully coordinating the Certified Hedera Developer Course at GM University for 170+ students using blockchain technology",
+          "For successfully coordinating the Certified Hedera Developer Course at GM University for 170+ students using cutting-edge blockchain technology",
       },
     ],
     anyOtherContributions: [
@@ -1461,6 +1624,10 @@ export const faculties = [
       "Question Paper Setting – Course Code 21CSI42 / 21ISI42 / 21CDI42 (Design and Analysis of Algorithms), Nagarjuna College of Engineering & Technology, CS/IS/CD Semester IV, 27th July 2023",
       "Question Paper Setting – Course Code 20CDI72 (Cryptography & Network Security), Nagarjuna College of Engineering & Technology, DS Semester VII, 27th January 2024",
       "Question Paper Setting – Course Code II UE24CS1203 (Data Structures & Application), G M University, Davanagere, CSE/CY/ISE/AIML Semester II, 11th June 2025",
+      "Question Paper Setting – Course Code B24ESC24C (Essentials of Information Technology), Don Bosco Institute of Technology, AIML Semester IV, 05-05-2026",
+      "Resource Person / Facilitator: Genetic Algorithm (Malnad College of Engineering, Hassan, 01-07-2021)",
+      "Resource Person / Facilitator: 'Need for Datamining in Healthcare' (Sri Siddhartha Institute of Technology, Tumkur, 29-05-2026)",
+      "Resource Person / Facilitator: 'Recent Trends in Technology Using Artificial Intelligence and the Future of Learning and Higher Education through AI' (Govt PU College, Honnavalli, 21-09-2026)",
     ],
   },
   {

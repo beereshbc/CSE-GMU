@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 import {
   X,
@@ -15,6 +16,9 @@ import {
   User,
   FileText,
   Building,
+  Lightbulb,
+  Bookmark,
+  Sparkles,
 } from "lucide-react";
 import { faculties } from "../assets/assets";
 
@@ -287,6 +291,88 @@ const FacultyDetailView = ({ faculty, onClose }) => {
                   </div>
                 </div>
               )}
+
+              {/* Patents Section */}
+              {faculty.publications?.patents && Array.isArray(faculty.publications.patents) && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-semibold text-blue-900 mb-4 flex items-center">
+                    <Lightbulb className="w-5 h-5 mr-2 text-amber-500" />
+                    Patents ({faculty.publications.patents.length})
+                  </h3>
+                  <div className="space-y-3">
+                    {faculty.publications.patents.map((pat, index) => (
+                      <div key={index} className="bg-amber-50/60 border border-amber-200/60 rounded-lg p-3 text-sm">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+                          <h5 className="font-semibold text-blue-950">
+                            {pat.title}
+                          </h5>
+                          {pat.status && (
+                            <span className="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-medium whitespace-nowrap self-start sm:self-auto">
+                              {pat.status}
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-xs text-slate-600">
+                          <strong>App No:</strong> {pat.applicationNo || pat.applicationNumber} {pat.date ? `• ${pat.date}` : ""}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Books & Book Chapters */}
+              {((faculty.publications?.books && Array.isArray(faculty.publications.books)) ||
+                (faculty.publications?.bookChapters && Array.isArray(faculty.publications.bookChapters))) && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-semibold text-blue-900 mb-4 flex items-center">
+                    <Bookmark className="w-5 h-5 mr-2 text-indigo-600" />
+                    Books & Book Chapters
+                  </h3>
+                  <div className="space-y-3">
+                    {faculty.publications.books &&
+                      Array.isArray(faculty.publications.books) &&
+                      faculty.publications.books.map((bk, index) => (
+                        <div key={index} className="bg-indigo-50/60 border border-indigo-200/60 rounded-lg p-3 text-sm">
+                          <p className="font-semibold text-blue-950">{bk.title}</p>
+                          <p className="text-xs text-slate-600 mt-1">
+                            {bk.publisher ? `Publisher: ${bk.publisher} • ` : ""}{bk.isbn ? `ISBN: ${bk.isbn} • ` : ""}Year: {bk.year}
+                          </p>
+                        </div>
+                      ))}
+                    {faculty.publications.bookChapters &&
+                      Array.isArray(faculty.publications.bookChapters) &&
+                      faculty.publications.bookChapters.map((bc, index) => (
+                        <div key={`bc-${index}`} className="bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm">
+                          <p className="font-semibold text-slate-800">{bc.title}</p>
+                          <p className="text-xs text-slate-600 mt-1">
+                            {bc.publisher ? `${bc.publisher} • ` : ""}Year: {bc.year}
+                          </p>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Awards Section */}
+              {faculty.awards && Array.isArray(faculty.awards) && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-semibold text-blue-900 mb-4 flex items-center">
+                    <Award className="w-5 h-5 mr-2 text-yellow-500" />
+                    Awards & Honors ({faculty.awards.length})
+                  </h3>
+                  <div className="space-y-3">
+                    {faculty.awards.map((award, index) => (
+                      <div key={index} className="bg-yellow-50/50 border border-yellow-200/60 rounded-lg p-3 text-sm">
+                        <h5 className="font-semibold text-blue-950">{award.title}</h5>
+                        <p className="text-xs text-slate-600 mt-1">
+                          {award.organization} {award.year ? `(${award.year})` : ""}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Sidebar - 1 column */}
@@ -349,7 +435,7 @@ const FacultyDetailView = ({ faculty, onClose }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-lg transition-colors transform hover:scale-110 flex items-center justify-center"
-                      title="Vidwan Profile"
+                      title="Vidwan / Profile"
                     >
                       <BookOpen className="w-4 h-4" />
                     </a>
@@ -367,6 +453,52 @@ const FacultyDetailView = ({ faculty, onClose }) => {
                     Research Output
                   </h3>
                   <div className="space-y-2 text-sm text-blue-700">
+                    {faculty.publications.totalPapers && (
+                      <div className="flex justify-between">
+                        <span>Total Papers:</span>
+                        <span className="font-semibold text-blue-900">
+                          {faculty.publications.totalPapers}
+                        </span>
+                      </div>
+                    )}
+                    {faculty.publications.patents && (
+                      <div className="flex justify-between">
+                        <span>Patents:</span>
+                        <span className="font-semibold text-blue-900">
+                          {Array.isArray(faculty.publications.patents)
+                            ? faculty.publications.patents.length
+                            : faculty.publications.patents}
+                        </span>
+                      </div>
+                    )}
+                    {faculty.publications.books && (
+                      <div className="flex justify-between">
+                        <span>Books:</span>
+                        <span className="font-semibold text-blue-900">
+                          {Array.isArray(faculty.publications.books)
+                            ? faculty.publications.books.length
+                            : faculty.publications.books}
+                        </span>
+                      </div>
+                    )}
+                    {faculty.publications.bookChapters && (
+                      <div className="flex justify-between">
+                        <span>Book Chapters:</span>
+                        <span className="font-semibold text-blue-900">
+                          {Array.isArray(faculty.publications.bookChapters)
+                            ? faculty.publications.bookChapters.length
+                            : faculty.publications.bookChapters}
+                        </span>
+                      </div>
+                    )}
+                    {faculty.publications.workshopsConferencesAttended && (
+                      <div className="flex justify-between">
+                        <span>Workshops / Conf:</span>
+                        <span className="font-semibold text-blue-900">
+                          {faculty.publications.workshopsConferencesAttended}
+                        </span>
+                      </div>
+                    )}
                     {faculty.publications.nationalConferencePapers && (
                       <div className="flex justify-between">
                         <span>National Conferences:</span>
@@ -596,7 +728,7 @@ const Faculty = () => {
 
           {/* Compact Faculty Grid - Responsive Layout */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            {faculties.map((faculty, index) => (
+            {faculties.map((faculty) => (
               <FacultyCard
                 key={faculty.name}
                 faculty={faculty}
