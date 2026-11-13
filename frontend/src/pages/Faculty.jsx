@@ -162,11 +162,7 @@ const FacultyDetailView = ({ faculty, onClose }) => {
                   {faculty.experience && (
                     <div className="text-center">
                       <div className="text-lg font-bold text-blue-600">
-                        {
-                          faculty.experience.filter(
-                            (exp) => exp.title === "Teaching",
-                          ).length
-                        }
+                        {faculty.experience.length}
                       </div>
                       <div className="text-xs text-blue-500">Roles</div>
                     </div>
@@ -244,6 +240,34 @@ const FacultyDetailView = ({ faculty, onClose }) => {
                           {qual.year && (
                             <span className="text-sm bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
                               {qual.year}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Additional Certifications & Credentials */}
+              {faculty.additionalQualifications && Array.isArray(faculty.additionalQualifications) && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-semibold text-blue-900 mb-4 flex items-center">
+                    <Award className="w-5 h-5 mr-2 text-indigo-600" />
+                    Additional Certifications & Academic Credentials ({faculty.additionalQualifications.length})
+                  </h3>
+                  <div className="space-y-3">
+                    {faculty.additionalQualifications.map((item, index) => (
+                      <div key={index} className="bg-slate-50 border border-slate-200 rounded-lg p-3.5">
+                        <div className="flex justify-between items-start">
+                          <div>
+                            <h4 className="font-semibold text-blue-950">{item.title}</h4>
+                            {item.institution && <p className="text-xs text-slate-600 mt-1">{item.institution}</p>}
+                            {item.details && <p className="text-xs text-slate-500 mt-0.5 italic">{item.details}</p>}
+                          </div>
+                          {item.year && (
+                            <span className="text-xs bg-slate-200/80 text-slate-700 px-2.5 py-0.5 rounded-full font-medium">
+                              {item.year}
                             </span>
                           )}
                         </div>

@@ -37,6 +37,8 @@ import {
   conferenceProceedings,
   bookChapters,
   patentsList,
+  patentStats,
+  guideStats,
   researchSupervisors,
   researchScholars,
   fdpAttended2024_25,
@@ -54,6 +56,7 @@ const ResearchPublications = () => {
   const [fdpSubTab, setFdpSubTab] = useState("all"); // 'all' (consolidated), '2024-25', '2025-26', '2026-27'
   const [confSubTab, setConfSubTab] = useState("proceedings"); // 'proceedings', 'presented'
   const [scholarSubTab, setScholarSubTab] = useState("scholars"); // 'supervisors', 'scholars'
+  const [patentFacultyFilter, setPatentFacultyFilter] = useState("all"); // 'all', 'chethan', 'hod'
 
   // Search Filter
   const [searchTerm, setSearchTerm] = useState("");
@@ -185,12 +188,18 @@ const ResearchPublications = () => {
     "doi",
   ]);
 
-  const filteredPatents = filterList(patentsList, [
-    "facultyName",
-    "title",
-    "applicationNumber",
-    "status",
-  ]);
+  const filteredPatents = filterList(
+    patentsList.filter((pat) => {
+      if (patentFacultyFilter === "chethan") {
+        return pat.facultyName.toLowerCase().includes("chethan");
+      }
+      if (patentFacultyFilter === "hod") {
+        return pat.facultyName.toLowerCase().includes("shivanagowda");
+      }
+      return true;
+    }),
+    ["facultyName", "title", "applicationNumber", "status"]
+  );
 
   const filteredBookChapters = filterList(bookChapters, [
     "authors",
@@ -763,6 +772,41 @@ const ResearchPublications = () => {
         {/* ================= TAB 4: PATENTS ================= */}
         {activeTab === "patents" && (
           <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+            {/* Patent Filter Chips */}
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { id: "all", label: "All Patents", count: patentStats.total },
+                  { id: "chethan", label: "Dr. Chethan Chandra S Basavaraddi", count: patentStats.chethanSir },
+                  { id: "hod", label: "Dr. Shivanagowda G M (HOD)", count: patentStats.hodSir },
+                ].map((btn) => (
+                  <button
+                    key={btn.id}
+                    onClick={() => setPatentFacultyFilter(btn.id)}
+                    className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all flex items-center gap-2 ${
+                      patentFacultyFilter === btn.id
+                        ? "bg-amber-600 text-white shadow-md shadow-amber-500/20"
+                        : "bg-white text-slate-700 border border-slate-200 hover:bg-slate-50"
+                    }`}
+                  >
+                    <span>{btn.label}</span>
+                    <span
+                      className={`text-xs px-2 py-0.5 rounded-full ${
+                        patentFacultyFilter === btn.id ? "bg-white/20 text-white" : "bg-slate-100 text-slate-600"
+                      }`}
+                    >
+                      {btn.count}
+                    </span>
+                  </button>
+                ))}
+              </div>
+
+              <div className="flex items-center gap-2 bg-amber-50 text-amber-900 border border-amber-200 px-3.5 py-1.5 rounded-xl text-xs font-semibold">
+                <Lightbulb className="w-4 h-4 text-amber-600" />
+                <span>Total: {patentStats.total} Patents (Chethan Sir: {patentStats.chethanSir} • HOD Sir: {patentStats.hodSir})</span>
+              </div>
+            </div>
+
             <div className="bg-white rounded-2xl shadow-lg border border-blue-100 overflow-hidden">
               <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50/50 border-b border-blue-100 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
@@ -776,7 +820,7 @@ const ResearchPublications = () => {
                 </div>
                 <div className="text-right">
                   <span className="text-xs font-semibold text-blue-800 bg-blue-100 px-3 py-1.5 rounded-lg">
-                    Total: {patentsList.length} Patents
+                    Showing {filteredPatents.length} of {patentsList.length} Patents
                   </span>
                 </div>
               </div>
@@ -876,26 +920,75 @@ const ResearchPublications = () => {
         {/* ================= TAB 6: SUPERVISORS & SCHOLARS ================= */}
         {activeTab === "scholars" && (
           <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+            {/* Supervisors & Scholars Overview Banner */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-blue-100 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-700">
+                  <Users className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xs text-slate-500 font-medium">Ph.D. Research Guides</p>
+                  <p className="text-lg font-bold text-blue-950">{guideStats.totalGuides} in CSE</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-blue-100 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-700">
+                  <GraduationCap className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xs text-slate-500 font-medium">Research Scholars</p>
+                  <p className="text-lg font-bold text-indigo-950">{guideStats.totalScholars} Registered</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-blue-100 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-700">
+                  <Building className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xs text-slate-500 font-medium">Research Centre</p>
+                  <p className="text-sm font-bold text-emerald-950">GMU CSE Centre</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-blue-100 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center text-amber-700">
+                  <Sparkles className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xs text-slate-500 font-medium">Approved Guides</p>
+                  <p className="text-xs font-semibold text-slate-700 line-clamp-1">Dr. Shivanagowda • Dr. Chethan • Dr. Santosh</p>
+                </div>
+              </div>
+            </div>
+
             <div className="flex gap-3 mb-6">
               <button
                 onClick={() => setScholarSubTab("scholars")}
-                className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
+                className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all flex items-center gap-2 ${
                   scholarSubTab === "scholars"
                     ? "bg-blue-600 text-white shadow"
                     : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-50"
                 }`}
               >
-                Research Scholars under GMU Centre ({researchScholars.length})
+                <span>Research Scholars under GMU Centre</span>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-bold">
+                  {researchScholars.length}
+                </span>
               </button>
               <button
                 onClick={() => setScholarSubTab("supervisors")}
-                className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
+                className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all flex items-center gap-2 ${
                   scholarSubTab === "supervisors"
                     ? "bg-blue-600 text-white shadow"
                     : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-50"
                 }`}
               >
-                Research Supervisors ({researchSupervisors.length})
+                <span>Research Supervisors</span>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-bold">
+                  {researchSupervisors.length}
+                </span>
               </button>
             </div>
 

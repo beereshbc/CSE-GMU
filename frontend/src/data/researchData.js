@@ -725,7 +725,18 @@ export const bookChapters = [
   },
 ];
 
-// 5. Patents (Academic Year 2024-26)
+// 5. Patents (Academic Year 2024-26) - Total 22 Patents (Dr. Chethan: 16, Dr. Shivanagowda: 6)
+export const patentStats = {
+  total: 22,
+  chethanSir: 16,
+  hodSir: 6,
+};
+
+export const guideStats = {
+  totalGuides: 3,
+  totalScholars: 9,
+};
+
 export const patentsList = [
   {
     slNo: 1,
@@ -837,66 +848,6 @@ export const patentsList = [
   },
   {
     slNo: 12,
-    facultyName: "Dr. Shivanagowda G M",
-    title:
-      "AN INTELLIGENT LPG MONITORING AND PREDICTIVE SAFETY APPARATUS USING MULTI-SENSOR FUSION AND AUTOMATED SHUT-OFF",
-    applicationNumber: "202641023377 A",
-    status: "Published",
-    filingDate: "Feb 2026",
-    publicationDate: "March 2026",
-  },
-  {
-    slNo: 13,
-    facultyName: "Dr. Shivanagowda G M",
-    title:
-      "Generative Intelligence Engine for Personalized Autism Diagnosis and Interpretation",
-    applicationNumber: "202641023378 A",
-    status: "Published",
-    filingDate: "Feb 2026",
-    publicationDate: "March 2026",
-  },
-  {
-    slNo: 14,
-    facultyName: "Dr. Shivanagowda G M",
-    title:
-      "A CONTEXT-AWARE PROBABILISTIC FRAMEWORK FOR AUTISM-INCLUSIVE ADAPTIVE LEARNING PATH",
-    applicationNumber: "202641023380 A",
-    status: "Published",
-    filingDate: "Feb 2026",
-    publicationDate: "March 2026",
-  },
-  {
-    slNo: 15,
-    facultyName: "Dr. Shivanagowda G M",
-    title:
-      "AN INTELLIGENT VISION-BASED ANOMALY DETECTION FRAMEWORK FOR INDUSTRIAL QUALITY ASSURANCE",
-    applicationNumber: "202641023388 A",
-    status: "Published",
-    filingDate: "Feb 2026",
-    publicationDate: "March 2026",
-  },
-  {
-    slNo: 16,
-    facultyName: "Dr. Shivanagowda G M",
-    title:
-      "A SPATIAL–TEMPORAL DEEP LEARNING FRAMEWORK FOR ROBUST HUMAN POSE ESTIMATION IN CROWDED VISUAL",
-    applicationNumber: "202641023750 A",
-    status: "Published",
-    filingDate: "Feb 2026",
-    publicationDate: "March 2026",
-  },
-  {
-    slNo: 17,
-    facultyName: "Dr. Shivanagowda G M",
-    title:
-      "AN INTELLIGENT VISUAL SEARCH AND REAL-TIME PRODUCT MATCHING FRAMEWORK FOR DIGITAL COMMERCE",
-    applicationNumber: "202641023892 A",
-    status: "Published",
-    filingDate: "Feb 2026",
-    publicationDate: "March 2026",
-  },
-  {
-    slNo: 18,
     facultyName: "Dr. Chethan Chandra S Basavaraddi",
     title:
       "Artificial Intelligence and the Future of Higher Education Management: Legal, Economic, and Humanistic Perspectives",
@@ -906,7 +857,7 @@ export const patentsList = [
     publicationDate: "June 2026",
   },
   {
-    slNo: 19,
+    slNo: 13,
     facultyName: "Dr. Chethan Chandra S Basavaraddi",
     title:
       "A Unified Secure AI Framework For Smart Education, Fintech, Digital Governance, Blockchain Law And Management for Multidisciplinary Research",
@@ -916,7 +867,7 @@ export const patentsList = [
     publicationDate: "Sep 2026",
   },
   {
-    slNo: 20,
+    slNo: 14,
     facultyName: "Dr. Chethan Chandra S Basavaraddi",
     title:
       "An Integrated AI and Nanotechnology Enabled Framework for Smart Education, FinTech, Digital Governance, Blockchain security, Management and Multidisciplinary Research",
@@ -925,45 +876,120 @@ export const patentsList = [
     filingDate: "Sep 2026",
     publicationDate: "Under Process",
   },
+  {
+    slNo: 15,
+    facultyName: "Dr. Chethan Chandra S Basavaraddi",
+    title:
+      "A Unified Artificial Intelligence Enabled Integrated System for Smart Education, Fintech, Administrative Governance and Multidisciplinary Research Analytics for Higher Education",
+    applicationNumber: "202631126988",
+    status: "Published",
+    filingDate: "Oct 2026",
+    publicationDate: "Oct 2026",
+  },
+  {
+    slNo: 16,
+    facultyName: "Dr. Chethan Chandra S Basavaraddi",
+    title:
+      "Next-Generation Artificial Intelligence and Nanotechnology for Cybersecurity, Smart Higher Education, FinTech, Blockchain Applications, Management, and Multidisciplinary Research",
+    applicationNumber: "202641122918",
+    status: "Published",
+    filingDate: "Oct 2026",
+    publicationDate: "Oct 2026",
+  },
+  {
+    slNo: 17,
+    facultyName: "Dr. Shivanagowda G M",
+    title:
+      "AN INTELLIGENT LPG MONITORING AND PREDICTIVE SAFETY APPARATUS USING MULTI-SENSOR FUSION AND AUTOMATED SHUT-OFF",
+    applicationNumber: "202641023377 A",
+    status: "Published",
+    filingDate: "Feb 2026",
+    publicationDate: "March 2026",
+  },
+  {
+    slNo: 18,
+    facultyName: "Dr. Shivanagowda G M",
+    title:
+      "Generative Intelligence Engine for Personalized Autism Diagnosis and Interpretation",
+    applicationNumber: "202641023378 A",
+    status: "Published",
+    filingDate: "Feb 2026",
+    publicationDate: "March 2026",
+  },
+  {
+    slNo: 19,
+    facultyName: "Dr. Shivanagowda G M",
+    title:
+      "A CONTEXT-AWARE PROBABILISTIC FRAMEWORK FOR AUTISM-INCLUSIVE ADAPTIVE LEARNING PATH",
+    applicationNumber: "202641023380 A",
+    status: "Published",
+    filingDate: "Feb 2026",
+    publicationDate: "March 2026",
+  },
+  {
+    slNo: 20,
+    facultyName: "Dr. Shivanagowda G M",
+    title:
+      "AN INTELLIGENT VISION-BASED ANOMALY DETECTION FRAMEWORK FOR INDUSTRIAL QUALITY ASSURANCE",
+    applicationNumber: "202641023388 A",
+    status: "Published",
+    filingDate: "Feb 2026",
+    publicationDate: "March 2026",
+  },
+  {
+    slNo: 21,
+    facultyName: "Dr. Shivanagowda G M",
+    title:
+      "A SPATIAL–TEMPORAL DEEP LEARNING FRAMEWORK FOR ROBUST HUMAN POSE ESTIMATION IN CROWDED VISUAL",
+    applicationNumber: "202641023750 A",
+    status: "Published",
+    filingDate: "Feb 2026",
+    publicationDate: "March 2026",
+  },
+  {
+    slNo: 22,
+    facultyName: "Dr. Shivanagowda G M",
+    title:
+      "AN INTELLIGENT VISUAL SEARCH AND REAL-TIME PRODUCT MATCHING FRAMEWORK FOR DIGITAL COMMERCE",
+    applicationNumber: "202641023892 A",
+    status: "Published",
+    filingDate: "Feb 2026",
+    publicationDate: "March 2026",
+  },
 ];
 
-// 6. Details of Research Supervisors
+// 6. Details of Research Supervisors (GMU CSE Research Centre)
 export const researchSupervisors = [
   {
     slNo: 1,
-    facultyName: "Dr. Sanjay Pande M B",
-    university: "VTU",
-    registeredScholars: 1,
+    facultyName: "Dr. Shivanagowda G M",
+    designation: "Professor & Head",
+    university: "GMU",
+    registeredScholars: 3,
     totalAwarded: 0,
-    totalOngoing: "1 - Submitted Thesis",
+    totalOngoing: 3,
   },
   {
     slNo: 2,
-    facultyName: "Dr. Shivanagowda G M",
+    facultyName: "Dr. Chethan Chandra S Basavaraddi",
+    designation: "Associate Professor & Research Coordinator (R & I)",
     university: "GMU",
-    registeredScholars: 2,
+    registeredScholars: 3,
     totalAwarded: 0,
-    totalOngoing: 2,
+    totalOngoing: 3,
   },
   {
     slNo: 3,
-    facultyName: "Dr. Chethan Chandra S Basavaraddi",
-    university: "GMU",
-    registeredScholars: 2,
-    totalAwarded: 0,
-    totalOngoing: 2,
-  },
-  {
-    slNo: 4,
     facultyName: "Dr. Santoshkumar Mahendrakar",
+    designation: "Assistant Professor",
     university: "GMU",
-    registeredScholars: 2,
+    registeredScholars: 3,
     totalAwarded: 0,
-    totalOngoing: 2,
+    totalOngoing: 3,
   },
 ];
 
-// 7. Details of Research Scholars Under GMU Research Centre
+// 7. Details of Research Scholars Under GMU Research Centre (Total 9 Scholars)
 export const researchScholars = [
   {
     slNo: 1,
@@ -987,6 +1013,16 @@ export const researchScholars = [
   },
   {
     slNo: 3,
+    supervisor: "Dr. Shivanagowda G M",
+    scholarName: "Research Scholar (CS)",
+    usn: "R26E01CS002",
+    mode: "Part-time",
+    admissionYear: "2026",
+    researchTitle: "Under Progress after RPRC-Meeting",
+    status: "Course work",
+  },
+  {
+    slNo: 4,
     supervisor: "Dr. Chethan Chandra S Basavaraddi",
     scholarName: "Shivakumara B G",
     usn: "R25E02CS002",
@@ -996,7 +1032,7 @@ export const researchScholars = [
     status: "Course work",
   },
   {
-    slNo: 4,
+    slNo: 5,
     supervisor: "Dr. Chethan Chandra S Basavaraddi",
     scholarName: "MOUNESHAPPA DODDAMANI",
     usn: "R26E02CS002",
@@ -1006,7 +1042,17 @@ export const researchScholars = [
     status: "Registered",
   },
   {
-    slNo: 5,
+    slNo: 6,
+    supervisor: "Dr. Chethan Chandra S Basavaraddi",
+    scholarName: "Akshy A",
+    usn: "R26E02CS003",
+    mode: "Part-time",
+    admissionYear: "2026",
+    researchTitle: "Under Progress after RPRC-Meeting",
+    status: "Registered",
+  },
+  {
+    slNo: 7,
     supervisor: "Dr. Santoshkumar Mahendrakar",
     scholarName: "Pradeep S H",
     usn: "R26C01CA004",
@@ -1016,30 +1062,20 @@ export const researchScholars = [
     status: "Registered",
   },
   {
-    slNo: 6,
-    supervisor: "Dr. Shivanagowda G M",
-    scholarName: "Research Scholar",
-    usn: "-",
-    mode: "Part-time",
-    admissionYear: "2026",
-    researchTitle: "Under Progress after RPRC-Meeting",
-    status: "Course work",
-  },
-  {
-    slNo: 7,
-    supervisor: "Dr. Chethan Chandra S Basavaraddi",
-    scholarName: "Akshy A",
-    usn: "-",
+    slNo: 8,
+    supervisor: "Dr. Santoshkumar Mahendrakar",
+    scholarName: "Kruparani",
+    usn: "R26C01CA005",
     mode: "Part-time",
     admissionYear: "2026",
     researchTitle: "Under Progress after RPRC-Meeting",
     status: "Registered",
   },
   {
-    slNo: 8,
+    slNo: 9,
     supervisor: "Dr. Santoshkumar Mahendrakar",
-    scholarName: "Kruparani",
-    usn: "-",
+    scholarName: "Research Scholar (CA)",
+    usn: "R26C01CA006",
     mode: "Part-time",
     admissionYear: "2026",
     researchTitle: "Under Progress after RPRC-Meeting",

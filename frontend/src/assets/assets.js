@@ -1076,8 +1076,52 @@ export const faculties = [
       ],
       patents: [
         {
-          title: "A Learning and Mentoring System and Method Thereof",
-          applicationNo: "202041034630, 2020",
+          slNo: 1,
+          title: "AN INTELLIGENT LPG MONITORING AND PREDICTIVE SAFETY APPARATUS USING MULTI-SENSOR FUSION AND AUTOMATED SHUT-OFF",
+          applicationNo: "202641023377 A",
+          status: "Published",
+          date: "Feb / March 2026",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
+        },
+        {
+          slNo: 2,
+          title: "Generative Intelligence Engine for Personalized Autism Diagnosis and Interpretation",
+          applicationNo: "202641023378 A",
+          status: "Published",
+          date: "Feb / March 2026",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
+        },
+        {
+          slNo: 3,
+          title: "A CONTEXT-AWARE PROBABILISTIC FRAMEWORK FOR AUTISM-INCLUSIVE ADAPTIVE LEARNING PATH",
+          applicationNo: "202641023380 A",
+          status: "Published",
+          date: "Feb / March 2026",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
+        },
+        {
+          slNo: 4,
+          title: "AN INTELLIGENT VISION-BASED ANOMALY DETECTION FRAMEWORK FOR INDUSTRIAL QUALITY ASSURANCE",
+          applicationNo: "202641023388 A",
+          status: "Published",
+          date: "Feb / March 2026",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
+        },
+        {
+          slNo: 5,
+          title: "A SPATIAL–TEMPORAL DEEP LEARNING FRAMEWORK FOR ROBUST HUMAN POSE ESTIMATION IN CROWDED VISUAL",
+          applicationNo: "202641023750 A",
+          status: "Published",
+          date: "Feb / March 2026",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
+        },
+        {
+          slNo: 6,
+          title: "AN INTELLIGENT VISUAL SEARCH AND REAL-TIME PRODUCT MATCHING FRAMEWORK FOR DIGITAL COMMERCE",
+          applicationNo: "202641023892 A",
+          status: "Published",
+          date: "Feb / March 2026",
+          location: "IPO Building, G.S.T. Road, Guindy, Chennai",
         },
       ],
       books: 1,
@@ -1227,20 +1271,12 @@ export const faculties = [
     },
     qualifications: [
       {
-        degree: "Ph.D. (Computer & Information Sciences) - Thesis Submitted",
-        institution:
-          "Faculty of Computer and Information Sciences, Government Engineering College Ramanagara, VTU, Belgaum",
-        year: "2026 (Submitted: 21-07-2026)",
-        thesis:
-          "Exploration of Integrated Data Mining Techniques into Telemedicine Systems",
-      },
-      {
         degree: "Ph.D. (Computer Science and Engineering)",
         institution:
-          "North East Frontier Technical University (NEFTU), Arunachal Pradesh",
-        year: "2020",
+          "NEFTU, Arunachal Pradesh (Awarded 2020) / VTU, Belgaum (Thesis Submitted 2026)",
+        year: "2020 (Awarded) / 2026 (Submitted)",
         thesis:
-          "A Detection Based on Deep Affinity Towards Multiple Object Tracking Using Hybrid Neuro Fuzzy Network Applied to Face Recognition from Feed Forward Neural Network",
+          "Exploration of Integrated Data Mining Techniques into Telemedicine Systems / Multi-Object Tracking Using Neuro-Fuzzy Networks",
       },
       {
         degree: "Doctor of Letters (D.Litt.)",
@@ -1249,42 +1285,44 @@ export const faculties = [
         year: "2017 (Awarded)",
       },
       {
-        degree: "Ph.D. Course Work",
-        institution:
-          "Dept. of Computer Science and P.G Studies, Mangalore University, Mangalore",
-        year: "2014 (FCD / CGPA: 74.20)",
-        thesis:
-          "Parser for Kannada Language Based on Constituency and Dependency Analysis",
-      },
-      {
         degree: "M.Tech. (Computer Science and Engineering)",
         institution:
           "University BDT College of Engineering (UBDTCE), Davanagere University",
         year: "2012 (FCD / CGPA: 7.86)",
       },
       {
-        degree: "B.Ed.",
+        degree: "B.Ed. (Bachelor of Education)",
         institution: "Kalpataru College of Education, Tumkur University",
         year: "2023 (80% / FCD)",
       },
       {
-        degree: "BE (Computer Science and Engineering)",
+        degree: "B.E. (Computer Science and Engineering)",
         institution:
-          "BCET, Bangalore, Visvesvaraya Technological University, Belagavi",
-        year: "2010",
+          "Bangalore College of Engineering and Technology, VTU, Belagavi",
+        year: "2010 (FC)",
       },
+    ],
+    additionalQualifications: [
       {
-        degree: "KSET (Assistant Professor)",
+        title: "KSET (Assistant Professor)",
         institution: "Karnataka Examinations Authority (KEA-KSET)",
         year: "2023 (App: KS1090708, Cert: 22-07-2024)",
       },
       {
-        degree: "PUC / 10+2",
+        title: "Ph.D. Course Work",
+        institution:
+          "Dept. of Computer Science and P.G Studies, Mangalore University, Mangalore",
+        year: "2014 (FCD / CGPA: 74.20)",
+        details:
+          "Parser for Kannada Language Based on Constituency and Dependency Analysis",
+      },
+      {
+        title: "PUC / 10+2",
         institution: "Kalpataru Science College, Tiptur (KDPU Education)",
         year: "2006 (FC / 70.33%)",
       },
       {
-        degree: "SSLC",
+        title: "SSLC",
         institution: "Govt. Boys High School, Tiptur (KSEE Board)",
         year: "2004 (FC / 68.64%)",
       },
